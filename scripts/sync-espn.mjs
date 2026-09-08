@@ -29,7 +29,7 @@ const teamName = (team) =>
   team.name || [team.location, team.nickname].filter(Boolean).join(" ") || `Team ${team.id}`;
 
 const params = new URLSearchParams();
-for (const view of ["mSettings", "mTeam", "mMatchupScore", "mStatus"])
+for (const view of ["mSettings", "mTeam", "mMatchupScore", "mStatus", "mDraftDetail"])
   params.append("view", view);
 const endpoint =
   `https://lm-api-reads.fantasy.espn.com/apis/v3/games/ffl/seasons/${season}` +
@@ -111,6 +111,66 @@ const standings = normalizedTeams
   }));
 
 const teamById = new Map(normalizedTeams.map((team) => [team.teamId, team]));
+const positionNames = {
+  1: "QB",
+  2: "RB",
+  3: "WR",
+  4: "TE",
+  5: "K",
+  16: "D/ST",
+};
+const draftPicks = raw.draftDetail?.picks || [];
+let playerById = new Map();
+if (draftPicks.length) {
+  const playersUrl =
+    `https://lm-api-reads.fantasy.espn.com/apis/v3/games/ffl/seasons/${season}/players` +
+    `?view=kona_player_info&scoringPeriodId=0`;
+  try {
+    const playersResponse = await fetch(playersUrl, {
+      headers,
+      signal: AbortSignal.timeout(30000),
+    });
+    if (playersResponse.ok) {
+      const playersPayload = await playersResponse.json();
+      playerById = new Map(
+        (playersPayload.players || []).map((entry) => {
+          const player = entry.player || entry;
+          return [Number(entry.id ?? player.id), player];
+        }),
+      );
+    }
+  } catch {
+    // The draft board remains useful with stable ESPN player IDs if the
+    // optional player-pool lookup is temporarily unavailable.
+  }
+}
+const drafts = draftPicks
+  .map((pick) => {
+    const team = teamById.get(Number(pick.teamId));
+    if (!team) return null;
+    const player = playerById.get(Number(pick.playerId)) || pick.player || {};
+    const playerName =
+      player.fullName ||
+      [player.firstName, player.lastName].filter(Boolean).join(" ") ||
+      `Player #${pick.playerId}`;
+    const position =
+      positionNames[player.defaultPositionId] ||
+      positionNames[player.positionId] ||
+      player.position ||
+      "Player";
+    return {
+      season,
+      round: Number(pick.roundId || 0),
+      pick: Number(pick.overallPickNumber || pick.id || 0),
+      player: playerName,
+      position,
+      team: team.team,
+      manager: team.manager,
+      keeper: Boolean(pick.keeper),
+    };
+  })
+  .filter(Boolean)
+  .sort((a, b) => a.pick - b.pick);
 const currentWeek = Number(raw.status?.currentMatchupPeriod || raw.scoringPeriodId || 1);
 const games = raw.schedule
   .filter(
@@ -155,6 +215,8 @@ const content = {
   source: "ESPN Fantasy Football",
   currentWeek,
   isActive: Boolean(raw.status?.isActive),
+  draftCompleteDate: raw.draftDetail?.completeDate || null,
+  drafts,
   standings,
   games,
 };
