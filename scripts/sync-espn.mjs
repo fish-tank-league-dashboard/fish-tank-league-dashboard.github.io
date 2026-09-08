@@ -7,6 +7,8 @@ const outputPath = path.resolve(
   process.env.ESPN_OUTPUT || `public/data/espn-${season}.json`,
 );
 const allowPrivate = Boolean(process.env.ESPN_S2 && process.env.ESPN_SWID);
+if (Boolean(process.env.ESPN_S2) !== Boolean(process.env.ESPN_SWID))
+  throw new Error("Private ESPN access requires both ESPN_S2 and ESPN_SWID secrets.");
 
 const aliases = {
   1: { manager: "Michael", ownerId: "owner:michael" },
@@ -41,16 +43,18 @@ if (allowPrivate) {
   headers.Cookie = `espn_s2=${process.env.ESPN_S2}; SWID=${process.env.ESPN_SWID}`;
 }
 
-const response = await fetch(endpoint, { headers });
+const response = await fetch(endpoint, { headers, signal: AbortSignal.timeout(30000) });
 if (!response.ok) {
   const message = await response.text();
   if (response.status === 401) {
+    if (allowPrivate)
+      throw new Error("ESPN login expired or was rejected. Refresh both GitHub ESPN secrets; saved data is unchanged.");
     console.log(
       "ESPN sync skipped: league is not publicly viewable. The existing dashboard data was left unchanged.",
     );
     process.exit(0);
   }
-  throw new Error(`ESPN returned ${response.status}: ${message.slice(0, 300)}`);
+  throw new Error(`ESPN returned HTTP ${response.status}; saved data is unchanged.`);
 }
 
 const raw = await response.json();
