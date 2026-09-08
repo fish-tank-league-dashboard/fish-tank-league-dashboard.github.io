@@ -130,30 +130,30 @@ const positionNames = {
 const draftPicks = raw.draftDetail?.picks || [];
 let playerById = new Map();
 let playerPayloadAvailable = false;
+const rosterPlayerById = new Map();
+for (const team of raw.teams || []) for (const entry of team?.roster?.entries || []) {
+  const rosterPlayer = (entry.playerPoolEntry || entry).player || entry.player || {};
+  const rosterPlayerId = Number(entry.playerId ?? rosterPlayer.id);
+  const rosterName = rosterPlayer.fullName || [rosterPlayer.firstName, rosterPlayer.lastName].filter(Boolean).join(" ");
+  if (rosterPlayerId > 0 && rosterName) rosterPlayerById.set(rosterPlayerId, rosterName);
+}
 if (draftPicks.length) {
-  const playersUrl =
-    `https://lm-api-reads.fantasy.espn.com/apis/v3/games/ffl/seasons/${season}/players` +
-    `?view=kona_player_info&scoringPeriodId=0`;
-  try {
-    const playersResponse = await fetch(playersUrl, {
-      headers,
-      signal: AbortSignal.timeout(30000),
-    });
-    if (playersResponse.ok) {
-      const playersPayload = await playersResponse.json();
-      playerPayloadAvailable = true;
-      const playerEntries = Array.isArray(playersPayload) ? playersPayload : (playersPayload.players || []);
-      playerById = new Map(
-        playerEntries.map((entry) => {
-          const player = entry.player || entry;
-          return [Number(entry.id ?? player.id), player];
-        }),
-      );
+  const draftPlayerIds = [...new Set(draftPicks.map((pick) => Number(pick.playerId)).filter((id) => id > 0))];
+  const playercardUrl = `https://lm-api-reads.fantasy.espn.com/apis/v3/games/ffl/seasons/${season}/segments/0/leagues/${leagueId}?view=kona_playercard`;
+  for (let offset = 0; offset < draftPlayerIds.length; offset += 50) try {
+    const batch = draftPlayerIds.slice(offset, offset + 50);
+    const playerHeaders = { ...headers, "X-Fantasy-Filter": JSON.stringify({ players: { filterIds: { value: batch } } }) };
+    const playersResponse = await fetch(playercardUrl, { headers: playerHeaders, signal: AbortSignal.timeout(30000) });
+    if (!playersResponse.ok) continue;
+    const playersPayload = await playersResponse.json();
+    const playerEntries = Array.isArray(playersPayload) ? playersPayload : (playersPayload.players || playersPayload.playerCards || []);
+    for (const entry of playerEntries) {
+      const player = entry.player || entry.playerPoolEntry?.player || entry;
+      const id = Number(entry.id ?? entry.playerId ?? player.id);
+      if (id > 0) playerById.set(id, player);
     }
-  } catch {
-    // The draft board remains useful with stable ESPN player IDs if the
-    // optional player-pool lookup is temporarily unavailable.
-  }
+    playerPayloadAvailable = playerEntries.length > 0;
+  } catch { /* raw roster names and verified recap names remain usable */ }
 }
 // The first 50 names are a verified ESPN Draft Recap snapshot.  Prefer those
 // names over a stale/mismatched player-pool response, while still allowing the
@@ -173,6 +173,7 @@ const drafts = draftPicks
     const playerName = fallback?.player ||
       player.fullName ||
       [player.firstName, player.lastName].filter(Boolean).join(" ") ||
+      rosterPlayerById.get(Number(pick.playerId)) ||
       `Player #${pick.playerId}`;
     const position = fallback?.position ||
       positionNames[player.defaultPositionId] ||
