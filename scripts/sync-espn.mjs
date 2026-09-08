@@ -1,11 +1,19 @@
 import fs from "node:fs";
 import path from "node:path";
+import {
+  buildAdvancedFeatures,
+  normalizeMatchupStatus,
+  normalizeRosterEntry,
+  rosterSlots,
+} from "./advanced-data.mjs";
 
 const leagueId = Number(process.env.ESPN_LEAGUE_ID || 791101930);
 const season = Number(process.env.ESPN_SEASON || 2026);
 const outputPath = path.resolve(
   process.env.ESPN_OUTPUT || `public/data/espn-${season}.json`,
 );
+let previous = null;
+try { previous = JSON.parse(fs.readFileSync(outputPath, "utf8")); } catch {}
 const allowPrivate = Boolean(process.env.ESPN_S2 && process.env.ESPN_SWID);
 if (Boolean(process.env.ESPN_S2) !== Boolean(process.env.ESPN_SWID))
   throw new Error("Private ESPN access requires both ESPN_S2 and ESPN_SWID secrets.");
@@ -29,7 +37,7 @@ const teamName = (team) =>
   team.name || [team.location, team.nickname].filter(Boolean).join(" ") || `Team ${team.id}`;
 
 const params = new URLSearchParams();
-for (const view of ["mSettings", "mTeam", "mMatchupScore", "mStatus", "mDraftDetail"])
+for (const view of ["mSettings", "mTeam", "mRoster", "mMatchupScore", "mScoreboard", "mStatus", "mDraftDetail"])
   params.append("view", view);
 const endpoint =
   `https://lm-api-reads.fantasy.espn.com/apis/v3/games/ffl/seasons/${season}` +
@@ -45,7 +53,7 @@ if (allowPrivate) {
 
 const response = await fetch(endpoint, { headers, signal: AbortSignal.timeout(30000) });
 if (!response.ok) {
-  const message = await response.text();
+  await response.text();
   if (response.status === 401) {
     if (allowPrivate)
       throw new Error("ESPN login expired or was rejected. Refresh both GitHub ESPN secrets; saved data is unchanged.");
@@ -121,6 +129,7 @@ const positionNames = {
 };
 const draftPicks = raw.draftDetail?.picks || [];
 let playerById = new Map();
+let playerPayloadAvailable = false;
 if (draftPicks.length) {
   const playersUrl =
     `https://lm-api-reads.fantasy.espn.com/apis/v3/games/ffl/seasons/${season}/players` +
@@ -132,8 +141,10 @@ if (draftPicks.length) {
     });
     if (playersResponse.ok) {
       const playersPayload = await playersResponse.json();
+      playerPayloadAvailable = true;
+      const playerEntries = Array.isArray(playersPayload) ? playersPayload : (playersPayload.players || []);
       playerById = new Map(
-        (playersPayload.players || []).map((entry) => {
+        playerEntries.map((entry) => {
           const player = entry.player || entry;
           return [Number(entry.id ?? player.id), player];
         }),
@@ -144,16 +155,26 @@ if (draftPicks.length) {
     // optional player-pool lookup is temporarily unavailable.
   }
 }
+// The first 50 names are a verified ESPN Draft Recap snapshot.  Prefer those
+// names over a stale/mismatched player-pool response, while still allowing the
+// authenticated player endpoint to resolve picks 51–150.
+const fallbackDraftPath = path.join(path.dirname(outputPath), `draft-${season}.json`);
+let verifiedDraftByPick = new Map();
+try {
+  const fallbackDraft = JSON.parse(fs.readFileSync(fallbackDraftPath, "utf8"));
+  verifiedDraftByPick = new Map(fallbackDraft.map((pick) => [`${pick.round}:${pick.pick}`, pick]));
+} catch {}
 const drafts = draftPicks
   .map((pick) => {
     const team = teamById.get(Number(pick.teamId));
     if (!team) return null;
+    const fallback = verifiedDraftByPick.get(`${Number(pick.roundId || 0)}:${Number(pick.overallPickNumber || pick.id || 0)}`);
     const player = playerById.get(Number(pick.playerId)) || pick.player || {};
-    const playerName =
+    const playerName = fallback?.player ||
       player.fullName ||
       [player.firstName, player.lastName].filter(Boolean).join(" ") ||
       `Player #${pick.playerId}`;
-    const position =
+    const position = fallback?.position ||
       positionNames[player.defaultPositionId] ||
       positionNames[player.positionId] ||
       player.position ||
@@ -167,11 +188,54 @@ const drafts = draftPicks
       team: team.team,
       manager: team.manager,
       keeper: Boolean(pick.keeper),
+      playerId: Number(pick.playerId || 0),
+      seasonPoints: null,
+      nameSource: fallback?.player ? "verified-draft-recap" : playerPayloadAvailable ? "espn-player-endpoint" : "espn-pick-or-id",
     };
   })
   .filter(Boolean)
   .sort((a, b) => a.pick - b.pick);
 const currentWeek = Number(raw.status?.currentMatchupPeriod || raw.scoringPeriodId || 1);
+
+// mMatchupScore roster payloads are authoritative for legal lineup regret. A
+// bounded 1–18 period sweep preserves historical rosters despite transactions.
+const rosterRows = [];
+const rosterRowKeys = new Set();
+const rosterEntries = (team) => team?.roster?.entries || team?.rosterForCurrentScoringPeriod?.entries || team?.rosterForMatchupPeriod?.entries || [];
+for (const team of raw.teams) {
+  const entries = rosterEntries(team);
+  const key = `${Number(team.id)}:${currentWeek}`;
+  if (entries.length && !rosterRowKeys.has(key)) { rosterRowKeys.add(key); rosterRows.push({ teamId: Number(team.id), week: currentWeek, players: entries.map((entry) => normalizeRosterEntry(entry, currentWeek)), slots: rosterSlots(raw), source: "ESPN mRoster" }); }
+}
+if (allowPrivate) {
+  // Roster transactions make a current roster invalid for historical regret;
+  // fetch each completed period's frozen matchup roster instead.
+  let frozenRosterCount = 0;
+  for (let week = 1; week <= Math.min(currentWeek, 18); week++) try {
+    const periodHeaders = { ...headers, "X-Fantasy-Filter": JSON.stringify({ schedule: { filterMatchupPeriodIds: { value: [week] } } }) };
+    const periodResponse = await fetch(`${endpoint}&scoringPeriodId=${week}`, { headers: periodHeaders, signal: AbortSignal.timeout(30000) });
+    if (!periodResponse.ok) continue;
+    const period = await periodResponse.json();
+    for (const team of period.teams || []) {
+      const entries = team?.roster?.entries || team?.rosterForMatchupPeriod?.entries || [];
+      const key = `${Number(team.id)}:${week}`;
+      if (!entries.length || !team?.id || rosterRowKeys.has(key)) continue;
+      rosterRowKeys.add(key); frozenRosterCount++;
+      rosterRows.push({ teamId: Number(team.id), week, players: entries.map((entry) => normalizeRosterEntry(entry, week)), slots: rosterSlots(period), source: "ESPN mRoster scoringPeriodId" });
+    }
+    for (const matchup of period.schedule || []) {
+      if (Number(matchup.matchupPeriodId) !== week) continue;
+      for (const side of [matchup.home, matchup.away]) {
+      const entries = side?.rosterForMatchupPeriod?.entries || side?.rosterForMatchupPeriodDelayed?.entries || side?.rosterForCurrentScoringPeriod?.entries || [];
+      const key = `${Number(side?.teamId)}:${week}`;
+      if (!entries.length || !side?.teamId || rosterRowKeys.has(key)) continue;
+      rosterRowKeys.add(key);
+      rosterRows.push({ teamId: Number(side.teamId), week, players: entries.map((entry) => normalizeRosterEntry(entry, week)), slots: rosterSlots(period), source: "ESPN mMatchupScore" }); frozenRosterCount++;
+      }
+    }
+  } catch { /* preserve the rows already captured and mark absent periods unavailable */ }
+  console.log(`ESPN frozen roster capture: ${frozenRosterCount} team-period rows; player scores are league-applied totals only.`);
+}
 const games = raw.schedule
   .filter(
     (matchup) =>
@@ -196,16 +260,61 @@ const games = raw.schedule
       bl: away.manager,
       bt: away.team,
       bs: round(matchup.away.totalPoints),
-      status: week < currentWeek ? "FINAL" : "LIVE",
+      status: normalizeMatchupStatus(matchup, currentWeek),
+      aTeamId: home.teamId,
+      bTeamId: away.teamId,
     };
   })
   .filter(Boolean)
   .sort((a, b) => a.week - b.week || a.at.localeCompare(b.at));
 
+// Keep a visible unavailable row for every finalized period/team whose frozen
+// roster was not returned.  Missing data must not look like a zero-point week.
+const completedWeeks = [...new Set(games.filter((game) => game.status === "FINAL").map((game) => game.week))].sort((a, b) => a - b);
+const missingRosterWeeks = completedWeeks.filter((week) => normalizedTeams.some((team) => !rosterRows.some((row) => row.teamId === team.teamId && row.week === week)));
+for (const week of missingRosterWeeks) for (const team of normalizedTeams) {
+  if (rosterRows.some((row) => row.teamId === team.teamId && row.week === week)) continue;
+  rosterRows.push({ teamId: team.teamId, week, players: [], slots: rosterSlots(raw), source: "UNAVAILABLE ESPN mMatchupScore", unavailableReason: "Frozen matchup roster was not returned" });
+}
+if (Array.isArray(previous?.advanced?.rosters)) {
+  const merged = new Map(rosterRows.map((row) => [`${row.teamId}:${row.week}`, row]));
+  const previousFinalWeeks = new Set((previous.games || []).filter((game) => game.status === "FINAL").map((game) => Number(game.week)));
+  for (const row of previous.advanced.rosters.filter((row) => previousFinalWeeks.has(Number(row.week)))) {
+    const key = `${row.teamId}:${row.week}`;
+    if (row.players?.length && (!merged.has(key) || !merged.get(key).players?.length)) merged.set(key, row);
+  }
+  rosterRows.splice(0, rosterRows.length, ...merged.values());
+}
+const finalizedRosters = rosterRows.filter((row) => completedWeeks.includes(Number(row.week)));
+
+// Draft performance is derived only from observed league matchup scores. The
+// global player directory may use a different scoring system, so it is never
+// used as a report-card result.
+const observedPlayerTotals = new Map();
+const observedPlayerWeeks = new Set();
+for (const row of finalizedRosters) for (const player of row.players) if (player.points !== null && player.playerId > 0) {
+  const key = `${row.week}:${player.playerId}`;
+  if (observedPlayerWeeks.has(key)) continue;
+  observedPlayerWeeks.add(key);
+  observedPlayerTotals.set(player.playerId, round((observedPlayerTotals.get(player.playerId) || 0) + player.points));
+}
+const scoredDrafts = drafts.map((pick) => ({
+  ...pick,
+  seasonPoints: observedPlayerTotals.get(pick.playerId) ?? null,
+  seasonPointsSource: observedPlayerTotals.has(pick.playerId) ? "ESPN mMatchupScore" : null,
+}));
+
 if (new Set(standings.map((team) => team.team)).size !== 10)
   throw new Error("ESPN sync produced duplicate team names.");
 if (new Set(games.map((game) => `${game.week}:${[game.a, game.b].sort().join(":")}`)).size !== games.length)
   throw new Error("ESPN sync produced duplicate matchups.");
+
+let archivedDrafts = [];
+try {
+  const archive = JSON.parse(fs.readFileSync(path.join(path.dirname(outputPath), "league.json"), "utf8"));
+  archivedDrafts = (archive.drafts || []).filter((pick) => Number(pick.season) !== season);
+} catch {}
+const reportDrafts = [...archivedDrafts, ...scoredDrafts];
 
 const content = {
   leagueId,
@@ -219,12 +328,24 @@ const content = {
   drafts,
   standings,
   games,
+  dataAvailability: {
+    matchupStatus: games.some((game) => game.status === "FINAL") ? "FINAL_DATA_PRESENT" : "NO_COMPLETED_MATCHUPS",
+    rosterScoring: finalizedRosters.some((row) => row.players.some((player) => player.points !== null)) ? "AVAILABLE" : "UNAVAILABLE",
+    rosterPeriods: { requested: completedWeeks, captured: completedWeeks.filter((week) => !missingRosterWeeks.includes(week)), missing: missingRosterWeeks },
+    playerDirectory: playerPayloadAvailable ? "AVAILABLE" : "UNAVAILABLE",
+  },
+  advanced: { ...buildAdvancedFeatures({ matchups: games.map((game) => ({ ...game, homeId: game.aTeamId, awayId: game.bTeamId, homeScore: game.as, awayScore: game.bs })), teams: normalizedTeams, rosters: finalizedRosters, drafts: reportDrafts, currentWeek }), rosters: finalizedRosters },
 };
 
-let previous = null;
-try {
-  previous = JSON.parse(fs.readFileSync(outputPath, "utf8"));
-} catch {}
+if (Array.isArray(previous?.advanced?.lineupRegret)) {
+  const preserved = new Map(content.advanced.lineupRegret.map((row) => [`${row.teamId}:${row.week}`, row]));
+  const previousFinalWeeks = new Set((previous.games || []).filter((game) => game.status === "FINAL").map((game) => Number(game.week)));
+  for (const row of previous.advanced.lineupRegret.filter((row) => previousFinalWeeks.has(Number(row.week)))) {
+    const key = `${row.teamId}:${row.week}`;
+    if (row.available && (!preserved.has(key) || !preserved.get(key).available)) preserved.set(key, row);
+  }
+  content.advanced.lineupRegret = [...preserved.values()];
+}
 const previousComparable = previous && { ...previous, updatedAt: undefined };
 if (JSON.stringify(previousComparable) === JSON.stringify({ ...content, updatedAt: undefined })) {
   console.log("ESPN sync complete: no league changes.");
