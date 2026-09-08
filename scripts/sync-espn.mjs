@@ -135,10 +135,10 @@ for (const team of raw.teams || []) for (const entry of team?.roster?.entries ||
   const rosterPlayer = (entry.playerPoolEntry || entry).player || entry.player || {};
   const rosterPlayerId = Number(entry.playerId ?? rosterPlayer.id);
   const rosterName = rosterPlayer.fullName || [rosterPlayer.firstName, rosterPlayer.lastName].filter(Boolean).join(" ");
-  if (rosterPlayerId > 0 && rosterName) rosterPlayerById.set(rosterPlayerId, rosterName);
+  if (Number.isFinite(rosterPlayerId) && rosterPlayerId !== 0 && rosterName) rosterPlayerById.set(rosterPlayerId, rosterName);
 }
 if (draftPicks.length) {
-  const draftPlayerIds = [...new Set(draftPicks.map((pick) => Number(pick.playerId)).filter((id) => id > 0))];
+  const draftPlayerIds = [...new Set(draftPicks.map((pick) => Number(pick.playerId)).filter((id) => Number.isFinite(id) && id !== 0))];
   const playercardUrl = `https://lm-api-reads.fantasy.espn.com/apis/v3/games/ffl/seasons/${season}/segments/0/leagues/${leagueId}?view=kona_playercard`;
   for (let offset = 0; offset < draftPlayerIds.length; offset += 50) try {
     const batch = draftPlayerIds.slice(offset, offset + 50);
@@ -150,7 +150,7 @@ if (draftPicks.length) {
     for (const entry of playerEntries) {
       const player = entry.player || entry.playerPoolEntry?.player || entry;
       const id = Number(entry.id ?? entry.playerId ?? player.id);
-      if (id > 0) playerById.set(id, player);
+      if (Number.isFinite(id) && id !== 0) playerById.set(id, player);
     }
     playerPayloadAvailable = playerEntries.length > 0;
   } catch { /* raw roster names and verified recap names remain usable */ }
@@ -293,7 +293,7 @@ const finalizedRosters = rosterRows.filter((row) => completedWeeks.includes(Numb
 // used as a report-card result.
 const observedPlayerTotals = new Map();
 const observedPlayerWeeks = new Set();
-for (const row of finalizedRosters) for (const player of row.players) if (player.points !== null && player.playerId > 0) {
+for (const row of finalizedRosters) for (const player of row.players) if (player.points !== null && Number.isFinite(player.playerId) && player.playerId !== 0) {
   const key = `${row.week}:${player.playerId}`;
   if (observedPlayerWeeks.has(key)) continue;
   observedPlayerWeeks.add(key);
