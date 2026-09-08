@@ -2,11 +2,168 @@
   "leagueId": 791101930,
   "season": 2026,
   "leagueName": "The Fish Tank",
-  "available": false,
+  "available": true,
   "source": "ESPN Fantasy Football",
-  "currentWeek": null,
+  "currentWeek": 1,
   "isActive": true,
-  "updatedAt": null,
-  "standings": [],
-  "games": []
+  "standings": [
+    {
+      "rank": 1,
+      "team": "Pasta Holy Trinity ",
+      "manager": "Blake",
+      "ownerId": "owner:blake",
+      "record": "0-0-0",
+      "pf": 0,
+      "pa": 0
+    },
+    {
+      "rank": 2,
+      "team": "Splitpeesoup",
+      "manager": "Min",
+      "ownerId": "owner:min",
+      "record": "0-0-0",
+      "pf": 0,
+      "pa": 0
+    },
+    {
+      "rank": 3,
+      "team": "Dico Rowdle",
+      "manager": "Gilguy",
+      "ownerId": "owner:gilguy",
+      "record": "0-0-0",
+      "pf": 0,
+      "pa": 0
+    },
+    {
+      "rank": 4,
+      "team": "The Blessed Sherpa ",
+      "manager": "Nyle",
+      "ownerId": "owner:nyle",
+      "record": "0-0-0",
+      "pf": 0,
+      "pa": 0
+    },
+    {
+      "rank": 5,
+      "team": "Backup Meat",
+      "manager": "Chris",
+      "ownerId": "owner:chris",
+      "record": "0-0-0",
+      "pf": 0,
+      "pa": 0
+    },
+    {
+      "rank": 6,
+      "team": "8 Hole Reverend Rate",
+      "manager": "Mob",
+      "ownerId": "owner:mob",
+      "record": "0-0-0",
+      "pf": 0,
+      "pa": 0
+    },
+    {
+      "rank": 7,
+      "team": "The Azz Train",
+      "manager": "Nick",
+      "ownerId": "owner:nick",
+      "record": "0-0-0",
+      "pf": 0,
+      "pa": 0
+    },
+    {
+      "rank": 8,
+      "team": "Right Reverend Raisins ",
+      "manager": "Rich",
+      "ownerId": "owner:rich",
+      "record": "0-0-0",
+      "pf": 0,
+      "pa": 0
+    },
+    {
+      "rank": 9,
+      "team": "Serenity Now, Insanity Later",
+      "manager": "Jake",
+      "ownerId": "owner:jake",
+      "record": "0-0-0",
+      "pf": 0,
+      "pa": 0
+    },
+    {
+      "rank": 10,
+      "team": "Unbridled Enthusiasm",
+      "manager": "Michael",
+      "ownerId": "owner:michael",
+      "record": "0-0-0",
+      "pf": 0,
+      "pa": 0
+    }
+  ],
+  "games": [
+    {
+      "season": 2026,
+      "week": 1,
+      "a": "owner:chris",
+      "al": "Chris",
+      "at": "Backup Meat",
+      "as": 0,
+      "b": "owner:rich",
+      "bl": "Rich",
+      "bt": "Right Reverend Raisins ",
+      "bs": 0,
+      "status": "LIVE"
+    },
+    {
+      "season": 2026,
+      "week": 1,
+      "a": "owner:blake",
+      "al": "Blake",
+      "at": "Pasta Holy Trinity ",
+      "as": 0,
+      "b": "owner:nyle",
+      "bl": "Nyle",
+      "bt": "The Blessed Sherpa ",
+      "bs": 0,
+      "status": "LIVE"
+    },
+    {
+      "season": 2026,
+      "week": 1,
+      "a": "owner:jake",
+      "al": "Jake",
+      "at": "Serenity Now, Insanity Later",
+      "as": 0,
+      "b": "owner:gilguy",
+      "bl": "Gilguy",
+      "bt": "Dico Rowdle",
+      "bs": 0,
+      "status": "LIVE"
+    },
+    {
+      "season": 2026,
+      "week": 1,
+      "a": "owner:min",
+      "al": "Min",
+      "at": "Splitpeesoup",
+      "as": 0,
+      "b": "owner:michael",
+      "bl": "Michael",
+      "bt": "Unbridled Enthusiasm",
+      "bs": 0,
+      "status": "LIVE"
+    },
+    {
+      "season": 2026,
+      "week": 1,
+      "a": "owner:nick",
+      "al": "Nick",
+      "at": "The Azz Train",
+      "as": 0,
+      "b": "owner:mob",
+      "bl": "Mob",
+      "bt": "8 Hole Reverend Rate",
+      "bs": 0,
+      "status": "LIVE"
+    }
+  ],
+  "updatedAt": "2026-09-08T01:17:55.954Z"
 }
