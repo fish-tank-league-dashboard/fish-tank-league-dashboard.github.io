@@ -6,6 +6,1509 @@
   "source": "ESPN Fantasy Football",
   "currentWeek": 1,
   "isActive": true,
+  "draftCompleteDate": 1788808729703,
+  "drafts": [
+    {
+      "season": 2026,
+      "round": 1,
+      "pick": 1,
+      "player": "Player #4429795",
+      "position": "Player",
+      "team": "8 Hole Reverend Rate",
+      "manager": "Mob",
+      "keeper": false
+    },
+    {
+      "season": 2026,
+      "round": 1,
+      "pick": 2,
+      "player": "Player #4430807",
+      "position": "Player",
+      "team": "The Blessed Sherpa ",
+      "manager": "Nyle",
+      "keeper": false
+    },
+    {
+      "season": 2026,
+      "round": 1,
+      "pick": 3,
+      "player": "Player #3117251",
+      "position": "Player",
+      "team": "Right Reverend Raisins ",
+      "manager": "Rich",
+      "keeper": false
+    },
+    {
+      "season": 2026,
+      "round": 1,
+      "pick": 4,
+      "player": "Player #4362628",
+      "position": "Player",
+      "team": "Unbridled Enthusiasm",
+      "manager": "Michael",
+      "keeper": false
+    },
+    {
+      "season": 2026,
+      "round": 1,
+      "pick": 5,
+      "player": "Player #4426515",
+      "position": "Player",
+      "team": "The Azz Train",
+      "manager": "Nick",
+      "keeper": false
+    },
+    {
+      "season": 2026,
+      "round": 1,
+      "pick": 6,
+      "player": "Player #4430878",
+      "position": "Player",
+      "team": "Dico Rowdle",
+      "manager": "Gilguy",
+      "keeper": false
+    },
+    {
+      "season": 2026,
+      "round": 1,
+      "pick": 7,
+      "player": "Player #4242335",
+      "position": "Player",
+      "team": "Backup Meat",
+      "manager": "Chris",
+      "keeper": false
+    },
+    {
+      "season": 2026,
+      "round": 1,
+      "pick": 8,
+      "player": "Player #4379399",
+      "position": "Player",
+      "team": "Serenity Now, Insanity Later",
+      "manager": "Jake",
+      "keeper": false
+    },
+    {
+      "season": 2026,
+      "round": 1,
+      "pick": 9,
+      "player": "Player #4262921",
+      "position": "Player",
+      "team": "Splitpeesoup",
+      "manager": "Min",
+      "keeper": false
+    },
+    {
+      "season": 2026,
+      "round": 1,
+      "pick": 10,
+      "player": "Player #3043078",
+      "position": "Player",
+      "team": "Pasta Holy Trinity ",
+      "manager": "Blake",
+      "keeper": false
+    },
+    {
+      "season": 2026,
+      "round": 2,
+      "pick": 11,
+      "player": "Player #4567048",
+      "position": "Player",
+      "team": "Pasta Holy Trinity ",
+      "manager": "Blake",
+      "keeper": false
+    },
+    {
+      "season": 2026,
+      "round": 2,
+      "pick": 12,
+      "player": "Player #3929630",
+      "position": "Player",
+      "team": "Splitpeesoup",
+      "manager": "Min",
+      "keeper": false
+    },
+    {
+      "season": 2026,
+      "round": 2,
+      "pick": 13,
+      "player": "Player #4362238",
+      "position": "Player",
+      "team": "Serenity Now, Insanity Later",
+      "manager": "Jake",
+      "keeper": false
+    },
+    {
+      "season": 2026,
+      "round": 2,
+      "pick": 14,
+      "player": "Player #4374302",
+      "position": "Player",
+      "team": "Backup Meat",
+      "manager": "Chris",
+      "keeper": false
+    },
+    {
+      "season": 2026,
+      "round": 2,
+      "pick": 15,
+      "player": "Player #4890973",
+      "position": "Player",
+      "team": "Dico Rowdle",
+      "manager": "Gilguy",
+      "keeper": false
+    },
+    {
+      "season": 2026,
+      "round": 2,
+      "pick": 16,
+      "player": "Player #4429160",
+      "position": "Player",
+      "team": "The Azz Train",
+      "manager": "Nick",
+      "keeper": false
+    },
+    {
+      "season": 2026,
+      "round": 2,
+      "pick": 17,
+      "player": "Player #4241389",
+      "position": "Player",
+      "team": "Unbridled Enthusiasm",
+      "manager": "Michael",
+      "keeper": false
+    },
+    {
+      "season": 2026,
+      "round": 2,
+      "pick": 18,
+      "player": "Player #4685382",
+      "position": "Player",
+      "team": "Right Reverend Raisins ",
+      "manager": "Rich",
+      "keeper": false
+    },
+    {
+      "season": 2026,
+      "round": 2,
+      "pick": 19,
+      "player": "Player #4047646",
+      "position": "Player",
+      "team": "The Blessed Sherpa ",
+      "manager": "Nyle",
+      "keeper": false
+    },
+    {
+      "season": 2026,
+      "round": 2,
+      "pick": 20,
+      "player": "Player #4426502",
+      "position": "Player",
+      "team": "8 Hole Reverend Rate",
+      "manager": "Mob",
+      "keeper": false
+    },
+    {
+      "season": 2026,
+      "round": 3,
+      "pick": 21,
+      "player": "Player #4432665",
+      "position": "Player",
+      "team": "8 Hole Reverend Rate",
+      "manager": "Mob",
+      "keeper": false
+    },
+    {
+      "season": 2026,
+      "round": 3,
+      "pick": 22,
+      "player": "Player #4361307",
+      "position": "Player",
+      "team": "The Blessed Sherpa ",
+      "manager": "Nyle",
+      "keeper": false
+    },
+    {
+      "season": 2026,
+      "round": 3,
+      "pick": 23,
+      "player": "Player #4258173",
+      "position": "Player",
+      "team": "Right Reverend Raisins ",
+      "manager": "Rich",
+      "keeper": false
+    },
+    {
+      "season": 2026,
+      "round": 3,
+      "pick": 24,
+      "player": "Player #4361370",
+      "position": "Player",
+      "team": "Unbridled Enthusiasm",
+      "manager": "Michael",
+      "keeper": false
+    },
+    {
+      "season": 2026,
+      "round": 3,
+      "pick": 25,
+      "player": "Player #4361579",
+      "position": "Player",
+      "team": "The Azz Train",
+      "manager": "Nick",
+      "keeper": false
+    },
+    {
+      "season": 2026,
+      "round": 3,
+      "pick": 26,
+      "player": "Player #4870808",
+      "position": "Player",
+      "team": "Dico Rowdle",
+      "manager": "Gilguy",
+      "keeper": false
+    },
+    {
+      "season": 2026,
+      "round": 3,
+      "pick": 27,
+      "player": "Player #4427366",
+      "position": "Player",
+      "team": "Backup Meat",
+      "manager": "Chris",
+      "keeper": false
+    },
+    {
+      "season": 2026,
+      "round": 3,
+      "pick": 28,
+      "player": "Player #4426354",
+      "position": "Player",
+      "team": "Serenity Now, Insanity Later",
+      "manager": "Jake",
+      "keeper": false
+    },
+    {
+      "season": 2026,
+      "round": 3,
+      "pick": 29,
+      "player": "Player #4430737",
+      "position": "Player",
+      "team": "Splitpeesoup",
+      "manager": "Min",
+      "keeper": false
+    },
+    {
+      "season": 2026,
+      "round": 3,
+      "pick": 30,
+      "player": "Player #4241478",
+      "position": "Player",
+      "team": "Pasta Holy Trinity ",
+      "manager": "Blake",
+      "keeper": false
+    },
+    {
+      "season": 2026,
+      "round": 4,
+      "pick": 31,
+      "player": "Player #4612826",
+      "position": "Player",
+      "team": "Pasta Holy Trinity ",
+      "manager": "Blake",
+      "keeper": false
+    },
+    {
+      "season": 2026,
+      "round": 4,
+      "pick": 32,
+      "player": "Player #4595348",
+      "position": "Player",
+      "team": "Splitpeesoup",
+      "manager": "Min",
+      "keeper": false
+    },
+    {
+      "season": 2026,
+      "round": 4,
+      "pick": 33,
+      "player": "Player #4429615",
+      "position": "Player",
+      "team": "Serenity Now, Insanity Later",
+      "manager": "Jake",
+      "keeper": false
+    },
+    {
+      "season": 2026,
+      "round": 4,
+      "pick": 34,
+      "player": "Player #4239996",
+      "position": "Player",
+      "team": "Backup Meat",
+      "manager": "Chris",
+      "keeper": false
+    },
+    {
+      "season": 2026,
+      "round": 4,
+      "pick": 35,
+      "player": "Player #4569618",
+      "position": "Player",
+      "team": "Dico Rowdle",
+      "manager": "Gilguy",
+      "keeper": false
+    },
+    {
+      "season": 2026,
+      "round": 4,
+      "pick": 36,
+      "player": "Player #4372016",
+      "position": "Player",
+      "team": "The Azz Train",
+      "manager": "Nick",
+      "keeper": false
+    },
+    {
+      "season": 2026,
+      "round": 4,
+      "pick": 37,
+      "player": "Player #4696981",
+      "position": "Player",
+      "team": "Unbridled Enthusiasm",
+      "manager": "Michael",
+      "keeper": false
+    },
+    {
+      "season": 2026,
+      "round": 4,
+      "pick": 38,
+      "player": "Player #3918298",
+      "position": "Player",
+      "team": "Right Reverend Raisins ",
+      "manager": "Rich",
+      "keeper": false
+    },
+    {
+      "season": 2026,
+      "round": 4,
+      "pick": 39,
+      "player": "Player #4428331",
+      "position": "Player",
+      "team": "The Blessed Sherpa ",
+      "manager": "Nyle",
+      "keeper": false
+    },
+    {
+      "season": 2026,
+      "round": 4,
+      "pick": 40,
+      "player": "Player #4259545",
+      "position": "Player",
+      "team": "8 Hole Reverend Rate",
+      "manager": "Mob",
+      "keeper": false
+    },
+    {
+      "season": 2026,
+      "round": 5,
+      "pick": 41,
+      "player": "Player #4567750",
+      "position": "Player",
+      "team": "8 Hole Reverend Rate",
+      "manager": "Mob",
+      "keeper": false
+    },
+    {
+      "season": 2026,
+      "round": 5,
+      "pick": 42,
+      "player": "Player #4685472",
+      "position": "Player",
+      "team": "The Blessed Sherpa ",
+      "manager": "Nyle",
+      "keeper": false
+    },
+    {
+      "season": 2026,
+      "round": 5,
+      "pick": 43,
+      "player": "Player #4685278",
+      "position": "Player",
+      "team": "Right Reverend Raisins ",
+      "manager": "Rich",
+      "keeper": false
+    },
+    {
+      "season": 2026,
+      "round": 5,
+      "pick": 44,
+      "player": "Player #4685702",
+      "position": "Player",
+      "team": "Unbridled Enthusiasm",
+      "manager": "Michael",
+      "keeper": false
+    },
+    {
+      "season": 2026,
+      "round": 5,
+      "pick": 45,
+      "player": "Player #4569987",
+      "position": "Player",
+      "team": "The Azz Train",
+      "manager": "Nick",
+      "keeper": false
+    },
+    {
+      "season": 2026,
+      "round": 5,
+      "pick": 46,
+      "player": "Player #4047365",
+      "position": "Player",
+      "team": "Dico Rowdle",
+      "manager": "Gilguy",
+      "keeper": false
+    },
+    {
+      "season": 2026,
+      "round": 5,
+      "pick": 47,
+      "player": "Player #3915416",
+      "position": "Player",
+      "team": "Backup Meat",
+      "manager": "Chris",
+      "keeper": false
+    },
+    {
+      "season": 2026,
+      "round": 5,
+      "pick": 48,
+      "player": "Player #4596448",
+      "position": "Player",
+      "team": "Serenity Now, Insanity Later",
+      "manager": "Jake",
+      "keeper": false
+    },
+    {
+      "season": 2026,
+      "round": 5,
+      "pick": 49,
+      "player": "Player #4239993",
+      "position": "Player",
+      "team": "Splitpeesoup",
+      "manager": "Min",
+      "keeper": false
+    },
+    {
+      "season": 2026,
+      "round": 5,
+      "pick": 50,
+      "player": "Player #16737",
+      "position": "Player",
+      "team": "Pasta Holy Trinity ",
+      "manager": "Blake",
+      "keeper": false
+    },
+    {
+      "season": 2026,
+      "round": 6,
+      "pick": 51,
+      "player": "Player #4723086",
+      "position": "Player",
+      "team": "Pasta Holy Trinity ",
+      "manager": "Blake",
+      "keeper": false
+    },
+    {
+      "season": 2026,
+      "round": 6,
+      "pick": 52,
+      "player": "Player #4035538",
+      "position": "Player",
+      "team": "Splitpeesoup",
+      "manager": "Min",
+      "keeper": false
+    },
+    {
+      "season": 2026,
+      "round": 6,
+      "pick": 53,
+      "player": "Player #16800",
+      "position": "Player",
+      "team": "Serenity Now, Insanity Later",
+      "manager": "Jake",
+      "keeper": false
+    },
+    {
+      "season": 2026,
+      "round": 6,
+      "pick": 54,
+      "player": "Player #3128429",
+      "position": "Player",
+      "team": "Backup Meat",
+      "manager": "Chris",
+      "keeper": false
+    },
+    {
+      "season": 2026,
+      "round": 6,
+      "pick": 55,
+      "player": "Player #4431459",
+      "position": "Player",
+      "team": "Dico Rowdle",
+      "manager": "Gilguy",
+      "keeper": false
+    },
+    {
+      "season": 2026,
+      "round": 6,
+      "pick": 56,
+      "player": "Player #4685512",
+      "position": "Player",
+      "team": "The Azz Train",
+      "manager": "Nick",
+      "keeper": false
+    },
+    {
+      "season": 2026,
+      "round": 6,
+      "pick": 57,
+      "player": "Player #3915511",
+      "position": "Player",
+      "team": "Unbridled Enthusiasm",
+      "manager": "Michael",
+      "keeper": false
+    },
+    {
+      "season": 2026,
+      "round": 6,
+      "pick": 58,
+      "player": "Player #4426388",
+      "position": "Player",
+      "team": "Right Reverend Raisins ",
+      "manager": "Rich",
+      "keeper": false
+    },
+    {
+      "season": 2026,
+      "round": 6,
+      "pick": 59,
+      "player": "Player #4432710",
+      "position": "Player",
+      "team": "The Blessed Sherpa ",
+      "manager": "Nyle",
+      "keeper": false
+    },
+    {
+      "season": 2026,
+      "round": 6,
+      "pick": 60,
+      "player": "Player #3121422",
+      "position": "Player",
+      "team": "8 Hole Reverend Rate",
+      "manager": "Mob",
+      "keeper": false
+    },
+    {
+      "season": 2026,
+      "round": 7,
+      "pick": 61,
+      "player": "Player #4431452",
+      "position": "Player",
+      "team": "8 Hole Reverend Rate",
+      "manager": "Mob",
+      "keeper": false
+    },
+    {
+      "season": 2026,
+      "round": 7,
+      "pick": 62,
+      "player": "Player #4431299",
+      "position": "Player",
+      "team": "The Blessed Sherpa ",
+      "manager": "Nyle",
+      "keeper": false
+    },
+    {
+      "season": 2026,
+      "round": 7,
+      "pick": 63,
+      "player": "Player #4248528",
+      "position": "Player",
+      "team": "Right Reverend Raisins ",
+      "manager": "Rich",
+      "keeper": false
+    },
+    {
+      "season": 2026,
+      "round": 7,
+      "pick": 64,
+      "player": "Player #4683062",
+      "position": "Player",
+      "team": "Unbridled Enthusiasm",
+      "manager": "Michael",
+      "keeper": false
+    },
+    {
+      "season": 2026,
+      "round": 7,
+      "pick": 65,
+      "player": "Player #3916387",
+      "position": "Player",
+      "team": "The Azz Train",
+      "manager": "Nick",
+      "keeper": false
+    },
+    {
+      "season": 2026,
+      "round": 7,
+      "pick": 66,
+      "player": "Player #4871023",
+      "position": "Player",
+      "team": "Dico Rowdle",
+      "manager": "Gilguy",
+      "keeper": false
+    },
+    {
+      "season": 2026,
+      "round": 7,
+      "pick": 67,
+      "player": "Player #4360078",
+      "position": "Player",
+      "team": "Backup Meat",
+      "manager": "Chris",
+      "keeper": false
+    },
+    {
+      "season": 2026,
+      "round": 7,
+      "pick": 68,
+      "player": "Player #4882093",
+      "position": "Player",
+      "team": "Serenity Now, Insanity Later",
+      "manager": "Jake",
+      "keeper": false
+    },
+    {
+      "season": 2026,
+      "round": 7,
+      "pick": 69,
+      "player": "Player #4432620",
+      "position": "Player",
+      "team": "Splitpeesoup",
+      "manager": "Min",
+      "keeper": false
+    },
+    {
+      "season": 2026,
+      "round": 7,
+      "pick": 70,
+      "player": "Player #4569173",
+      "position": "Player",
+      "team": "Pasta Holy Trinity ",
+      "manager": "Blake",
+      "keeper": false
+    },
+    {
+      "season": 2026,
+      "round": 8,
+      "pick": 71,
+      "player": "Player #4432773",
+      "position": "Player",
+      "team": "Pasta Holy Trinity ",
+      "manager": "Blake",
+      "keeper": false
+    },
+    {
+      "season": 2026,
+      "round": 8,
+      "pick": 72,
+      "player": "Player #4040715",
+      "position": "Player",
+      "team": "Splitpeesoup",
+      "manager": "Min",
+      "keeper": false
+    },
+    {
+      "season": 2026,
+      "round": 8,
+      "pick": 73,
+      "player": "Player #4430027",
+      "position": "Player",
+      "team": "Serenity Now, Insanity Later",
+      "manager": "Jake",
+      "keeper": false
+    },
+    {
+      "season": 2026,
+      "round": 8,
+      "pick": 74,
+      "player": "Player #3139477",
+      "position": "Player",
+      "team": "Backup Meat",
+      "manager": "Chris",
+      "keeper": false
+    },
+    {
+      "season": 2026,
+      "round": 8,
+      "pick": 75,
+      "player": "Player #4047650",
+      "position": "Player",
+      "team": "Dico Rowdle",
+      "manager": "Gilguy",
+      "keeper": false
+    },
+    {
+      "season": 2026,
+      "round": 8,
+      "pick": 76,
+      "player": "Player #3116165",
+      "position": "Player",
+      "team": "The Azz Train",
+      "manager": "Nick",
+      "keeper": false
+    },
+    {
+      "season": 2026,
+      "round": 8,
+      "pick": 77,
+      "player": "Player #4569587",
+      "position": "Player",
+      "team": "Unbridled Enthusiasm",
+      "manager": "Michael",
+      "keeper": false
+    },
+    {
+      "season": 2026,
+      "round": 8,
+      "pick": 78,
+      "player": "Player #4568490",
+      "position": "Player",
+      "team": "Right Reverend Raisins ",
+      "manager": "Rich",
+      "keeper": false
+    },
+    {
+      "season": 2026,
+      "round": 8,
+      "pick": 79,
+      "player": "Player #3916148",
+      "position": "Player",
+      "team": "The Blessed Sherpa ",
+      "manager": "Nyle",
+      "keeper": false
+    },
+    {
+      "season": 2026,
+      "round": 8,
+      "pick": 80,
+      "player": "Player #4678008",
+      "position": "Player",
+      "team": "8 Hole Reverend Rate",
+      "manager": "Mob",
+      "keeper": false
+    },
+    {
+      "season": 2026,
+      "round": 9,
+      "pick": 81,
+      "player": "Player #4360761",
+      "position": "Player",
+      "team": "8 Hole Reverend Rate",
+      "manager": "Mob",
+      "keeper": false
+    },
+    {
+      "season": 2026,
+      "round": 9,
+      "pick": 82,
+      "player": "Player #4035687",
+      "position": "Player",
+      "team": "The Blessed Sherpa ",
+      "manager": "Nyle",
+      "keeper": false
+    },
+    {
+      "season": 2026,
+      "round": 9,
+      "pick": 83,
+      "player": "Player #3953687",
+      "position": "Player",
+      "team": "Right Reverend Raisins ",
+      "manager": "Rich",
+      "keeper": false
+    },
+    {
+      "season": 2026,
+      "round": 9,
+      "pick": 84,
+      "player": "Player #4241985",
+      "position": "Player",
+      "team": "Unbridled Enthusiasm",
+      "manager": "Michael",
+      "keeper": false
+    },
+    {
+      "season": 2026,
+      "round": 9,
+      "pick": 85,
+      "player": "Player #4432708",
+      "position": "Player",
+      "team": "The Azz Train",
+      "manager": "Nick",
+      "keeper": false
+    },
+    {
+      "season": 2026,
+      "round": 9,
+      "pick": 86,
+      "player": "Player #4038815",
+      "position": "Player",
+      "team": "Dico Rowdle",
+      "manager": "Gilguy",
+      "keeper": false
+    },
+    {
+      "season": 2026,
+      "round": 9,
+      "pick": 87,
+      "player": "Player #4575131",
+      "position": "Player",
+      "team": "Backup Meat",
+      "manager": "Chris",
+      "keeper": false
+    },
+    {
+      "season": 2026,
+      "round": 9,
+      "pick": 88,
+      "player": "Player #4429205",
+      "position": "Player",
+      "team": "Serenity Now, Insanity Later",
+      "manager": "Jake",
+      "keeper": false
+    },
+    {
+      "season": 2026,
+      "round": 9,
+      "pick": 89,
+      "player": "Player #4688813",
+      "position": "Player",
+      "team": "Splitpeesoup",
+      "manager": "Min",
+      "keeper": false
+    },
+    {
+      "season": 2026,
+      "round": 9,
+      "pick": 90,
+      "player": "Player #4429025",
+      "position": "Player",
+      "team": "Pasta Holy Trinity ",
+      "manager": "Blake",
+      "keeper": false
+    },
+    {
+      "season": 2026,
+      "round": 10,
+      "pick": 91,
+      "player": "Player #4429096",
+      "position": "Player",
+      "team": "Pasta Holy Trinity ",
+      "manager": "Blake",
+      "keeper": false
+    },
+    {
+      "season": 2026,
+      "round": 10,
+      "pick": 92,
+      "player": "Player #4572680",
+      "position": "Player",
+      "team": "Splitpeesoup",
+      "manager": "Min",
+      "keeper": false
+    },
+    {
+      "season": 2026,
+      "round": 10,
+      "pick": 93,
+      "player": "Player #2577417",
+      "position": "Player",
+      "team": "Serenity Now, Insanity Later",
+      "manager": "Jake",
+      "keeper": false
+    },
+    {
+      "season": 2026,
+      "round": 10,
+      "pick": 94,
+      "player": "Player #4701936",
+      "position": "Player",
+      "team": "Backup Meat",
+      "manager": "Chris",
+      "keeper": false
+    },
+    {
+      "season": 2026,
+      "round": 10,
+      "pick": 95,
+      "player": "Player #4362249",
+      "position": "Player",
+      "team": "Dico Rowdle",
+      "manager": "Gilguy",
+      "keeper": false
+    },
+    {
+      "season": 2026,
+      "round": 10,
+      "pick": 96,
+      "player": "Player #5083076",
+      "position": "Player",
+      "team": "The Azz Train",
+      "manager": "Nick",
+      "keeper": false
+    },
+    {
+      "season": 2026,
+      "round": 10,
+      "pick": 97,
+      "player": "Player #4360248",
+      "position": "Player",
+      "team": "Unbridled Enthusiasm",
+      "manager": "Michael",
+      "keeper": false
+    },
+    {
+      "season": 2026,
+      "round": 10,
+      "pick": 98,
+      "player": "Player #-16034",
+      "position": "Player",
+      "team": "Right Reverend Raisins ",
+      "manager": "Rich",
+      "keeper": false
+    },
+    {
+      "season": 2026,
+      "round": 10,
+      "pick": 99,
+      "player": "Player #3916433",
+      "position": "Player",
+      "team": "The Blessed Sherpa ",
+      "manager": "Nyle",
+      "keeper": false
+    },
+    {
+      "season": 2026,
+      "round": 10,
+      "pick": 100,
+      "player": "Player #3042519",
+      "position": "Player",
+      "team": "8 Hole Reverend Rate",
+      "manager": "Mob",
+      "keeper": false
+    },
+    {
+      "season": 2026,
+      "round": 11,
+      "pick": 101,
+      "player": "Player #4373678",
+      "position": "Player",
+      "team": "8 Hole Reverend Rate",
+      "manager": "Mob",
+      "keeper": false
+    },
+    {
+      "season": 2026,
+      "round": 11,
+      "pick": 102,
+      "player": "Player #3040151",
+      "position": "Player",
+      "team": "The Blessed Sherpa ",
+      "manager": "Nyle",
+      "keeper": false
+    },
+    {
+      "season": 2026,
+      "round": 11,
+      "pick": 103,
+      "player": "Player #4361050",
+      "position": "Player",
+      "team": "Right Reverend Raisins ",
+      "manager": "Rich",
+      "keeper": false
+    },
+    {
+      "season": 2026,
+      "round": 11,
+      "pick": 104,
+      "player": "Player #4371733",
+      "position": "Player",
+      "team": "Unbridled Enthusiasm",
+      "manager": "Michael",
+      "keeper": false
+    },
+    {
+      "season": 2026,
+      "round": 11,
+      "pick": 105,
+      "player": "Player #4360569",
+      "position": "Player",
+      "team": "The Azz Train",
+      "manager": "Nick",
+      "keeper": false
+    },
+    {
+      "season": 2026,
+      "round": 11,
+      "pick": 106,
+      "player": "Player #4608686",
+      "position": "Player",
+      "team": "Dico Rowdle",
+      "manager": "Gilguy",
+      "keeper": false
+    },
+    {
+      "season": 2026,
+      "round": 11,
+      "pick": 107,
+      "player": "Player #3121023",
+      "position": "Player",
+      "team": "Backup Meat",
+      "manager": "Chris",
+      "keeper": false
+    },
+    {
+      "season": 2026,
+      "round": 11,
+      "pick": 108,
+      "player": "Player #4426348",
+      "position": "Player",
+      "team": "Serenity Now, Insanity Later",
+      "manager": "Jake",
+      "keeper": false
+    },
+    {
+      "season": 2026,
+      "round": 11,
+      "pick": 109,
+      "player": "Player #4596334",
+      "position": "Player",
+      "team": "Splitpeesoup",
+      "manager": "Min",
+      "keeper": false
+    },
+    {
+      "season": 2026,
+      "round": 11,
+      "pick": 110,
+      "player": "Player #4241416",
+      "position": "Player",
+      "team": "Pasta Holy Trinity ",
+      "manager": "Blake",
+      "keeper": false
+    },
+    {
+      "season": 2026,
+      "round": 12,
+      "pick": 111,
+      "player": "Player #4038941",
+      "position": "Player",
+      "team": "Pasta Holy Trinity ",
+      "manager": "Blake",
+      "keeper": false
+    },
+    {
+      "season": 2026,
+      "round": 12,
+      "pick": 112,
+      "player": "Player #4710714",
+      "position": "Player",
+      "team": "Splitpeesoup",
+      "manager": "Min",
+      "keeper": false
+    },
+    {
+      "season": 2026,
+      "round": 12,
+      "pick": 113,
+      "player": "Player #3116365",
+      "position": "Player",
+      "team": "Serenity Now, Insanity Later",
+      "manager": "Jake",
+      "keeper": false
+    },
+    {
+      "season": 2026,
+      "round": 12,
+      "pick": 114,
+      "player": "Player #-16014",
+      "position": "Player",
+      "team": "Backup Meat",
+      "manager": "Chris",
+      "keeper": false
+    },
+    {
+      "season": 2026,
+      "round": 12,
+      "pick": 115,
+      "player": "Player #4870795",
+      "position": "Player",
+      "team": "Dico Rowdle",
+      "manager": "Gilguy",
+      "keeper": false
+    },
+    {
+      "season": 2026,
+      "round": 12,
+      "pick": 116,
+      "player": "Player #4697815",
+      "position": "Player",
+      "team": "The Azz Train",
+      "manager": "Nick",
+      "keeper": false
+    },
+    {
+      "season": 2026,
+      "round": 12,
+      "pick": 117,
+      "player": "Player #4360516",
+      "position": "Player",
+      "team": "Unbridled Enthusiasm",
+      "manager": "Michael",
+      "keeper": false
+    },
+    {
+      "season": 2026,
+      "round": 12,
+      "pick": 118,
+      "player": "Player #15847",
+      "position": "Player",
+      "team": "Right Reverend Raisins ",
+      "manager": "Rich",
+      "keeper": false
+    },
+    {
+      "season": 2026,
+      "round": 12,
+      "pick": 119,
+      "player": "Player #3126486",
+      "position": "Player",
+      "team": "The Blessed Sherpa ",
+      "manager": "Nyle",
+      "keeper": false
+    },
+    {
+      "season": 2026,
+      "round": 12,
+      "pick": 120,
+      "player": "Player #-16007",
+      "position": "Player",
+      "team": "8 Hole Reverend Rate",
+      "manager": "Mob",
+      "keeper": false
+    },
+    {
+      "season": 2026,
+      "round": 13,
+      "pick": 121,
+      "player": "Player #4360310",
+      "position": "Player",
+      "team": "8 Hole Reverend Rate",
+      "manager": "Mob",
+      "keeper": false
+    },
+    {
+      "season": 2026,
+      "round": 13,
+      "pick": 122,
+      "player": "Player #4361741",
+      "position": "Player",
+      "team": "The Blessed Sherpa ",
+      "manager": "Nyle",
+      "keeper": false
+    },
+    {
+      "season": 2026,
+      "round": 13,
+      "pick": 123,
+      "player": "Player #4362619",
+      "position": "Player",
+      "team": "Right Reverend Raisins ",
+      "manager": "Rich",
+      "keeper": false
+    },
+    {
+      "season": 2026,
+      "round": 13,
+      "pick": 124,
+      "player": "Player #4429013",
+      "position": "Player",
+      "team": "Unbridled Enthusiasm",
+      "manager": "Michael",
+      "keeper": false
+    },
+    {
+      "season": 2026,
+      "round": 13,
+      "pick": 125,
+      "player": "Player #4242355",
+      "position": "Player",
+      "team": "The Azz Train",
+      "manager": "Nick",
+      "keeper": false
+    },
+    {
+      "season": 2026,
+      "round": 13,
+      "pick": 126,
+      "player": "Player #-16026",
+      "position": "Player",
+      "team": "Dico Rowdle",
+      "manager": "Gilguy",
+      "keeper": false
+    },
+    {
+      "season": 2026,
+      "round": 13,
+      "pick": 127,
+      "player": "Player #2971573",
+      "position": "Player",
+      "team": "Backup Meat",
+      "manager": "Chris",
+      "keeper": false
+    },
+    {
+      "season": 2026,
+      "round": 13,
+      "pick": 128,
+      "player": "Player #2976212",
+      "position": "Player",
+      "team": "Serenity Now, Insanity Later",
+      "manager": "Jake",
+      "keeper": false
+    },
+    {
+      "season": 2026,
+      "round": 13,
+      "pick": 129,
+      "player": "Player #-16017",
+      "position": "Player",
+      "team": "Splitpeesoup",
+      "manager": "Min",
+      "keeper": false
+    },
+    {
+      "season": 2026,
+      "round": 13,
+      "pick": 130,
+      "player": "Player #4870653",
+      "position": "Player",
+      "team": "Pasta Holy Trinity ",
+      "manager": "Blake",
+      "keeper": false
+    },
+    {
+      "season": 2026,
+      "round": 14,
+      "pick": 131,
+      "player": "Player #-16033",
+      "position": "Player",
+      "team": "Pasta Holy Trinity ",
+      "manager": "Blake",
+      "keeper": false
+    },
+    {
+      "season": 2026,
+      "round": 14,
+      "pick": 132,
+      "player": "Player #4361432",
+      "position": "Player",
+      "team": "Splitpeesoup",
+      "manager": "Min",
+      "keeper": false
+    },
+    {
+      "season": 2026,
+      "round": 14,
+      "pick": 133,
+      "player": "Player #-16023",
+      "position": "Player",
+      "team": "Serenity Now, Insanity Later",
+      "manager": "Jake",
+      "keeper": false
+    },
+    {
+      "season": 2026,
+      "round": 14,
+      "pick": 134,
+      "player": "Player #4241463",
+      "position": "Player",
+      "team": "Backup Meat",
+      "manager": "Chris",
+      "keeper": false
+    },
+    {
+      "season": 2026,
+      "round": 14,
+      "pick": 135,
+      "player": "Player #4362081",
+      "position": "Player",
+      "team": "Dico Rowdle",
+      "manager": "Gilguy",
+      "keeper": false
+    },
+    {
+      "season": 2026,
+      "round": 14,
+      "pick": 136,
+      "player": "Player #-16024",
+      "position": "Player",
+      "team": "The Azz Train",
+      "manager": "Nick",
+      "keeper": false
+    },
+    {
+      "season": 2026,
+      "round": 14,
+      "pick": 137,
+      "player": "Player #-16005",
+      "position": "Player",
+      "team": "Unbridled Enthusiasm",
+      "manager": "Michael",
+      "keeper": false
+    },
+    {
+      "season": 2026,
+      "round": 14,
+      "pick": 138,
+      "player": "Player #4431611",
+      "position": "Player",
+      "team": "Right Reverend Raisins ",
+      "manager": "Rich",
+      "keeper": false
+    },
+    {
+      "season": 2026,
+      "round": 14,
+      "pick": 139,
+      "player": "Player #-16021",
+      "position": "Player",
+      "team": "The Blessed Sherpa ",
+      "manager": "Nyle",
+      "keeper": false
+    },
+    {
+      "season": 2026,
+      "round": 14,
+      "pick": 140,
+      "player": "Player #4686361",
+      "position": "Player",
+      "team": "8 Hole Reverend Rate",
+      "manager": "Mob",
+      "keeper": false
+    },
+    {
+      "season": 2026,
+      "round": 15,
+      "pick": 141,
+      "player": "Player #4361529",
+      "position": "Player",
+      "team": "8 Hole Reverend Rate",
+      "manager": "Mob",
+      "keeper": false
+    },
+    {
+      "season": 2026,
+      "round": 15,
+      "pick": 142,
+      "player": "Player #3055899",
+      "position": "Player",
+      "team": "The Blessed Sherpa ",
+      "manager": "Nyle",
+      "keeper": false
+    },
+    {
+      "season": 2026,
+      "round": 15,
+      "pick": 143,
+      "player": "Player #4695883",
+      "position": "Player",
+      "team": "Right Reverend Raisins ",
+      "manager": "Rich",
+      "keeper": false
+    },
+    {
+      "season": 2026,
+      "round": 15,
+      "pick": 144,
+      "player": "Player #4689936",
+      "position": "Player",
+      "team": "Unbridled Enthusiasm",
+      "manager": "Michael",
+      "keeper": false
+    },
+    {
+      "season": 2026,
+      "round": 15,
+      "pick": 145,
+      "player": "Player #2473037",
+      "position": "Player",
+      "team": "The Azz Train",
+      "manager": "Nick",
+      "keeper": false
+    },
+    {
+      "season": 2026,
+      "round": 15,
+      "pick": 146,
+      "player": "Player #4426338",
+      "position": "Player",
+      "team": "Dico Rowdle",
+      "manager": "Gilguy",
+      "keeper": false
+    },
+    {
+      "season": 2026,
+      "round": 15,
+      "pick": 147,
+      "player": "Player #3917315",
+      "position": "Player",
+      "team": "Backup Meat",
+      "manager": "Chris",
+      "keeper": false
+    },
+    {
+      "season": 2026,
+      "round": 15,
+      "pick": 148,
+      "player": "Player #4360234",
+      "position": "Player",
+      "team": "Serenity Now, Insanity Later",
+      "manager": "Jake",
+      "keeper": false
+    },
+    {
+      "season": 2026,
+      "round": 15,
+      "pick": 149,
+      "player": "Player #4574716",
+      "position": "Player",
+      "team": "Splitpeesoup",
+      "manager": "Min",
+      "keeper": false
+    },
+    {
+      "season": 2026,
+      "round": 15,
+      "pick": 150,
+      "player": "Player #4569923",
+      "position": "Player",
+      "team": "Pasta Holy Trinity ",
+      "manager": "Blake",
+      "keeper": false
+    }
+  ],
   "standings": [
     {
       "rank": 1,
@@ -165,5 +1668,5 @@
       "status": "LIVE"
     }
   ],
-  "updatedAt": "2026-09-08T01:17:55.954Z"
+  "updatedAt": "2026-09-08T01:31:20.684Z"
 }
