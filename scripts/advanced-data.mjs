@@ -2,10 +2,311 @@
 // network or model calls so the recurring sync remains deterministic.
 
 export const FEATURE_VERSION = 1;
+export const TRANSACTION_FEATURE_VERSION = 1;
 
 const round = (value) => Math.round((Number(value) || 0) * 100) / 100;
 const asArray = (value) => Array.isArray(value) ? value : [];
 const number = (value) => value === null || value === undefined || value === "" || !Number.isFinite(Number(value)) ? null : Number(value);
+
+const integer = (value) => {
+  const parsed = number(value);
+  return parsed === null ? null : Math.trunc(parsed);
+};
+
+const text = (value) => value === null || value === undefined ? "" : String(value).trim();
+
+const acceptedTransactionStatuses = new Set([
+  "COMPLETE", "COMPLETED", "EXECUTED", "PROCESSED", "SUCCESS", "SUCCESSFUL",
+]);
+const rejectedTransactionStatuses = new Set([
+  "CANCELLED", "CANCELED", "DECLINED", "FAILED", "INVALID", "PENDING", "PROPOSED",
+  "REJECTED", "VETOED", "WAIVER_PENDING",
+]);
+
+/**
+ * ESPN's transaction endpoint has had a few response wrappers over time. Keep
+ * extraction deliberately narrow: league transactions/activities only, never
+ * discussions, messages, bids, or arbitrary communication payloads.
+ */
+export function extractTransactionRecords(payload = {}) {
+  if (Array.isArray(payload)) return payload;
+  if (!payload || typeof payload !== "object") return [];
+  if (Array.isArray(payload.transactions)) return payload.transactions;
+  return [];
+}
+
+export function isCompletedTransaction(transaction = {}) {
+  const status = text(transaction.status ?? transaction.state ?? transaction.transactionStatus ?? transaction.executionStatus).toUpperCase();
+  if (rejectedTransactionStatuses.has(status)) return false;
+  // A status alone is not enough: ESPN can expose an accepted/proposed review
+  // record before it is executed. Require a verified process/completion date.
+  const processed = transaction.processDate ?? transaction.completedAt ?? transaction.executedDate;
+  if (processed === null || processed === undefined || processed === "") return false;
+  return acceptedTransactionStatuses.has(status);
+}
+
+const transactionType = (transaction = {}, item = {}) => {
+  const rawItem = text(item.type).toUpperCase().replace(/[\s-]+/g, "_");
+  const rawTransaction = text(transaction.type || transaction.transactionType).toUpperCase().replace(/[\s-]+/g, "_");
+  const raw = rawItem || rawTransaction;
+  if (["WAIVER", "WAIVER_CLAIM", "WAIVER_ADD", "FAAB"].includes(rawTransaction) && ["", "ADD", "ADDED", "CLAIM", "FREE_AGENT", "FREEAGENT"].includes(rawItem)) return "WAIVER";
+  if (["WAIVER", "WAIVER_CLAIM", "WAIVER_ADD", "FAAB"].includes(raw)) return "WAIVER";
+  if (["TRADE", "TRADES"].includes(raw)) return "TRADE";
+  if (["DROP", "DROPPED", "RELEASE"].includes(raw)) return "DROP";
+  if (["ADD", "ADDED", "CLAIM", "FREE_AGENT", "FREEAGENT"].includes(raw)) return "ADD";
+  return raw;
+};
+
+const transactionDate = (transaction = {}) => {
+  const value = transaction.processDate ?? transaction.completedAt ?? transaction.executedDate ?? transaction.proposedDate ?? transaction.date;
+  if (value === null || value === undefined || value === "") return null;
+  const date = typeof value === "number" || /^\d+$/.test(String(value)) ? new Date(Number(value)) : new Date(value);
+  return Number.isNaN(date.getTime()) ? null : date.toISOString();
+};
+
+const transactionPlayer = (item = {}) => item.player || item.playerPoolEntry?.player || item.playerPoolEntry || {};
+const transactionPlayerId = (item = {}) => integer(item.playerId ?? item.player?.id ?? item.playerPoolEntry?.player?.id ?? item.targetId);
+const transactionPlayerName = (item = {}, playerNames = new Map()) => {
+  const id = transactionPlayerId(item);
+  const player = transactionPlayer(item);
+  return text(item.playerName || player.fullName || [player.firstName, player.lastName].filter(Boolean).join(" ") || (id !== null ? playerNames.get(id) : ""));
+};
+const transactionTeamId = (value) => integer(value?.teamId ?? value?.id ?? value);
+
+const teamForId = (teamId, teamsById) => {
+  const team = teamsById.get(Number(teamId));
+  if (!team) return { teamId: teamId === null ? null : Number(teamId), team: null, manager: null, ownerId: null };
+  return { teamId: Number(team.teamId ?? team.id), team: team.team || null, manager: team.manager || null, ownerId: team.ownerId || null };
+};
+
+const itemTeamId = (transaction, item, direction = "to") => {
+  const direct = direction === "from"
+    ? (item.fromTeamId ?? item.from?.teamId ?? item.from?.id ?? transaction.fromTeamId ?? transaction.from?.teamId)
+    : (item.toTeamId ?? item.to?.teamId ?? item.to?.id ?? item.forTeamId ?? item.for?.teamId ?? item.for?.id ?? transaction.toTeamId ?? transaction.to?.teamId ?? transaction.teamId ?? transaction.team?.id);
+  return transactionTeamId(direct);
+};
+
+const playerPosition = (item = {}) => {
+  const player = transactionPlayer(item);
+  return normalizePosition(player.defaultPositionId ?? player.positionId ?? player.position ?? item.position);
+};
+
+const faabAmount = (transaction = {}, item = {}) => {
+  const value = item.bidAmount ?? item.bid ?? item.faab ?? transaction.bidAmount ?? transaction.bid ?? transaction.faab;
+  return value === null || value === undefined || value === "" || !Number.isFinite(Number(value)) ? null : Number(value);
+};
+
+/**
+ * Convert only accepted ESPN transactions into the public-safe, stable feed.
+ * No ESPN member IDs, cookies, bids/offers, or communication text are copied.
+ */
+export function normalizeTransactions(records = [], { season = null, teams = [], playerNames = new Map() } = {}) {
+  const teamsById = new Map(teams.map((team) => [Number(team.teamId ?? team.id), team]));
+  const names = playerNames instanceof Map ? playerNames : new Map(Object.entries(playerNames).map(([id, name]) => [Number(id), name]));
+  const items = [];
+  const trades = [];
+  const seen = new Set();
+  let acceptedCount = 0;
+  let excludedCount = 0;
+
+  for (let index = 0; index < records.length; index++) {
+    const transaction = records[index] || {};
+    if (!isCompletedTransaction(transaction)) { excludedCount++; continue; }
+    const type = transactionType(transaction);
+    if (!["ADD", "DROP", "WAIVER", "TRADE"].includes(type)) { excludedCount++; continue; }
+    const date = transactionDate(transaction);
+    const scoringPeriodId = integer(transaction.scoringPeriodId ?? transaction.period ?? transaction.week);
+    const rawId = transaction.id ?? transaction.transactionId ?? transaction.activityId;
+    const fallbackPlayers = (Array.isArray(transaction.items) ? transaction.items : [transaction]).map((item) => transactionPlayerId(item) ?? transactionPlayerName(item, names)).filter(Boolean).sort().join(",");
+    const fallbackTeams = [transaction.teamId, transaction.fromTeamId, transaction.toTeamId].map(transactionTeamId).filter((teamId) => teamId !== null).sort((a, b) => a - b).join(",");
+    const transactionId = rawId !== null && rawId !== undefined && rawId !== ""
+      ? `espn:${String(rawId)}`
+      : `tx:${season ?? "unknown"}:${scoringPeriodId ?? "unknown"}:${type}:${date ?? "unknown"}:${fallbackTeams}:${fallbackPlayers}`;
+    if (seen.has(transactionId)) continue;
+    seen.add(transactionId);
+    acceptedCount++;
+    const transactionItems = Array.isArray(transaction.items) ? transaction.items : [];
+
+    if (type === "TRADE") {
+      const sidesById = new Map();
+      const ensureSide = (teamId) => {
+        if (teamId === null) return null;
+        if (!sidesById.has(teamId)) sidesById.set(teamId, { ...teamForId(teamId, teamsById), players: [], sentPlayers: [], totalPoints: null, starterPoints: null, pointsCoverage: "unavailable" });
+        return sidesById.get(teamId);
+      };
+      let flowedPlayers = 0;
+      for (const item of transactionItems) {
+        const fromTeamId = transactionTeamId(item.fromTeamId ?? item.from?.teamId ?? item.from?.id ?? transaction.fromTeamId ?? transaction.from?.teamId);
+        const toTeamId = transactionTeamId(item.toTeamId ?? item.to?.teamId ?? item.to?.id ?? item.forTeamId ?? item.for?.teamId ?? item.for?.id ?? transaction.toTeamId ?? transaction.to?.teamId);
+        const playerId = transactionPlayerId(item);
+        const player = transactionPlayerName(item, names);
+        if (fromTeamId === null || toTeamId === null || (playerId === null && !player)) continue;
+        flowedPlayers++;
+        const playerRow = { playerId, name: player || (playerId !== null ? `Player #${playerId}` : "Player unavailable"), player: player || (playerId !== null ? `Player #${playerId}` : "Player unavailable"), position: playerPosition(item) || null };
+        const destination = ensureSide(toTeamId);
+        const source = ensureSide(fromTeamId);
+        if (destination && !destination.players.some((row) => row.playerId === playerId && row.name === playerRow.name)) destination.players.push(playerRow);
+        if (source && !source.sentPlayers.some((row) => row.playerId === playerId && row.name === playerRow.name)) source.sentPlayers.push(playerRow);
+      }
+      // Some ESPN payloads put participant IDs on the transaction itself. They
+      // are only labels after at least one explicit player flow is verified.
+      if (flowedPlayers) for (const team of Array.isArray(transaction.teams) ? transaction.teams : []) ensureSide(transactionTeamId(team));
+      const sides = [...sidesById.values()].sort((a, b) => (a.teamId ?? 999) - (b.teamId ?? 999));
+      if (flowedPlayers && sides.length >= 2 && sides.some((side) => side.players.length)) trades.push({ id: transactionId, status: "Completed", date, completedAt: date, scoringPeriodId, sides });
+      continue;
+    }
+
+    const fallbackTeamId = itemTeamId(transaction, {}, "to");
+    const normalizedItems = transactionItems.length ? transactionItems : [transaction];
+    for (let itemIndex = 0; itemIndex < normalizedItems.length; itemIndex++) {
+      const item = normalizedItems[itemIndex] || {};
+      const itemType = transactionType(transaction, item);
+      if (!["ADD", "DROP", "WAIVER"].includes(itemType)) continue;
+      const playerId = transactionPlayerId(item);
+      const player = transactionPlayerName(item, names);
+      if (playerId === null && !player) continue;
+      const teamId = itemTeamId(transaction, item, "to") ?? fallbackTeamId;
+      const team = teamForId(teamId, teamsById);
+      const eventKey = `${transactionId}:${itemType}:${playerId ?? player}:${teamId ?? "unknown"}`;
+      if (seen.has(eventKey)) continue;
+      seen.add(eventKey);
+      items.push({
+        id: eventKey,
+        kind: itemType,
+        type: itemType,
+        playerId,
+        player: player || (playerId !== null ? `Player #${playerId}` : "Player unavailable"),
+        position: playerPosition(item) || null,
+        ...team,
+        date,
+        completedAt: date,
+        scoringPeriodId,
+        faab: ["ADD", "WAIVER"].includes(itemType) ? faabAmount(transaction, item) : null,
+      });
+    }
+  }
+  items.sort((a, b) => String(b.date || "").localeCompare(String(a.date || "")) || a.id.localeCompare(b.id));
+  trades.sort((a, b) => String(b.date || "").localeCompare(String(a.date || "")) || a.id.localeCompare(b.id));
+  return { version: TRANSACTION_FEATURE_VERSION, items, trades, acceptedCount, excludedCount };
+}
+
+/**
+ * Attribute observed FINAL roster points only after the first full scoring
+ * period following a pickup/waiver. A drop ends the interval before its period
+ * so we never claim points earned after the player left the roster.
+ */
+export function buildPickupLeaderboard({ items = [], trades = [], rosters = [], completedWeeks = [] } = {}) {
+  const finals = new Set(completedWeeks.map(Number));
+  const rows = new Map();
+  const pickups = items.filter((item) => ["ADD", "WAIVER"].includes(item.kind) && item.playerId !== null && item.teamId !== null).map((item, index) => ({ ...item, _order: index }));
+  const drops = items.filter((item) => item.kind === "DROP" && item.playerId !== null && item.teamId !== null).map((item, index) => ({ ...item, _order: index }));
+  for (const [tradeIndex, trade] of trades.entries()) for (const side of trade.sides || []) for (const player of side.sentPlayers || []) {
+    drops.push({ ...player, kind: "DROP", teamId: side.teamId, scoringPeriodId: trade.scoringPeriodId, date: trade.date, _order: tradeIndex });
+  }
+  const occursAfter = (later, earlier) => {
+    const laterPeriod = integer(later.scoringPeriodId);
+    const earlierPeriod = integer(earlier.scoringPeriodId);
+    if (laterPeriod === null || earlierPeriod === null) return false;
+    if (laterPeriod !== earlierPeriod) return laterPeriod > earlierPeriod;
+    const laterDate = later.date ? new Date(later.date).getTime() : NaN;
+    const earlierDate = earlier.date ? new Date(earlier.date).getTime() : NaN;
+    if (Number.isFinite(laterDate) && Number.isFinite(earlierDate)) return laterDate > earlierDate;
+    return Number(later._order ?? 0) < Number(earlier._order ?? 0);
+  };
+  const seenAcquisitions = new Set();
+  for (const pickup of pickups) {
+    if (seenAcquisitions.has(pickup.id)) continue;
+    seenAcquisitions.add(pickup.id);
+    const period = integer(pickup.scoringPeriodId);
+    if (period === null) continue;
+    const laterAcquisition = pickups.filter((candidate) => candidate !== pickup && Number(candidate.teamId) === Number(pickup.teamId) && Number(candidate.playerId) === Number(pickup.playerId) && occursAfter(candidate, pickup));
+    const endCandidates = [...drops.filter((drop) => Number(drop.teamId) === Number(pickup.teamId) && Number(drop.playerId) === Number(pickup.playerId) && occursAfter(drop, pickup)), ...laterAcquisition];
+    const end = endCandidates.sort((a, b) => Number(a.scoringPeriodId) - Number(b.scoringPeriodId) || String(a.date || "").localeCompare(String(b.date || "")))[0];
+    const expectedWeeks = [...finals].filter((week) => week > period && (!end || week < Number(end.scoringPeriodId))).sort((a, b) => a - b);
+    const eligibleWeeks = rosters.filter((roster) => {
+      const week = Number(roster.week);
+      return Number(roster.teamId) === Number(pickup.teamId) && finals.has(week) && week > period && (!end || week < Number(end.scoringPeriodId));
+    }).sort((a, b) => Number(a.week) - Number(b.week));
+    const seenRosterWeeks = new Set();
+    let totalPoints = 0;
+    let starterPoints = 0;
+    let scoredPeriods = 0;
+    for (const roster of eligibleWeeks) {
+      const rosterWeekKey = `${pickup.teamId}:${roster.week}`;
+      if (seenRosterWeeks.has(rosterWeekKey)) continue;
+      seenRosterWeeks.add(rosterWeekKey);
+      const player = (roster.players || []).find((candidate) => Number(candidate.playerId) === Number(pickup.playerId));
+      if (!player || player.points === null || player.points === undefined || !Number.isFinite(Number(player.points))) continue;
+      const points = Number(player.points);
+      totalPoints += points;
+      if (player.status === "STARTER") starterPoints += points;
+      scoredPeriods++;
+    }
+    if (!scoredPeriods) continue;
+    const key = `${pickup.teamId}:${pickup.playerId}`;
+    const existing = rows.get(key);
+    const row = existing || { id: `pickup:${pickup.teamId}:${pickup.playerId}`, playerId: pickup.playerId, player: pickup.player, teamId: pickup.teamId, team: pickup.team, manager: pickup.manager, ownerId: pickup.ownerId, faab: pickup.faab, totalPoints: 0, starterPoints: 0, scoredPeriods: 0, coverage: "complete" };
+    row.totalPoints = round(row.totalPoints + totalPoints);
+    row.starterPoints = round(row.starterPoints + starterPoints);
+    row.scoredPeriods += scoredPeriods;
+    if (row.player.startsWith("Player #") && pickup.player) row.player = pickup.player;
+    if (expectedWeeks.length > scoredPeriods) row.coverage = "partial";
+    rows.set(key, row);
+  }
+  return [...rows.values()].sort((a, b) => b.totalPoints - a.totalPoints || a.player.localeCompare(b.player));
+}
+
+/** Add deterministic post-trade production to each receiving side. */
+export function addTradeProduction(trades = [], rosters = [], completedWeeks = [], items = []) {
+  const finals = new Set(completedWeeks.map(Number));
+  const drops = items.filter((item) => item.kind === "DROP" && item.playerId !== null && item.teamId !== null);
+  const tradeAcquisitions = [];
+  for (const [tradeIndex, trade] of trades.entries()) for (const side of trade.sides || []) for (const player of side.players || []) tradeAcquisitions.push({ ...player, teamId: side.teamId, scoringPeriodId: trade.scoringPeriodId, date: trade.date, _order: tradeIndex, tradeId: trade.id });
+  const tradeDrops = [];
+  for (const [tradeIndex, trade] of trades.entries()) for (const side of trade.sides || []) for (const player of side.sentPlayers || []) tradeDrops.push({ ...player, teamId: side.teamId, scoringPeriodId: trade.scoringPeriodId, date: trade.date, _order: tradeIndex });
+  const occursAfter = (later, earlier) => {
+    const laterPeriod = integer(later.scoringPeriodId);
+    const earlierPeriod = integer(earlier.scoringPeriodId);
+    if (laterPeriod === null || earlierPeriod === null) return false;
+    if (laterPeriod !== earlierPeriod) return laterPeriod > earlierPeriod;
+    const laterDate = later.date ? new Date(later.date).getTime() : NaN;
+    const earlierDate = earlier.date ? new Date(earlier.date).getTime() : NaN;
+    if (Number.isFinite(laterDate) && Number.isFinite(earlierDate)) return laterDate > earlierDate;
+    return Number(later._order ?? 0) < Number(earlier._order ?? 0);
+  };
+  return trades.map((trade, tradeIndex) => {
+    const period = integer(trade.scoringPeriodId);
+    return {
+      ...trade,
+      sides: (trade.sides || []).map((side) => {
+        if (period === null) return { ...side, totalPoints: null, starterPoints: null, pointsCoverage: "unavailable" };
+        let total = 0; let starter = 0; let scored = 0; let expected = 0;
+        for (const player of side.players || []) {
+          const acquisition = { ...player, teamId: side.teamId, scoringPeriodId: period, date: trade.date, _order: tradeIndex, tradeId: trade.id };
+          const laterAcquisition = tradeAcquisitions.filter((candidate) => candidate.tradeId !== trade.id && Number(candidate.teamId) === Number(side.teamId) && Number(candidate.playerId) === Number(player.playerId) && occursAfter(candidate, acquisition));
+          const endCandidates = [
+            ...drops.filter((drop) => Number(drop.teamId) === Number(side.teamId) && Number(drop.playerId) === Number(player.playerId) && occursAfter(drop, acquisition)),
+            ...tradeDrops.filter((drop) => Number(drop.teamId) === Number(side.teamId) && Number(drop.playerId) === Number(player.playerId) && occursAfter(drop, acquisition)),
+            ...laterAcquisition,
+          ];
+          const end = endCandidates.sort((a, b) => Number(a.scoringPeriodId) - Number(b.scoringPeriodId) || String(a.date || "").localeCompare(String(b.date || "")))[0];
+          const expectedWeeks = [...finals].filter((week) => week > period && (!end || week < Number(end.scoringPeriodId)));
+          const weeks = rosters.filter((roster) => Number(roster.teamId) === Number(side.teamId) && finals.has(Number(roster.week)) && Number(roster.week) > period && (!end || Number(roster.week) < Number(end.scoringPeriodId))).sort((a, b) => Number(a.week) - Number(b.week));
+          const seenWeeks = new Set();
+          expected += expectedWeeks.length;
+          for (const roster of weeks) {
+            if (seenWeeks.has(Number(roster.week))) continue;
+            seenWeeks.add(Number(roster.week));
+            const observed = (roster.players || []).find((candidate) => Number(candidate.playerId) === Number(player.playerId));
+            if (!observed || observed.points === null || observed.points === undefined || !Number.isFinite(Number(observed.points))) continue;
+            const points = Number(observed.points); total += points; if (observed.status === "STARTER") starter += points; scored++;
+          }
+        }
+        return { ...side, totalPoints: scored ? round(total) : null, starterPoints: scored ? round(starter) : null, pointsCoverage: !scored ? "unavailable" : scored < expected ? "partial" : "complete" };
+      }),
+    };
+  });
+}
 
 export function isFinalMatchup(matchup = {}) {
   const status = matchup.status || {};

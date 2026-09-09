@@ -2,6 +2,10 @@ import fs from "node:fs";
 import path from "node:path";
 import {
   buildAdvancedFeatures,
+  addTradeProduction,
+  buildPickupLeaderboard,
+  extractTransactionRecords,
+  normalizeTransactions,
   normalizeMatchupStatus,
   normalizeRosterEntry,
   rosterSlots,
@@ -13,7 +17,10 @@ const outputPath = path.resolve(
   process.env.ESPN_OUTPUT || `public/data/espn-${season}.json`,
 );
 let previous = null;
-try { previous = JSON.parse(fs.readFileSync(outputPath, "utf8")); } catch {}
+try {
+  const saved = JSON.parse(fs.readFileSync(outputPath, "utf8"));
+  if (Number(saved.leagueId) === leagueId && Number(saved.season) === season) previous = saved;
+} catch {}
 const allowPrivate = Boolean(process.env.ESPN_S2 && process.env.ESPN_SWID);
 if (Boolean(process.env.ESPN_S2) !== Boolean(process.env.ESPN_SWID))
   throw new Error("Private ESPN access requires both ESPN_S2 and ESPN_SWID secrets.");
@@ -42,6 +49,9 @@ for (const view of ["mSettings", "mTeam", "mRoster", "mMatchupScore", "mScoreboa
 const endpoint =
   `https://lm-api-reads.fantasy.espn.com/apis/v3/games/ffl/seasons/${season}` +
   `/segments/0/leagues/${leagueId}?${params}`;
+const leagueEndpoint =
+  `https://lm-api-reads.fantasy.espn.com/apis/v3/games/ffl/seasons/${season}` +
+  `/segments/0/leagues/${leagueId}`;
 
 const headers = {
   Accept: "application/json",
@@ -71,6 +81,43 @@ if (Number(raw.id) !== leagueId || Number(raw.seasonId) !== season)
 if (!Array.isArray(raw.teams) || raw.teams.length !== 10)
   throw new Error(`Expected 10 ESPN teams; received ${raw.teams?.length ?? 0}.`);
 if (!Array.isArray(raw.schedule)) throw new Error("ESPN response is missing its schedule.");
+
+// Transactions are optional for standings: fetch a bounded mTransactions2
+// history and keep the last verified slice when ESPN is unavailable or the
+// endpoint truncates/errs. No raw activity, messages, bids, or member IDs are
+// persisted.
+const fetchTransactions = async () => {
+  const initial = extractTransactionRecords(raw);
+  const currentPeriod = Number(raw.status?.currentMatchupPeriod || raw.scoringPeriodId || 1);
+  let records = initial.slice();
+  let sourceAvailable = initial.length > 0;
+  let pages = initial.length > 0 ? 1 : 0;
+  const errors = [];
+  const statuses = new Set();
+  const types = new Set();
+  for (const row of initial) { if (row?.status != null) statuses.add(String(row.status)); if (row?.type != null) types.add(String(row.type)); }
+  // A small, known current/previous scoring-period window keeps Tue/Fri runs
+  // cheap and makes the partial-history disclosure explicit. Older verified
+  // rows are merged below from the saved dashboard payload.
+  for (const scoringPeriodId of [...new Set([currentPeriod, currentPeriod - 1].filter((period) => period > 0))]) {
+    const query = new URLSearchParams({ view: "mTransactions2", scoringPeriodId: String(scoringPeriodId) });
+    const periodHeaders = { ...headers };
+    try {
+      const pageResponse = await fetch(`${leagueEndpoint}?${query}`, { headers: periodHeaders, signal: AbortSignal.timeout(30000) });
+      if (!pageResponse.ok) { errors.push(`HTTP ${pageResponse.status} for scoring period ${scoringPeriodId}`); continue; }
+      const payload = await pageResponse.json();
+      const hasWrapper = Array.isArray(payload) || Array.isArray(payload?.transactions);
+      if (!hasWrapper) { errors.push(`unsupported mTransactions2 response for scoring period ${scoringPeriodId}`); continue; }
+      sourceAvailable = true;
+      pages++;
+      const pageRows = extractTransactionRecords(payload);
+      records.push(...pageRows);
+      for (const row of pageRows) { if (row?.status != null) statuses.add(String(row.status)); if (row?.type != null) types.add(String(row.type)); }
+    } catch (fetchError) { errors.push(fetchError?.message || `request failed for scoring period ${scoringPeriodId}`); }
+  }
+  return { records, sourceAvailable, complete: false, pages, error: errors.join("; ") || null, statuses: [...statuses].sort(), types: [...types].sort() };
+};
+const transactionFetch = await fetchTransactions();
 
 const members = new Map((raw.members || []).map((member) => [member.id, member]));
 const normalizedTeams = raw.teams.map((team) => {
@@ -288,6 +335,44 @@ if (Array.isArray(previous?.advanced?.rosters)) {
 }
 const finalizedRosters = rosterRows.filter((row) => completedWeeks.includes(Number(row.week)));
 
+const previousTransactions = previous?.transactions && typeof previous.transactions === "object" ? previous.transactions : null;
+const playerNames = new Map(rosterPlayerById);
+for (const pick of drafts || []) if (pick?.playerId && pick?.player) playerNames.set(Number(pick.playerId), pick.player);
+for (const row of previousTransactions?.items || []) if (row?.playerId && row?.player) playerNames.set(Number(row.playerId), row.player);
+const normalizedTransactions = transactionFetch.sourceAvailable
+  ? normalizeTransactions(transactionFetch.records, { season, teams: normalizedTeams, playerNames })
+  : { items: [], trades: [], acceptedCount: 0, excludedCount: 0 };
+const mergeById = (current, prior) => {
+  const merged = new Map();
+  for (const row of [...(prior || []), ...(current || [])]) if (row?.id) merged.set(String(row.id), row);
+  return [...merged.values()].sort((a, b) => String(b.date || "").localeCompare(String(a.date || "")) || String(a.id).localeCompare(String(b.id)));
+};
+const transactionItems = transactionFetch.sourceAvailable
+  ? (transactionFetch.complete ? normalizedTransactions.items : mergeById(normalizedTransactions.items, previousTransactions?.items))
+  : (Array.isArray(previousTransactions?.items) ? previousTransactions.items : []);
+const transactionTradesBase = transactionFetch.sourceAvailable
+  ? (transactionFetch.complete ? normalizedTransactions.trades : mergeById(normalizedTransactions.trades, previousTransactions?.trades))
+  : (Array.isArray(previousTransactions?.trades) ? previousTransactions.trades : []);
+const transactionTrades = addTradeProduction(transactionTradesBase, finalizedRosters, completedWeeks, transactionItems);
+const pickupLeaderboard = buildPickupLeaderboard({ items: transactionItems, trades: transactionTrades, rosters: finalizedRosters, completedWeeks });
+const transactionAvailable = transactionFetch.sourceAvailable || Boolean(previousTransactions?.available);
+const transactionCoverageStatus = transactionFetch.sourceAvailable
+  ? (transactionFetch.complete ? "complete" : "partial")
+  : (previousTransactions ? "partial" : "unavailable");
+const transactionCoverageNote = transactionFetch.sourceAvailable
+  ? `Recent ESPN transactions captured for the current and previous scoring periods; older verified records are retained.${transactionFetch.error ? ` ${transactionFetch.error}.` : ""}`
+  : (previousTransactions ? `Latest ESPN transaction request was unavailable${transactionFetch.error ? ` (${transactionFetch.error})` : ""}; showing the previous verified slice.` : `ESPN transaction history is unavailable${transactionFetch.error ? ` (${transactionFetch.error})` : ""}.`);
+const transactions = {
+  available: transactionAvailable,
+  coverage: { status: transactionCoverageStatus, note: transactionCoverageNote },
+  items: transactionItems,
+  pickupLeaderboard,
+  trades: transactionTrades,
+};
+console.log(
+  `ESPN transactions: ${transactionFetch.sourceAvailable ? "source available" : "unavailable"}; ${transactionFetch.pages} bounded period requests; ${transactionItems.length} public move rows; ${transactionTrades.length} grouped trades; statuses=${transactionFetch.statuses?.join(",") || "none"}; types=${transactionFetch.types?.join(",") || "none"}${transactionFetch.error ? `; note=${transactionFetch.error}` : ""}`,
+);
+
 // Draft performance is derived only from observed league matchup scores. The
 // global player directory may use a different scoring system, so it is never
 // used as a report-card result.
@@ -329,6 +414,7 @@ const content = {
   drafts,
   standings,
   games,
+  transactions,
   dataAvailability: {
     matchupStatus: games.some((game) => game.status === "FINAL") ? "FINAL_DATA_PRESENT" : "NO_COMPLETED_MATCHUPS",
     rosterScoring: finalizedRosters.some((row) => row.players.some((player) => player.points !== null)) ? "AVAILABLE" : "UNAVAILABLE",
