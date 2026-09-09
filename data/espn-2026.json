@@ -2128,6 +2128,129 @@
       "bTeamId": 5
     }
   ],
+  "transactions": {
+    "available": true,
+    "coverage": {
+      "status": "partial",
+      "note": "Recent ESPN transactions captured for the current and previous scoring periods; older verified records are retained."
+    },
+    "items": [
+      {
+        "id": "espn:f896f101-8edf-4ca8-887d-cff82cf7824d:WAIVER:4696044:5",
+        "kind": "WAIVER",
+        "type": "WAIVER",
+        "playerId": 4696044,
+        "player": "Kaelon Black",
+        "position": null,
+        "teamId": 5,
+        "team": "8 Hole Reverend Rate",
+        "manager": "Mob",
+        "ownerId": "owner:mob",
+        "date": "2026-09-09T07:14:15.901Z",
+        "completedAt": "2026-09-09T07:14:15.901Z",
+        "scoringPeriodId": 1,
+        "faab": 0
+      },
+      {
+        "id": "espn:712e694a-06f3-4778-aae1-387a9fa00d58:DROP:4695883:0",
+        "kind": "DROP",
+        "type": "DROP",
+        "playerId": 4695883,
+        "player": "Jalen Coker",
+        "position": null,
+        "teamId": 0,
+        "team": null,
+        "manager": null,
+        "ownerId": null,
+        "date": "2026-09-09T07:14:15.900Z",
+        "completedAt": "2026-09-09T07:14:15.900Z",
+        "scoringPeriodId": 1,
+        "faab": null
+      },
+      {
+        "id": "espn:712e694a-06f3-4778-aae1-387a9fa00d58:WAIVER:12483:3",
+        "kind": "WAIVER",
+        "type": "WAIVER",
+        "playerId": 12483,
+        "player": "Matthew Stafford",
+        "position": null,
+        "teamId": 3,
+        "team": "Right Reverend Raisins ",
+        "manager": "Rich",
+        "ownerId": "owner:rich",
+        "date": "2026-09-09T07:14:15.900Z",
+        "completedAt": "2026-09-09T07:14:15.900Z",
+        "scoringPeriodId": 1,
+        "faab": 6
+      },
+      {
+        "id": "espn:906b0e3b-b1da-45b1-b708-fac23f33c70c:DROP:-16005:0",
+        "kind": "DROP",
+        "type": "DROP",
+        "playerId": -16005,
+        "player": "Browns D/ST",
+        "position": null,
+        "teamId": 0,
+        "team": null,
+        "manager": null,
+        "ownerId": null,
+        "date": "2026-09-09T07:14:15.900Z",
+        "completedAt": "2026-09-09T07:14:15.900Z",
+        "scoringPeriodId": 1,
+        "faab": null
+      },
+      {
+        "id": "espn:906b0e3b-b1da-45b1-b708-fac23f33c70c:WAIVER:-16030:1",
+        "kind": "WAIVER",
+        "type": "WAIVER",
+        "playerId": -16030,
+        "player": "Jaguars D/ST",
+        "position": null,
+        "teamId": 1,
+        "team": "Unbridled Enthusiasm",
+        "manager": "Michael",
+        "ownerId": "owner:michael",
+        "date": "2026-09-09T07:14:15.900Z",
+        "completedAt": "2026-09-09T07:14:15.900Z",
+        "scoringPeriodId": 1,
+        "faab": 1
+      },
+      {
+        "id": "espn:7d538db8-994e-4d7a-9259-51146735757c:DROP:4870795:0",
+        "kind": "DROP",
+        "type": "DROP",
+        "playerId": 4870795,
+        "player": "Makai Lemon",
+        "position": null,
+        "teamId": 0,
+        "team": null,
+        "manager": null,
+        "ownerId": null,
+        "date": "2026-09-09T07:14:15.899Z",
+        "completedAt": "2026-09-09T07:14:15.899Z",
+        "scoringPeriodId": 1,
+        "faab": null
+      },
+      {
+        "id": "espn:7d538db8-994e-4d7a-9259-51146735757c:WAIVER:4429023:9",
+        "kind": "WAIVER",
+        "type": "WAIVER",
+        "playerId": 4429023,
+        "player": "MarShawn Lloyd",
+        "position": null,
+        "teamId": 9,
+        "team": "Dico Rowdle",
+        "manager": "Gilguy",
+        "ownerId": "owner:gilguy",
+        "date": "2026-09-09T07:14:15.899Z",
+        "completedAt": "2026-09-09T07:14:15.899Z",
+        "scoringPeriodId": 1,
+        "faab": 38
+      }
+    ],
+    "pickupLeaderboard": [],
+    "trades": []
+  },
   "dataAvailability": {
     "matchupStatus": "NO_COMPLETED_MATCHUPS",
     "rosterScoring": "UNAVAILABLE",
@@ -8013,5 +8136,5 @@
     ],
     "rosters": []
   },
-  "updatedAt": "2026-09-08T12:19:18.864Z"
+  "updatedAt": "2026-09-09T19:43:41.693Z"
 }
