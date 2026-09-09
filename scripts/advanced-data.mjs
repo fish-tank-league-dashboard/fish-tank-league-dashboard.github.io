@@ -165,7 +165,11 @@ export function normalizeTransactions(records = [], { season = null, teams = [],
       const playerId = transactionPlayerId(item);
       const player = transactionPlayerName(item, names);
       if (playerId === null && !player) continue;
-      const teamId = itemTeamId(transaction, item, "to") ?? fallbackTeamId;
+      // ESPN represents a dropped player as toTeamId=0 (free agency). The
+      // roster owner is the source team; never publish team 0 as a manager.
+      const teamId = itemType === "DROP"
+        ? (itemTeamId(transaction, item, "from") ?? transactionTeamId(transaction.teamId))
+        : (itemTeamId(transaction, item, "to") ?? fallbackTeamId);
       const team = teamForId(teamId, teamsById);
       const eventKey = `${transactionId}:${itemType}:${playerId ?? player}:${teamId ?? "unknown"}`;
       if (seen.has(eventKey)) continue;

@@ -342,9 +342,16 @@ for (const row of previousTransactions?.items || []) if (row?.playerId && row?.p
 const normalizedTransactions = transactionFetch.sourceAvailable
   ? normalizeTransactions(transactionFetch.records, { season, teams: normalizedTeams, playerNames })
   : { items: [], trades: [], acceptedCount: 0, excludedCount: 0 };
+const logicalMoveKey = (row) => {
+  const parts = String(row?.id || "").split(":");
+  // `espn:<transaction-id>:<kind>:<player-id>:<team-id>` lets a corrected
+  // DROP (team 0 -> source team) replace the stale prior row safely.
+  if (parts[0] === "espn" && parts.length >= 5 && ["ADD", "DROP", "WAIVER"].includes(parts[2])) return parts.slice(0, 4).join(":");
+  return String(row?.id || "");
+};
 const mergeById = (current, prior) => {
   const merged = new Map();
-  for (const row of [...(prior || []), ...(current || [])]) if (row?.id) merged.set(String(row.id), row);
+  for (const row of [...(prior || []), ...(current || [])]) if (row?.id) merged.set(logicalMoveKey(row), row);
   return [...merged.values()].sort((a, b) => String(b.date || "").localeCompare(String(a.date || "")) || String(a.id).localeCompare(String(b.id)));
 };
 const transactionItems = transactionFetch.sourceAvailable
