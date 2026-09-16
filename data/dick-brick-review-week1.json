@@ -1,0 +1,189 @@
+{
+  "season": 2026,
+  "week": 1,
+  "status": "retrospective",
+  "generatedAt": "2026-09-16T12:56:18.699Z",
+  "firstMnfKickoff": "2026-09-15T00:15:00.000Z",
+  "method": "Retrospective: points scored by starters whose NFL games kicked off before the first MNF game, plus ESPN's stored projection (statSourceId 1) for each starter still to play, run through the standard probability formula. Not a live capture; ESPN's stored projection is its last pregame value for each player.",
+  "brickRecipient": "Nyle",
+  "brickWinProbability": 66.6,
+  "matchups": [
+    {
+      "home": {
+        "managerId": "owner:min",
+        "manager": "Min",
+        "team": "Splitpeesoup",
+        "scoredBeforeMnf": 132.72,
+        "projectedRemaining": 0,
+        "projectedTotal": 132.72,
+        "remaining": [],
+        "finalScore": 132.72,
+        "winProbability": 80
+      },
+      "away": {
+        "managerId": "owner:michael",
+        "manager": "Michael",
+        "team": "Unbridled Enthusiasm",
+        "scoredBeforeMnf": 116.06,
+        "projectedRemaining": 0,
+        "projectedTotal": 116.06,
+        "remaining": [],
+        "finalScore": 116.06,
+        "winProbability": 20
+      },
+      "loser": "Michael",
+      "loserWinProbability": 20
+    },
+    {
+      "home": {
+        "managerId": "owner:chris",
+        "manager": "Chris",
+        "team": "Backup Meat",
+        "scoredBeforeMnf": 150.1,
+        "projectedRemaining": 18.15,
+        "projectedTotal": 168.25,
+        "remaining": [
+          {
+            "name": "Patrick Mahomes",
+            "projected": 18.15,
+            "actual": 25.66
+          }
+        ],
+        "finalScore": 175.76,
+        "winProbability": 99.6
+      },
+      "away": {
+        "managerId": "owner:rich",
+        "manager": "Rich",
+        "team": "Right Reverend Raisins",
+        "scoredBeforeMnf": 93.6,
+        "projectedRemaining": 9.83,
+        "projectedTotal": 103.43,
+        "remaining": [
+          {
+            "name": "Travis Kelce",
+            "projected": 9.83,
+            "actual": 10.1
+          }
+        ],
+        "finalScore": 103.7,
+        "winProbability": 0.4
+      },
+      "loser": "Rich",
+      "loserWinProbability": 0.4
+    },
+    {
+      "home": {
+        "managerId": "owner:jake",
+        "manager": "Jake",
+        "team": "Serenity Now, Insanity Later",
+        "scoredBeforeMnf": 139.3,
+        "projectedRemaining": 0,
+        "projectedTotal": 139.3,
+        "remaining": [],
+        "finalScore": 139.3,
+        "winProbability": 36.5
+      },
+      "away": {
+        "managerId": "owner:gilguy",
+        "manager": "Gilguy",
+        "team": "Dico Rowdle",
+        "scoredBeforeMnf": 127.1,
+        "projectedRemaining": 18.87,
+        "projectedTotal": 145.97,
+        "remaining": [
+          {
+            "name": "Bo Nix",
+            "projected": 18.87,
+            "actual": 7.44
+          }
+        ],
+        "finalScore": 134.54,
+        "winProbability": 63.5
+      },
+      "loser": "Gilguy",
+      "loserWinProbability": 63.5
+    },
+    {
+      "home": {
+        "managerId": "owner:nick",
+        "manager": "Nick",
+        "team": "The Azz Train",
+        "scoredBeforeMnf": 102.56,
+        "projectedRemaining": 12.28,
+        "projectedTotal": 114.84,
+        "remaining": [
+          {
+            "name": "Jaylen Waddle",
+            "projected": 12.28,
+            "actual": 1.2
+          }
+        ],
+        "finalScore": 103.76,
+        "winProbability": 1.3
+      },
+      "away": {
+        "managerId": "owner:mob",
+        "manager": "Mob",
+        "team": "8 Hole Reverend Rate",
+        "scoredBeforeMnf": 153.9,
+        "projectedRemaining": 13.02,
+        "projectedTotal": 166.92,
+        "remaining": [
+          {
+            "name": "Broncos D/ST",
+            "projected": 13.02,
+            "actual": 8
+          }
+        ],
+        "finalScore": 161.9,
+        "winProbability": 98.7
+      },
+      "loser": "Nick",
+      "loserWinProbability": 1.3
+    },
+    {
+      "home": {
+        "managerId": "owner:blake",
+        "manager": "Blake",
+        "team": "Pasta Holy Trinity",
+        "scoredBeforeMnf": 112.56,
+        "projectedRemaining": 14.75,
+        "projectedTotal": 127.31,
+        "remaining": [
+          {
+            "name": "Kenneth Walker III",
+            "projected": 14.75,
+            "actual": 34.1
+          }
+        ],
+        "finalScore": 146.66,
+        "winProbability": 33.4
+      },
+      "away": {
+        "managerId": "owner:nyle",
+        "manager": "Nyle",
+        "team": "The Blessed Sherpa",
+        "scoredBeforeMnf": 112.4,
+        "projectedRemaining": 23.21,
+        "projectedTotal": 135.61,
+        "remaining": [
+          {
+            "name": "Rashee Rice",
+            "projected": 14.41,
+            "actual": 9.9
+          },
+          {
+            "name": "Harrison Butker",
+            "projected": 8.8,
+            "actual": 7
+          }
+        ],
+        "finalScore": 129.3,
+        "winProbability": 66.6
+      },
+      "loser": "Nyle",
+      "loserWinProbability": 66.6
+    }
+  ]
+}
