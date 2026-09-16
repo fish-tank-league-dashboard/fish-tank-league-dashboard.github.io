@@ -1,0 +1,73 @@
+name: Capture Dick Brick
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/capture-dick-brick.yml
+      - scripts/capture-dick-brick.mjs
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: verify ESPN access, capture before MNF, finalize a captured week, or auto (both)
+        type: choice
+        options: [verify, auto, capture, finalize, review]
+        default: verify
+  schedule:
+    # Every 5 minutes, 6pm-1:55am Eastern on Monday, so the 30-minute pre-kickoff window is covered in EDT and EST.
+    - cron: '*/5 22-23 * * 1'
+    - cron: '*/5 0-5 * * 2'
+    # Finalize once ESPN has processed Monday's results (Tuesday and Wednesday mornings).
+    - cron: '0 11 * * 2,3'
+
+permissions:
+  contents: write
+  pages: write
+
+concurrency:
+  group: dick-brick-capture
+  cancel-in-progress: false
+
+jobs:
+  capture:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Capture or finalize the weekly record
+        env:
+          ESPN_LEAGUE_ID: '791101930'
+          ESPN_SEASON: '2026'
+          ESPN_S2: ${{ secrets.ESPN_S2 }}
+          ESPN_SWID: ${{ secrets.ESPN_SWID }}
+        run: |
+          mode="${{ inputs.mode }}"
+          if [ "${{ github.event_name }}" = "push" ]; then
+            # A change to the capture code checks ESPN access and refreshes the Week 1 retrospective.
+            node scripts/capture-dick-brick.mjs review 1
+            node scripts/capture-dick-brick.mjs verify
+            exit 0
+          fi
+          if [ "$mode" = "review" ]; then node scripts/capture-dick-brick.mjs review 1; exit 0; fi
+          if [ -z "$mode" ]; then
+            if [ "${{ github.event.schedule }}" = "0 11 * * 2,3" ]; then mode=finalize; else mode=auto; fi
+          fi
+          node scripts/capture-dick-brick.mjs "$mode"
+      - name: Commit captured records
+        if: success() || failure()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if git diff --quiet -- data/dick-bricks.json data/dick-brick-snapshots.json && [ -z "$(git ls-files --others --exclude-standard data/)" ]; then
+            echo "No Dick Brick changes."
+            exit 0
+          fi
+          git config user.name "fish-tank-data-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add data/dick-bricks.json data/dick-brick*.json
+          git commit -m "data: capture Dick Brick record"
+          git pull --rebase
+          git push
+          gh api --method POST "repos/$GITHUB_REPOSITORY/pages/builds"

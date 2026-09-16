@@ -1,0 +1,20 @@
+{
+  "definition": "Awarded each week to the losing team with the highest projection-based win probability immediately before the first Monday Night Football kickoff.",
+  "capturePoint": "The capture workflow records ESPN live projected totals in the 30 minutes before the first Monday Night Football kickoff. Nothing is back-filled or estimated after the fact.",
+  "probabilityMethod": "100 ÷ (1 + e^(-(team projected total − opponent projected total) ÷ 12))",
+  "awards": [
+    {
+      "season": 2026,
+      "week": 1,
+      "status": "manual",
+      "managerId": "owner:gilguy",
+      "manager": "Gilguy",
+      "team": "Dico Rowdle",
+      "opponent": "Serenity Now, Insanity Later",
+      "opponentManager": "Jake",
+      "winProbability": null,
+      "finalScore": "134.54–139.30",
+      "note": "Manual award. The loss is confirmed from ESPN final scores, but no pre-MNF projection was captured for Week 1 and ESPN does not keep historical mid-week projections, so the win probability is not recorded."
+    }
+  ]
+}
