@@ -7,14 +7,14 @@
       "season": 2026,
       "week": 1,
       "status": "manual",
-      "managerId": "owner:gilguy",
-      "manager": "Gilguy",
-      "team": "Dico Rowdle",
-      "opponent": "Serenity Now, Insanity Later",
-      "opponentManager": "Jake",
+      "managerId": "owner:nyle",
+      "manager": "Nyle",
+      "team": "The Blessed Sherpa",
+      "opponent": "Pasta Holy Trinity",
+      "opponentManager": "Blake",
       "winProbability": null,
-      "finalScore": "134.54–139.30",
-      "note": "Manual award. The loss is confirmed from ESPN final scores, but no pre-MNF projection was captured for Week 1 and ESPN does not keep historical mid-week projections, so the win probability is not recorded."
+      "finalScore": "129.30–146.66",
+      "note": "Manual award. No pre-MNF projection was captured live for Week 1. A retrospective rebuild from ESPN data (points scored before MNF plus ESPN stored projections for starters still to play) ranks Nyle as the losing team with the highest win probability (66.6%), ahead of Gilguy (63.5%); see data/dick-brick-review-week1.json."
     }
   ]
 }
