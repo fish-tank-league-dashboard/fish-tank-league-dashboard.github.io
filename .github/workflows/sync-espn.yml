@@ -2,7 +2,22 @@ name: Refresh ESPN league data
 
 on:
   workflow_dispatch:
+  # GitHub cron is always UTC and ignores DST. Days are the UTC day, so
+  # Thursday night ET is Friday UTC (5) and Monday night ET is Tuesday UTC (2).
+  # Evening windows run through hour 4 UTC on purpose: when EDT ends on
+  # 2026-11-01 games shift an hour later in UTC, and the padding covers both.
+  # The extra no-op runs cost nothing because unchanged data skips the commit
+  # and the Pages build. Do not trim these hours.
   schedule:
+    # Sunday main slate through SNF (most games, most score movement)
+    - cron: "0,30 17-23 * * 0"
+    # Sunday late games and SNF finish (spills past midnight UTC)
+    - cron: "0,30 0-4 * * 1"
+    # Thursday Night Football, single game, hourly is enough
+    - cron: "0 0-4 * * 5"
+    # Monday Night Football, single game, hourly is enough
+    - cron: "0 0-4 * * 2"
+    # Post-MNF settle and midweek waivers/transactions (existing cadence)
     - cron: "30 10 * * 2,4"
 
 permissions:

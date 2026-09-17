@@ -259,7 +259,32 @@ if (allowPrivate) {
   // Roster transactions make a current roster invalid for historical regret;
   // fetch each completed period's frozen matchup roster instead.
   let frozenRosterCount = 0;
+  // Finalized periods never change, so reuse any week the previous snapshot
+  // fully captured. The current week is always refetched. A missing or
+  // malformed snapshot (previous === null) falls back to the full sweep, as
+  // does ESPN_FORCE_FULL_BACKFILL=1.
+  const forceFullBackfill = process.env.ESPN_FORCE_FULL_BACKFILL === "1";
+  const carriedWeeks = new Set();
+  const previousCaptured = previous?.dataAvailability?.rosterPeriods?.captured;
+  const previousRosters = previous?.advanced?.rosters;
+  if (!forceFullBackfill && Array.isArray(previousCaptured) && Array.isArray(previousRosters)) {
+    for (const week of previousCaptured.map(Number)) {
+      if (!Number.isInteger(week) || week < 1 || week >= currentWeek) continue;
+      const rows = raw.teams.map((team) => previousRosters.find((row) => Number(row?.teamId) === Number(team.id) && Number(row?.week) === week));
+      if (rows.some((row) => !Array.isArray(row?.players) || !row.players.length)) continue;
+      for (const row of rows) {
+        const key = `${Number(row.teamId)}:${week}`;
+        if (rosterRowKeys.has(key)) continue;
+        rosterRowKeys.add(key);
+        rosterRows.push(row);
+      }
+      carriedWeeks.add(week);
+    }
+  }
+  let periodRequestCount = 0;
   for (let week = 1; week <= Math.min(currentWeek, 18); week++) try {
+    if (carriedWeeks.has(week)) continue;
+    periodRequestCount++;
     const periodHeaders = { ...headers, "X-Fantasy-Filter": JSON.stringify({ schedule: { filterMatchupPeriodIds: { value: [week] } } }) };
     const periodResponse = await fetch(`${endpoint}&scoringPeriodId=${week}`, { headers: periodHeaders, signal: AbortSignal.timeout(30000) });
     if (!periodResponse.ok) continue;
@@ -282,7 +307,7 @@ if (allowPrivate) {
       }
     }
   } catch { /* preserve the rows already captured and mark absent periods unavailable */ }
-  console.log(`ESPN frozen roster capture: ${frozenRosterCount} team-period rows; player scores are league-applied totals only.`);
+  console.log(`ESPN frozen roster capture: ${frozenRosterCount} team-period rows from ${periodRequestCount} period requests; reused weeks [${[...carriedWeeks].join(", ")}] from the previous snapshot${forceFullBackfill ? " (full backfill forced)" : ""}; player scores are league-applied totals only.`);
 }
 const games = raw.schedule
   .filter(
