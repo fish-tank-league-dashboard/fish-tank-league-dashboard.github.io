@@ -80,6 +80,44 @@ function loadReview(season, week) {
     .catch(() => null);
 }
 
+const fixed = value => Number(value).toFixed(2);
+const loadJson = file => fetch(`${base}data/${file}?t=${Date.now()}`, { cache: 'no-store' })
+  .then(response => response.ok ? response.json() : null)
+  .catch(() => null);
+
+const validMatchups = matchups => Array.isArray(matchups) && matchups.length > 0 &&
+  matchups.every(matchup => [matchup?.home, matchup?.away].every(side => side && side.team && side.manager &&
+    Number.isFinite(side.projectedPoints) && Number.isFinite(side.winProbability)));
+
+// This week's projections for a week with no award yet: the pre-kickoff capture once it
+// exists, otherwise the Monday-morning preliminary run. Neither is an award.
+export function currentProjections(snapshots, previews, awards) {
+  const awarded = new Set(awards.map(row => `${row.season}:${row.week}`));
+  const candidates = [
+    ...(snapshots?.snapshots || []).filter(row => validMatchups(row.matchups)).map(row => ({ ...row, kind: 'capture' })),
+    ...(previews?.previews || []).filter(row => row.status === 'preliminary' && validMatchups(row.matchups)).map(row => ({ ...row, kind: 'preliminary' }))
+  ].filter(row => Number.isInteger(row.season) && Number.isInteger(row.week) && !awarded.has(`${row.season}:${row.week}`));
+  candidates.sort((a, b) => b.season - a.season || b.week - a.week || (a.kind === 'capture' ? -1 : 1) - (b.kind === 'capture' ? -1 : 1));
+  return candidates[0] || null;
+}
+
+const easternTime = iso => new Date(iso).toLocaleString('en-US', { timeZone: 'America/New_York', weekday: 'short', hour: 'numeric', minute: '2-digit' }) + ' ET';
+function ProjectionsPanel({ projection }) {
+  const captured = projection.kind === 'capture';
+  return h('article', { className: 'brick-history' },
+    h('h2', { className: 'eyebrow' }, `WEEK ${projection.week} PROJECTIONS · ${captured ? 'PRE-KICKOFF CAPTURE' : 'PRELIMINARY'}`),
+    h('p', null, captured
+      ? `ESPN live projections captured ${easternTime(projection.capturedAt)}, ${projection.minutesBeforeKickoff} minutes before the first Monday Night Football kickoff. These are the probabilities the brick will be decided on once the week is final.`
+      : `ESPN live projections as of ${easternTime(projection.capturedAt)}. Preliminary only: the brick is decided on the capture taken just before the first Monday Night Football kickoff.`),
+    h('div', { className: 'table-card', tabIndex: 0, role: 'region', 'aria-label': `Week ${projection.week} projections` },
+      h('table', null,
+        h('thead', null, h('tr', null, ['Team', 'Points so far', 'Projected total', 'Win %'].map(label => h('th', { scope: 'col', key: label }, label)))),
+        h('tbody', null, projection.matchups.flatMap((matchup, index) => [matchup.home, matchup.away].map(side => h('tr', { key: `${index}-${side.manager}` },
+          h('td', null, h('b', null, side.team), h('small', null, side.manager)),
+          h('td', null, fixed(side.pointsAtCapture ?? 0)), h('td', null, fixed(side.projectedPoints)),
+          h('td', null, `${side.winProbability}%`, !captured && h('span', { className: 'tag' }, 'PRELIMINARY')))))))));
+}
+
 export function summarizeSeason(awards, season) {
   const receipts = awards.filter(row => row.season === season).sort((a, b) => b.week - a.week);
   const managers = new Map();
@@ -109,7 +147,6 @@ export function recipientProbability(review, award) {
   for (const matchup of review.matchups) for (const side of [matchup.home, matchup.away]) if (side.managerId === award.managerId) return side.winProbability;
   return null;
 }
-const fixed = value => Number(value).toFixed(2);
 function ReviewPanel({ review, award }) {
   const agrees = review.brickRecipient === award.manager;
   return h('article', { className: 'brick-history' },
@@ -133,6 +170,7 @@ export default function DickBrickAward() {
   const [error, setError] = React.useState(false);
   const [attempt, setAttempt] = React.useState(0);
   const [reviews, setReviews] = React.useState({});
+  const [projection, setProjection] = React.useState(null);
   const [selectedSeason, setSelectedSeason] = React.useState(2026);
   const [animate, setAnimate] = React.useState(() => !window.matchMedia('(prefers-reduced-motion: reduce)').matches);
   React.useEffect(() => {
@@ -142,6 +180,8 @@ export default function DickBrickAward() {
     loadAwards().then(rows => {
       if (!active) return;
       setAwards(rows);
+      Promise.all([loadJson('dick-brick-snapshots.json'), loadJson('dick-brick-preliminary.json')])
+        .then(([snapshots, previews]) => { if (active) setProjection(currentProjections(snapshots, previews, rows)); });
       rows.filter(row => row.status === 'manual').forEach(row => loadReview(row.season, row.week).then(review => {
         if (active && review) setReviews(current => ({ ...current, [`${row.season}:${row.week}`]: { ...review, recipientProbability: recipientProbability(review, row) } }));
       }));
@@ -192,6 +232,7 @@ export default function DickBrickAward() {
         h('h2', null, 'Hold this.'), h('p', null, 'Monday had other plans. The brick is yours.'),
         recipient),
       h('article', null, h('p', { className: 'eyebrow' }, `${selectedSeason} SEASON BRICK COUNT`), board)),
+    !error && projection && projection.season === selectedSeason && h(ProjectionsPanel, { projection }),
     !error && receipts.length > 0 && h('article', { className: 'brick-history' },
       h('h2', { className: 'eyebrow' }, 'BRICK RECEIPTS'),
       h('div', { className: 'table-card', tabIndex: 0, role: 'region', 'aria-label': 'Weekly brick receipts' },
