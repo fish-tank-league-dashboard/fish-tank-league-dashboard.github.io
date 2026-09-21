@@ -1,6 +1,7 @@
 // Dick Brick of the Week capture.
 //   capture  - on Monday, within 30 minutes of the first MNF kickoff, record ESPN live projected totals.
 //   finalize - once ESPN marks the week final, turn a captured snapshot into a verified award.
+//   preliminary - Monday 10am Eastern: record live projections as a preview; never used for the award.
 //   verify   - confirm ESPN access and that live projections are present.
 //   auto     - capture, then check for a missed capture, then finalize.
 // Nothing here estimates or back-fills a probability. Missing data is an error, not a guess.
@@ -11,6 +12,7 @@ import { fileURLToPath } from 'node:url';
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const ledgerPath = resolve(root, 'data/dick-bricks.json');
 const snapshotsPath = resolve(root, 'data/dick-brick-snapshots.json');
+const preliminaryPath = resolve(root, 'data/dick-brick-preliminary.json');
 const leaguePath = resolve(root, 'data/espn-2026.json');
 const leagueId = process.env.ESPN_LEAGUE_ID || '791101930';
 const season = Number(process.env.ESPN_SEASON || 2026);
@@ -126,6 +128,31 @@ async function capture(now) {
   return `Captured Week ${week} ${minutes.toFixed(1)} minutes before kickoff.`;
 }
 
+// Monday-morning look at the week's live projections. It is stored apart from the
+// capture snapshots, labeled preliminary, and never decides an award. A scheduled
+// run only records during the 10 o'clock hour Eastern, so the EDT and EST cron
+// entries cannot both write.
+async function preliminary(now, scheduled) {
+  if (scheduled && Number(new Intl.DateTimeFormat('en-US', { timeZone: 'America/New_York', hour: 'numeric', hourCycle: 'h23' }).format(now)) !== 10) {
+    return 'Preliminary run skipped: outside the 10am Eastern hour.';
+  }
+  const { week, payload } = await leagueScoreboard();
+  const schedule = weekSchedule(payload, week);
+  if (!schedule.length) throw new Error(`ESPN returned no Week ${week} matchups`);
+  const directory = teamDirectory(await readJson(leaguePath));
+  const matchups = schedule.map(matchup => ({
+    id: matchup.id,
+    home: projectedSide(matchup.home, matchup.away, directory),
+    away: projectedSide(matchup.away, matchup.home, directory)
+  }));
+  const previews = await readJson(preliminaryPath, { previews: [] });
+  previews.previews = previews.previews.filter(row => !(row.season === season && row.week === week));
+  previews.previews.push({ season, week, status: 'preliminary', capturedAt: now.toISOString(), matchups });
+  previews.previews.sort((a, b) => a.season - b.season || a.week - b.week);
+  await writeJson(preliminaryPath, previews);
+  return `Recorded preliminary Week ${week} projections for ${matchups.length} matchups.`;
+}
+
 async function finalize() {
   const snapshots = await readJson(snapshotsPath, { snapshots: [] });
   const open = snapshots.snapshots.filter(row => row.season === season && !row.finalizedAt);
@@ -228,9 +255,10 @@ async function review(week) {
 
 async function main() {
   const mode = process.argv[2] || 'auto';
-  if (!['auto', 'capture', 'finalize', 'verify', 'review'].includes(mode)) throw new Error(`Unknown mode: ${mode}`);
+  if (!['auto', 'capture', 'finalize', 'verify', 'review', 'preliminary'].includes(mode)) throw new Error(`Unknown mode: ${mode}`);
   if (!process.env.ESPN_S2 || !process.env.ESPN_SWID) throw new Error('ESPN_S2 and ESPN_SWID secrets are required; nothing was captured.');
   if (mode === 'verify') return console.log(await verify());
+  if (mode === 'preliminary') return console.log(await preliminary(new Date(), process.argv[3] === '--scheduled'));
   if (mode === 'review') return console.log(await review(Number(process.argv[3] || 1)));
   if (mode === 'auto' || mode === 'capture') console.log(await capture(new Date()));
   if (mode === 'auto' || mode === 'finalize') console.log(await finalize());

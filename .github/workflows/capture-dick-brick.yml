@@ -9,11 +9,15 @@ on:
   workflow_dispatch:
     inputs:
       mode:
-        description: verify ESPN access, capture before MNF, finalize a captured week, or auto (both)
+        description: verify ESPN access, preliminary Monday-morning projections, capture before MNF, finalize a captured week, or auto (both)
         type: choice
-        options: [verify, auto, capture, finalize, review]
+        options: [verify, preliminary, auto, capture, finalize, review]
         default: verify
   schedule:
+    # Preliminary win probabilities at 10am Eastern on Monday. Cron is UTC with no DST:
+    # 14:00 UTC is 10am EDT and 15:00 UTC is 10am EST. The script only records during
+    # the 10am Eastern hour, so exactly one of the two runs writes. Keep both hours.
+    - cron: '0 14,15 * * 1'
     # Every 5 minutes, 6pm-1:55am Eastern on Monday, so the 30-minute pre-kickoff window is covered in EDT and EST.
     - cron: '*/5 22-23 * * 1'
     - cron: '*/5 0-5 * * 2'
@@ -52,6 +56,7 @@ jobs:
           fi
           if [ "$mode" = "review" ]; then node scripts/capture-dick-brick.mjs review 1; exit 0; fi
           if [ -z "$mode" ]; then
+            if [ "${{ github.event.schedule }}" = "0 14,15 * * 1" ]; then node scripts/capture-dick-brick.mjs preliminary --scheduled; exit 0; fi
             if [ "${{ github.event.schedule }}" = "0 11 * * 2,3" ]; then mode=finalize; else mode=auto; fi
           fi
           node scripts/capture-dick-brick.mjs "$mode"
@@ -60,7 +65,7 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          if git diff --quiet -- data/dick-bricks.json data/dick-brick-snapshots.json && [ -z "$(git ls-files --others --exclude-standard data/)" ]; then
+          if git diff --quiet -- data/dick-bricks.json data/dick-brick-snapshots.json data/dick-brick-preliminary.json && [ -z "$(git ls-files --others --exclude-standard data/)" ]; then
             echo "No Dick Brick changes."
             exit 0
           fi
