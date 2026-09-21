@@ -1,0 +1,117 @@
+{
+  "previews": [
+    {
+      "season": 2026,
+      "week": 2,
+      "status": "preliminary",
+      "capturedAt": "2026-09-21T17:53:19.858Z",
+      "matchups": [
+        {
+          "id": 6,
+          "home": {
+            "teamId": 3,
+            "managerId": "owner:rich",
+            "manager": "Rich",
+            "team": "Right Reverend Raisins",
+            "projectedPoints": 155.51516826,
+            "pointsAtCapture": 144.52,
+            "winProbability": 87.4
+          },
+          "away": {
+            "teamId": 9,
+            "managerId": "owner:gilguy",
+            "manager": "Gilguy",
+            "team": "Dico Rowdle",
+            "projectedPoints": 132.28,
+            "pointsAtCapture": 132.28,
+            "winProbability": 12.6
+          }
+        },
+        {
+          "id": 7,
+          "home": {
+            "teamId": 5,
+            "managerId": "owner:mob",
+            "manager": "Mob",
+            "team": "8 Hole Reverend Rate",
+            "projectedPoints": 99.76,
+            "pointsAtCapture": 99.76,
+            "winProbability": 35.8
+          },
+          "away": {
+            "teamId": 8,
+            "managerId": "owner:min",
+            "manager": "Min",
+            "team": "Splitpeesoup",
+            "projectedPoints": 106.74275449,
+            "pointsAtCapture": 67.56,
+            "winProbability": 64.2
+          }
+        },
+        {
+          "id": 8,
+          "home": {
+            "teamId": 7,
+            "managerId": "owner:nyle",
+            "manager": "Nyle",
+            "team": "The Blessed Sherpa",
+            "projectedPoints": 138.98,
+            "pointsAtCapture": 138.98,
+            "winProbability": 38.2
+          },
+          "away": {
+            "teamId": 1,
+            "managerId": "owner:michael",
+            "manager": "Michael",
+            "team": "Unbridled Enthusiasm",
+            "projectedPoints": 144.75921004,
+            "pointsAtCapture": 131.88,
+            "winProbability": 61.8
+          }
+        },
+        {
+          "id": 9,
+          "home": {
+            "teamId": 4,
+            "managerId": "owner:nick",
+            "manager": "Nick",
+            "team": "The Azz Train",
+            "projectedPoints": 103.4,
+            "pointsAtCapture": 103.4,
+            "winProbability": 3.9
+          },
+          "away": {
+            "teamId": 6,
+            "managerId": "owner:chris",
+            "manager": "Chris",
+            "team": "Backup Meat",
+            "projectedPoints": 141.93238996,
+            "pointsAtCapture": 128.98,
+            "winProbability": 96.1
+          }
+        },
+        {
+          "id": 10,
+          "home": {
+            "teamId": 10,
+            "managerId": "owner:blake",
+            "manager": "Blake",
+            "team": "Pasta Holy Trinity",
+            "projectedPoints": 123.38,
+            "pointsAtCapture": 123.38,
+            "winProbability": 29.9
+          },
+          "away": {
+            "teamId": 2,
+            "managerId": "owner:jake",
+            "manager": "Jake",
+            "team": "Serenity Now, Insanity Later",
+            "projectedPoints": 133.59159223,
+            "pointsAtCapture": 118.04,
+            "winProbability": 70.1
+          }
+        }
+      ]
+    }
+  ]
+}
