@@ -111,10 +111,10 @@ function ProjectionsPanel({ projection }) {
       : `ESPN live projections as of ${easternTime(projection.capturedAt)}. Preliminary only: the brick is decided on the capture taken just before the first Monday Night Football kickoff.`),
     h('div', { className: 'table-card', tabIndex: 0, role: 'region', 'aria-label': `Week ${projection.week} projections` },
       h('table', null,
-        h('thead', null, h('tr', null, ['Team', 'Points so far', 'Projected total', 'Win %'].map(label => h('th', { scope: 'col', key: label }, label)))),
+        h('thead', null, h('tr', null, ['Team', 'Points so far', 'Starters left', 'Projected total', 'Win %'].map(label => h('th', { scope: 'col', key: label }, label)))),
         h('tbody', null, projection.matchups.flatMap((matchup, index) => [matchup.home, matchup.away].map(side => h('tr', { key: `${index}-${side.manager}` },
           h('td', null, h('b', null, side.team), h('small', null, side.manager)),
-          h('td', null, fixed(side.pointsAtCapture ?? 0)), h('td', null, fixed(side.projectedPoints)),
+          h('td', null, fixed(side.pointsAtCapture ?? 0)), h('td', null, side.startersLeft ?? '–'), h('td', null, fixed(side.projectedPoints)),
           h('td', null, `${side.winProbability}%`, !captured && h('span', { className: 'tag' }, 'PRELIMINARY')))))))));
 }
 

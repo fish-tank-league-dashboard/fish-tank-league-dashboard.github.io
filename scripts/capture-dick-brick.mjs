@@ -42,10 +42,45 @@ async function fetchJson(url, authenticated = false) {
   catch { throw new Error(`${host} returned a non-JSON response. Refresh the ESPN_S2 and ESPN_SWID repository secrets.`); }
 }
 
-export function projectedWinProbability(teamProjection, opponentProjection) {
-  // A 12-point live projection edge corresponds to roughly a 73% win chance.
+// With a full week to play, a 12-point live projection edge is roughly a 73% win chance.
+// The spread shrinks with the starters still to play on both sides:
+// 12 × √(starters left ÷ starters in both lineups). With nobody left the result is decided.
+export function projectedWinProbability(teamProjection, opponentProjection, remaining = null) {
   const difference = Number(teamProjection) - Number(opponentProjection);
-  return Math.round((100 / (1 + Math.exp(-difference / 12))) * 10) / 10;
+  let scale = 12;
+  if (remaining) {
+    if (remaining.left <= 0) return difference > 0 ? 100 : difference < 0 ? 0 : 50;
+    scale = 12 * Math.sqrt(remaining.left / remaining.starters);
+  }
+  const probability = Math.round((100 / (1 + Math.exp(-difference / scale))) * 10) / 10;
+  // An undecided game never rounds to a certainty.
+  return remaining ? Math.min(99.9, Math.max(0.1, probability)) : probability;
+}
+
+// Starters whose NFL game has not finished, per fantasy team, from ESPN rosters and the NFL scoreboard.
+// Missing roster or schedule data is an error: without it the spread cannot be sized.
+export function startersLeft(schedule, unfinishedProTeams) {
+  const counts = new Map();
+  for (const matchup of schedule) for (const side of [matchup.home, matchup.away]) {
+    const entries = side.rosterForCurrentScoringPeriod?.entries;
+    if (!Array.isArray(entries) || !entries.length) throw new Error(`ESPN returned no roster for team ${side.teamId}; refusing to record a probability.`);
+    const starters = entries.filter(entry => ![20, 21].includes(entry.lineupSlotId));
+    const left = starters.filter(entry => unfinishedProTeams.has(String(entry.playerPoolEntry?.player?.proTeamId))).length;
+    counts.set(Number(side.teamId), { starters: starters.length, left });
+  }
+  return counts;
+}
+
+async function remainingContext(week) {
+  const query = new URLSearchParams({ scoringPeriodId: String(week), matchupPeriodId: String(week) });
+  for (const view of ['mMatchupScore', 'mBoxscore']) query.append('view', view);
+  const payload = await fetchJson(`https://lm-api-reads.fantasy.espn.com/apis/v3/games/ffl/seasons/${season}/segments/0/leagues/${leagueId}?${query}`, true);
+  const nfl = await fetchJson(`https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=${season}&seasontype=2&week=${week}&limit=1000`);
+  if (!(nfl.events || []).length) throw new Error(`NFL scoreboard returned no Week ${week} games`);
+  const unfinished = new Set((nfl.events || [])
+    .filter(event => !(event.status?.type?.completed ?? event.competitions?.[0]?.status?.type?.completed))
+    .flatMap(event => (event.competitions?.[0]?.competitors || []).map(c => String(c.team?.id))));
+  return startersLeft(weekSchedule(payload, week), unfinished);
 }
 
 // Names come from the site's own ESPN feed so the award matches the rest of the hub.
@@ -58,7 +93,7 @@ export function teamDirectory(league) {
   return directory;
 }
 
-export function projectedSide(side, opponent, directory) {
+export function projectedSide(side, opponent, directory, left = null) {
   const details = directory.get(Number(side.teamId));
   if (!details || !details.manager || !details.team) throw new Error(`ESPN team ${side.teamId} is not in data/espn-2026.json; run the ESPN sync first.`);
   const projectedPoints = side.totalProjectedPointsLive;
@@ -66,7 +101,15 @@ export function projectedSide(side, opponent, directory) {
   if (!Number.isFinite(projectedPoints) || !Number.isFinite(opponentProjected)) {
     throw new Error(`ESPN did not return live projected totals for team ${side.teamId}; refusing to record a probability.`);
   }
-  return { teamId: Number(side.teamId), ...details, projectedPoints, pointsAtCapture: Number(side.totalPointsLive ?? side.totalPoints ?? 0), winProbability: projectedWinProbability(projectedPoints, opponentProjected) };
+  let remaining = null;
+  if (left) {
+    const mine = left.get(Number(side.teamId)), theirs = left.get(Number(opponent.teamId));
+    if (!mine || !theirs) throw new Error(`No starters-left count for team ${side.teamId} or ${opponent.teamId}; refusing to record a probability.`);
+    remaining = { left: mine.left + theirs.left, starters: mine.starters + theirs.starters };
+  }
+  return { teamId: Number(side.teamId), ...details, projectedPoints, pointsAtCapture: Number(side.totalPointsLive ?? side.totalPoints ?? 0),
+    ...(left ? { startersLeft: left.get(Number(side.teamId)).left } : {}),
+    winProbability: projectedWinProbability(projectedPoints, opponentProjected, remaining) };
 }
 
 export function awardCandidate(snapshot, finalSchedule) {
@@ -117,10 +160,11 @@ async function capture(now) {
   const directory = teamDirectory(await readJson(leaguePath));
   const schedule = weekSchedule(payload, week);
   if (!schedule.length) throw new Error(`ESPN returned no Week ${week} matchups`);
+  const left = await remainingContext(week);
   const matchups = schedule.map(matchup => ({
     id: matchup.id,
-    home: projectedSide(matchup.home, matchup.away, directory),
-    away: projectedSide(matchup.away, matchup.home, directory)
+    home: projectedSide(matchup.home, matchup.away, directory, left),
+    away: projectedSide(matchup.away, matchup.home, directory, left)
   }));
   snapshots.snapshots.push({ season, week, capturedAt: now.toISOString(), firstMnfKickoff: kickoff.toISOString(), minutesBeforeKickoff: Math.round(minutes * 10) / 10, matchups });
   snapshots.snapshots.sort((a, b) => a.season - b.season || a.week - b.week);
@@ -140,10 +184,11 @@ async function preliminary(now, scheduled) {
   const schedule = weekSchedule(payload, week);
   if (!schedule.length) throw new Error(`ESPN returned no Week ${week} matchups`);
   const directory = teamDirectory(await readJson(leaguePath));
+  const left = await remainingContext(week);
   const matchups = schedule.map(matchup => ({
     id: matchup.id,
-    home: projectedSide(matchup.home, matchup.away, directory),
-    away: projectedSide(matchup.away, matchup.home, directory)
+    home: projectedSide(matchup.home, matchup.away, directory, left),
+    away: projectedSide(matchup.away, matchup.home, directory, left)
   }));
   const previews = await readJson(preliminaryPath, { previews: [] });
   previews.previews = previews.previews.filter(row => !(row.season === season && row.week === week));
@@ -185,7 +230,8 @@ async function verify() {
   const schedule = weekSchedule(payload, week);
   if (!schedule.length) throw new Error(`ESPN returned no Week ${week} matchups`);
   const directory = teamDirectory(await readJson(leaguePath));
-  schedule.forEach(matchup => { projectedSide(matchup.home, matchup.away, directory); projectedSide(matchup.away, matchup.home, directory); });
+  const left = await remainingContext(week);
+  schedule.forEach(matchup => { projectedSide(matchup.home, matchup.away, directory, left); projectedSide(matchup.away, matchup.home, directory, left); });
   return `Verified ESPN access for Week ${week}: ${schedule.length} matchups with live projections and resolved team names.`;
 }
 

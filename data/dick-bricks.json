@@ -1,7 +1,7 @@
 {
   "definition": "Awarded each week to the losing team with the highest projection-based win probability immediately before the first Monday Night Football kickoff.",
   "capturePoint": "The capture workflow records ESPN live projected totals in the 30 minutes before the first Monday Night Football kickoff. Nothing is back-filled or estimated after the fact.",
-  "probabilityMethod": "100 ÷ (1 + e^(-(team projected total − opponent projected total) ÷ 12))",
+  "probabilityMethod": "From Week 2: 100 ÷ (1 + e^(-(team projected total − opponent projected total) ÷ s)), where s = 12 × √(starters still to play in the matchup ÷ starters in both lineups). With no starters left the result is decided (0% or 100%); otherwise it is capped at 0.1–99.9%. Week 1 used a fixed s = 12.",
   "awards": [
     {
       "season": 2026,
