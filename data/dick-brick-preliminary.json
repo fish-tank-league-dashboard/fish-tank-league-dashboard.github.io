@@ -4,7 +4,7 @@
       "season": 2026,
       "week": 2,
       "status": "preliminary",
-      "capturedAt": "2026-09-21T17:53:19.858Z",
+      "capturedAt": "2026-09-21T18:04:34.195Z",
       "matchups": [
         {
           "id": 6,
@@ -15,7 +15,8 @@
             "team": "Right Reverend Raisins",
             "projectedPoints": 155.51516826,
             "pointsAtCapture": 144.52,
-            "winProbability": 87.4
+            "startersLeft": 1,
+            "winProbability": 99.9
           },
           "away": {
             "teamId": 9,
@@ -24,7 +25,8 @@
             "team": "Dico Rowdle",
             "projectedPoints": 132.28,
             "pointsAtCapture": 132.28,
-            "winProbability": 12.6
+            "startersLeft": 0,
+            "winProbability": 0.1
           }
         },
         {
@@ -36,7 +38,8 @@
             "team": "8 Hole Reverend Rate",
             "projectedPoints": 99.76,
             "pointsAtCapture": 99.76,
-            "winProbability": 35.8
+            "startersLeft": 0,
+            "winProbability": 19.4
           },
           "away": {
             "teamId": 8,
@@ -45,7 +48,8 @@
             "team": "Splitpeesoup",
             "projectedPoints": 106.74275449,
             "pointsAtCapture": 67.56,
-            "winProbability": 64.2
+            "startersLeft": 3,
+            "winProbability": 80.6
           }
         },
         {
@@ -57,7 +61,8 @@
             "team": "The Blessed Sherpa",
             "projectedPoints": 138.98,
             "pointsAtCapture": 138.98,
-            "winProbability": 38.2
+            "startersLeft": 0,
+            "winProbability": 11.5
           },
           "away": {
             "teamId": 1,
@@ -66,7 +71,8 @@
             "team": "Unbridled Enthusiasm",
             "projectedPoints": 144.75921004,
             "pointsAtCapture": 131.88,
-            "winProbability": 61.8
+            "startersLeft": 1,
+            "winProbability": 88.5
           }
         },
         {
@@ -78,7 +84,8 @@
             "team": "The Azz Train",
             "projectedPoints": 103.4,
             "pointsAtCapture": 103.4,
-            "winProbability": 3.9
+            "startersLeft": 1,
+            "winProbability": 0.1
           },
           "away": {
             "teamId": 6,
@@ -87,7 +94,8 @@
             "team": "Backup Meat",
             "projectedPoints": 141.93238996,
             "pointsAtCapture": 128.98,
-            "winProbability": 96.1
+            "startersLeft": 1,
+            "winProbability": 99.9
           }
         },
         {
@@ -99,7 +107,8 @@
             "team": "Pasta Holy Trinity",
             "projectedPoints": 123.38,
             "pointsAtCapture": 123.38,
-            "winProbability": 29.9
+            "startersLeft": 0,
+            "winProbability": 2.6
           },
           "away": {
             "teamId": 2,
@@ -108,7 +117,8 @@
             "team": "Serenity Now, Insanity Later",
             "projectedPoints": 133.59159223,
             "pointsAtCapture": 118.04,
-            "winProbability": 70.1
+            "startersLeft": 1,
+            "winProbability": 97.4
           }
         }
       ]
