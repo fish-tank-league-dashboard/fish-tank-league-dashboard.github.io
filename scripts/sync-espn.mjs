@@ -309,6 +309,15 @@ if (allowPrivate) {
   } catch { /* preserve the rows already captured and mark absent periods unavailable */ }
   console.log(`ESPN frozen roster capture: ${frozenRosterCount} team-period rows from ${periodRequestCount} period requests; reused weeks [${[...carriedWeeks].join(", ")}] from the previous snapshot${forceFullBackfill ? " (full backfill forced)" : ""}; player scores are league-applied totals only.`);
 }
+// ESPN only settles `totalPoints` once a matchup period finalizes (after MNF).
+// Before that it stays 0; the live, still-accruing total is `totalPointsLive`
+// (same mMatchupScore payload capture-dick-brick.mjs already relies on).
+const matchupPoints = (side, isFinal) => {
+  const live = Number(side?.totalPointsLive);
+  const official = Number(side?.totalPoints);
+  if (!isFinal && Number.isFinite(live)) return live;
+  return Number.isFinite(official) ? official : 0;
+};
 const games = raw.schedule
   .filter(
     (matchup) =>
@@ -322,18 +331,20 @@ const games = raw.schedule
     const away = teamById.get(Number(matchup.away.teamId));
     if (!home || !away) return null;
     const week = Number(matchup.matchupPeriodId);
+    const status = normalizeMatchupStatus(matchup, currentWeek);
+    const isFinal = status === "FINAL";
     return {
       season,
       week,
       a: home.ownerId,
       al: home.manager,
       at: home.team,
-      as: round(matchup.home.totalPoints),
+      as: round(matchupPoints(matchup.home, isFinal)),
       b: away.ownerId,
       bl: away.manager,
       bt: away.team,
-      bs: round(matchup.away.totalPoints),
-      status: normalizeMatchupStatus(matchup, currentWeek),
+      bs: round(matchupPoints(matchup.away, isFinal)),
+      status,
       aTeamId: home.teamId,
       bTeamId: away.teamId,
     };
