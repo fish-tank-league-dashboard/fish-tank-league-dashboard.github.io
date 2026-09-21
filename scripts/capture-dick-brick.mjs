@@ -172,6 +172,25 @@ async function capture(now) {
   return `Captured Week ${week} ${minutes.toFixed(1)} minutes before kickoff.`;
 }
 
+// GitHub drops or delays many scheduled runs, so a run started hours early waits inside the
+// job for the capture window instead of relying on a cron firing inside it. It aims for
+// 20 minutes before kickoff and retries every 2 minutes until kickoff if ESPN errors.
+const sleep = minutes => new Promise(done => setTimeout(done, minutes * 60000));
+async function waitAndCapture() {
+  const kickoff = await firstMondayKickoff(new Date());
+  if (!kickoff) return 'No Monday Night Football kickoff today.';
+  const wait = (kickoff - Date.now()) / 60000 - 20;
+  if (wait > 0) { console.log(`Waiting ${wait.toFixed(1)} minutes for the capture window (kickoff ${kickoff.toISOString()}).`); await sleep(wait); }
+  for (;;) {
+    try { return await capture(new Date()); }
+    catch (error) {
+      if (kickoff - Date.now() < 3 * 60000) throw error;
+      console.log(`Capture attempt failed, retrying in 2 minutes: ${error.message}`);
+      await sleep(2);
+    }
+  }
+}
+
 // Monday-morning look at the week's live projections. It is stored apart from the
 // capture snapshots, labeled preliminary, and never decides an award. A scheduled
 // run only records during the 10 o'clock hour Eastern, so the EDT and EST cron
@@ -301,9 +320,10 @@ async function review(week) {
 
 async function main() {
   const mode = process.argv[2] || 'auto';
-  if (!['auto', 'capture', 'finalize', 'verify', 'review', 'preliminary'].includes(mode)) throw new Error(`Unknown mode: ${mode}`);
+  if (!['auto', 'capture', 'finalize', 'verify', 'review', 'preliminary', 'wait'].includes(mode)) throw new Error(`Unknown mode: ${mode}`);
   if (!process.env.ESPN_S2 || !process.env.ESPN_SWID) throw new Error('ESPN_S2 and ESPN_SWID secrets are required; nothing was captured.');
   if (mode === 'verify') return console.log(await verify());
+  if (mode === 'wait') return console.log(await waitAndCapture());
   if (mode === 'preliminary') return console.log(await preliminary(new Date(), process.argv[3] === '--scheduled'));
   if (mode === 'review') return console.log(await review(Number(process.argv[3] || 1)));
   if (mode === 'auto' || mode === 'capture') console.log(await capture(new Date()));

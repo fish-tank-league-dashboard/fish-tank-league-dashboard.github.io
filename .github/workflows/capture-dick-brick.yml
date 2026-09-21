@@ -11,14 +11,18 @@ on:
       mode:
         description: verify ESPN access, preliminary Monday-morning projections, capture before MNF, finalize a captured week, or auto (both)
         type: choice
-        options: [verify, preliminary, auto, capture, finalize, review]
+        options: [verify, preliminary, wait, auto, capture, finalize, review]
         default: verify
   schedule:
+    # Primary pre-MNF capture. GitHub drops or delays many scheduled runs, so these start
+    # hours early (4-6pm EDT / 3-5pm EST) and the job sleeps until ~20 minutes before
+    # kickoff. Any one of the three firing is enough; later ones see the capture and exit.
+    - cron: '0 20,21,22 * * 1'
     # Preliminary win probabilities at 10am Eastern on Monday. Cron is UTC with no DST:
     # 14:00 UTC is 10am EDT and 15:00 UTC is 10am EST. The script only records during
     # the 10am Eastern hour, so exactly one of the two runs writes. Keep both hours.
     - cron: '0 14,15 * * 1'
-    # Every 5 minutes, 6pm-1:55am Eastern on Monday, so the 30-minute pre-kickoff window is covered in EDT and EST.
+    # Backup: every 5 minutes, 6pm-1:55am Eastern on Monday, so the 30-minute pre-kickoff window is covered in EDT and EST.
     - cron: '*/5 22-23 * * 1'
     - cron: '*/5 0-5 * * 2'
     # Finalize once ESPN has processed Monday's results (Tuesday and Wednesday mornings).
@@ -35,6 +39,8 @@ concurrency:
 jobs:
   capture:
     runs-on: ubuntu-latest
+    # A wait run can sleep for hours; GitHub's hard limit is 360 minutes.
+    timeout-minutes: 355
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -57,7 +63,10 @@ jobs:
           if [ "$mode" = "review" ]; then node scripts/capture-dick-brick.mjs review 1; exit 0; fi
           if [ -z "$mode" ]; then
             if [ "${{ github.event.schedule }}" = "0 14,15 * * 1" ]; then node scripts/capture-dick-brick.mjs preliminary --scheduled; exit 0; fi
-            if [ "${{ github.event.schedule }}" = "0 11 * * 2,3" ]; then mode=finalize; else mode=auto; fi
+            if [ "${{ github.event.schedule }}" = "0 20,21,22 * * 1" ]; then mode=wait; fi
+            if [ -z "$mode" ]; then
+              if [ "${{ github.event.schedule }}" = "0 11 * * 2,3" ]; then mode=finalize; else mode=auto; fi
+            fi
           fi
           node scripts/capture-dick-brick.mjs "$mode"
       - name: Commit captured records
