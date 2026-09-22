@@ -2282,7 +2282,7 @@
     "available": true,
     "coverage": {
       "status": "partial",
-      "note": "Recent ESPN transactions captured for the current and previous scoring periods; older verified records are retained. unsupported mTransactions2 response for scoring period 3."
+      "note": "Recent ESPN transactions captured for the current and previous scoring periods; older verified records are retained."
     },
     "items": [
       {
@@ -15151,5 +15151,5 @@
       }
     ]
   },
-  "updatedAt": "2026-09-22T08:07:17.915Z"
+  "updatedAt": "2026-09-22T15:06:33.216Z"
 }
