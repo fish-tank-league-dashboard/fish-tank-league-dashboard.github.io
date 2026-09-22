@@ -20,7 +20,22 @@ assert.equal(week1.team, game[`${mine}t`].trim());
 assert.equal(week1.opponent, game[`${theirs}t`].trim());
 assert.ok(game[`${mine}s`] < game[`${theirs}s`], 'Week 1 recipient must have lost');
 assert.equal(week1.finalScore, `${game[`${mine}s`].toFixed(2)}–${game[`${theirs}s`].toFixed(2)}`);
-assert.equal((await json('../data/dick-brick-snapshots.json')).snapshots.length, 0);
+// Every capture landed inside the pre-kickoff window, with a probability for every side,
+// and every verified award traces back to its capture.
+const { snapshots } = await json('../data/dick-brick-snapshots.json');
+assert.ok(!snapshots.some(row => row.week === 1), 'Week 1 was never captured');
+for (const snap of snapshots) {
+  assert.ok(new Date(snap.capturedAt) < new Date(snap.firstMnfKickoff), `Week ${snap.week} captured after kickoff`);
+  assert.ok(snap.minutesBeforeKickoff > 0 && snap.minutesBeforeKickoff <= 30, `Week ${snap.week} outside the capture window`);
+  assert.ok(snap.matchups.length > 0);
+  for (const m of snap.matchups) for (const x of [m.home, m.away]) assert.ok(Number.isFinite(x.winProbability) && Number.isFinite(x.projectedPoints), `Week ${snap.week} ${x.manager} lacks a probability`);
+}
+for (const award of ledger.awards.filter(row => row.status === 'verified')) {
+  const snap = snapshots.find(row => row.season === award.season && row.week === award.week);
+  assert.ok(snap && snap.capturedAt === award.capturedAt, `Week ${award.week} award has no matching capture`);
+  const sideOf = snap.matchups.flatMap(m => [m.home, m.away]).find(x => x.managerId === award.managerId);
+  assert.equal(sideOf.winProbability, award.winProbability);
+}
 
 // Validation rejects invented or missing probabilities.
 const row = (week, manager, extra = {}) => ({ season: 2026, week, status: 'verified', manager, team: `${manager} team`, opponent: 'Opp', winProbability: 80, capturedAt: '2026-09-22T00:00:00Z', finalScore: '1–2', ...extra });
