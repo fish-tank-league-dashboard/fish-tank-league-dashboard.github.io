@@ -5,6 +5,20 @@
   "awards": [
     {
       "season": 2026,
+      "week": 2,
+      "status": "verified",
+      "managerId": "owner:min",
+      "manager": "Min",
+      "team": "Splitpeesoup",
+      "opponent": "8 Hole Reverend Rate",
+      "opponentManager": "Mob",
+      "winProbability": 80.6,
+      "projectedPoints": 106.74275449,
+      "finalScore": "88.36–99.76",
+      "capturedAt": "2026-09-21T23:55:00.073Z"
+    },
+    {
+      "season": 2026,
       "week": 1,
       "status": "manual",
       "managerId": "owner:nyle",
