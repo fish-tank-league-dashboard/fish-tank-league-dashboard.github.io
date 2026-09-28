@@ -2208,11 +2208,11 @@
       "a": "owner:mob",
       "al": "Mob",
       "at": "8 Hole Reverend Rate",
-      "as": 151.74,
+      "as": 165.6,
       "b": "owner:nyle",
       "bl": "Nyle",
       "bt": "The Blessed Sherpa ",
-      "bs": 104.74,
+      "bs": 146.68,
       "status": "LIVE",
       "aTeamId": 5,
       "bTeamId": 7
@@ -2223,11 +2223,11 @@
       "a": "owner:gilguy",
       "al": "Gilguy",
       "at": "Dico Rowdle",
-      "as": 149.3,
+      "as": 157.7,
       "b": "owner:blake",
       "bl": "Blake",
       "bt": "Pasta Holy Trinity ",
-      "bs": 142.08,
+      "bs": 148.58,
       "status": "LIVE",
       "aTeamId": 9,
       "bTeamId": 10
@@ -2238,11 +2238,11 @@
       "a": "owner:rich",
       "al": "Rich",
       "at": "Right Reverend Raisins ",
-      "as": 118.06,
+      "as": 126.96,
       "b": "owner:nick",
       "bl": "Nick",
       "bt": "The Azz Train",
-      "bs": 60.58,
+      "bs": 73.34,
       "status": "LIVE",
       "aTeamId": 3,
       "bTeamId": 4
@@ -2253,11 +2253,11 @@
       "a": "owner:min",
       "al": "Min",
       "at": "Splitpeesoup",
-      "as": 55.4,
+      "as": 65,
       "b": "owner:chris",
       "bl": "Chris",
       "bt": "Backup Meat",
-      "bs": 94.24,
+      "bs": 114.24,
       "status": "LIVE",
       "aTeamId": 8,
       "bTeamId": 6
@@ -2268,11 +2268,11 @@
       "a": "owner:michael",
       "al": "Michael",
       "at": "Unbridled Enthusiasm",
-      "as": 125.38,
+      "as": 147.68,
       "b": "owner:jake",
       "bl": "Jake",
       "bt": "Serenity Now, Insanity Later",
-      "bs": 84.18,
+      "bs": 102.84,
       "status": "LIVE",
       "aTeamId": 1,
       "bTeamId": 2
@@ -15551,5 +15551,5 @@
       }
     ]
   },
-  "updatedAt": "2026-09-27T22:40:27.948Z"
+  "updatedAt": "2026-09-28T01:17:27.227Z"
 }
