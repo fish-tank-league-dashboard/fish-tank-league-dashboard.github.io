@@ -2242,7 +2242,7 @@
       "b": "owner:nick",
       "bl": "Nick",
       "bt": "The Azz Train",
-      "bs": 73.34,
+      "bs": 79.74,
       "status": "LIVE",
       "aTeamId": 3,
       "bTeamId": 4
@@ -2253,11 +2253,11 @@
       "a": "owner:min",
       "al": "Min",
       "at": "Splitpeesoup",
-      "as": 65,
+      "as": 77.2,
       "b": "owner:chris",
       "bl": "Chris",
       "bt": "Backup Meat",
-      "bs": 114.24,
+      "bs": 105.24,
       "status": "LIVE",
       "aTeamId": 8,
       "bTeamId": 6
@@ -2272,7 +2272,7 @@
       "b": "owner:jake",
       "bl": "Jake",
       "bt": "Serenity Now, Insanity Later",
-      "bs": 102.84,
+      "bs": 120.34,
       "status": "LIVE",
       "aTeamId": 1,
       "bTeamId": 2
@@ -15551,5 +15551,5 @@
       }
     ]
   },
-  "updatedAt": "2026-09-28T01:17:27.227Z"
+  "updatedAt": "2026-09-28T04:09:14.976Z"
 }
