@@ -2208,11 +2208,11 @@
       "a": "owner:mob",
       "al": "Mob",
       "at": "8 Hole Reverend Rate",
-      "as": 165.6,
+      "as": 176.4,
       "b": "owner:nyle",
       "bl": "Nyle",
       "bt": "The Blessed Sherpa ",
-      "bs": 146.68,
+      "bs": 152.68,
       "status": "LIVE",
       "aTeamId": 5,
       "bTeamId": 7
@@ -2227,7 +2227,7 @@
       "b": "owner:blake",
       "bl": "Blake",
       "bt": "Pasta Holy Trinity ",
-      "bs": 148.58,
+      "bs": 161.08,
       "status": "LIVE",
       "aTeamId": 9,
       "bTeamId": 10
@@ -2242,7 +2242,7 @@
       "b": "owner:nick",
       "bl": "Nick",
       "bt": "The Azz Train",
-      "bs": 79.74,
+      "bs": 84.94,
       "status": "LIVE",
       "aTeamId": 3,
       "bTeamId": 4
@@ -2253,7 +2253,7 @@
       "a": "owner:min",
       "al": "Min",
       "at": "Splitpeesoup",
-      "as": 77.2,
+      "as": 98.82,
       "b": "owner:chris",
       "bl": "Chris",
       "bt": "Backup Meat",
@@ -15551,5 +15551,5 @@
       }
     ]
   },
-  "updatedAt": "2026-09-28T04:09:14.976Z"
+  "updatedAt": "2026-09-29T03:36:12.772Z"
 }
