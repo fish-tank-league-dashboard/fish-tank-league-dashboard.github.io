@@ -172,14 +172,36 @@ async function capture(now) {
   return `Captured Week ${week} ${minutes.toFixed(1)} minutes before kickoff.`;
 }
 
-// GitHub drops or delays many scheduled runs, so a run started hours early waits inside the
-// job for the capture window instead of relying on a cron firing inside it. It aims for
-// 20 minutes before kickoff and retries every 2 minutes until kickoff if ESPN errors.
+// GitHub drops scheduled runs or starts them hours late (Week 3's arrived four hours late,
+// after kickoff), so a run started early waits inside the job for the capture window instead
+// of relying on a cron firing inside it. It aims for 20 minutes before kickoff and retries
+// every 2 minutes until kickoff if ESPN errors. A job can only live about six hours, so a run
+// that starts earlier than that sleeps five hours and then starts its own replacement.
 const sleep = minutes => new Promise(done => setTimeout(done, minutes * 60000));
+const RELAY_AFTER_MINUTES = 300;
+async function relayWait() {
+  const repository = process.env.GITHUB_REPOSITORY, token = process.env.GH_TOKEN;
+  if (!repository || !token) throw new Error('Cannot relay the wait: GITHUB_REPOSITORY and GH_TOKEN are required.');
+  const response = await fetch(`https://api.github.com/repos/${repository}/actions/workflows/capture-dick-brick.yml/dispatches`, {
+    method: 'POST',
+    headers: { Authorization: `Bearer ${token}`, Accept: 'application/vnd.github+json', 'X-GitHub-Api-Version': '2022-11-28' },
+    body: JSON.stringify({ ref: 'main', inputs: { mode: 'wait' } })
+  });
+  if (!response.ok) throw new Error(`Could not start the next wait run: ${response.status} ${await response.text()}`);
+}
 async function waitAndCapture() {
   const kickoff = await firstMondayKickoff(new Date());
   if (!kickoff) return 'No Monday Night Football kickoff today.';
   const wait = (kickoff - Date.now()) / 60000 - 20;
+  if (wait > RELAY_AFTER_MINUTES) {
+    const { week } = await leagueScoreboard();
+    const snapshots = await readJson(snapshotsPath, { snapshots: [] });
+    if (snapshots.snapshots.some(row => row.season === season && row.week === week)) return `Week ${week} already captured.`;
+    console.log(`Capture window is ${wait.toFixed(1)} minutes away (kickoff ${kickoff.toISOString()}); sleeping ${RELAY_AFTER_MINUTES} minutes, then handing off to a new run.`);
+    await sleep(RELAY_AFTER_MINUTES);
+    await relayWait();
+    return 'Handed off to a new wait run.';
+  }
   if (wait > 0) { console.log(`Waiting ${wait.toFixed(1)} minutes for the capture window (kickoff ${kickoff.toISOString()}).`); await sleep(wait); }
   for (;;) {
     try { return await capture(new Date()); }
@@ -192,14 +214,20 @@ async function waitAndCapture() {
 }
 
 // Monday-morning look at the week's live projections. It is stored apart from the
-// capture snapshots, labeled preliminary, and never decides an award. A scheduled
-// run only records during the 10 o'clock hour Eastern, so the EDT and EST cron
-// entries cannot both write.
+// capture snapshots, labeled preliminary, and never decides an award. GitHub can start
+// a scheduled run hours late, so a scheduled run records the first time it gets to run
+// on Monday from 10am Eastern until kickoff, and skips once the week has a preview.
 async function preliminary(now, scheduled) {
-  if (scheduled && Number(new Intl.DateTimeFormat('en-US', { timeZone: 'America/New_York', hour: 'numeric', hourCycle: 'h23' }).format(now)) !== 10) {
-    return 'Preliminary run skipped: outside the 10am Eastern hour.';
+  if (scheduled) {
+    const hour = Number(new Intl.DateTimeFormat('en-US', { timeZone: 'America/New_York', hour: 'numeric', hourCycle: 'h23' }).format(now));
+    if (nyParts(now).weekday !== 'Monday' || hour < 10) return 'Preliminary run skipped: before 10am Eastern on Monday.';
+    const kickoff = await firstMondayKickoff(now);
+    if (kickoff && now >= kickoff) return 'Preliminary run skipped: Monday Night Football has kicked off.';
   }
   const { week, payload } = await leagueScoreboard();
+  if (scheduled && (await readJson(preliminaryPath, { previews: [] })).previews.some(row => row.season === season && row.week === week)) {
+    return `Preliminary run skipped: Week ${week} already has a preview.`;
+  }
   const schedule = weekSchedule(payload, week);
   if (!schedule.length) throw new Error(`ESPN returned no Week ${week} matchups`);
   const directory = teamDirectory(await readJson(leaguePath));
