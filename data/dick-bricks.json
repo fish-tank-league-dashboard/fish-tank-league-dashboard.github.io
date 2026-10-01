@@ -5,6 +5,19 @@
   "awards": [
     {
       "season": 2026,
+      "week": 3,
+      "status": "manual",
+      "managerId": "owner:min",
+      "manager": "Min",
+      "team": "Splitpeesoup",
+      "opponent": "Backup Meat",
+      "opponentManager": "Chris",
+      "winProbability": null,
+      "finalScore": "98.82–105.24",
+      "note": "Manual award. GitHub started the scheduled capture runs about four hours late, after the first MNF kickoff, so no pre-kickoff projection was captured for Week 3. The preliminary run at 5:07pm ET on Monday, about three hours before kickoff with no games played in between, had Min at 95.6% to win, far ahead of the next losing team (Gilguy, 9.0%); see data/dick-brick-preliminary.json."
+    },
+    {
+      "season": 2026,
       "week": 2,
       "status": "verified",
       "managerId": "owner:min",
