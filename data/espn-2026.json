@@ -2298,7 +2298,7 @@
       "a": "owner:jake",
       "al": "Jake",
       "at": "Serenity Now, Insanity Later",
-      "as": 0,
+      "as": 12,
       "b": "owner:nyle",
       "bl": "Nyle",
       "bt": "The Blessed Sherpa ",
@@ -2328,7 +2328,7 @@
       "a": "owner:nick",
       "al": "Nick",
       "at": "The Azz Train",
-      "as": 0,
+      "as": 27.3,
       "b": "owner:blake",
       "bl": "Blake",
       "bt": "Pasta Holy Trinity ",
@@ -2343,7 +2343,7 @@
       "a": "owner:michael",
       "al": "Michael",
       "at": "Unbridled Enthusiasm",
-      "as": 0,
+      "as": 21.6,
       "b": "owner:gilguy",
       "bl": "Gilguy",
       "bt": "Dico Rowdle",
@@ -19432,5 +19432,5 @@
       }
     ]
   },
-  "updatedAt": "2026-10-01T17:05:16.118Z"
+  "updatedAt": "2026-10-02T03:59:24.590Z"
 }
