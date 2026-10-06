@@ -27,8 +27,11 @@ on:
     # 14:00 UTC is 10am EDT and 15:00 UTC is 10am EST. The script records the first time
     # it gets to run after 10am Eastern and skips once the week has a preview.
     - cron: '0 14,15 * * 1'
-    # Finalize once ESPN has processed Monday's results (Tuesday and Wednesday mornings).
-    - cron: '0 11 * * 2,3'
+    # Finalize once ESPN has processed Monday's results: hourly 7am-3pm EDT Tuesday (6am-2pm EST),
+    # because GitHub can start any single run hours late, then once Wednesday morning as a backup.
+    # Finalize is idempotent: a finalized week is skipped.
+    - cron: '0 11-19 * * 2'
+    - cron: '0 11 * * 3'
 
 permissions:
   contents: write
@@ -39,7 +42,7 @@ permissions:
 # A wait run holds the capture group for hours, so quick runs (preliminary, verify,
 # finalize, review, code pushes) use their own group instead of queueing behind it.
 concurrency:
-  group: dick-brick-${{ (github.event_name == 'push' || github.event.schedule == '0 14,15 * * 1' || github.event.schedule == '0 11 * * 2,3' || (github.event_name == 'workflow_dispatch' && inputs.mode != 'wait' && inputs.mode != 'capture' && inputs.mode != 'auto')) && 'quick' || 'capture' }}
+  group: dick-brick-${{ (github.event_name == 'push' || github.event.schedule == '0 14,15 * * 1' || github.event.schedule == '0 11-19 * * 2' || github.event.schedule == '0 11 * * 3' || (github.event_name == 'workflow_dispatch' && inputs.mode != 'wait' && inputs.mode != 'capture' && inputs.mode != 'auto')) && 'quick' || 'capture' }}
   cancel-in-progress: false
 
 jobs:
@@ -70,7 +73,7 @@ jobs:
           if [ "$mode" = "review" ]; then node scripts/capture-dick-brick.mjs review 1; exit 0; fi
           if [ -z "$mode" ]; then
             if [ "${{ github.event.schedule }}" = "0 14,15 * * 1" ]; then node scripts/capture-dick-brick.mjs preliminary --scheduled; exit 0; fi
-            if [ "${{ github.event.schedule }}" = "0 11 * * 2,3" ]; then mode=finalize; else mode=wait; fi
+            case "${{ github.event.schedule }}" in '0 11-19 * * 2'|'0 11 * * 3') mode=finalize ;; *) mode=wait ;; esac
           fi
           node scripts/capture-dick-brick.mjs "$mode"
       - name: Commit captured records
