@@ -2283,11 +2283,11 @@
       "a": "owner:chris",
       "al": "Chris",
       "at": "Backup Meat",
-      "as": 108.5,
+      "as": 131.3,
       "b": "owner:mob",
       "bl": "Mob",
       "bt": "8 Hole Reverend Rate",
-      "bs": 121.08,
+      "bs": 135.68,
       "status": "LIVE",
       "aTeamId": 6,
       "bTeamId": 5
@@ -2302,7 +2302,7 @@
       "b": "owner:nyle",
       "bl": "Nyle",
       "bt": "The Blessed Sherpa ",
-      "bs": 119.62,
+      "bs": 147.32,
       "status": "LIVE",
       "aTeamId": 2,
       "bTeamId": 7
@@ -2332,7 +2332,7 @@
       "b": "owner:blake",
       "bl": "Blake",
       "bt": "Pasta Holy Trinity ",
-      "bs": 122.48,
+      "bs": 134.38,
       "status": "LIVE",
       "aTeamId": 4,
       "bTeamId": 10
@@ -2343,7 +2343,7 @@
       "a": "owner:michael",
       "al": "Michael",
       "at": "Unbridled Enthusiasm",
-      "as": 130.92,
+      "as": 158.22,
       "b": "owner:gilguy",
       "bl": "Gilguy",
       "bt": "Dico Rowdle",
@@ -19432,5 +19432,5 @@
       }
     ]
   },
-  "updatedAt": "2026-10-05T04:31:57.703Z"
+  "updatedAt": "2026-10-06T04:12:04.458Z"
 }
