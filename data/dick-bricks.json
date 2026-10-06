@@ -5,6 +5,20 @@
   "awards": [
     {
       "season": 2026,
+      "week": 4,
+      "status": "verified",
+      "managerId": "owner:jake",
+      "manager": "Jake",
+      "team": "Serenity Now, Insanity Later",
+      "opponent": "The Blessed Sherpa",
+      "opponentManager": "Nyle",
+      "winProbability": 20.9,
+      "projectedPoints": 137.4,
+      "finalScore": "137.40–147.32",
+      "capturedAt": "2026-10-05T23:55:00.101Z"
+    },
+    {
+      "season": 2026,
       "week": 3,
       "status": "manual",
       "managerId": "owner:min",
