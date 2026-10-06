@@ -3,11 +3,14 @@
 //   finalize - once ESPN marks the week final, turn a captured snapshot into a verified award.
 //   preliminary - Monday 10am Eastern: record live projections as a preview; never used for the award.
 //   verify   - confirm ESPN access and that live projections are present.
+//   finalize-wait - retry finalize every 15 minutes until ESPN marks the week final.
+//   finalize-pending - print yes if a captured week still awaits final scores.
 //   auto     - capture, then check for a missed capture, then finalize.
 // Nothing here estimates or back-fills a probability. Missing data is an error, not a guess.
 import { readFile, writeFile, mkdir } from 'node:fs/promises';
 import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { execFileSync } from 'node:child_process';
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const ledgerPath = resolve(root, 'data/dick-bricks.json');
@@ -179,15 +182,15 @@ async function capture(now) {
 // that starts earlier than that sleeps five hours and then starts its own replacement.
 const sleep = minutes => new Promise(done => setTimeout(done, minutes * 60000));
 const RELAY_AFTER_MINUTES = 300;
-async function relayWait() {
+async function relayWait(mode = 'wait') {
   const repository = process.env.GITHUB_REPOSITORY, token = process.env.GH_TOKEN;
   if (!repository || !token) throw new Error('Cannot relay the wait: GITHUB_REPOSITORY and GH_TOKEN are required.');
   const response = await fetch(`https://api.github.com/repos/${repository}/actions/workflows/capture-dick-brick.yml/dispatches`, {
     method: 'POST',
     headers: { Authorization: `Bearer ${token}`, Accept: 'application/vnd.github+json', 'X-GitHub-Api-Version': '2022-11-28' },
-    body: JSON.stringify({ ref: 'main', inputs: { mode: 'wait' } })
+    body: JSON.stringify({ ref: 'main', inputs: { mode } })
   });
-  if (!response.ok) throw new Error(`Could not start the next wait run: ${response.status} ${await response.text()}`);
+  if (!response.ok) throw new Error(`Could not start the next ${mode} run: ${response.status} ${await response.text()}`);
 }
 async function waitAndCapture() {
   const kickoff = await firstMondayKickoff(new Date());
@@ -269,7 +272,43 @@ async function finalize() {
     await writeJson(ledgerPath, ledger);
     await writeJson(snapshotsPath, snapshots);
   }
-  return messages.join(' ');
+  return { changed, message: messages.join(' ') };
+}
+
+// GitHub started none of Week 4's Tuesday finalize crons on time, so finalizing no longer
+// depends on cron. Any run that leaves a captured week unfinalized starts a finalize-wait
+// run, which pulls main and retries every 15 minutes until ESPN posts final scores, handing
+// off to a new run before the six-hour job limit. It gives up 60 hours after the capture.
+const FINALIZE_POLL_MINUTES = 15;
+const FINALIZE_GIVE_UP_HOURS = 60;
+export const awaitingFinal = (snapshots, now = Date.now()) => snapshots.snapshots.filter(row => row.season === season && !row.finalizedAt
+  && now - Date.parse(row.capturedAt) < FINALIZE_GIVE_UP_HOURS * 3600000);
+async function finalizePending() {
+  return awaitingFinal(await readJson(snapshotsPath, { snapshots: [] })).length ? 'yes' : 'no';
+}
+async function finalizeAndWait() {
+  const started = Date.now();
+  for (;;) {
+    // Another run may have finalized the week since this one checked out main.
+    execFileSync('git', ['pull', '--ff-only', '--quiet'], { cwd: root, stdio: 'inherit' });
+    const snapshots = await readJson(snapshotsPath, { snapshots: [] });
+    if (!awaitingFinal(snapshots).length) {
+      const stale = snapshots.snapshots.filter(row => row.season === season && !row.finalizedAt);
+      if (stale.length) throw new Error(`Week ${stale.map(row => row.week).join(', ')} still not final ${FINALIZE_GIVE_UP_HOURS} hours after capture; run finalize manually.`);
+      return 'No captured weeks awaiting final scores.';
+    }
+    try {
+      const { changed, message } = await finalize();
+      if (changed) return message;
+      console.log(message);
+    } catch (error) { console.log(`Finalize attempt failed: ${error.message}`); }
+    if ((Date.now() - started) / 60000 + FINALIZE_POLL_MINUTES > RELAY_AFTER_MINUTES) {
+      await relayWait('finalize-wait');
+      return 'Handed off to a new finalize-wait run.';
+    }
+    console.log(`Retrying in ${FINALIZE_POLL_MINUTES} minutes.`);
+    await sleep(FINALIZE_POLL_MINUTES);
+  }
 }
 
 async function verify() {
@@ -348,14 +387,16 @@ async function review(week) {
 
 async function main() {
   const mode = process.argv[2] || 'auto';
-  if (!['auto', 'capture', 'finalize', 'verify', 'review', 'preliminary', 'wait'].includes(mode)) throw new Error(`Unknown mode: ${mode}`);
+  if (!['auto', 'capture', 'finalize', 'finalize-wait', 'finalize-pending', 'verify', 'review', 'preliminary', 'wait'].includes(mode)) throw new Error(`Unknown mode: ${mode}`);
+  if (mode === 'finalize-pending') return console.log(await finalizePending());
   if (!process.env.ESPN_S2 || !process.env.ESPN_SWID) throw new Error('ESPN_S2 and ESPN_SWID secrets are required; nothing was captured.');
   if (mode === 'verify') return console.log(await verify());
   if (mode === 'wait') return console.log(await waitAndCapture());
   if (mode === 'preliminary') return console.log(await preliminary(new Date(), process.argv[3] === '--scheduled'));
   if (mode === 'review') return console.log(await review(Number(process.argv[3] || 1)));
   if (mode === 'auto' || mode === 'capture') console.log(await capture(new Date()));
-  if (mode === 'auto' || mode === 'finalize') console.log(await finalize());
+  if (mode === 'finalize-wait') return console.log(await finalizeAndWait());
+  if (mode === 'auto' || mode === 'finalize') console.log((await finalize()).message);
 }
 
 if (process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {

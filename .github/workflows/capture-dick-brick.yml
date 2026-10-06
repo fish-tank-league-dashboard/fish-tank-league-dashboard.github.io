@@ -11,7 +11,7 @@ on:
       mode:
         description: verify ESPN access, preliminary Monday-morning projections, capture before MNF, finalize a captured week, or auto (both)
         type: choice
-        options: [verify, preliminary, wait, auto, capture, finalize, review]
+        options: [verify, preliminary, wait, auto, capture, finalize, finalize-wait, review]
         default: verify
   schedule:
     # Pre-MNF capture. GitHub drops scheduled runs or starts them hours late (Week 3's
@@ -29,7 +29,8 @@ on:
     - cron: '0 14,15 * * 1'
     # Finalize once ESPN has processed Monday's results: hourly 7am-3pm EDT Tuesday (6am-2pm EST),
     # because GitHub can start any single run hours late, then once Wednesday morning as a backup.
-    # Finalize is idempotent: a finalized week is skipped.
+    # Finalize is idempotent: a finalized week is skipped. These are now only a backup: any
+    # run that leaves a captured week unfinalized starts a finalize-wait run (see the last step).
     - cron: '0 11-19 * * 2'
     - cron: '0 11 * * 3'
 
@@ -41,8 +42,10 @@ permissions:
 
 # A wait run holds the capture group for hours, so quick runs (preliminary, verify,
 # finalize, review, code pushes) use their own group instead of queueing behind it.
+# A finalize-wait run also holds its group for hours, so it gets a third group; duplicates
+# queue there and exit once they see the week finalized.
 concurrency:
-  group: dick-brick-${{ (github.event_name == 'push' || github.event.schedule == '0 14,15 * * 1' || github.event.schedule == '0 11-19 * * 2' || github.event.schedule == '0 11 * * 3' || (github.event_name == 'workflow_dispatch' && inputs.mode != 'wait' && inputs.mode != 'capture' && inputs.mode != 'auto')) && 'quick' || 'capture' }}
+  group: dick-brick-${{ (github.event_name == 'workflow_dispatch' && inputs.mode == 'finalize-wait') && 'finalize' || ((github.event_name == 'push' || github.event.schedule == '0 14,15 * * 1' || github.event.schedule == '0 11-19 * * 2' || github.event.schedule == '0 11 * * 3' || (github.event_name == 'workflow_dispatch' && inputs.mode != 'wait' && inputs.mode != 'capture' && inputs.mode != 'auto')) && 'quick' || 'capture') }}
   cancel-in-progress: false
 
 jobs:
@@ -92,3 +95,12 @@ jobs:
           git pull --rebase
           git push
           gh api --method POST "repos/$GITHUB_REPOSITORY/pages/builds"
+      - name: Keep finalizing until ESPN posts final scores
+        if: success() && inputs.mode != 'finalize-wait'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if [ "$(node scripts/capture-dick-brick.mjs finalize-pending)" = "yes" ]; then
+            gh workflow run capture-dick-brick.yml --ref main -f mode=finalize-wait
+            echo "Started a finalize-wait run."
+          fi
