@@ -2362,7 +2362,7 @@
       "b": "owner:rich",
       "bl": "Rich",
       "bt": "Right Reverend Raisins ",
-      "bs": 0,
+      "bs": 5,
       "status": "LIVE",
       "aTeamId": 5,
       "bTeamId": 3
@@ -2377,7 +2377,7 @@
       "b": "owner:jake",
       "bl": "Jake",
       "bt": "Serenity Now, Insanity Later",
-      "bs": 0,
+      "bs": 42.64,
       "status": "LIVE",
       "aTeamId": 6,
       "bTeamId": 2
@@ -2392,7 +2392,7 @@
       "b": "owner:michael",
       "bl": "Michael",
       "bt": "Unbridled Enthusiasm",
-      "bs": 0,
+      "bs": 2.9,
       "status": "LIVE",
       "aTeamId": 10,
       "bTeamId": 1
@@ -2403,7 +2403,7 @@
       "a": "owner:nick",
       "al": "Nick",
       "at": "The Azz Train",
-      "as": 0,
+      "as": 14.2,
       "b": "owner:min",
       "bl": "Min",
       "bt": "Splitpeesoup",
@@ -2418,7 +2418,7 @@
       "a": "owner:nyle",
       "al": "Nyle",
       "at": "The Blessed Sherpa ",
-      "as": 0,
+      "as": 5,
       "b": "owner:gilguy",
       "bl": "Gilguy",
       "bt": "Dico Rowdle",
@@ -23252,5 +23252,5 @@
       }
     ]
   },
-  "updatedAt": "2026-10-08T17:28:47.297Z"
+  "updatedAt": "2026-10-09T04:29:57.154Z"
 }
