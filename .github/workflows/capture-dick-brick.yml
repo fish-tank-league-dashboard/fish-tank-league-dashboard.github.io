@@ -9,7 +9,7 @@ on:
   workflow_dispatch:
     inputs:
       mode:
-        description: verify ESPN access, preliminary Monday-morning projections, capture before MNF, finalize a captured week, or auto (both)
+        description: verify ESPN access, preliminary Monday midday projections, capture before MNF, finalize a captured week, or auto (both)
         type: choice
         options: [verify, preliminary, wait, auto, capture, finalize, finalize-wait, review]
         default: verify
@@ -23,10 +23,15 @@ on:
     - cron: '0 10-23 * * 1'
     # Late arrivals and the EST window (kickoff is 01:15 UTC after DST ends).
     - cron: '*/15 0-1 * * 2'
-    # Preliminary win probabilities from 10am Eastern on Monday. Cron is UTC with no DST:
-    # 14:00 UTC is 10am EDT and 15:00 UTC is 10am EST. The script records the first time
-    # it gets to run after 10am Eastern and skips once the week has a preview.
-    - cron: '0 14,15 * * 1'
+    # Preliminary win probabilities at 12:30pm Eastern on Monday, with a 12:45pm fallback,
+    # so the 1:00pm Eastern league readout always has a current-week preview. Cron is UTC
+    # and ignores DST, so each slot is listed for both offsets: 16:30 UTC is 12:30 EDT and
+    # 17:30 UTC is 12:30 EST. The script records only at or after 12:30 Eastern and skips
+    # when the week already has a preview recorded in today's window, so exactly one of
+    # each pair writes, and the 12:45 pair acts only when 12:30 was dropped or wrote
+    # nothing. Do not collapse these into one slot.
+    - cron: '30 16,17 * * 1'
+    - cron: '45 16,17 * * 1'
     # Finalize once ESPN has processed Monday's results: hourly 7am-3pm EDT Tuesday (6am-2pm EST),
     # because GitHub can start any single run hours late, then once Wednesday morning as a backup.
     # Finalize is idempotent: a finalized week is skipped. These are now only a backup: any
@@ -45,7 +50,7 @@ permissions:
 # A finalize-wait run also holds its group for hours, so it gets a third group; duplicates
 # queue there and exit once they see the week finalized.
 concurrency:
-  group: dick-brick-${{ (github.event_name == 'workflow_dispatch' && inputs.mode == 'finalize-wait') && 'finalize' || ((github.event_name == 'push' || github.event.schedule == '0 14,15 * * 1' || github.event.schedule == '0 11-19 * * 2' || github.event.schedule == '0 11 * * 3' || (github.event_name == 'workflow_dispatch' && inputs.mode != 'wait' && inputs.mode != 'capture' && inputs.mode != 'auto')) && 'quick' || 'capture') }}
+  group: dick-brick-${{ (github.event_name == 'workflow_dispatch' && inputs.mode == 'finalize-wait') && 'finalize' || ((github.event_name == 'push' || github.event.schedule == '30 16,17 * * 1' || github.event.schedule == '45 16,17 * * 1' || github.event.schedule == '0 11-19 * * 2' || github.event.schedule == '0 11 * * 3' || (github.event_name == 'workflow_dispatch' && inputs.mode != 'wait' && inputs.mode != 'capture' && inputs.mode != 'auto')) && 'quick' || 'capture') }}
   cancel-in-progress: false
 
 jobs:
@@ -75,7 +80,7 @@ jobs:
           fi
           if [ "$mode" = "review" ]; then node scripts/capture-dick-brick.mjs review 1; exit 0; fi
           if [ -z "$mode" ]; then
-            if [ "${{ github.event.schedule }}" = "0 14,15 * * 1" ]; then node scripts/capture-dick-brick.mjs preliminary --scheduled; exit 0; fi
+            case "${{ github.event.schedule }}" in '30 16,17 * * 1'|'45 16,17 * * 1') node scripts/capture-dick-brick.mjs preliminary --scheduled; exit 0 ;; esac
             case "${{ github.event.schedule }}" in '0 11-19 * * 2'|'0 11 * * 3') mode=finalize ;; *) mode=wait ;; esac
           fi
           node scripts/capture-dick-brick.mjs "$mode"

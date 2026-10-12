@@ -216,20 +216,48 @@ async function waitAndCapture() {
   }
 }
 
+// The preview feeds a 1:00pm Eastern Monday league readout, so it is scheduled for
+// 12:30pm Eastern with a 12:45pm fallback. GitHub cron is UTC and ignores DST, so each
+// slot is listed for both offsets and this window check decides which of the pair
+// actually records: 16:30 UTC is 12:30 EDT but 11:30 EST, 17:30 UTC is 13:30 EDT but
+// 12:30 EST. A slot that arrives late still records, which is better than no preview.
+const PRELIMINARY_ET_MINUTES = 12 * 60 + 30;
+const nyClock = date => {
+  const part = Object.fromEntries(new Intl.DateTimeFormat('en-US', {
+    timeZone: 'America/New_York', weekday: 'long', year: 'numeric', month: '2-digit',
+    day: '2-digit', hour: '2-digit', minute: '2-digit', hourCycle: 'h23'
+  }).formatToParts(date).filter(entry => entry.type !== 'literal').map(entry => [entry.type, entry.value]));
+  return { weekday: part.weekday, day: `${part.year}-${part.month}-${part.day}`, minutes: Number(part.hour) * 60 + Number(part.minute) };
+};
+export const isPreliminaryWindow = now => {
+  const clock = nyClock(now);
+  return clock.weekday === 'Monday' && clock.minutes >= PRELIMINARY_ET_MINUTES;
+};
+// Fresh means recorded inside today's window, not merely some time this week. This is
+// what lets the 12:45 fallback re-record when the 12:30 run was dropped or wrote nothing,
+// while staying a no-op when 12:30 already produced a preview.
+export function preliminaryIsFresh(preview, now) {
+  if (!preview || !preview.capturedAt) return false;
+  const taken = new Date(preview.capturedAt);
+  if (!Number.isFinite(taken.valueOf())) return false;
+  const recorded = nyClock(taken), current = nyClock(now);
+  return recorded.day === current.day && recorded.minutes >= PRELIMINARY_ET_MINUTES;
+}
+
 // Monday-morning look at the week's live projections. It is stored apart from the
 // capture snapshots, labeled preliminary, and never decides an award. GitHub can start
 // a scheduled run hours late, so a scheduled run records the first time it gets to run
 // on Monday from 10am Eastern until kickoff, and skips once the week has a preview.
 async function preliminary(now, scheduled) {
   if (scheduled) {
-    const hour = Number(new Intl.DateTimeFormat('en-US', { timeZone: 'America/New_York', hour: 'numeric', hourCycle: 'h23' }).format(now));
-    if (nyParts(now).weekday !== 'Monday' || hour < 10) return 'Preliminary run skipped: before 10am Eastern on Monday.';
+    if (!isPreliminaryWindow(now)) return 'Preliminary run skipped: before 12:30pm Eastern on Monday.';
     const kickoff = await firstMondayKickoff(now);
     if (kickoff && now >= kickoff) return 'Preliminary run skipped: Monday Night Football has kicked off.';
   }
   const { week, payload } = await leagueScoreboard();
-  if (scheduled && (await readJson(preliminaryPath, { previews: [] })).previews.some(row => row.season === season && row.week === week)) {
-    return `Preliminary run skipped: Week ${week} already has a preview.`;
+  if (scheduled) {
+    const existing = (await readJson(preliminaryPath, { previews: [] })).previews.find(row => row.season === season && row.week === week);
+    if (preliminaryIsFresh(existing, now)) return `Preliminary run skipped: Week ${week} already has a preview from today's window.`;
   }
   const schedule = weekSchedule(payload, week);
   if (!schedule.length) throw new Error(`ESPN returned no Week ${week} matchups`);
