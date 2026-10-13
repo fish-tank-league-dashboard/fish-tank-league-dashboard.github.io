@@ -5,6 +5,20 @@
   "awards": [
     {
       "season": 2026,
+      "week": 5,
+      "status": "verified",
+      "managerId": "owner:min",
+      "manager": "Min",
+      "team": "Splitpeesoup",
+      "opponent": "The Azz Train",
+      "opponentManager": "Nick",
+      "winProbability": 76.4,
+      "projectedPoints": 155.16374828,
+      "finalScore": "156.90–166.44",
+      "capturedAt": "2026-10-12T23:55:00.098Z"
+    },
+    {
+      "season": 2026,
       "week": 4,
       "status": "verified",
       "managerId": "owner:jake",

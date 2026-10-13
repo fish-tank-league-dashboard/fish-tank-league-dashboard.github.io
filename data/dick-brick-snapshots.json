@@ -374,7 +374,9 @@
             "winProbability": 100
           }
         }
-      ]
+      ],
+      "finalizedAt": "2026-10-13T07:10:40.486Z",
+      "awardManager": "Min"
     }
   ]
 }
