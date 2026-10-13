@@ -4,7 +4,7 @@
   "leagueName": "The Fish Tank",
   "available": true,
   "source": "ESPN Fantasy Football",
-  "currentWeek": 5,
+  "currentWeek": 6,
   "isActive": true,
   "draftCompleteDate": 1788808729703,
   "drafts": [
@@ -1965,90 +1965,90 @@
       "team": "8 Hole Reverend Rate",
       "manager": "Mob",
       "ownerId": "owner:mob",
-      "record": "4-0-0",
-      "pf": 573.74,
-      "pa": 476.1
+      "record": "5-0-0",
+      "pf": 747.26,
+      "pa": 642
     },
     {
       "rank": 2,
-      "team": "Unbridled Enthusiasm",
-      "manager": "Michael",
-      "ownerId": "owner:michael",
-      "record": "3-1-0",
-      "pf": 563.34,
-      "pa": 516.5
-    },
-    {
-      "rank": 3,
-      "team": "Backup Meat",
-      "manager": "Chris",
-      "ownerId": "owner:chris",
-      "record": "3-1-0",
-      "pf": 561.28,
-      "pa": 446.6
-    },
-    {
-      "rank": 4,
-      "team": "Pasta Holy Trinity ",
-      "manager": "Blake",
-      "ownerId": "owner:blake",
-      "record": "2-2-0",
-      "pf": 565.5,
-      "pa": 584.92
-    },
-    {
-      "rank": 5,
       "team": "Serenity Now, Insanity Later",
       "manager": "Jake",
       "ownerId": "owner:jake",
-      "record": "2-2-0",
-      "pf": 554.58,
-      "pa": 552.92
+      "record": "3-2-0",
+      "pf": 698.52,
+      "pa": 680.56
+    },
+    {
+      "rank": 3,
+      "team": "Pasta Holy Trinity ",
+      "manager": "Blake",
+      "ownerId": "owner:blake",
+      "record": "3-2-0",
+      "pf": 696.28,
+      "pa": 704.02
+    },
+    {
+      "rank": 4,
+      "team": "Backup Meat",
+      "manager": "Chris",
+      "ownerId": "owner:chris",
+      "record": "3-2-0",
+      "pf": 688.92,
+      "pa": 590.54
+    },
+    {
+      "rank": 5,
+      "team": "Unbridled Enthusiasm",
+      "manager": "Michael",
+      "ownerId": "owner:michael",
+      "record": "3-2-0",
+      "pf": 682.44,
+      "pa": 647.28
     },
     {
       "rank": 6,
       "team": "Right Reverend Raisins ",
       "manager": "Rich",
       "ownerId": "owner:rich",
-      "record": "2-2-0",
-      "pf": 505.7,
-      "pa": 522
+      "record": "2-3-0",
+      "pf": 671.6,
+      "pa": 695.52
     },
     {
       "rank": 7,
       "team": "Splitpeesoup",
       "manager": "Min",
       "ownerId": "owner:min",
-      "record": "2-2-0",
-      "pf": 448.92,
-      "pa": 443.28
+      "record": "2-3-0",
+      "pf": 605.82,
+      "pa": 609.72
     },
     {
       "rank": 8,
-      "team": "The Blessed Sherpa ",
-      "manager": "Nyle",
-      "ownerId": "owner:nyle",
-      "record": "1-3-0",
-      "pf": 568.28,
-      "pa": 601.84
-    },
-    {
-      "rank": 9,
       "team": "The Azz Train",
       "manager": "Nick",
       "ownerId": "owner:nick",
-      "record": "1-3-0",
-      "pf": 437.48,
-      "pa": 572.22
+      "record": "2-3-0",
+      "pf": 603.92,
+      "pa": 729.12
     },
     {
-      "rank": 10,
+      "rank": 9,
       "team": "Dico Rowdle",
       "manager": "Gilguy",
       "ownerId": "owner:gilguy",
-      "record": "0-4-0",
-      "pf": 548.98,
-      "pa": 611.42
+      "record": "1-4-0",
+      "pf": 691.34,
+      "pa": 700.78
+    },
+    {
+      "rank": 10,
+      "team": "The Blessed Sherpa ",
+      "manager": "Nyle",
+      "ownerId": "owner:nyle",
+      "record": "1-4-0",
+      "pf": 657.64,
+      "pa": 744.2
     }
   ],
   "games": [
@@ -2363,7 +2363,7 @@
       "bl": "Rich",
       "bt": "Right Reverend Raisins ",
       "bs": 165.9,
-      "status": "LIVE",
+      "status": "FINAL",
       "aTeamId": 5,
       "bTeamId": 3
     },
@@ -2378,7 +2378,7 @@
       "bl": "Jake",
       "bt": "Serenity Now, Insanity Later",
       "bs": 143.94,
-      "status": "LIVE",
+      "status": "FINAL",
       "aTeamId": 6,
       "bTeamId": 2
     },
@@ -2393,7 +2393,7 @@
       "bl": "Michael",
       "bt": "Unbridled Enthusiasm",
       "bs": 119.1,
-      "status": "LIVE",
+      "status": "FINAL",
       "aTeamId": 10,
       "bTeamId": 1
     },
@@ -2408,7 +2408,7 @@
       "bl": "Min",
       "bt": "Splitpeesoup",
       "bs": 156.9,
-      "status": "LIVE",
+      "status": "FINAL",
       "aTeamId": 4,
       "bTeamId": 8
     },
@@ -2423,9 +2423,84 @@
       "bl": "Gilguy",
       "bt": "Dico Rowdle",
       "bs": 142.36,
-      "status": "LIVE",
+      "status": "FINAL",
       "aTeamId": 7,
       "bTeamId": 9
+    },
+    {
+      "season": 2026,
+      "week": 6,
+      "a": "owner:gilguy",
+      "al": "Gilguy",
+      "at": "Dico Rowdle",
+      "as": 0,
+      "b": "owner:mob",
+      "bl": "Mob",
+      "bt": "8 Hole Reverend Rate",
+      "bs": 0,
+      "status": "LIVE",
+      "aTeamId": 9,
+      "bTeamId": 5
+    },
+    {
+      "season": 2026,
+      "week": 6,
+      "a": "owner:blake",
+      "al": "Blake",
+      "at": "Pasta Holy Trinity ",
+      "as": 0,
+      "b": "owner:chris",
+      "bl": "Chris",
+      "bt": "Backup Meat",
+      "bs": 0,
+      "status": "LIVE",
+      "aTeamId": 10,
+      "bTeamId": 6
+    },
+    {
+      "season": 2026,
+      "week": 6,
+      "a": "owner:jake",
+      "al": "Jake",
+      "at": "Serenity Now, Insanity Later",
+      "as": 0,
+      "b": "owner:min",
+      "bl": "Min",
+      "bt": "Splitpeesoup",
+      "bs": 0,
+      "status": "LIVE",
+      "aTeamId": 2,
+      "bTeamId": 8
+    },
+    {
+      "season": 2026,
+      "week": 6,
+      "a": "owner:nyle",
+      "al": "Nyle",
+      "at": "The Blessed Sherpa ",
+      "as": 0,
+      "b": "owner:nick",
+      "bl": "Nick",
+      "bt": "The Azz Train",
+      "bs": 0,
+      "status": "LIVE",
+      "aTeamId": 7,
+      "bTeamId": 4
+    },
+    {
+      "season": 2026,
+      "week": 6,
+      "a": "owner:michael",
+      "al": "Michael",
+      "at": "Unbridled Enthusiasm",
+      "as": 0,
+      "b": "owner:rich",
+      "bl": "Rich",
+      "bt": "Right Reverend Raisins ",
+      "bs": 0,
+      "status": "LIVE",
+      "aTeamId": 1,
+      "bTeamId": 3
     }
   ],
   "transactions": {
@@ -3758,9 +3833,9 @@
         "manager": "Rich",
         "ownerId": "owner:rich",
         "faab": 6,
-        "totalPoints": 133.54,
+        "totalPoints": 176.54,
         "starterPoints": 0,
-        "scoredPeriods": 3,
+        "scoredPeriods": 4,
         "coverage": "complete"
       },
       {
@@ -3772,9 +3847,9 @@
         "manager": "Michael",
         "ownerId": "owner:michael",
         "faab": 1,
-        "totalPoints": 98,
-        "starterPoints": 63,
-        "scoredPeriods": 3,
+        "totalPoints": 123,
+        "starterPoints": 88,
+        "scoredPeriods": 4,
         "coverage": "complete"
       },
       {
@@ -3786,9 +3861,9 @@
         "manager": "Mob",
         "ownerId": "owner:mob",
         "faab": 3,
-        "totalPoints": 49.74,
+        "totalPoints": 67.52,
         "starterPoints": 0,
-        "scoredPeriods": 1,
+        "scoredPeriods": 2,
         "coverage": "complete"
       },
       {
@@ -3800,9 +3875,9 @@
         "manager": "Rich",
         "ownerId": "owner:rich",
         "faab": 2,
-        "totalPoints": 42.6,
+        "totalPoints": 66.6,
         "starterPoints": 18.3,
-        "scoredPeriods": 2,
+        "scoredPeriods": 3,
         "coverage": "complete"
       },
       {
@@ -3814,9 +3889,51 @@
         "manager": "Gilguy",
         "ownerId": "owner:gilguy",
         "faab": 0,
-        "totalPoints": 41.1,
+        "totalPoints": 66.56,
         "starterPoints": 41.1,
-        "scoredPeriods": 1,
+        "scoredPeriods": 2,
+        "coverage": "complete"
+      },
+      {
+        "id": "pickup:7:4568490",
+        "playerId": 4568490,
+        "player": "RJ Harvey",
+        "teamId": 7,
+        "team": "The Blessed Sherpa ",
+        "manager": "Nyle",
+        "ownerId": "owner:nyle",
+        "faab": 5,
+        "totalPoints": 60.7,
+        "starterPoints": 20,
+        "scoredPeriods": 3,
+        "coverage": "complete"
+      },
+      {
+        "id": "pickup:10:3929645",
+        "playerId": 3929645,
+        "player": "Juwan Johnson",
+        "teamId": 10,
+        "team": "Pasta Holy Trinity ",
+        "manager": "Blake",
+        "ownerId": "owner:blake",
+        "faab": 1,
+        "totalPoints": 52.7,
+        "starterPoints": 52.7,
+        "scoredPeriods": 2,
+        "coverage": "complete"
+      },
+      {
+        "id": "pickup:9:2473037",
+        "playerId": 2473037,
+        "player": "Jason Myers",
+        "teamId": 9,
+        "team": "Dico Rowdle",
+        "manager": "Gilguy",
+        "ownerId": "owner:gilguy",
+        "faab": 0,
+        "totalPoints": 44,
+        "starterPoints": 44,
+        "scoredPeriods": 2,
         "coverage": "complete"
       },
       {
@@ -3834,34 +3951,6 @@
         "coverage": "complete"
       },
       {
-        "id": "pickup:7:4568490",
-        "playerId": 4568490,
-        "player": "RJ Harvey",
-        "teamId": 7,
-        "team": "The Blessed Sherpa ",
-        "manager": "Nyle",
-        "ownerId": "owner:nyle",
-        "faab": 5,
-        "totalPoints": 40.7,
-        "starterPoints": 0,
-        "scoredPeriods": 2,
-        "coverage": "complete"
-      },
-      {
-        "id": "pickup:10:3929645",
-        "playerId": 3929645,
-        "player": "Juwan Johnson",
-        "teamId": 10,
-        "team": "Pasta Holy Trinity ",
-        "manager": "Blake",
-        "ownerId": "owner:blake",
-        "faab": 1,
-        "totalPoints": 35.2,
-        "starterPoints": 35.2,
-        "scoredPeriods": 1,
-        "coverage": "complete"
-      },
-      {
         "id": "pickup:4:4385690",
         "playerId": 4385690,
         "player": "Dalton Kincaid",
@@ -3870,9 +3959,51 @@
         "manager": "Nick",
         "ownerId": "owner:nick",
         "faab": 6,
-        "totalPoints": 31.8,
+        "totalPoints": 37.2,
         "starterPoints": 31.8,
-        "scoredPeriods": 2,
+        "scoredPeriods": 3,
+        "coverage": "complete"
+      },
+      {
+        "id": "pickup:6:4711533",
+        "playerId": 4711533,
+        "player": "Ollie Gordon II",
+        "teamId": 6,
+        "team": "Backup Meat",
+        "manager": "Chris",
+        "ownerId": "owner:chris",
+        "faab": 10,
+        "totalPoints": 32.8,
+        "starterPoints": 32.8,
+        "scoredPeriods": 1,
+        "coverage": "complete"
+      },
+      {
+        "id": "pickup:7:4685247",
+        "playerId": 4685247,
+        "player": "Braelon Allen",
+        "teamId": 7,
+        "team": "The Blessed Sherpa ",
+        "manager": "Nyle",
+        "ownerId": "owner:nyle",
+        "faab": 17,
+        "totalPoints": 27.3,
+        "starterPoints": 0,
+        "scoredPeriods": 1,
+        "coverage": "complete"
+      },
+      {
+        "id": "pickup:1:5082424",
+        "playerId": 5082424,
+        "player": "Dominic Zvada",
+        "teamId": 1,
+        "team": "Unbridled Enthusiasm",
+        "manager": "Michael",
+        "ownerId": "owner:michael",
+        "faab": 0,
+        "totalPoints": 27,
+        "starterPoints": 27,
+        "scoredPeriods": 1,
         "coverage": "complete"
       },
       {
@@ -3914,21 +4045,7 @@
         "faab": 5,
         "totalPoints": 22.2,
         "starterPoints": 0,
-        "scoredPeriods": 2,
-        "coverage": "complete"
-      },
-      {
-        "id": "pickup:9:2473037",
-        "playerId": 2473037,
-        "player": "Jason Myers",
-        "teamId": 9,
-        "team": "Dico Rowdle",
-        "manager": "Gilguy",
-        "ownerId": "owner:gilguy",
-        "faab": 0,
-        "totalPoints": 15,
-        "starterPoints": 15,
-        "scoredPeriods": 1,
+        "scoredPeriods": 3,
         "coverage": "complete"
       },
       {
@@ -3955,6 +4072,34 @@
         "ownerId": "owner:nick",
         "faab": 6,
         "totalPoints": 10,
+        "starterPoints": 0,
+        "scoredPeriods": 1,
+        "coverage": "partial"
+      },
+      {
+        "id": "pickup:8:15818",
+        "playerId": 15818,
+        "player": "Keenan Allen",
+        "teamId": 8,
+        "team": "Splitpeesoup",
+        "manager": "Min",
+        "ownerId": "owner:min",
+        "faab": 15,
+        "totalPoints": 9.5,
+        "starterPoints": 0,
+        "scoredPeriods": 1,
+        "coverage": "complete"
+      },
+      {
+        "id": "pickup:9:4242355",
+        "playerId": 4242355,
+        "player": "Jake Ferguson",
+        "teamId": 9,
+        "team": "Dico Rowdle",
+        "manager": "Gilguy",
+        "ownerId": "owner:gilguy",
+        "faab": 0,
+        "totalPoints": 9,
         "starterPoints": 0,
         "scoredPeriods": 1,
         "coverage": "complete"
@@ -3985,6 +4130,34 @@
         "totalPoints": 8.9,
         "starterPoints": 8.9,
         "scoredPeriods": 1,
+        "coverage": "partial"
+      },
+      {
+        "id": "pickup:4:4682745",
+        "playerId": 4682745,
+        "player": "Jaylen Wright",
+        "teamId": 4,
+        "team": "The Azz Train",
+        "manager": "Nick",
+        "ownerId": "owner:nick",
+        "faab": 26,
+        "totalPoints": 1.8,
+        "starterPoints": 0,
+        "scoredPeriods": 1,
+        "coverage": "complete"
+      },
+      {
+        "id": "pickup:5:5083315",
+        "playerId": 5083315,
+        "player": "Kenyon Sadiq",
+        "teamId": 5,
+        "team": "8 Hole Reverend Rate",
+        "manager": "Mob",
+        "ownerId": "owner:mob",
+        "faab": 4,
+        "totalPoints": 0.3,
+        "starterPoints": 0,
+        "scoredPeriods": 1,
         "coverage": "complete"
       },
       {
@@ -3998,7 +4171,7 @@
         "faab": 3,
         "totalPoints": 0,
         "starterPoints": 0,
-        "scoredPeriods": 1,
+        "scoredPeriods": 2,
         "coverage": "complete"
       },
       {
@@ -4012,7 +4185,7 @@
         "faab": 10,
         "totalPoints": 0,
         "starterPoints": 0,
-        "scoredPeriods": 1,
+        "scoredPeriods": 2,
         "coverage": "complete"
       }
     ],
@@ -4026,13 +4199,15 @@
         1,
         2,
         3,
-        4
+        4,
+        5
       ],
       "captured": [
         1,
         2,
         3,
-        4
+        4,
+        5
       ],
       "missing": []
     },
@@ -4126,88 +4301,109 @@
           "points": 63
         },
         "available": true
+      },
+      {
+        "week": 5,
+        "highestTeamScore": {
+          "teamId": 5,
+          "score": 173.52
+        },
+        "largestMargin": {
+          "teamIds": [
+            7,
+            9
+          ],
+          "margin": 53
+        },
+        "topPlayer": {
+          "teamId": 5,
+          "playerId": 4431452,
+          "player": "Drake Maye",
+          "points": 77.62
+        },
+        "available": true
       }
     ],
     "allPlayLuck": [
       {
         "teamId": 1,
-        "allPlayWins": 22,
-        "allPlayLosses": 14,
+        "allPlayWins": 23,
+        "allPlayLosses": 22,
         "allPlayTies": 0,
-        "weeks": 4,
-        "allPlayPct": 0.61
+        "weeks": 5,
+        "allPlayPct": 0.51
       },
       {
         "teamId": 2,
-        "allPlayWins": 24,
-        "allPlayLosses": 12,
+        "allPlayWins": 29,
+        "allPlayLosses": 16,
         "allPlayTies": 0,
-        "weeks": 4,
-        "allPlayPct": 0.67
-      },
-      {
-        "teamId": 3,
-        "allPlayWins": 12,
-        "allPlayLosses": 24,
-        "allPlayTies": 0,
-        "weeks": 4,
-        "allPlayPct": 0.33
-      },
-      {
-        "teamId": 4,
-        "allPlayWins": 10,
-        "allPlayLosses": 26,
-        "allPlayTies": 0,
-        "weeks": 4,
-        "allPlayPct": 0.28
-      },
-      {
-        "teamId": 5,
-        "allPlayWins": 23,
-        "allPlayLosses": 13,
-        "allPlayTies": 0,
-        "weeks": 4,
+        "weeks": 5,
         "allPlayPct": 0.64
       },
       {
-        "teamId": 6,
-        "allPlayWins": 21,
-        "allPlayLosses": 15,
+        "teamId": 3,
+        "allPlayWins": 19,
+        "allPlayLosses": 26,
         "allPlayTies": 0,
-        "weeks": 4,
-        "allPlayPct": 0.58
+        "weeks": 5,
+        "allPlayPct": 0.42
+      },
+      {
+        "teamId": 4,
+        "allPlayWins": 18,
+        "allPlayLosses": 27,
+        "allPlayTies": 0,
+        "weeks": 5,
+        "allPlayPct": 0.4
+      },
+      {
+        "teamId": 5,
+        "allPlayWins": 32,
+        "allPlayLosses": 13,
+        "allPlayTies": 0,
+        "weeks": 5,
+        "allPlayPct": 0.71
+      },
+      {
+        "teamId": 6,
+        "allPlayWins": 23,
+        "allPlayLosses": 22,
+        "allPlayTies": 0,
+        "weeks": 5,
+        "allPlayPct": 0.51
       },
       {
         "teamId": 7,
         "allPlayWins": 22,
-        "allPlayLosses": 14,
+        "allPlayLosses": 23,
         "allPlayTies": 0,
-        "weeks": 4,
-        "allPlayPct": 0.61
+        "weeks": 5,
+        "allPlayPct": 0.49
       },
       {
         "teamId": 8,
-        "allPlayWins": 7,
-        "allPlayLosses": 29,
+        "allPlayWins": 13,
+        "allPlayLosses": 32,
         "allPlayTies": 0,
-        "weeks": 4,
-        "allPlayPct": 0.19
+        "weeks": 5,
+        "allPlayPct": 0.29
       },
       {
         "teamId": 9,
-        "allPlayWins": 17,
-        "allPlayLosses": 19,
+        "allPlayWins": 21,
+        "allPlayLosses": 24,
         "allPlayTies": 0,
-        "weeks": 4,
+        "weeks": 5,
         "allPlayPct": 0.47
       },
       {
         "teamId": 10,
-        "allPlayWins": 22,
-        "allPlayLosses": 14,
+        "allPlayWins": 25,
+        "allPlayLosses": 20,
         "allPlayTies": 0,
-        "weeks": 4,
-        "allPlayPct": 0.61
+        "weeks": 5,
+        "allPlayPct": 0.56
       }
     ],
     "rivalrySpotlight": [
@@ -4228,6 +4424,16 @@
         ],
         "games": 1,
         "margin": 58.14,
+        "wins": 1,
+        "ties": 0
+      },
+      {
+        "teamIds": [
+          "7",
+          "9"
+        ],
+        "games": 1,
+        "margin": 53.000000000000014,
         "wins": 1,
         "ties": 0
       },
@@ -4323,6 +4529,26 @@
       },
       {
         "teamIds": [
+          "2",
+          "6"
+        ],
+        "games": 1,
+        "margin": 16.299999999999997,
+        "wins": 1,
+        "ties": 0
+      },
+      {
+        "teamIds": [
+          "1",
+          "10"
+        ],
+        "games": 1,
+        "margin": 11.680000000000007,
+        "wins": 1,
+        "ties": 0
+      },
+      {
+        "teamIds": [
           "5",
           "8"
         ],
@@ -4338,6 +4564,26 @@
         ],
         "games": 1,
         "margin": 9.919999999999987,
+        "wins": 1,
+        "ties": 0
+      },
+      {
+        "teamIds": [
+          "4",
+          "8"
+        ],
+        "games": 1,
+        "margin": 9.539999999999992,
+        "wins": 1,
+        "ties": 0
+      },
+      {
+        "teamIds": [
+          "3",
+          "5"
+        ],
+        "games": 1,
+        "margin": 7.6200000000000045,
         "wins": 1,
         "ties": 0
       },
@@ -4415,82 +4661,82 @@
     "trends": [
       {
         "teamId": 1,
-        "games": 4,
-        "average": 140.84,
-        "recentAverage": 149.09,
-        "delta": 8.26,
+        "games": 5,
+        "average": 136.49,
+        "recentAverage": 141.67,
+        "delta": 5.18,
         "state": "HOT"
       },
       {
         "teamId": 2,
-        "games": 4,
-        "average": 138.65,
-        "recentAverage": 138.43,
-        "delta": -0.22,
-        "state": "STEADY"
-      },
-      {
-        "teamId": 3,
-        "games": 4,
-        "average": 126.42,
-        "recentAverage": 134,
-        "delta": 7.58,
-        "state": "HOT"
-      },
-      {
-        "teamId": 4,
-        "games": 4,
-        "average": 109.37,
-        "recentAverage": 111.24,
-        "delta": 1.87,
-        "state": "STEADY"
-      },
-      {
-        "teamId": 5,
-        "games": 4,
-        "average": 143.44,
-        "recentAverage": 137.28,
-        "delta": -6.16,
+        "games": 5,
+        "average": 139.7,
+        "recentAverage": 133.89,
+        "delta": -5.81,
         "state": "COLD"
       },
       {
+        "teamId": 3,
+        "games": 5,
+        "average": 134.32,
+        "recentAverage": 138.36,
+        "delta": 4.04,
+        "state": "STEADY"
+      },
+      {
+        "teamId": 4,
+        "games": 5,
+        "average": 120.78,
+        "recentAverage": 130.59,
+        "delta": 9.8,
+        "state": "HOT"
+      },
+      {
+        "teamId": 5,
+        "games": 5,
+        "average": 149.45,
+        "recentAverage": 161.87,
+        "delta": 12.41,
+        "state": "HOT"
+      },
+      {
         "teamId": 6,
-        "games": 4,
-        "average": 140.32,
-        "recentAverage": 128.51,
-        "delta": -11.81,
+        "games": 5,
+        "average": 137.78,
+        "recentAverage": 121.39,
+        "delta": -16.39,
         "state": "COLD"
       },
       {
         "teamId": 7,
-        "games": 4,
-        "average": 142.07,
-        "recentAverage": 146.33,
-        "delta": 4.26,
+        "games": 5,
+        "average": 131.53,
+        "recentAverage": 129.79,
+        "delta": -1.74,
         "state": "STEADY"
       },
       {
         "teamId": 8,
-        "games": 4,
-        "average": 112.23,
-        "recentAverage": 105.4,
-        "delta": -6.83,
-        "state": "COLD"
+        "games": 5,
+        "average": 121.16,
+        "recentAverage": 128.25,
+        "delta": 7.08,
+        "state": "HOT"
       },
       {
         "teamId": 9,
-        "games": 4,
-        "average": 137.25,
-        "recentAverage": 138.15,
-        "delta": 0.9,
+        "games": 5,
+        "average": 138.27,
+        "recentAverage": 141.51,
+        "delta": 3.24,
         "state": "STEADY"
       },
       {
         "teamId": 10,
-        "games": 4,
-        "average": 141.38,
-        "recentAverage": 139.61,
-        "delta": -1.76,
+        "games": 5,
+        "average": 139.26,
+        "recentAverage": 142.08,
+        "delta": 2.82,
         "state": "STEADY"
       }
     ],
@@ -7051,6 +7297,646 @@
             "playerId": 4241416,
             "player": "Chuba Hubbard",
             "points": 40.900000000000006
+          }
+        ],
+        "available": true
+      },
+      {
+        "teamId": 1,
+        "week": 5,
+        "actual": 275.32,
+        "optimal": 292.72,
+        "regret": 17.4,
+        "assignments": [
+          {
+            "slot": 0,
+            "playerId": 3915511,
+            "player": "Joe Burrow",
+            "points": 58.32000000000001
+          },
+          {
+            "slot": 2,
+            "playerId": 4685702,
+            "player": "Quinshon Judkins",
+            "points": 29.6
+          },
+          {
+            "slot": 2,
+            "playerId": 4241985,
+            "player": "J.K. Dobbins",
+            "points": 22.6
+          },
+          {
+            "slot": 4,
+            "playerId": 4241389,
+            "player": "CeeDee Lamb",
+            "points": 44.199999999999996
+          },
+          {
+            "slot": 4,
+            "playerId": 4361370,
+            "player": "Chris Olave",
+            "points": 28.200000000000003
+          },
+          {
+            "slot": 6,
+            "playerId": 4360248,
+            "player": "Kyle Pitts Sr.",
+            "points": 22.9
+          },
+          {
+            "slot": 16,
+            "playerId": -16030,
+            "player": "Jaguars D/ST",
+            "points": 25
+          },
+          {
+            "slot": 17,
+            "playerId": 5082424,
+            "player": "Dominic Zvada",
+            "points": 27
+          },
+          {
+            "slot": 23,
+            "playerId": 4426388,
+            "player": "Jameson Williams",
+            "points": 34.900000000000006
+          }
+        ],
+        "available": true
+      },
+      {
+        "teamId": 2,
+        "week": 5,
+        "actual": 281.34,
+        "optimal": 292.84,
+        "regret": 11.5,
+        "assignments": [
+          {
+            "slot": 0,
+            "playerId": 2577417,
+            "player": "Dak Prescott",
+            "points": 34.74
+          },
+          {
+            "slot": 2,
+            "playerId": 4596448,
+            "player": "Bucky Irving",
+            "points": 37.6
+          },
+          {
+            "slot": 2,
+            "playerId": 4379399,
+            "player": "James Cook III",
+            "points": 39.1
+          },
+          {
+            "slot": 4,
+            "playerId": 16800,
+            "player": "Davante Adams",
+            "points": 29.3
+          },
+          {
+            "slot": 4,
+            "playerId": 4429615,
+            "player": "Zay Flowers",
+            "points": 40.400000000000006
+          },
+          {
+            "slot": 6,
+            "playerId": 4430027,
+            "player": "Sam LaPorta",
+            "points": 42.2
+          },
+          {
+            "slot": 16,
+            "playerId": -16023,
+            "player": "Steelers D/ST",
+            "points": 20
+          },
+          {
+            "slot": 17,
+            "playerId": 4360234,
+            "player": "Evan McPherson",
+            "points": 12
+          },
+          {
+            "slot": 23,
+            "playerId": 4426354,
+            "player": "George Pickens",
+            "points": 37.5
+          }
+        ],
+        "available": true
+      },
+      {
+        "teamId": 3,
+        "week": 5,
+        "actual": 298.22,
+        "optimal": 311.02,
+        "regret": 12.8,
+        "assignments": [
+          {
+            "slot": 0,
+            "playerId": 3918298,
+            "player": "Josh Allen",
+            "points": 51.02
+          },
+          {
+            "slot": 2,
+            "playerId": 3117251,
+            "player": "Christian McCaffrey",
+            "points": 33.3
+          },
+          {
+            "slot": 2,
+            "playerId": 4241474,
+            "player": "Brian Robinson Jr.",
+            "points": 27.3
+          },
+          {
+            "slot": 4,
+            "playerId": 4258173,
+            "player": "Nico Collins",
+            "points": 41.400000000000006
+          },
+          {
+            "slot": 4,
+            "playerId": 4248528,
+            "player": "Christian Watson",
+            "points": 40
+          },
+          {
+            "slot": 6,
+            "playerId": 4361050,
+            "player": "Isaiah Likely",
+            "points": 46
+          },
+          {
+            "slot": 16,
+            "playerId": -16034,
+            "player": "Texans D/ST",
+            "points": 31
+          },
+          {
+            "slot": 17,
+            "playerId": 3953687,
+            "player": "Brandon Aubrey",
+            "points": 17
+          },
+          {
+            "slot": 23,
+            "playerId": 4569559,
+            "player": "Devaughn Vele",
+            "points": 24
+          }
+        ],
+        "available": true
+      },
+      {
+        "teamId": 4,
+        "week": 5,
+        "actual": 341.22,
+        "optimal": 341.22,
+        "regret": 0,
+        "assignments": [
+          {
+            "slot": 0,
+            "playerId": 4432577,
+            "player": "C.J. Stroud",
+            "points": 50.019999999999996
+          },
+          {
+            "slot": 2,
+            "playerId": 4361579,
+            "player": "Javonte Williams",
+            "points": 45.5
+          },
+          {
+            "slot": 2,
+            "playerId": 4569987,
+            "player": "Jaylen Warren",
+            "points": 52.400000000000006
+          },
+          {
+            "slot": 4,
+            "playerId": 4426515,
+            "player": "Puka Nacua",
+            "points": 65.4
+          },
+          {
+            "slot": 4,
+            "playerId": 4372016,
+            "player": "Jaylen Waddle",
+            "points": 19.3
+          },
+          {
+            "slot": 6,
+            "playerId": 5083076,
+            "player": "Harold Fannin Jr.",
+            "points": 13.1
+          },
+          {
+            "slot": 16,
+            "playerId": -16005,
+            "player": "Browns D/ST",
+            "points": 34
+          },
+          {
+            "slot": 17,
+            "playerId": 4567104,
+            "player": "Will Reichard",
+            "points": 35
+          },
+          {
+            "slot": 23,
+            "playerId": 4832800,
+            "player": "Denzel Boston",
+            "points": 26.5
+          }
+        ],
+        "available": true
+      },
+      {
+        "teamId": 5,
+        "week": 5,
+        "actual": 307.2,
+        "optimal": 359.5,
+        "regret": 52.3,
+        "assignments": [
+          {
+            "slot": 0,
+            "playerId": 4431452,
+            "player": "Drake Maye",
+            "points": 77.62
+          },
+          {
+            "slot": 2,
+            "playerId": 4887558,
+            "player": "Emanuel Wilson",
+            "points": 40.2
+          },
+          {
+            "slot": 2,
+            "playerId": 4429795,
+            "player": "Jahmyr Gibbs",
+            "points": 55.400000000000006
+          },
+          {
+            "slot": 4,
+            "playerId": 4360761,
+            "player": "Michael Wilson",
+            "points": 23.78
+          },
+          {
+            "slot": 4,
+            "playerId": 4426502,
+            "player": "Drake London",
+            "points": 33.400000000000006
+          },
+          {
+            "slot": 6,
+            "playerId": 4432665,
+            "player": "Brock Bowers",
+            "points": 43.6
+          },
+          {
+            "slot": 16,
+            "playerId": -16004,
+            "player": "Bengals D/ST",
+            "points": 27
+          },
+          {
+            "slot": 17,
+            "playerId": 4686361,
+            "player": "Cam Little",
+            "points": 23
+          },
+          {
+            "slot": 23,
+            "playerId": 3042519,
+            "player": "Aaron Jones Sr.",
+            "points": 35.5
+          }
+        ],
+        "available": true
+      },
+      {
+        "teamId": 6,
+        "week": 5,
+        "actual": 274.92,
+        "optimal": 290.52,
+        "regret": 15.6,
+        "assignments": [
+          {
+            "slot": 0,
+            "playerId": 3046779,
+            "player": "Jared Goff",
+            "points": 57.42
+          },
+          {
+            "slot": 2,
+            "playerId": 3054850,
+            "player": "Alvin Kamara",
+            "points": 25.400000000000002
+          },
+          {
+            "slot": 2,
+            "playerId": 4242335,
+            "player": "Jonathan Taylor",
+            "points": 33.9
+          },
+          {
+            "slot": 4,
+            "playerId": 4701936,
+            "player": "Matthew Golden",
+            "points": 32
+          },
+          {
+            "slot": 4,
+            "playerId": 4374302,
+            "player": "Amon-Ra St. Brown",
+            "points": 28.4
+          },
+          {
+            "slot": 6,
+            "playerId": 4036133,
+            "player": "T.J. Hockenson",
+            "points": 26.599999999999998
+          },
+          {
+            "slot": 16,
+            "playerId": -16014,
+            "player": "Rams D/ST",
+            "points": 21
+          },
+          {
+            "slot": 17,
+            "playerId": 2971573,
+            "player": "Ka'imi Fairbairn",
+            "points": 33
+          },
+          {
+            "slot": 23,
+            "playerId": 4711533,
+            "player": "Ollie Gordon II",
+            "points": 32.8
+          }
+        ],
+        "available": true
+      },
+      {
+        "teamId": 7,
+        "week": 5,
+        "actual": 232.78,
+        "optimal": 273.38,
+        "regret": 40.6,
+        "assignments": [
+          {
+            "slot": 0,
+            "playerId": 4361741,
+            "player": "Brock Purdy",
+            "points": 41.78
+          },
+          {
+            "slot": 2,
+            "playerId": 4685247,
+            "player": "Braelon Allen",
+            "points": 27.300000000000004
+          },
+          {
+            "slot": 2,
+            "playerId": 4430807,
+            "player": "Bijan Robinson",
+            "points": 43.5
+          },
+          {
+            "slot": 4,
+            "playerId": 3126486,
+            "player": "Deebo Samuel Sr.",
+            "points": 20.5
+          },
+          {
+            "slot": 4,
+            "playerId": 4685472,
+            "player": "Tetairoa McMillan",
+            "points": 45.2
+          },
+          {
+            "slot": 6,
+            "playerId": 3040151,
+            "player": "George Kittle",
+            "points": 24.4
+          },
+          {
+            "slot": 16,
+            "playerId": -16006,
+            "player": "Cowboys D/ST",
+            "points": 11
+          },
+          {
+            "slot": 17,
+            "playerId": 4689936,
+            "player": "Jake Bates",
+            "points": 28
+          },
+          {
+            "slot": 23,
+            "playerId": 4361307,
+            "player": "Trey McBride",
+            "points": 31.700000000000003
+          }
+        ],
+        "available": true
+      },
+      {
+        "teamId": 8,
+        "week": 5,
+        "actual": 284.92,
+        "optimal": 313.72,
+        "regret": 28.8,
+        "assignments": [
+          {
+            "slot": 0,
+            "playerId": 4040715,
+            "player": "Jalen Hurts",
+            "points": 32.519999999999996
+          },
+          {
+            "slot": 2,
+            "playerId": 4430737,
+            "player": "Kyren Williams",
+            "points": 56.3
+          },
+          {
+            "slot": 2,
+            "playerId": 4596334,
+            "player": "Keaton Mitchell",
+            "points": 17.2
+          },
+          {
+            "slot": 4,
+            "playerId": 4595348,
+            "player": "Malik Nabers",
+            "points": 52.300000000000004
+          },
+          {
+            "slot": 4,
+            "playerId": 4239993,
+            "player": "Tee Higgins",
+            "points": 30.900000000000002
+          },
+          {
+            "slot": 6,
+            "playerId": 4572680,
+            "player": "Tucker Kraft",
+            "points": 28.1
+          },
+          {
+            "slot": 16,
+            "playerId": -16017,
+            "player": "Patriots D/ST",
+            "points": 27
+          },
+          {
+            "slot": 17,
+            "playerId": 4571557,
+            "player": "Spencer Shrader",
+            "points": 37
+          },
+          {
+            "slot": 23,
+            "playerId": 4432620,
+            "player": "Parker Washington",
+            "points": 32.4
+          }
+        ],
+        "available": true
+      },
+      {
+        "teamId": 9,
+        "week": 5,
+        "actual": 252.84,
+        "optimal": 272.14,
+        "regret": 19.3,
+        "assignments": [
+          {
+            "slot": 0,
+            "playerId": 3917315,
+            "player": "Kyler Murray",
+            "points": 31.740000000000002
+          },
+          {
+            "slot": 2,
+            "playerId": 4608686,
+            "player": "Kyle Monangai",
+            "points": 28
+          },
+          {
+            "slot": 2,
+            "playerId": 4890973,
+            "player": "Ashton Jeanty",
+            "points": 29.3
+          },
+          {
+            "slot": 4,
+            "playerId": 4871023,
+            "player": "Carnell Tate",
+            "points": 23.1
+          },
+          {
+            "slot": 4,
+            "playerId": 4430878,
+            "player": "Jaxon Smith-Njigba",
+            "points": 35.400000000000006
+          },
+          {
+            "slot": 6,
+            "playerId": 4431459,
+            "player": "Tyler Warren",
+            "points": 30.5
+          },
+          {
+            "slot": 16,
+            "playerId": -16026,
+            "player": "Seahawks D/ST",
+            "points": 36
+          },
+          {
+            "slot": 17,
+            "playerId": 2473037,
+            "player": "Jason Myers",
+            "points": 29
+          },
+          {
+            "slot": 23,
+            "playerId": 4569618,
+            "player": "Garrett Wilson",
+            "points": 29.099999999999998
+          }
+        ],
+        "available": true
+      },
+      {
+        "teamId": 10,
+        "week": 5,
+        "actual": 264.22,
+        "optimal": 282.22,
+        "regret": 18,
+        "assignments": [
+          {
+            "slot": 0,
+            "playerId": 2578570,
+            "player": "Jacoby Brissett",
+            "points": 45.72
+          },
+          {
+            "slot": 2,
+            "playerId": 3043078,
+            "player": "Derrick Henry",
+            "points": 36.900000000000006
+          },
+          {
+            "slot": 2,
+            "playerId": 4567048,
+            "player": "Kenneth Walker III",
+            "points": 30.9
+          },
+          {
+            "slot": 4,
+            "playerId": 16737,
+            "player": "Mike Evans",
+            "points": 38.900000000000006
+          },
+          {
+            "slot": 4,
+            "playerId": 4361432,
+            "player": "Romeo Doubs",
+            "points": 26.400000000000002
+          },
+          {
+            "slot": 6,
+            "playerId": 3929645,
+            "player": "Juwan Johnson",
+            "points": 17.5
+          },
+          {
+            "slot": 16,
+            "playerId": -16016,
+            "player": "Vikings D/ST",
+            "points": 39
+          },
+          {
+            "slot": 17,
+            "playerId": 4574716,
+            "player": "Harrison Mevis",
+            "points": 11
+          },
+          {
+            "slot": 23,
+            "playerId": 4569173,
+            "player": "Rhamondre Stevenson",
+            "points": 35.9
           }
         ],
         "available": true
@@ -10367,10 +11253,10 @@
         "manager": "Mob",
         "keeper": false,
         "playerId": 4429795,
-        "seasonPoints": 214.3,
+        "seasonPoints": 269.7,
         "nameSource": "verified-draft-recap",
         "seasonPointsSource": "ESPN mMatchupScore",
-        "performance": 214.3,
+        "performance": 269.7,
         "performanceStatus": "AVAILABLE"
       },
       {
@@ -10383,10 +11269,10 @@
         "manager": "Nyle",
         "keeper": false,
         "playerId": 4430807,
-        "seasonPoints": 183.1,
+        "seasonPoints": 226.6,
         "nameSource": "verified-draft-recap",
         "seasonPointsSource": "ESPN mMatchupScore",
-        "performance": 183.1,
+        "performance": 226.6,
         "performanceStatus": "AVAILABLE"
       },
       {
@@ -10399,10 +11285,10 @@
         "manager": "Rich",
         "keeper": false,
         "playerId": 3117251,
-        "seasonPoints": 132,
+        "seasonPoints": 165.3,
         "nameSource": "verified-draft-recap",
         "seasonPointsSource": "ESPN mMatchupScore",
-        "performance": 132,
+        "performance": 165.3,
         "performanceStatus": "AVAILABLE"
       },
       {
@@ -10415,10 +11301,10 @@
         "manager": "Michael",
         "keeper": false,
         "playerId": 4362628,
-        "seasonPoints": 114.7,
+        "seasonPoints": 140.1,
         "nameSource": "verified-draft-recap",
         "seasonPointsSource": "ESPN mMatchupScore",
-        "performance": 114.7,
+        "performance": 140.1,
         "performanceStatus": "AVAILABLE"
       },
       {
@@ -10431,10 +11317,10 @@
         "manager": "Nick",
         "keeper": false,
         "playerId": 4426515,
-        "seasonPoints": 52.5,
+        "seasonPoints": 117.9,
         "nameSource": "verified-draft-recap",
         "seasonPointsSource": "ESPN mMatchupScore",
-        "performance": 52.5,
+        "performance": 117.9,
         "performanceStatus": "AVAILABLE"
       },
       {
@@ -10447,10 +11333,10 @@
         "manager": "Gilguy",
         "keeper": false,
         "playerId": 4430878,
-        "seasonPoints": 220.72,
+        "seasonPoints": 256.12,
         "nameSource": "verified-draft-recap",
         "seasonPointsSource": "ESPN mMatchupScore",
-        "performance": 220.72,
+        "performance": 256.12,
         "performanceStatus": "AVAILABLE"
       },
       {
@@ -10463,10 +11349,10 @@
         "manager": "Chris",
         "keeper": false,
         "playerId": 4242335,
-        "seasonPoints": 149.7,
+        "seasonPoints": 183.6,
         "nameSource": "verified-draft-recap",
         "seasonPointsSource": "ESPN mMatchupScore",
-        "performance": 149.7,
+        "performance": 183.6,
         "performanceStatus": "AVAILABLE"
       },
       {
@@ -10479,10 +11365,10 @@
         "manager": "Jake",
         "keeper": false,
         "playerId": 4379399,
-        "seasonPoints": 116.7,
+        "seasonPoints": 155.8,
         "nameSource": "verified-draft-recap",
         "seasonPointsSource": "ESPN mMatchupScore",
-        "performance": 116.7,
+        "performance": 155.8,
         "performanceStatus": "AVAILABLE"
       },
       {
@@ -10495,10 +11381,10 @@
         "manager": "Min",
         "keeper": false,
         "playerId": 4262921,
-        "seasonPoints": 89.8,
+        "seasonPoints": 108.6,
         "nameSource": "verified-draft-recap",
         "seasonPointsSource": "ESPN mMatchupScore",
-        "performance": 89.8,
+        "performance": 108.6,
         "performanceStatus": "AVAILABLE"
       },
       {
@@ -10511,10 +11397,10 @@
         "manager": "Blake",
         "keeper": false,
         "playerId": 3043078,
-        "seasonPoints": 165.7,
+        "seasonPoints": 202.6,
         "nameSource": "verified-draft-recap",
         "seasonPointsSource": "ESPN mMatchupScore",
-        "performance": 165.7,
+        "performance": 202.6,
         "performanceStatus": "AVAILABLE"
       },
       {
@@ -10527,10 +11413,10 @@
         "manager": "Blake",
         "keeper": false,
         "playerId": 4567048,
-        "seasonPoints": 189.3,
+        "seasonPoints": 220.2,
         "nameSource": "verified-draft-recap",
         "seasonPointsSource": "ESPN mMatchupScore",
-        "performance": 189.3,
+        "performance": 220.2,
         "performanceStatus": "AVAILABLE"
       },
       {
@@ -10543,10 +11429,10 @@
         "manager": "Min",
         "keeper": false,
         "playerId": 3929630,
-        "seasonPoints": 44,
+        "seasonPoints": 46,
         "nameSource": "verified-draft-recap",
         "seasonPointsSource": "ESPN mMatchupScore",
-        "performance": 44,
+        "performance": 46,
         "performanceStatus": "AVAILABLE"
       },
       {
@@ -10559,10 +11445,10 @@
         "manager": "Jake",
         "keeper": false,
         "playerId": 4362238,
-        "seasonPoints": 96.9,
+        "seasonPoints": 123,
         "nameSource": "verified-draft-recap",
         "seasonPointsSource": "ESPN mMatchupScore",
-        "performance": 96.9,
+        "performance": 123,
         "performanceStatus": "AVAILABLE"
       },
       {
@@ -10575,10 +11461,10 @@
         "manager": "Chris",
         "keeper": false,
         "playerId": 4374302,
-        "seasonPoints": 167.1,
+        "seasonPoints": 195.5,
         "nameSource": "verified-draft-recap",
         "seasonPointsSource": "ESPN mMatchupScore",
-        "performance": 167.1,
+        "performance": 195.5,
         "performanceStatus": "AVAILABLE"
       },
       {
@@ -10591,10 +11477,10 @@
         "manager": "Gilguy",
         "keeper": false,
         "playerId": 4890973,
-        "seasonPoints": 129.2,
+        "seasonPoints": 158.5,
         "nameSource": "verified-draft-recap",
         "seasonPointsSource": "ESPN mMatchupScore",
-        "performance": 129.2,
+        "performance": 158.5,
         "performanceStatus": "AVAILABLE"
       },
       {
@@ -10623,10 +11509,10 @@
         "manager": "Michael",
         "keeper": false,
         "playerId": 4241389,
-        "seasonPoints": 183.1,
+        "seasonPoints": 227.3,
         "nameSource": "verified-draft-recap",
         "seasonPointsSource": "ESPN mMatchupScore",
-        "performance": 183.1,
+        "performance": 227.3,
         "performanceStatus": "AVAILABLE"
       },
       {
@@ -10639,10 +11525,10 @@
         "manager": "Rich",
         "keeper": false,
         "playerId": 4685382,
-        "seasonPoints": 76.1,
+        "seasonPoints": 94.3,
         "nameSource": "verified-draft-recap",
         "seasonPointsSource": "ESPN mMatchupScore",
-        "performance": 76.1,
+        "performance": 94.3,
         "performanceStatus": "AVAILABLE"
       },
       {
@@ -10671,10 +11557,10 @@
         "manager": "Mob",
         "keeper": false,
         "playerId": 4426502,
-        "seasonPoints": 100.2,
+        "seasonPoints": 133.6,
         "nameSource": "verified-draft-recap",
         "seasonPointsSource": "ESPN mMatchupScore",
-        "performance": 100.2,
+        "performance": 133.6,
         "performanceStatus": "AVAILABLE"
       },
       {
@@ -10687,10 +11573,10 @@
         "manager": "Mob",
         "keeper": false,
         "playerId": 4432665,
-        "seasonPoints": 75.8,
+        "seasonPoints": 119.4,
         "nameSource": "verified-draft-recap",
         "seasonPointsSource": "ESPN mMatchupScore",
-        "performance": 75.8,
+        "performance": 119.4,
         "performanceStatus": "AVAILABLE"
       },
       {
@@ -10703,10 +11589,10 @@
         "manager": "Nyle",
         "keeper": false,
         "playerId": 4361307,
-        "seasonPoints": 128.3,
+        "seasonPoints": 160,
         "nameSource": "verified-draft-recap",
         "seasonPointsSource": "ESPN mMatchupScore",
-        "performance": 128.3,
+        "performance": 160,
         "performanceStatus": "AVAILABLE"
       },
       {
@@ -10719,10 +11605,10 @@
         "manager": "Rich",
         "keeper": false,
         "playerId": 4258173,
-        "seasonPoints": 73.2,
+        "seasonPoints": 114.6,
         "nameSource": "verified-draft-recap",
         "seasonPointsSource": "ESPN mMatchupScore",
-        "performance": 73.2,
+        "performance": 114.6,
         "performanceStatus": "AVAILABLE"
       },
       {
@@ -10735,10 +11621,10 @@
         "manager": "Michael",
         "keeper": false,
         "playerId": 4361370,
-        "seasonPoints": 160.6,
+        "seasonPoints": 188.8,
         "nameSource": "verified-draft-recap",
         "seasonPointsSource": "ESPN mMatchupScore",
-        "performance": 160.6,
+        "performance": 188.8,
         "performanceStatus": "AVAILABLE"
       },
       {
@@ -10751,10 +11637,10 @@
         "manager": "Nick",
         "keeper": false,
         "playerId": 4361579,
-        "seasonPoints": 132.3,
+        "seasonPoints": 177.8,
         "nameSource": "verified-draft-recap",
         "seasonPointsSource": "ESPN mMatchupScore",
-        "performance": 132.3,
+        "performance": 177.8,
         "performanceStatus": "AVAILABLE"
       },
       {
@@ -10767,10 +11653,10 @@
         "manager": "Gilguy",
         "keeper": false,
         "playerId": 4870808,
-        "seasonPoints": 91.3,
+        "seasonPoints": 100,
         "nameSource": "verified-draft-recap",
         "seasonPointsSource": "ESPN mMatchupScore",
-        "performance": 91.3,
+        "performance": 100,
         "performanceStatus": "AVAILABLE"
       },
       {
@@ -10799,10 +11685,10 @@
         "manager": "Jake",
         "keeper": false,
         "playerId": 4426354,
-        "seasonPoints": 71.5,
+        "seasonPoints": 109,
         "nameSource": "verified-draft-recap",
         "seasonPointsSource": "ESPN mMatchupScore",
-        "performance": 71.5,
+        "performance": 109,
         "performanceStatus": "AVAILABLE"
       },
       {
@@ -10815,10 +11701,10 @@
         "manager": "Min",
         "keeper": false,
         "playerId": 4430737,
-        "seasonPoints": 142.7,
+        "seasonPoints": 199,
         "nameSource": "verified-draft-recap",
         "seasonPointsSource": "ESPN mMatchupScore",
-        "performance": 142.7,
+        "performance": 199,
         "performanceStatus": "AVAILABLE"
       },
       {
@@ -10863,10 +11749,10 @@
         "manager": "Min",
         "keeper": false,
         "playerId": 4595348,
-        "seasonPoints": 66.4,
+        "seasonPoints": 118.7,
         "nameSource": "verified-draft-recap",
         "seasonPointsSource": "ESPN mMatchupScore",
-        "performance": 66.4,
+        "performance": 118.7,
         "performanceStatus": "AVAILABLE"
       },
       {
@@ -10879,10 +11765,10 @@
         "manager": "Jake",
         "keeper": false,
         "playerId": 4429615,
-        "seasonPoints": 108.6,
+        "seasonPoints": 149,
         "nameSource": "verified-draft-recap",
         "seasonPointsSource": "ESPN mMatchupScore",
-        "performance": 108.6,
+        "performance": 149,
         "performanceStatus": "AVAILABLE"
       },
       {
@@ -10911,10 +11797,10 @@
         "manager": "Gilguy",
         "keeper": false,
         "playerId": 4569618,
-        "seasonPoints": 120.3,
+        "seasonPoints": 149.4,
         "nameSource": "verified-draft-recap",
         "seasonPointsSource": "ESPN mMatchupScore",
-        "performance": 120.3,
+        "performance": 149.4,
         "performanceStatus": "AVAILABLE"
       },
       {
@@ -10927,10 +11813,10 @@
         "manager": "Nick",
         "keeper": false,
         "playerId": 4372016,
-        "seasonPoints": 73.3,
+        "seasonPoints": 92.6,
         "nameSource": "verified-draft-recap",
         "seasonPointsSource": "ESPN mMatchupScore",
-        "performance": 73.3,
+        "performance": 92.6,
         "performanceStatus": "AVAILABLE"
       },
       {
@@ -10943,10 +11829,10 @@
         "manager": "Michael",
         "keeper": false,
         "playerId": 4696981,
-        "seasonPoints": 80.8,
+        "seasonPoints": 95.5,
         "nameSource": "verified-draft-recap",
         "seasonPointsSource": "ESPN mMatchupScore",
-        "performance": 80.8,
+        "performance": 95.5,
         "performanceStatus": "AVAILABLE"
       },
       {
@@ -10959,10 +11845,10 @@
         "manager": "Rich",
         "keeper": false,
         "playerId": 3918298,
-        "seasonPoints": 228.4,
+        "seasonPoints": 279.42,
         "nameSource": "verified-draft-recap",
         "seasonPointsSource": "ESPN mMatchupScore",
-        "performance": 228.4,
+        "performance": 279.42,
         "performanceStatus": "AVAILABLE"
       },
       {
@@ -10991,10 +11877,10 @@
         "manager": "Mob",
         "keeper": false,
         "playerId": 4259545,
-        "seasonPoints": 119.6,
+        "seasonPoints": 144.3,
         "nameSource": "verified-draft-recap",
         "seasonPointsSource": "ESPN mMatchupScore",
-        "performance": 119.6,
+        "performance": 144.3,
         "performanceStatus": "AVAILABLE"
       },
       {
@@ -11007,10 +11893,10 @@
         "manager": "Mob",
         "keeper": false,
         "playerId": 4567750,
-        "seasonPoints": 68.9,
+        "seasonPoints": 89.4,
         "nameSource": "verified-draft-recap",
         "seasonPointsSource": "ESPN mMatchupScore",
-        "performance": 68.9,
+        "performance": 89.4,
         "performanceStatus": "AVAILABLE"
       },
       {
@@ -11023,10 +11909,10 @@
         "manager": "Nyle",
         "keeper": false,
         "playerId": 4685472,
-        "seasonPoints": 103.8,
+        "seasonPoints": 149,
         "nameSource": "verified-draft-recap",
         "seasonPointsSource": "ESPN mMatchupScore",
-        "performance": 103.8,
+        "performance": 149,
         "performanceStatus": "AVAILABLE"
       },
       {
@@ -11039,10 +11925,10 @@
         "manager": "Rich",
         "keeper": false,
         "playerId": 4685278,
-        "seasonPoints": 82.4,
+        "seasonPoints": 102.7,
         "nameSource": "verified-draft-recap",
         "seasonPointsSource": "ESPN mMatchupScore",
-        "performance": 82.4,
+        "performance": 102.7,
         "performanceStatus": "AVAILABLE"
       },
       {
@@ -11055,10 +11941,10 @@
         "manager": "Michael",
         "keeper": false,
         "playerId": 4685702,
-        "seasonPoints": 75,
+        "seasonPoints": 104.6,
         "nameSource": "verified-draft-recap",
         "seasonPointsSource": "ESPN mMatchupScore",
-        "performance": 75,
+        "performance": 104.6,
         "performanceStatus": "AVAILABLE"
       },
       {
@@ -11071,10 +11957,10 @@
         "manager": "Nick",
         "keeper": false,
         "playerId": 4569987,
-        "seasonPoints": 96.8,
+        "seasonPoints": 149.2,
         "nameSource": "verified-draft-recap",
         "seasonPointsSource": "ESPN mMatchupScore",
-        "performance": 96.8,
+        "performance": 149.2,
         "performanceStatus": "AVAILABLE"
       },
       {
@@ -11103,10 +11989,10 @@
         "manager": "Chris",
         "keeper": false,
         "playerId": 3915416,
-        "seasonPoints": 69.9,
+        "seasonPoints": 72.6,
         "nameSource": "verified-draft-recap",
         "seasonPointsSource": "ESPN mMatchupScore",
-        "performance": 69.9,
+        "performance": 72.6,
         "performanceStatus": "AVAILABLE"
       },
       {
@@ -11119,10 +12005,10 @@
         "manager": "Jake",
         "keeper": false,
         "playerId": 4596448,
-        "seasonPoints": 88.3,
+        "seasonPoints": 125.9,
         "nameSource": "verified-draft-recap",
         "seasonPointsSource": "ESPN mMatchupScore",
-        "performance": 88.3,
+        "performance": 125.9,
         "performanceStatus": "AVAILABLE"
       },
       {
@@ -11135,10 +12021,10 @@
         "manager": "Min",
         "keeper": false,
         "playerId": 4239993,
-        "seasonPoints": 115.5,
+        "seasonPoints": 146.4,
         "nameSource": "verified-draft-recap",
         "seasonPointsSource": "ESPN mMatchupScore",
-        "performance": 115.5,
+        "performance": 146.4,
         "performanceStatus": "AVAILABLE"
       },
       {
@@ -11151,10 +12037,10 @@
         "manager": "Blake",
         "keeper": false,
         "playerId": 16737,
-        "seasonPoints": 88,
+        "seasonPoints": 126.9,
         "nameSource": "verified-draft-recap",
         "seasonPointsSource": "ESPN mMatchupScore",
-        "performance": 88,
+        "performance": 126.9,
         "performanceStatus": "AVAILABLE"
       },
       {
@@ -11167,10 +12053,10 @@
         "manager": "Blake",
         "keeper": false,
         "playerId": 4723086,
-        "seasonPoints": 28.5,
+        "seasonPoints": 44.1,
         "nameSource": "espn-player-endpoint",
         "seasonPointsSource": "ESPN mMatchupScore",
-        "performance": 28.5,
+        "performance": 44.1,
         "performanceStatus": "AVAILABLE"
       },
       {
@@ -11183,10 +12069,10 @@
         "manager": "Min",
         "keeper": false,
         "playerId": 4035538,
-        "seasonPoints": 84.5,
+        "seasonPoints": 89.9,
         "nameSource": "espn-player-endpoint",
         "seasonPointsSource": "ESPN mMatchupScore",
-        "performance": 84.5,
+        "performance": 89.9,
         "performanceStatus": "AVAILABLE"
       },
       {
@@ -11199,10 +12085,10 @@
         "manager": "Jake",
         "keeper": false,
         "playerId": 16800,
-        "seasonPoints": 138.8,
+        "seasonPoints": 168.1,
         "nameSource": "espn-player-endpoint",
         "seasonPointsSource": "ESPN mMatchupScore",
-        "performance": 138.8,
+        "performance": 168.1,
         "performanceStatus": "AVAILABLE"
       },
       {
@@ -11215,10 +12101,10 @@
         "manager": "Chris",
         "keeper": false,
         "playerId": 3128429,
-        "seasonPoints": 33.8,
+        "seasonPoints": 45,
         "nameSource": "espn-player-endpoint",
         "seasonPointsSource": "ESPN mMatchupScore",
-        "performance": 33.8,
+        "performance": 45,
         "performanceStatus": "AVAILABLE"
       },
       {
@@ -11231,10 +12117,10 @@
         "manager": "Gilguy",
         "keeper": false,
         "playerId": 4431459,
-        "seasonPoints": 87.9,
+        "seasonPoints": 118.4,
         "nameSource": "espn-player-endpoint",
         "seasonPointsSource": "ESPN mMatchupScore",
-        "performance": 87.9,
+        "performance": 118.4,
         "performanceStatus": "AVAILABLE"
       },
       {
@@ -11263,10 +12149,10 @@
         "manager": "Michael",
         "keeper": false,
         "playerId": 3915511,
-        "seasonPoints": 155.56,
+        "seasonPoints": 213.88,
         "nameSource": "espn-player-endpoint",
         "seasonPointsSource": "ESPN mMatchupScore",
-        "performance": 155.56,
+        "performance": 213.88,
         "performanceStatus": "AVAILABLE"
       },
       {
@@ -11279,10 +12165,10 @@
         "manager": "Rich",
         "keeper": false,
         "playerId": 4426388,
-        "seasonPoints": 61.6,
+        "seasonPoints": 96.5,
         "nameSource": "espn-player-endpoint",
         "seasonPointsSource": "ESPN mMatchupScore",
-        "performance": 61.6,
+        "performance": 96.5,
         "performanceStatus": "AVAILABLE"
       },
       {
@@ -11295,10 +12181,10 @@
         "manager": "Nyle",
         "keeper": false,
         "playerId": 4432710,
-        "seasonPoints": 39.2,
+        "seasonPoints": 48.2,
         "nameSource": "espn-player-endpoint",
         "seasonPointsSource": "ESPN mMatchupScore",
-        "performance": 39.2,
+        "performance": 48.2,
         "performanceStatus": "AVAILABLE"
       },
       {
@@ -11311,10 +12197,10 @@
         "manager": "Mob",
         "keeper": false,
         "playerId": 3121422,
-        "seasonPoints": 60.2,
+        "seasonPoints": 72.4,
         "nameSource": "espn-player-endpoint",
         "seasonPointsSource": "ESPN mMatchupScore",
-        "performance": 60.2,
+        "performance": 72.4,
         "performanceStatus": "AVAILABLE"
       },
       {
@@ -11327,10 +12213,10 @@
         "manager": "Mob",
         "keeper": false,
         "playerId": 4431452,
-        "seasonPoints": 77.36,
+        "seasonPoints": 154.98,
         "nameSource": "espn-player-endpoint",
         "seasonPointsSource": "ESPN mMatchupScore",
-        "performance": 77.36,
+        "performance": 154.98,
         "performanceStatus": "AVAILABLE"
       },
       {
@@ -11343,10 +12229,10 @@
         "manager": "Nyle",
         "keeper": false,
         "playerId": 4431299,
-        "seasonPoints": 59.2,
+        "seasonPoints": 79.6,
         "nameSource": "espn-player-endpoint",
         "seasonPointsSource": "ESPN mMatchupScore",
-        "performance": 59.2,
+        "performance": 79.6,
         "performanceStatus": "AVAILABLE"
       },
       {
@@ -11359,10 +12245,10 @@
         "manager": "Rich",
         "keeper": false,
         "playerId": 4248528,
-        "seasonPoints": 146.5,
+        "seasonPoints": 186.5,
         "nameSource": "espn-player-endpoint",
         "seasonPointsSource": "ESPN mMatchupScore",
-        "performance": 146.5,
+        "performance": 186.5,
         "performanceStatus": "AVAILABLE"
       },
       {
@@ -11391,10 +12277,10 @@
         "manager": "Nick",
         "keeper": false,
         "playerId": 3916387,
-        "seasonPoints": 159.28,
+        "seasonPoints": 182.16,
         "nameSource": "espn-player-endpoint",
         "seasonPointsSource": "ESPN mMatchupScore",
-        "performance": 159.28,
+        "performance": 182.16,
         "performanceStatus": "AVAILABLE"
       },
       {
@@ -11407,10 +12293,10 @@
         "manager": "Gilguy",
         "keeper": false,
         "playerId": 4871023,
-        "seasonPoints": 72.1,
+        "seasonPoints": 95.2,
         "nameSource": "espn-player-endpoint",
         "seasonPointsSource": "ESPN mMatchupScore",
-        "performance": 72.1,
+        "performance": 95.2,
         "performanceStatus": "AVAILABLE"
       },
       {
@@ -11439,10 +12325,10 @@
         "manager": "Jake",
         "keeper": false,
         "playerId": 4882093,
-        "seasonPoints": 93.1,
+        "seasonPoints": 115.8,
         "nameSource": "espn-player-endpoint",
         "seasonPointsSource": "ESPN mMatchupScore",
-        "performance": 93.1,
+        "performance": 115.8,
         "performanceStatus": "AVAILABLE"
       },
       {
@@ -11455,10 +12341,10 @@
         "manager": "Min",
         "keeper": false,
         "playerId": 4432620,
-        "seasonPoints": 100.2,
+        "seasonPoints": 132.6,
         "nameSource": "espn-player-endpoint",
         "seasonPointsSource": "ESPN mMatchupScore",
-        "performance": 100.2,
+        "performance": 132.6,
         "performanceStatus": "AVAILABLE"
       },
       {
@@ -11471,10 +12357,10 @@
         "manager": "Blake",
         "keeper": false,
         "playerId": 4569173,
-        "seasonPoints": 68.2,
+        "seasonPoints": 104.1,
         "nameSource": "espn-player-endpoint",
         "seasonPointsSource": "ESPN mMatchupScore",
-        "performance": 68.2,
+        "performance": 104.1,
         "performanceStatus": "AVAILABLE"
       },
       {
@@ -11503,10 +12389,10 @@
         "manager": "Min",
         "keeper": false,
         "playerId": 4040715,
-        "seasonPoints": 144.52,
+        "seasonPoints": 177.04,
         "nameSource": "espn-player-endpoint",
         "seasonPointsSource": "ESPN mMatchupScore",
-        "performance": 144.52,
+        "performance": 177.04,
         "performanceStatus": "AVAILABLE"
       },
       {
@@ -11519,10 +12405,10 @@
         "manager": "Jake",
         "keeper": false,
         "playerId": 4430027,
-        "seasonPoints": 91.2,
+        "seasonPoints": 133.4,
         "nameSource": "espn-player-endpoint",
         "seasonPointsSource": "ESPN mMatchupScore",
-        "performance": 91.2,
+        "performance": 133.4,
         "performanceStatus": "AVAILABLE"
       },
       {
@@ -11535,10 +12421,10 @@
         "manager": "Chris",
         "keeper": false,
         "playerId": 3139477,
-        "seasonPoints": 182.16,
+        "seasonPoints": 203.16,
         "nameSource": "espn-player-endpoint",
         "seasonPointsSource": "ESPN mMatchupScore",
-        "performance": 182.16,
+        "performance": 203.16,
         "performanceStatus": "AVAILABLE"
       },
       {
@@ -11551,10 +12437,10 @@
         "manager": "Gilguy",
         "keeper": false,
         "playerId": 4047650,
-        "seasonPoints": 70.1,
+        "seasonPoints": 91.9,
         "nameSource": "espn-player-endpoint",
         "seasonPointsSource": "ESPN mMatchupScore",
-        "performance": 70.1,
+        "performance": 91.9,
         "performanceStatus": "AVAILABLE"
       },
       {
@@ -11567,10 +12453,10 @@
         "manager": "Nick",
         "keeper": false,
         "playerId": 3116165,
-        "seasonPoints": 54.3,
+        "seasonPoints": 70.4,
         "nameSource": "espn-player-endpoint",
         "seasonPointsSource": "ESPN mMatchupScore",
-        "performance": 54.3,
+        "performance": 70.4,
         "performanceStatus": "AVAILABLE"
       },
       {
@@ -11583,10 +12469,10 @@
         "manager": "Michael",
         "keeper": false,
         "playerId": 4569587,
-        "seasonPoints": 69.8,
+        "seasonPoints": 92.1,
         "nameSource": "espn-player-endpoint",
         "seasonPointsSource": "ESPN mMatchupScore",
-        "performance": 69.8,
+        "performance": 92.1,
         "performanceStatus": "AVAILABLE"
       },
       {
@@ -11599,10 +12485,10 @@
         "manager": "Rich",
         "keeper": false,
         "playerId": 4568490,
-        "seasonPoints": 56.9,
+        "seasonPoints": 76.9,
         "nameSource": "espn-player-endpoint",
         "seasonPointsSource": "ESPN mMatchupScore",
-        "performance": 56.9,
+        "performance": 76.9,
         "performanceStatus": "AVAILABLE"
       },
       {
@@ -11615,10 +12501,10 @@
         "manager": "Nyle",
         "keeper": false,
         "playerId": 3916148,
-        "seasonPoints": 64,
+        "seasonPoints": 82.2,
         "nameSource": "espn-player-endpoint",
         "seasonPointsSource": "ESPN mMatchupScore",
-        "performance": 64,
+        "performance": 82.2,
         "performanceStatus": "AVAILABLE"
       },
       {
@@ -11647,10 +12533,10 @@
         "manager": "Mob",
         "keeper": false,
         "playerId": 4360761,
-        "seasonPoints": 97.1,
+        "seasonPoints": 120.88,
         "nameSource": "espn-player-endpoint",
         "seasonPointsSource": "ESPN mMatchupScore",
-        "performance": 97.1,
+        "performance": 120.88,
         "performanceStatus": "AVAILABLE"
       },
       {
@@ -11679,10 +12565,10 @@
         "manager": "Rich",
         "keeper": false,
         "playerId": 3953687,
-        "seasonPoints": 72,
+        "seasonPoints": 89,
         "nameSource": "espn-player-endpoint",
         "seasonPointsSource": "ESPN mMatchupScore",
-        "performance": 72,
+        "performance": 89,
         "performanceStatus": "AVAILABLE"
       },
       {
@@ -11695,10 +12581,10 @@
         "manager": "Michael",
         "keeper": false,
         "playerId": 4241985,
-        "seasonPoints": 34.2,
+        "seasonPoints": 56.8,
         "nameSource": "espn-player-endpoint",
         "seasonPointsSource": "ESPN mMatchupScore",
-        "performance": 34.2,
+        "performance": 56.8,
         "performanceStatus": "AVAILABLE"
       },
       {
@@ -11711,10 +12597,10 @@
         "manager": "Nick",
         "keeper": false,
         "playerId": 4432708,
-        "seasonPoints": 15.6,
+        "seasonPoints": 23.8,
         "nameSource": "espn-player-endpoint",
         "seasonPointsSource": "ESPN mMatchupScore",
-        "performance": 15.6,
+        "performance": 23.8,
         "performanceStatus": "AVAILABLE"
       },
       {
@@ -11759,10 +12645,10 @@
         "manager": "Jake",
         "keeper": false,
         "playerId": 4429205,
-        "seasonPoints": 57.3,
+        "seasonPoints": 66.4,
         "nameSource": "espn-player-endpoint",
         "seasonPointsSource": "ESPN mMatchupScore",
-        "performance": 57.3,
+        "performance": 66.4,
         "performanceStatus": "AVAILABLE"
       },
       {
@@ -11775,10 +12661,10 @@
         "manager": "Min",
         "keeper": false,
         "playerId": 4688813,
-        "seasonPoints": 69.8,
+        "seasonPoints": 82.1,
         "nameSource": "espn-player-endpoint",
         "seasonPointsSource": "ESPN mMatchupScore",
-        "performance": 69.8,
+        "performance": 82.1,
         "performanceStatus": "AVAILABLE"
       },
       {
@@ -11807,10 +12693,10 @@
         "manager": "Blake",
         "keeper": false,
         "playerId": 4429096,
-        "seasonPoints": 34.7,
+        "seasonPoints": 54,
         "nameSource": "espn-player-endpoint",
         "seasonPointsSource": "ESPN mMatchupScore",
-        "performance": 34.7,
+        "performance": 54,
         "performanceStatus": "AVAILABLE"
       },
       {
@@ -11823,10 +12709,10 @@
         "manager": "Min",
         "keeper": false,
         "playerId": 4572680,
-        "seasonPoints": 55.7,
+        "seasonPoints": 83.8,
         "nameSource": "espn-player-endpoint",
         "seasonPointsSource": "ESPN mMatchupScore",
-        "performance": 55.7,
+        "performance": 83.8,
         "performanceStatus": "AVAILABLE"
       },
       {
@@ -11839,10 +12725,10 @@
         "manager": "Jake",
         "keeper": false,
         "playerId": 2577417,
-        "seasonPoints": 170.3,
+        "seasonPoints": 205.04,
         "nameSource": "espn-player-endpoint",
         "seasonPointsSource": "ESPN mMatchupScore",
-        "performance": 170.3,
+        "performance": 205.04,
         "performanceStatus": "AVAILABLE"
       },
       {
@@ -11855,10 +12741,10 @@
         "manager": "Chris",
         "keeper": false,
         "playerId": 4701936,
-        "seasonPoints": 104.3,
+        "seasonPoints": 136.3,
         "nameSource": "espn-player-endpoint",
         "seasonPointsSource": "ESPN mMatchupScore",
-        "performance": 104.3,
+        "performance": 136.3,
         "performanceStatus": "AVAILABLE"
       },
       {
@@ -11887,10 +12773,10 @@
         "manager": "Nick",
         "keeper": false,
         "playerId": 5083076,
-        "seasonPoints": 88.9,
+        "seasonPoints": 102,
         "nameSource": "espn-player-endpoint",
         "seasonPointsSource": "ESPN mMatchupScore",
-        "performance": 88.9,
+        "performance": 102,
         "performanceStatus": "AVAILABLE"
       },
       {
@@ -11903,10 +12789,10 @@
         "manager": "Michael",
         "keeper": false,
         "playerId": 4360248,
-        "seasonPoints": 15.7,
+        "seasonPoints": 38.6,
         "nameSource": "espn-player-endpoint",
         "seasonPointsSource": "ESPN mMatchupScore",
-        "performance": 15.7,
+        "performance": 38.6,
         "performanceStatus": "AVAILABLE"
       },
       {
@@ -11919,10 +12805,10 @@
         "manager": "Rich",
         "keeper": false,
         "playerId": -16034,
-        "seasonPoints": 79,
+        "seasonPoints": 110,
         "nameSource": "espn-player-endpoint",
         "seasonPointsSource": "ESPN mMatchupScore",
-        "performance": 79,
+        "performance": 110,
         "performanceStatus": "AVAILABLE"
       },
       {
@@ -11935,10 +12821,10 @@
         "manager": "Nyle",
         "keeper": false,
         "playerId": 3916433,
-        "seasonPoints": 37.9,
+        "seasonPoints": 49.9,
         "nameSource": "espn-player-endpoint",
         "seasonPointsSource": "ESPN mMatchupScore",
-        "performance": 37.9,
+        "performance": 49.9,
         "performanceStatus": "AVAILABLE"
       },
       {
@@ -11951,10 +12837,10 @@
         "manager": "Mob",
         "keeper": false,
         "playerId": 3042519,
-        "seasonPoints": 86.2,
+        "seasonPoints": 121.7,
         "nameSource": "espn-player-endpoint",
         "seasonPointsSource": "ESPN mMatchupScore",
-        "performance": 86.2,
+        "performance": 121.7,
         "performanceStatus": "AVAILABLE"
       },
       {
@@ -11983,10 +12869,10 @@
         "manager": "Nyle",
         "keeper": false,
         "playerId": 3040151,
-        "seasonPoints": 111.8,
+        "seasonPoints": 136.2,
         "nameSource": "espn-player-endpoint",
         "seasonPointsSource": "ESPN mMatchupScore",
-        "performance": 111.8,
+        "performance": 136.2,
         "performanceStatus": "AVAILABLE"
       },
       {
@@ -11999,10 +12885,10 @@
         "manager": "Rich",
         "keeper": false,
         "playerId": 4361050,
-        "seasonPoints": 92.4,
+        "seasonPoints": 138.4,
         "nameSource": "espn-player-endpoint",
         "seasonPointsSource": "ESPN mMatchupScore",
-        "performance": 92.4,
+        "performance": 138.4,
         "performanceStatus": "AVAILABLE"
       },
       {
@@ -12047,10 +12933,10 @@
         "manager": "Gilguy",
         "keeper": false,
         "playerId": 4608686,
-        "seasonPoints": 90.6,
+        "seasonPoints": 118.6,
         "nameSource": "espn-player-endpoint",
         "seasonPointsSource": "ESPN mMatchupScore",
-        "performance": 90.6,
+        "performance": 118.6,
         "performanceStatus": "AVAILABLE"
       },
       {
@@ -12063,10 +12949,10 @@
         "manager": "Chris",
         "keeper": false,
         "playerId": 3121023,
-        "seasonPoints": 50.2,
+        "seasonPoints": 60,
         "nameSource": "espn-player-endpoint",
         "seasonPointsSource": "ESPN mMatchupScore",
-        "performance": 50.2,
+        "performance": 60,
         "performanceStatus": "AVAILABLE"
       },
       {
@@ -12079,10 +12965,10 @@
         "manager": "Jake",
         "keeper": false,
         "playerId": 4426348,
-        "seasonPoints": 76.8,
+        "seasonPoints": 107.06,
         "nameSource": "espn-player-endpoint",
         "seasonPointsSource": "ESPN mMatchupScore",
-        "performance": 76.8,
+        "performance": 107.06,
         "performanceStatus": "AVAILABLE"
       },
       {
@@ -12095,10 +12981,10 @@
         "manager": "Min",
         "keeper": false,
         "playerId": 4596334,
-        "seasonPoints": 50.3,
+        "seasonPoints": 67.5,
         "nameSource": "espn-player-endpoint",
         "seasonPointsSource": "ESPN mMatchupScore",
-        "performance": 50.3,
+        "performance": 67.5,
         "performanceStatus": "AVAILABLE"
       },
       {
@@ -12111,10 +12997,10 @@
         "manager": "Blake",
         "keeper": false,
         "playerId": 4241416,
-        "seasonPoints": 132.1,
+        "seasonPoints": 158,
         "nameSource": "espn-player-endpoint",
         "seasonPointsSource": "ESPN mMatchupScore",
-        "performance": 132.1,
+        "performance": 158,
         "performanceStatus": "AVAILABLE"
       },
       {
@@ -12159,10 +13045,10 @@
         "manager": "Jake",
         "keeper": false,
         "playerId": 3116365,
-        "seasonPoints": 64.1,
+        "seasonPoints": 82.6,
         "nameSource": "espn-player-endpoint",
         "seasonPointsSource": "ESPN mMatchupScore",
-        "performance": 64.1,
+        "performance": 82.6,
         "performanceStatus": "AVAILABLE"
       },
       {
@@ -12175,10 +13061,10 @@
         "manager": "Chris",
         "keeper": false,
         "playerId": -16014,
-        "seasonPoints": 94,
+        "seasonPoints": 115,
         "nameSource": "espn-player-endpoint",
         "seasonPointsSource": "ESPN mMatchupScore",
-        "performance": 94,
+        "performance": 115,
         "performanceStatus": "AVAILABLE"
       },
       {
@@ -12239,10 +13125,10 @@
         "manager": "Rich",
         "keeper": false,
         "playerId": 15847,
-        "seasonPoints": 101.7,
+        "seasonPoints": 105.2,
         "nameSource": "espn-player-endpoint",
         "seasonPointsSource": "ESPN mMatchupScore",
-        "performance": 101.7,
+        "performance": 105.2,
         "performanceStatus": "AVAILABLE"
       },
       {
@@ -12255,10 +13141,10 @@
         "manager": "Nyle",
         "keeper": false,
         "playerId": 3126486,
-        "seasonPoints": 97.8,
+        "seasonPoints": 118.3,
         "nameSource": "espn-player-endpoint",
         "seasonPointsSource": "ESPN mMatchupScore",
-        "performance": 97.8,
+        "performance": 118.3,
         "performanceStatus": "AVAILABLE"
       },
       {
@@ -12271,10 +13157,10 @@
         "manager": "Mob",
         "keeper": false,
         "playerId": -16007,
-        "seasonPoints": 62,
+        "seasonPoints": 90,
         "nameSource": "espn-player-endpoint",
         "seasonPointsSource": "ESPN mMatchupScore",
-        "performance": 62,
+        "performance": 90,
         "performanceStatus": "AVAILABLE"
       },
       {
@@ -12287,10 +13173,10 @@
         "manager": "Mob",
         "keeper": false,
         "playerId": 4360310,
-        "seasonPoints": 147.16,
+        "seasonPoints": 187.98,
         "nameSource": "espn-player-endpoint",
         "seasonPointsSource": "ESPN mMatchupScore",
-        "performance": 147.16,
+        "performance": 187.98,
         "performanceStatus": "AVAILABLE"
       },
       {
@@ -12303,10 +13189,10 @@
         "manager": "Nyle",
         "keeper": false,
         "playerId": 4361741,
-        "seasonPoints": 221.34,
+        "seasonPoints": 263.12,
         "nameSource": "espn-player-endpoint",
         "seasonPointsSource": "ESPN mMatchupScore",
-        "performance": 221.34,
+        "performance": 263.12,
         "performanceStatus": "AVAILABLE"
       },
       {
@@ -12351,10 +13237,10 @@
         "manager": "Nick",
         "keeper": false,
         "playerId": 4242355,
-        "seasonPoints": 16,
+        "seasonPoints": 25,
         "nameSource": "espn-player-endpoint",
         "seasonPointsSource": "ESPN mMatchupScore",
-        "performance": 16,
+        "performance": 25,
         "performanceStatus": "AVAILABLE"
       },
       {
@@ -12367,10 +13253,10 @@
         "manager": "Gilguy",
         "keeper": false,
         "playerId": -16026,
-        "seasonPoints": 117,
+        "seasonPoints": 153,
         "nameSource": "espn-player-endpoint",
         "seasonPointsSource": "ESPN mMatchupScore",
-        "performance": 117,
+        "performance": 153,
         "performanceStatus": "AVAILABLE"
       },
       {
@@ -12383,10 +13269,10 @@
         "manager": "Chris",
         "keeper": false,
         "playerId": 2971573,
-        "seasonPoints": 58,
+        "seasonPoints": 91,
         "nameSource": "espn-player-endpoint",
         "seasonPointsSource": "ESPN mMatchupScore",
-        "performance": 58,
+        "performance": 91,
         "performanceStatus": "AVAILABLE"
       },
       {
@@ -12399,10 +13285,10 @@
         "manager": "Jake",
         "keeper": false,
         "playerId": 2976212,
-        "seasonPoints": 97.5,
+        "seasonPoints": 106,
         "nameSource": "espn-player-endpoint",
         "seasonPointsSource": "ESPN mMatchupScore",
-        "performance": 97.5,
+        "performance": 106,
         "performanceStatus": "AVAILABLE"
       },
       {
@@ -12415,10 +13301,10 @@
         "manager": "Min",
         "keeper": false,
         "playerId": -16017,
-        "seasonPoints": 108,
+        "seasonPoints": 135,
         "nameSource": "espn-player-endpoint",
         "seasonPointsSource": "ESPN mMatchupScore",
-        "performance": 108,
+        "performance": 135,
         "performanceStatus": "AVAILABLE"
       },
       {
@@ -12431,10 +13317,10 @@
         "manager": "Blake",
         "keeper": false,
         "playerId": 4870653,
-        "seasonPoints": 7.8,
+        "seasonPoints": 20.7,
         "nameSource": "espn-player-endpoint",
         "seasonPointsSource": "ESPN mMatchupScore",
-        "performance": 7.8,
+        "performance": 20.7,
         "performanceStatus": "AVAILABLE"
       },
       {
@@ -12463,10 +13349,10 @@
         "manager": "Min",
         "keeper": false,
         "playerId": 4361432,
-        "seasonPoints": 33.1,
+        "seasonPoints": 59.5,
         "nameSource": "espn-player-endpoint",
         "seasonPointsSource": "ESPN mMatchupScore",
-        "performance": 33.1,
+        "performance": 59.5,
         "performanceStatus": "AVAILABLE"
       },
       {
@@ -12479,10 +13365,10 @@
         "manager": "Jake",
         "keeper": false,
         "playerId": -16023,
-        "seasonPoints": 120,
+        "seasonPoints": 140,
         "nameSource": "espn-player-endpoint",
         "seasonPointsSource": "ESPN mMatchupScore",
-        "performance": 120,
+        "performance": 140,
         "performanceStatus": "AVAILABLE"
       },
       {
@@ -12543,11 +13429,11 @@
         "manager": "Michael",
         "keeper": false,
         "playerId": -16005,
-        "seasonPoints": null,
+        "seasonPoints": 34,
         "nameSource": "espn-player-endpoint",
-        "seasonPointsSource": null,
-        "performance": null,
-        "performanceStatus": "UNAVAILABLE"
+        "seasonPointsSource": "ESPN mMatchupScore",
+        "performance": 34,
+        "performanceStatus": "AVAILABLE"
       },
       {
         "season": 2026,
@@ -12591,10 +13477,10 @@
         "manager": "Mob",
         "keeper": false,
         "playerId": 4686361,
-        "seasonPoints": 64,
+        "seasonPoints": 87,
         "nameSource": "espn-player-endpoint",
         "seasonPointsSource": "ESPN mMatchupScore",
-        "performance": 64,
+        "performance": 87,
         "performanceStatus": "AVAILABLE"
       },
       {
@@ -12655,11 +13541,11 @@
         "manager": "Michael",
         "keeper": false,
         "playerId": 4689936,
-        "seasonPoints": null,
+        "seasonPoints": 28,
         "nameSource": "espn-player-endpoint",
-        "seasonPointsSource": null,
-        "performance": null,
-        "performanceStatus": "UNAVAILABLE"
+        "seasonPointsSource": "ESPN mMatchupScore",
+        "performance": 28,
+        "performanceStatus": "AVAILABLE"
       },
       {
         "season": 2026,
@@ -12671,10 +13557,10 @@
         "manager": "Nick",
         "keeper": false,
         "playerId": 2473037,
-        "seasonPoints": 52,
+        "seasonPoints": 81,
         "nameSource": "espn-player-endpoint",
         "seasonPointsSource": "ESPN mMatchupScore",
-        "performance": 52,
+        "performance": 81,
         "performanceStatus": "AVAILABLE"
       },
       {
@@ -12703,10 +13589,10 @@
         "manager": "Chris",
         "keeper": false,
         "playerId": 3917315,
-        "seasonPoints": -0.38,
+        "seasonPoints": 31.36,
         "nameSource": "espn-player-endpoint",
         "seasonPointsSource": "ESPN mMatchupScore",
-        "performance": -0.38,
+        "performance": 31.36,
         "performanceStatus": "AVAILABLE"
       },
       {
@@ -12719,10 +13605,10 @@
         "manager": "Jake",
         "keeper": false,
         "playerId": 4360234,
-        "seasonPoints": 89,
+        "seasonPoints": 101,
         "nameSource": "espn-player-endpoint",
         "seasonPointsSource": "ESPN mMatchupScore",
-        "performance": 89,
+        "performance": 101,
         "performanceStatus": "AVAILABLE"
       },
       {
@@ -12735,10 +13621,10 @@
         "manager": "Min",
         "keeper": false,
         "playerId": 4574716,
-        "seasonPoints": 6,
+        "seasonPoints": 17,
         "nameSource": "espn-player-endpoint",
         "seasonPointsSource": "ESPN mMatchupScore",
-        "performance": 6,
+        "performance": 17,
         "performanceStatus": "AVAILABLE"
       },
       {
@@ -23249,8 +24135,2679 @@
           23
         ],
         "source": "ESPN mRoster scoringPeriodId"
+      },
+      {
+        "teamId": 1,
+        "week": 5,
+        "players": [
+          {
+            "playerId": 4362628,
+            "player": "Ja'Marr Chase",
+            "position": "WR",
+            "eligibleSlots": [
+              3,
+              4,
+              5,
+              23,
+              7,
+              20,
+              21
+            ],
+            "lineupSlotId": 4,
+            "status": "STARTER",
+            "points": 25.4
+          },
+          {
+            "playerId": 4241389,
+            "player": "CeeDee Lamb",
+            "position": "WR",
+            "eligibleSlots": [
+              3,
+              4,
+              5,
+              23,
+              7,
+              20,
+              21
+            ],
+            "lineupSlotId": 4,
+            "status": "STARTER",
+            "points": 44.199999999999996
+          },
+          {
+            "playerId": 4361370,
+            "player": "Chris Olave",
+            "position": "WR",
+            "eligibleSlots": [
+              3,
+              4,
+              5,
+              23,
+              7,
+              20,
+              21
+            ],
+            "lineupSlotId": 23,
+            "status": "STARTER",
+            "points": 28.200000000000003
+          },
+          {
+            "playerId": 4696981,
+            "player": "Cam Skattebo",
+            "position": "RB",
+            "eligibleSlots": [
+              2,
+              3,
+              23,
+              7,
+              20,
+              21
+            ],
+            "lineupSlotId": 2,
+            "status": "STARTER",
+            "points": 14.700000000000001
+          },
+          {
+            "playerId": 4685702,
+            "player": "Quinshon Judkins",
+            "position": "RB",
+            "eligibleSlots": [
+              2,
+              3,
+              23,
+              7,
+              20,
+              21
+            ],
+            "lineupSlotId": 2,
+            "status": "STARTER",
+            "points": 29.6
+          },
+          {
+            "playerId": 3915511,
+            "player": "Joe Burrow",
+            "position": "QB",
+            "eligibleSlots": [
+              0,
+              7,
+              20,
+              21
+            ],
+            "lineupSlotId": 0,
+            "status": "STARTER",
+            "points": 58.32000000000001
+          },
+          {
+            "playerId": 4569587,
+            "player": "Wan'Dale Robinson",
+            "position": "WR",
+            "eligibleSlots": [
+              3,
+              4,
+              5,
+              23,
+              7,
+              20,
+              21
+            ],
+            "lineupSlotId": 20,
+            "status": "BENCH",
+            "points": 22.3
+          },
+          {
+            "playerId": 4241985,
+            "player": "J.K. Dobbins",
+            "position": "RB",
+            "eligibleSlots": [
+              2,
+              3,
+              23,
+              7,
+              20,
+              21
+            ],
+            "lineupSlotId": 20,
+            "status": "BENCH",
+            "points": 22.6
+          },
+          {
+            "playerId": 4360248,
+            "player": "Kyle Pitts Sr.",
+            "position": "TE",
+            "eligibleSlots": [
+              5,
+              6,
+              23,
+              7,
+              20,
+              21
+            ],
+            "lineupSlotId": 6,
+            "status": "STARTER",
+            "points": 22.9
+          },
+          {
+            "playerId": -16030,
+            "player": "Jaguars D/ST",
+            "position": "D/ST",
+            "eligibleSlots": [
+              16,
+              20,
+              21
+            ],
+            "lineupSlotId": 16,
+            "status": "STARTER",
+            "points": 25
+          },
+          {
+            "playerId": 4429059,
+            "player": "Woody Marks",
+            "position": "RB",
+            "eligibleSlots": [
+              2,
+              3,
+              23,
+              7,
+              20,
+              21
+            ],
+            "lineupSlotId": 20,
+            "status": "BENCH",
+            "points": 20.7
+          },
+          {
+            "playerId": 4360078,
+            "player": "Alec Pierce",
+            "position": "WR",
+            "eligibleSlots": [
+              3,
+              4,
+              5,
+              23,
+              7,
+              20,
+              21
+            ],
+            "lineupSlotId": 21,
+            "status": "IR",
+            "points": 0
+          },
+          {
+            "playerId": 5082424,
+            "player": "Dominic Zvada",
+            "position": "K",
+            "eligibleSlots": [
+              25,
+              17,
+              20,
+              21
+            ],
+            "lineupSlotId": 17,
+            "status": "STARTER",
+            "points": 27
+          },
+          {
+            "playerId": 4426388,
+            "player": "Jameson Williams",
+            "position": "WR",
+            "eligibleSlots": [
+              3,
+              4,
+              5,
+              23,
+              7,
+              20,
+              21
+            ],
+            "lineupSlotId": 20,
+            "status": "BENCH",
+            "points": 34.900000000000006
+          },
+          {
+            "playerId": 4569603,
+            "player": "Malik Washington",
+            "position": "WR",
+            "eligibleSlots": [
+              3,
+              4,
+              5,
+              23,
+              7,
+              20,
+              21
+            ],
+            "lineupSlotId": 20,
+            "status": "BENCH",
+            "points": 24.1
+          },
+          {
+            "playerId": 4431545,
+            "player": "Will Shipley",
+            "position": "RB",
+            "eligibleSlots": [
+              2,
+              3,
+              23,
+              7,
+              20,
+              21
+            ],
+            "lineupSlotId": 20,
+            "status": "BENCH",
+            "points": 10.6
+          }
+        ],
+        "slots": [
+          0,
+          2,
+          2,
+          4,
+          4,
+          6,
+          16,
+          17,
+          23
+        ],
+        "source": "ESPN mRoster scoringPeriodId"
+      },
+      {
+        "teamId": 2,
+        "week": 5,
+        "players": [
+          {
+            "playerId": 4379399,
+            "player": "James Cook III",
+            "position": "RB",
+            "eligibleSlots": [
+              2,
+              3,
+              23,
+              7,
+              20,
+              21
+            ],
+            "lineupSlotId": 2,
+            "status": "STARTER",
+            "points": 39.1
+          },
+          {
+            "playerId": 4362238,
+            "player": "Chase Brown",
+            "position": "RB",
+            "eligibleSlots": [
+              2,
+              3,
+              23,
+              7,
+              20,
+              21
+            ],
+            "lineupSlotId": 2,
+            "status": "STARTER",
+            "points": 26.1
+          },
+          {
+            "playerId": 4426354,
+            "player": "George Pickens",
+            "position": "WR",
+            "eligibleSlots": [
+              3,
+              4,
+              5,
+              23,
+              7,
+              20,
+              21
+            ],
+            "lineupSlotId": 4,
+            "status": "STARTER",
+            "points": 37.5
+          },
+          {
+            "playerId": 4429615,
+            "player": "Zay Flowers",
+            "position": "WR",
+            "eligibleSlots": [
+              3,
+              4,
+              5,
+              23,
+              7,
+              20,
+              21
+            ],
+            "lineupSlotId": 23,
+            "status": "STARTER",
+            "points": 40.400000000000006
+          },
+          {
+            "playerId": 4596448,
+            "player": "Bucky Irving",
+            "position": "RB",
+            "eligibleSlots": [
+              2,
+              3,
+              23,
+              7,
+              20,
+              21
+            ],
+            "lineupSlotId": 20,
+            "status": "BENCH",
+            "points": 37.6
+          },
+          {
+            "playerId": 16800,
+            "player": "Davante Adams",
+            "position": "WR",
+            "eligibleSlots": [
+              3,
+              4,
+              5,
+              23,
+              7,
+              20,
+              21
+            ],
+            "lineupSlotId": 4,
+            "status": "STARTER",
+            "points": 29.3
+          },
+          {
+            "playerId": 4882093,
+            "player": "Bhayshul Tuten",
+            "position": "RB",
+            "eligibleSlots": [
+              2,
+              3,
+              23,
+              7,
+              20,
+              21
+            ],
+            "lineupSlotId": 20,
+            "status": "BENCH",
+            "points": 22.700000000000003
+          },
+          {
+            "playerId": 4430027,
+            "player": "Sam LaPorta",
+            "position": "TE",
+            "eligibleSlots": [
+              5,
+              6,
+              23,
+              7,
+              20,
+              21
+            ],
+            "lineupSlotId": 6,
+            "status": "STARTER",
+            "points": 42.2
+          },
+          {
+            "playerId": 4429205,
+            "player": "Jordan Addison",
+            "position": "WR",
+            "eligibleSlots": [
+              3,
+              4,
+              5,
+              23,
+              7,
+              20,
+              21
+            ],
+            "lineupSlotId": 20,
+            "status": "BENCH",
+            "points": 9.1
+          },
+          {
+            "playerId": 2577417,
+            "player": "Dak Prescott",
+            "position": "QB",
+            "eligibleSlots": [
+              0,
+              7,
+              20,
+              21
+            ],
+            "lineupSlotId": 0,
+            "status": "STARTER",
+            "points": 34.74
+          },
+          {
+            "playerId": 4426348,
+            "player": "Jayden Daniels",
+            "position": "QB",
+            "eligibleSlots": [
+              0,
+              7,
+              20,
+              21
+            ],
+            "lineupSlotId": 20,
+            "status": "BENCH",
+            "points": 30.26
+          },
+          {
+            "playerId": 3116365,
+            "player": "Mark Andrews",
+            "position": "TE",
+            "eligibleSlots": [
+              5,
+              6,
+              23,
+              7,
+              20,
+              21
+            ],
+            "lineupSlotId": 20,
+            "status": "BENCH",
+            "points": 18.5
+          },
+          {
+            "playerId": 2976212,
+            "player": "Stefon Diggs",
+            "position": "WR",
+            "eligibleSlots": [
+              3,
+              4,
+              5,
+              23,
+              7,
+              20,
+              21
+            ],
+            "lineupSlotId": 20,
+            "status": "BENCH",
+            "points": 8.5
+          },
+          {
+            "playerId": -16023,
+            "player": "Steelers D/ST",
+            "position": "D/ST",
+            "eligibleSlots": [
+              16,
+              20,
+              21
+            ],
+            "lineupSlotId": 16,
+            "status": "STARTER",
+            "points": 20
+          },
+          {
+            "playerId": 4360234,
+            "player": "Evan McPherson",
+            "position": "K",
+            "eligibleSlots": [
+              17,
+              20,
+              21
+            ],
+            "lineupSlotId": 17,
+            "status": "STARTER",
+            "points": 12
+          }
+        ],
+        "slots": [
+          0,
+          2,
+          2,
+          4,
+          4,
+          6,
+          16,
+          17,
+          23
+        ],
+        "source": "ESPN mRoster scoringPeriodId"
+      },
+      {
+        "teamId": 3,
+        "week": 5,
+        "players": [
+          {
+            "playerId": 3117251,
+            "player": "Christian McCaffrey",
+            "position": "RB",
+            "eligibleSlots": [
+              2,
+              3,
+              23,
+              7,
+              20,
+              21
+            ],
+            "lineupSlotId": 2,
+            "status": "STARTER",
+            "points": 33.3
+          },
+          {
+            "playerId": 4685382,
+            "player": "Omarion Hampton",
+            "position": "RB",
+            "eligibleSlots": [
+              2,
+              3,
+              23,
+              7,
+              20,
+              21
+            ],
+            "lineupSlotId": 2,
+            "status": "STARTER",
+            "points": 18.200000000000003
+          },
+          {
+            "playerId": 4258173,
+            "player": "Nico Collins",
+            "position": "WR",
+            "eligibleSlots": [
+              3,
+              4,
+              5,
+              23,
+              7,
+              20,
+              21
+            ],
+            "lineupSlotId": 23,
+            "status": "STARTER",
+            "points": 41.400000000000006
+          },
+          {
+            "playerId": 3918298,
+            "player": "Josh Allen",
+            "position": "QB",
+            "eligibleSlots": [
+              0,
+              7,
+              20,
+              21
+            ],
+            "lineupSlotId": 0,
+            "status": "STARTER",
+            "points": 51.02
+          },
+          {
+            "playerId": 4685278,
+            "player": "Luther Burden III",
+            "position": "WR",
+            "eligibleSlots": [
+              3,
+              4,
+              5,
+              23,
+              7,
+              20,
+              21
+            ],
+            "lineupSlotId": 4,
+            "status": "STARTER",
+            "points": 20.3
+          },
+          {
+            "playerId": 4248528,
+            "player": "Christian Watson",
+            "position": "WR",
+            "eligibleSlots": [
+              3,
+              4,
+              5,
+              23,
+              7,
+              20,
+              21
+            ],
+            "lineupSlotId": 4,
+            "status": "STARTER",
+            "points": 40
+          },
+          {
+            "playerId": 3953687,
+            "player": "Brandon Aubrey",
+            "position": "K",
+            "eligibleSlots": [
+              17,
+              20,
+              21
+            ],
+            "lineupSlotId": 17,
+            "status": "STARTER",
+            "points": 17
+          },
+          {
+            "playerId": -16034,
+            "player": "Texans D/ST",
+            "position": "D/ST",
+            "eligibleSlots": [
+              16,
+              20,
+              21
+            ],
+            "lineupSlotId": 16,
+            "status": "STARTER",
+            "points": 31
+          },
+          {
+            "playerId": 4361050,
+            "player": "Isaiah Likely",
+            "position": "TE",
+            "eligibleSlots": [
+              5,
+              6,
+              23,
+              7,
+              20,
+              21
+            ],
+            "lineupSlotId": 6,
+            "status": "STARTER",
+            "points": 46
+          },
+          {
+            "playerId": 15847,
+            "player": "Travis Kelce",
+            "position": "TE",
+            "eligibleSlots": [
+              5,
+              6,
+              23,
+              7,
+              20,
+              21
+            ],
+            "lineupSlotId": 20,
+            "status": "BENCH",
+            "points": 3.5
+          },
+          {
+            "playerId": 12483,
+            "player": "Matthew Stafford",
+            "position": "QB",
+            "eligibleSlots": [
+              0,
+              7,
+              20,
+              21
+            ],
+            "lineupSlotId": 20,
+            "status": "BENCH",
+            "points": 43
+          },
+          {
+            "playerId": 4569559,
+            "player": "Devaughn Vele",
+            "position": "WR",
+            "eligibleSlots": [
+              3,
+              4,
+              5,
+              23,
+              7,
+              20,
+              21
+            ],
+            "lineupSlotId": 20,
+            "status": "BENCH",
+            "points": 24
+          },
+          {
+            "playerId": -16007,
+            "player": "Broncos D/ST",
+            "position": "D/ST",
+            "eligibleSlots": [
+              16,
+              20,
+              21
+            ],
+            "lineupSlotId": 20,
+            "status": "BENCH",
+            "points": 28
+          },
+          {
+            "playerId": 4426385,
+            "player": "Zach Charbonnet",
+            "position": "RB",
+            "eligibleSlots": [
+              2,
+              3,
+              23,
+              7,
+              20,
+              21
+            ],
+            "lineupSlotId": 21,
+            "status": "IR",
+            "points": 0
+          },
+          {
+            "playerId": 4429096,
+            "player": "Blake Corum",
+            "position": "RB",
+            "eligibleSlots": [
+              2,
+              3,
+              23,
+              7,
+              20,
+              21
+            ],
+            "lineupSlotId": 20,
+            "status": "BENCH",
+            "points": 19.300000000000004
+          },
+          {
+            "playerId": 4241474,
+            "player": "Brian Robinson Jr.",
+            "position": "RB",
+            "eligibleSlots": [
+              2,
+              3,
+              23,
+              7,
+              20,
+              21
+            ],
+            "lineupSlotId": 20,
+            "status": "BENCH",
+            "points": 27.3
+          }
+        ],
+        "slots": [
+          0,
+          2,
+          2,
+          4,
+          4,
+          6,
+          16,
+          17,
+          23
+        ],
+        "source": "ESPN mRoster scoringPeriodId"
+      },
+      {
+        "teamId": 4,
+        "week": 5,
+        "players": [
+          {
+            "playerId": 4426515,
+            "player": "Puka Nacua",
+            "position": "WR",
+            "eligibleSlots": [
+              3,
+              4,
+              5,
+              23,
+              7,
+              20,
+              21
+            ],
+            "lineupSlotId": 4,
+            "status": "STARTER",
+            "points": 65.4
+          },
+          {
+            "playerId": 4361579,
+            "player": "Javonte Williams",
+            "position": "RB",
+            "eligibleSlots": [
+              2,
+              3,
+              23,
+              7,
+              20,
+              21
+            ],
+            "lineupSlotId": 2,
+            "status": "STARTER",
+            "points": 45.5
+          },
+          {
+            "playerId": 4372016,
+            "player": "Jaylen Waddle",
+            "position": "WR",
+            "eligibleSlots": [
+              3,
+              4,
+              5,
+              23,
+              7,
+              20,
+              21
+            ],
+            "lineupSlotId": 23,
+            "status": "STARTER",
+            "points": 19.3
+          },
+          {
+            "playerId": 4569987,
+            "player": "Jaylen Warren",
+            "position": "RB",
+            "eligibleSlots": [
+              2,
+              3,
+              23,
+              7,
+              20,
+              21
+            ],
+            "lineupSlotId": 2,
+            "status": "STARTER",
+            "points": 52.400000000000006
+          },
+          {
+            "playerId": 3916387,
+            "player": "Lamar Jackson",
+            "position": "QB",
+            "eligibleSlots": [
+              0,
+              7,
+              20,
+              21
+            ],
+            "lineupSlotId": 20,
+            "status": "BENCH",
+            "points": 22.880000000000003
+          },
+          {
+            "playerId": 3116165,
+            "player": "Chris Godwin Jr.",
+            "position": "WR",
+            "eligibleSlots": [
+              3,
+              4,
+              5,
+              23,
+              7,
+              20,
+              21
+            ],
+            "lineupSlotId": 20,
+            "status": "BENCH",
+            "points": 16.1
+          },
+          {
+            "playerId": 5083076,
+            "player": "Harold Fannin Jr.",
+            "position": "TE",
+            "eligibleSlots": [
+              5,
+              6,
+              23,
+              7,
+              20,
+              21
+            ],
+            "lineupSlotId": 6,
+            "status": "STARTER",
+            "points": 13.1
+          },
+          {
+            "playerId": 4360569,
+            "player": "Jordan Mason",
+            "position": "RB",
+            "eligibleSlots": [
+              2,
+              3,
+              23,
+              7,
+              20,
+              21
+            ],
+            "lineupSlotId": 21,
+            "status": "IR",
+            "points": 0
+          },
+          {
+            "playerId": 4385690,
+            "player": "Dalton Kincaid",
+            "position": "TE",
+            "eligibleSlots": [
+              5,
+              6,
+              23,
+              7,
+              20,
+              21
+            ],
+            "lineupSlotId": 20,
+            "status": "BENCH",
+            "points": 5.4
+          },
+          {
+            "playerId": 4832800,
+            "player": "Denzel Boston",
+            "position": "WR",
+            "eligibleSlots": [
+              25,
+              3,
+              4,
+              5,
+              23,
+              7,
+              20,
+              21
+            ],
+            "lineupSlotId": 4,
+            "status": "STARTER",
+            "points": 26.5
+          },
+          {
+            "playerId": 4432577,
+            "player": "C.J. Stroud",
+            "position": "QB",
+            "eligibleSlots": [
+              0,
+              7,
+              20,
+              21
+            ],
+            "lineupSlotId": 0,
+            "status": "STARTER",
+            "points": 50.019999999999996
+          },
+          {
+            "playerId": 4682745,
+            "player": "Jaylen Wright",
+            "position": "RB",
+            "eligibleSlots": [
+              2,
+              3,
+              23,
+              7,
+              20,
+              21
+            ],
+            "lineupSlotId": 20,
+            "status": "BENCH",
+            "points": 1.8000000000000003
+          },
+          {
+            "playerId": 4567104,
+            "player": "Will Reichard",
+            "position": "K",
+            "eligibleSlots": [
+              17,
+              20,
+              21
+            ],
+            "lineupSlotId": 17,
+            "status": "STARTER",
+            "points": 35
+          },
+          {
+            "playerId": -16005,
+            "player": "Browns D/ST",
+            "position": "D/ST",
+            "eligibleSlots": [
+              16,
+              20,
+              21
+            ],
+            "lineupSlotId": 16,
+            "status": "STARTER",
+            "points": 34
+          },
+          {
+            "playerId": 3116406,
+            "player": "Tyreek Hill",
+            "position": "WR",
+            "eligibleSlots": [
+              3,
+              4,
+              5,
+              23,
+              7,
+              20,
+              21
+            ],
+            "lineupSlotId": 20,
+            "status": "BENCH",
+            "points": 0
+          },
+          {
+            "playerId": 4431492,
+            "player": "Roman Wilson",
+            "position": "WR",
+            "eligibleSlots": [
+              3,
+              4,
+              5,
+              23,
+              7,
+              20,
+              21
+            ],
+            "lineupSlotId": 20,
+            "status": "BENCH",
+            "points": 16.4
+          }
+        ],
+        "slots": [
+          0,
+          2,
+          2,
+          4,
+          4,
+          6,
+          16,
+          17,
+          23
+        ],
+        "source": "ESPN mRoster scoringPeriodId"
+      },
+      {
+        "teamId": 5,
+        "week": 5,
+        "players": [
+          {
+            "playerId": 4429795,
+            "player": "Jahmyr Gibbs",
+            "position": "RB",
+            "eligibleSlots": [
+              2,
+              3,
+              23,
+              7,
+              20,
+              21
+            ],
+            "lineupSlotId": 2,
+            "status": "STARTER",
+            "points": 55.400000000000006
+          },
+          {
+            "playerId": 4426502,
+            "player": "Drake London",
+            "position": "WR",
+            "eligibleSlots": [
+              3,
+              4,
+              5,
+              23,
+              7,
+              20,
+              21
+            ],
+            "lineupSlotId": 4,
+            "status": "STARTER",
+            "points": 33.400000000000006
+          },
+          {
+            "playerId": 4432665,
+            "player": "Brock Bowers",
+            "position": "TE",
+            "eligibleSlots": [
+              5,
+              6,
+              23,
+              7,
+              20,
+              21
+            ],
+            "lineupSlotId": 6,
+            "status": "STARTER",
+            "points": 43.6
+          },
+          {
+            "playerId": 4259545,
+            "player": "D'Andre Swift",
+            "position": "RB",
+            "eligibleSlots": [
+              2,
+              3,
+              23,
+              7,
+              20,
+              21
+            ],
+            "lineupSlotId": 23,
+            "status": "STARTER",
+            "points": 24.700000000000003
+          },
+          {
+            "playerId": 4567750,
+            "player": "Emeka Egbuka",
+            "position": "WR",
+            "eligibleSlots": [
+              3,
+              4,
+              5,
+              23,
+              7,
+              20,
+              21
+            ],
+            "lineupSlotId": 20,
+            "status": "BENCH",
+            "points": 20.5
+          },
+          {
+            "playerId": 3121422,
+            "player": "Terry McLaurin",
+            "position": "WR",
+            "eligibleSlots": [
+              3,
+              4,
+              5,
+              23,
+              7,
+              20,
+              21
+            ],
+            "lineupSlotId": 20,
+            "status": "BENCH",
+            "points": 12.2
+          },
+          {
+            "playerId": 4431452,
+            "player": "Drake Maye",
+            "position": "QB",
+            "eligibleSlots": [
+              0,
+              7,
+              20,
+              21
+            ],
+            "lineupSlotId": 20,
+            "status": "BENCH",
+            "points": 77.62
+          },
+          {
+            "playerId": 4360761,
+            "player": "Michael Wilson",
+            "position": "WR",
+            "eligibleSlots": [
+              3,
+              4,
+              5,
+              23,
+              7,
+              20,
+              21
+            ],
+            "lineupSlotId": 4,
+            "status": "STARTER",
+            "points": 23.78
+          },
+          {
+            "playerId": 3042519,
+            "player": "Aaron Jones Sr.",
+            "position": "RB",
+            "eligibleSlots": [
+              2,
+              3,
+              23,
+              7,
+              20,
+              21
+            ],
+            "lineupSlotId": 2,
+            "status": "STARTER",
+            "points": 35.5
+          },
+          {
+            "playerId": 4360310,
+            "player": "Trevor Lawrence",
+            "position": "QB",
+            "eligibleSlots": [
+              0,
+              7,
+              20,
+              21
+            ],
+            "lineupSlotId": 0,
+            "status": "STARTER",
+            "points": 40.82
+          },
+          {
+            "playerId": 4686361,
+            "player": "Cam Little",
+            "position": "K",
+            "eligibleSlots": [
+              17,
+              20,
+              21
+            ],
+            "lineupSlotId": 17,
+            "status": "STARTER",
+            "points": 23
+          },
+          {
+            "playerId": 4361529,
+            "player": "Isiah Pacheco",
+            "position": "RB",
+            "eligibleSlots": [
+              2,
+              3,
+              23,
+              7,
+              20,
+              21
+            ],
+            "lineupSlotId": 21,
+            "status": "IR",
+            "points": 0
+          },
+          {
+            "playerId": 4360689,
+            "player": "Tyler Shough",
+            "position": "QB",
+            "eligibleSlots": [
+              0,
+              7,
+              20,
+              21
+            ],
+            "lineupSlotId": 20,
+            "status": "BENCH",
+            "points": 17.779999999999998
+          },
+          {
+            "playerId": 4887558,
+            "player": "Emanuel Wilson",
+            "position": "RB",
+            "eligibleSlots": [
+              2,
+              3,
+              23,
+              7,
+              20,
+              21
+            ],
+            "lineupSlotId": 20,
+            "status": "BENCH",
+            "points": 40.2
+          },
+          {
+            "playerId": 5083315,
+            "player": "Kenyon Sadiq",
+            "position": "TE",
+            "eligibleSlots": [
+              25,
+              5,
+              6,
+              23,
+              7,
+              20,
+              21
+            ],
+            "lineupSlotId": 20,
+            "status": "BENCH",
+            "points": 0.30000000000000004
+          },
+          {
+            "playerId": -16004,
+            "player": "Bengals D/ST",
+            "position": "D/ST",
+            "eligibleSlots": [
+              16,
+              20,
+              21
+            ],
+            "lineupSlotId": 16,
+            "status": "STARTER",
+            "points": 27
+          }
+        ],
+        "slots": [
+          0,
+          2,
+          2,
+          4,
+          4,
+          6,
+          16,
+          17,
+          23
+        ],
+        "source": "ESPN mRoster scoringPeriodId"
+      },
+      {
+        "teamId": 6,
+        "week": 5,
+        "players": [
+          {
+            "playerId": 4242335,
+            "player": "Jonathan Taylor",
+            "position": "RB",
+            "eligibleSlots": [
+              2,
+              3,
+              23,
+              7,
+              20,
+              21
+            ],
+            "lineupSlotId": 2,
+            "status": "STARTER",
+            "points": 33.9
+          },
+          {
+            "playerId": 4374302,
+            "player": "Amon-Ra St. Brown",
+            "position": "WR",
+            "eligibleSlots": [
+              3,
+              4,
+              5,
+              23,
+              7,
+              20,
+              21
+            ],
+            "lineupSlotId": 4,
+            "status": "STARTER",
+            "points": 28.4
+          },
+          {
+            "playerId": 4427366,
+            "player": "Breece Hall",
+            "position": "RB",
+            "eligibleSlots": [
+              2,
+              3,
+              23,
+              7,
+              20,
+              21
+            ],
+            "lineupSlotId": 20,
+            "status": "BENCH",
+            "points": 0
+          },
+          {
+            "playerId": 4239996,
+            "player": "Travis Etienne Jr.",
+            "position": "RB",
+            "eligibleSlots": [
+              2,
+              3,
+              23,
+              7,
+              20,
+              21
+            ],
+            "lineupSlotId": 21,
+            "status": "IR",
+            "points": 0
+          },
+          {
+            "playerId": 3915416,
+            "player": "DJ Moore",
+            "position": "WR",
+            "eligibleSlots": [
+              3,
+              4,
+              5,
+              23,
+              7,
+              20,
+              21
+            ],
+            "lineupSlotId": 20,
+            "status": "BENCH",
+            "points": 2.7
+          },
+          {
+            "playerId": 3128429,
+            "player": "Courtland Sutton",
+            "position": "WR",
+            "eligibleSlots": [
+              3,
+              4,
+              5,
+              23,
+              7,
+              20,
+              21
+            ],
+            "lineupSlotId": 20,
+            "status": "BENCH",
+            "points": 11.200000000000001
+          },
+          {
+            "playerId": 3139477,
+            "player": "Patrick Mahomes",
+            "position": "QB",
+            "eligibleSlots": [
+              0,
+              7,
+              20,
+              21
+            ],
+            "lineupSlotId": 20,
+            "status": "BENCH",
+            "points": 21
+          },
+          {
+            "playerId": 4701936,
+            "player": "Matthew Golden",
+            "position": "WR",
+            "eligibleSlots": [
+              3,
+              4,
+              5,
+              23,
+              7,
+              20,
+              21
+            ],
+            "lineupSlotId": 4,
+            "status": "STARTER",
+            "points": 32
+          },
+          {
+            "playerId": 3121023,
+            "player": "Dallas Goedert",
+            "position": "TE",
+            "eligibleSlots": [
+              5,
+              6,
+              23,
+              7,
+              20,
+              21
+            ],
+            "lineupSlotId": 6,
+            "status": "STARTER",
+            "points": 9.8
+          },
+          {
+            "playerId": -16014,
+            "player": "Rams D/ST",
+            "position": "D/ST",
+            "eligibleSlots": [
+              16,
+              20,
+              21
+            ],
+            "lineupSlotId": 16,
+            "status": "STARTER",
+            "points": 21
+          },
+          {
+            "playerId": 2971573,
+            "player": "Ka'imi Fairbairn",
+            "position": "K",
+            "eligibleSlots": [
+              17,
+              20,
+              21
+            ],
+            "lineupSlotId": 17,
+            "status": "STARTER",
+            "points": 33
+          },
+          {
+            "playerId": 3046779,
+            "player": "Jared Goff",
+            "position": "QB",
+            "eligibleSlots": [
+              0,
+              7,
+              20,
+              21
+            ],
+            "lineupSlotId": 0,
+            "status": "STARTER",
+            "points": 57.42
+          },
+          {
+            "playerId": 3054850,
+            "player": "Alvin Kamara",
+            "position": "RB",
+            "eligibleSlots": [
+              2,
+              3,
+              23,
+              7,
+              20,
+              21
+            ],
+            "lineupSlotId": 20,
+            "status": "BENCH",
+            "points": 25.400000000000002
+          },
+          {
+            "playerId": 4711533,
+            "player": "Ollie Gordon II",
+            "position": "RB",
+            "eligibleSlots": [
+              2,
+              3,
+              23,
+              7,
+              20,
+              21
+            ],
+            "lineupSlotId": 2,
+            "status": "STARTER",
+            "points": 32.8
+          },
+          {
+            "playerId": 4036133,
+            "player": "T.J. Hockenson",
+            "position": "TE",
+            "eligibleSlots": [
+              5,
+              6,
+              23,
+              7,
+              20,
+              21
+            ],
+            "lineupSlotId": 23,
+            "status": "STARTER",
+            "points": 26.599999999999998
+          },
+          {
+            "playerId": 4432708,
+            "player": "Marvin Harrison Jr.",
+            "position": "WR",
+            "eligibleSlots": [
+              3,
+              4,
+              5,
+              23,
+              7,
+              20,
+              21
+            ],
+            "lineupSlotId": 20,
+            "status": "BENCH",
+            "points": 8.2
+          }
+        ],
+        "slots": [
+          0,
+          2,
+          2,
+          4,
+          4,
+          6,
+          16,
+          17,
+          23
+        ],
+        "source": "ESPN mRoster scoringPeriodId"
+      },
+      {
+        "teamId": 7,
+        "week": 5,
+        "players": [
+          {
+            "playerId": 4430807,
+            "player": "Bijan Robinson",
+            "position": "RB",
+            "eligibleSlots": [
+              2,
+              3,
+              23,
+              7,
+              20,
+              21
+            ],
+            "lineupSlotId": 2,
+            "status": "STARTER",
+            "points": 43.5
+          },
+          {
+            "playerId": 4047646,
+            "player": "A.J. Brown",
+            "position": "WR",
+            "eligibleSlots": [
+              3,
+              4,
+              5,
+              23,
+              7,
+              20,
+              21
+            ],
+            "lineupSlotId": 21,
+            "status": "IR",
+            "points": 0
+          },
+          {
+            "playerId": 4361307,
+            "player": "Trey McBride",
+            "position": "TE",
+            "eligibleSlots": [
+              5,
+              6,
+              23,
+              7,
+              20,
+              21
+            ],
+            "lineupSlotId": 6,
+            "status": "STARTER",
+            "points": 31.700000000000003
+          },
+          {
+            "playerId": 4428331,
+            "player": "Rashee Rice",
+            "position": "WR",
+            "eligibleSlots": [
+              3,
+              4,
+              5,
+              23,
+              7,
+              20,
+              21
+            ],
+            "lineupSlotId": 20,
+            "status": "BENCH",
+            "points": 0
+          },
+          {
+            "playerId": 4685472,
+            "player": "Tetairoa McMillan",
+            "position": "WR",
+            "eligibleSlots": [
+              3,
+              4,
+              5,
+              23,
+              7,
+              20,
+              21
+            ],
+            "lineupSlotId": 20,
+            "status": "BENCH",
+            "points": 45.2
+          },
+          {
+            "playerId": 4432710,
+            "player": "TreVeyon Henderson",
+            "position": "RB",
+            "eligibleSlots": [
+              2,
+              3,
+              23,
+              7,
+              20,
+              21
+            ],
+            "lineupSlotId": 20,
+            "status": "BENCH",
+            "points": 9
+          },
+          {
+            "playerId": 4431299,
+            "player": "Rome Odunze",
+            "position": "WR",
+            "eligibleSlots": [
+              3,
+              4,
+              5,
+              23,
+              7,
+              20,
+              21
+            ],
+            "lineupSlotId": 4,
+            "status": "STARTER",
+            "points": 20.4
+          },
+          {
+            "playerId": 3916148,
+            "player": "Tony Pollard",
+            "position": "RB",
+            "eligibleSlots": [
+              2,
+              3,
+              23,
+              7,
+              20,
+              21
+            ],
+            "lineupSlotId": 20,
+            "status": "BENCH",
+            "points": 18.2
+          },
+          {
+            "playerId": 3040151,
+            "player": "George Kittle",
+            "position": "TE",
+            "eligibleSlots": [
+              5,
+              6,
+              23,
+              7,
+              20,
+              21
+            ],
+            "lineupSlotId": 23,
+            "status": "STARTER",
+            "points": 24.4
+          },
+          {
+            "playerId": 3126486,
+            "player": "Deebo Samuel Sr.",
+            "position": "WR",
+            "eligibleSlots": [
+              3,
+              4,
+              5,
+              23,
+              7,
+              20,
+              21
+            ],
+            "lineupSlotId": 20,
+            "status": "BENCH",
+            "points": 20.5
+          },
+          {
+            "playerId": 4361741,
+            "player": "Brock Purdy",
+            "position": "QB",
+            "eligibleSlots": [
+              0,
+              7,
+              20,
+              21
+            ],
+            "lineupSlotId": 0,
+            "status": "STARTER",
+            "points": 41.78
+          },
+          {
+            "playerId": 4568490,
+            "player": "RJ Harvey",
+            "position": "RB",
+            "eligibleSlots": [
+              2,
+              3,
+              23,
+              7,
+              20,
+              21
+            ],
+            "lineupSlotId": 2,
+            "status": "STARTER",
+            "points": 20
+          },
+          {
+            "playerId": 4685247,
+            "player": "Braelon Allen",
+            "position": "RB",
+            "eligibleSlots": [
+              2,
+              3,
+              23,
+              7,
+              20,
+              21
+            ],
+            "lineupSlotId": 20,
+            "status": "BENCH",
+            "points": 27.300000000000004
+          },
+          {
+            "playerId": 4689936,
+            "player": "Jake Bates",
+            "position": "K",
+            "eligibleSlots": [
+              17,
+              20,
+              21
+            ],
+            "lineupSlotId": 17,
+            "status": "STARTER",
+            "points": 28
+          },
+          {
+            "playerId": -16006,
+            "player": "Cowboys D/ST",
+            "position": "D/ST",
+            "eligibleSlots": [
+              16,
+              20,
+              21
+            ],
+            "lineupSlotId": 16,
+            "status": "STARTER",
+            "points": 11
+          },
+          {
+            "playerId": 3916433,
+            "player": "Jakobi Meyers",
+            "position": "WR",
+            "eligibleSlots": [
+              3,
+              4,
+              5,
+              23,
+              7,
+              20,
+              21
+            ],
+            "lineupSlotId": 4,
+            "status": "STARTER",
+            "points": 12
+          }
+        ],
+        "slots": [
+          0,
+          2,
+          2,
+          4,
+          4,
+          6,
+          16,
+          17,
+          23
+        ],
+        "source": "ESPN mRoster scoringPeriodId"
+      },
+      {
+        "teamId": 8,
+        "week": 5,
+        "players": [
+          {
+            "playerId": 4262921,
+            "player": "Justin Jefferson",
+            "position": "WR",
+            "eligibleSlots": [
+              3,
+              4,
+              5,
+              23,
+              7,
+              20,
+              21
+            ],
+            "lineupSlotId": 4,
+            "status": "STARTER",
+            "points": 18.8
+          },
+          {
+            "playerId": 3929630,
+            "player": "Saquon Barkley",
+            "position": "RB",
+            "eligibleSlots": [
+              2,
+              3,
+              23,
+              7,
+              20,
+              21
+            ],
+            "lineupSlotId": 20,
+            "status": "BENCH",
+            "points": 2
+          },
+          {
+            "playerId": 4430737,
+            "player": "Kyren Williams",
+            "position": "RB",
+            "eligibleSlots": [
+              2,
+              3,
+              23,
+              7,
+              20,
+              21
+            ],
+            "lineupSlotId": 2,
+            "status": "STARTER",
+            "points": 56.3
+          },
+          {
+            "playerId": 4595348,
+            "player": "Malik Nabers",
+            "position": "WR",
+            "eligibleSlots": [
+              3,
+              4,
+              5,
+              23,
+              7,
+              20,
+              21
+            ],
+            "lineupSlotId": 4,
+            "status": "STARTER",
+            "points": 52.300000000000004
+          },
+          {
+            "playerId": 4239993,
+            "player": "Tee Higgins",
+            "position": "WR",
+            "eligibleSlots": [
+              3,
+              4,
+              5,
+              23,
+              7,
+              20,
+              21
+            ],
+            "lineupSlotId": 20,
+            "status": "BENCH",
+            "points": 30.900000000000002
+          },
+          {
+            "playerId": 4035538,
+            "player": "David Montgomery",
+            "position": "RB",
+            "eligibleSlots": [
+              2,
+              3,
+              23,
+              7,
+              20,
+              21
+            ],
+            "lineupSlotId": 2,
+            "status": "STARTER",
+            "points": 5.4
+          },
+          {
+            "playerId": 4432620,
+            "player": "Parker Washington",
+            "position": "WR",
+            "eligibleSlots": [
+              3,
+              4,
+              5,
+              23,
+              7,
+              20,
+              21
+            ],
+            "lineupSlotId": 23,
+            "status": "STARTER",
+            "points": 32.4
+          },
+          {
+            "playerId": 4040715,
+            "player": "Jalen Hurts",
+            "position": "QB",
+            "eligibleSlots": [
+              0,
+              7,
+              20,
+              21
+            ],
+            "lineupSlotId": 20,
+            "status": "BENCH",
+            "points": 32.519999999999996
+          },
+          {
+            "playerId": 4688813,
+            "player": "Josh Downs",
+            "position": "WR",
+            "eligibleSlots": [
+              3,
+              4,
+              5,
+              23,
+              7,
+              20,
+              21
+            ],
+            "lineupSlotId": 20,
+            "status": "BENCH",
+            "points": 12.3
+          },
+          {
+            "playerId": 4572680,
+            "player": "Tucker Kraft",
+            "position": "TE",
+            "eligibleSlots": [
+              5,
+              6,
+              23,
+              7,
+              20,
+              21
+            ],
+            "lineupSlotId": 6,
+            "status": "STARTER",
+            "points": 28.1
+          },
+          {
+            "playerId": 4596334,
+            "player": "Keaton Mitchell",
+            "position": "RB",
+            "eligibleSlots": [
+              2,
+              3,
+              23,
+              7,
+              20,
+              21
+            ],
+            "lineupSlotId": 20,
+            "status": "BENCH",
+            "points": 17.2
+          },
+          {
+            "playerId": 4710714,
+            "player": "De'Zhaun Stribling",
+            "position": "WR",
+            "eligibleSlots": [
+              25,
+              3,
+              4,
+              5,
+              23,
+              7,
+              20,
+              21
+            ],
+            "lineupSlotId": 21,
+            "status": "IR",
+            "points": 0
+          },
+          {
+            "playerId": -16017,
+            "player": "Patriots D/ST",
+            "position": "D/ST",
+            "eligibleSlots": [
+              16,
+              20,
+              21
+            ],
+            "lineupSlotId": 16,
+            "status": "STARTER",
+            "points": 27
+          },
+          {
+            "playerId": 4571557,
+            "player": "Spencer Shrader",
+            "position": "K",
+            "eligibleSlots": [
+              17,
+              20,
+              21
+            ],
+            "lineupSlotId": 17,
+            "status": "STARTER",
+            "points": 37
+          },
+          {
+            "playerId": 15818,
+            "player": "Keenan Allen",
+            "position": "WR",
+            "eligibleSlots": [
+              3,
+              4,
+              5,
+              23,
+              7,
+              20,
+              21
+            ],
+            "lineupSlotId": 20,
+            "status": "BENCH",
+            "points": 9.5
+          },
+          {
+            "playerId": 3912547,
+            "player": "Sam Darnold",
+            "position": "QB",
+            "eligibleSlots": [
+              0,
+              7,
+              20,
+              21
+            ],
+            "lineupSlotId": 0,
+            "status": "STARTER",
+            "points": 27.62
+          }
+        ],
+        "slots": [
+          0,
+          2,
+          2,
+          4,
+          4,
+          6,
+          16,
+          17,
+          23
+        ],
+        "source": "ESPN mRoster scoringPeriodId"
+      },
+      {
+        "teamId": 9,
+        "week": 5,
+        "players": [
+          {
+            "playerId": 4430878,
+            "player": "Jaxon Smith-Njigba",
+            "position": "WR",
+            "eligibleSlots": [
+              3,
+              4,
+              5,
+              23,
+              7,
+              20,
+              21
+            ],
+            "lineupSlotId": 4,
+            "status": "STARTER",
+            "points": 35.400000000000006
+          },
+          {
+            "playerId": 4890973,
+            "player": "Ashton Jeanty",
+            "position": "RB",
+            "eligibleSlots": [
+              2,
+              3,
+              23,
+              7,
+              20,
+              21
+            ],
+            "lineupSlotId": 2,
+            "status": "STARTER",
+            "points": 29.3
+          },
+          {
+            "playerId": 4870808,
+            "player": "Jeremiyah Love",
+            "position": "RB",
+            "eligibleSlots": [
+              25,
+              2,
+              3,
+              23,
+              7,
+              20,
+              21
+            ],
+            "lineupSlotId": 2,
+            "status": "STARTER",
+            "points": 8.700000000000001
+          },
+          {
+            "playerId": 4569618,
+            "player": "Garrett Wilson",
+            "position": "WR",
+            "eligibleSlots": [
+              3,
+              4,
+              5,
+              23,
+              7,
+              20,
+              21
+            ],
+            "lineupSlotId": 4,
+            "status": "STARTER",
+            "points": 29.099999999999998
+          },
+          {
+            "playerId": 4047365,
+            "player": "Josh Jacobs",
+            "position": "RB",
+            "eligibleSlots": [
+              2,
+              3,
+              23,
+              7,
+              20,
+              21
+            ],
+            "lineupSlotId": 20,
+            "status": "BENCH",
+            "points": 0
+          },
+          {
+            "playerId": 4431459,
+            "player": "Tyler Warren",
+            "position": "TE",
+            "eligibleSlots": [
+              5,
+              6,
+              23,
+              7,
+              20,
+              21
+            ],
+            "lineupSlotId": 6,
+            "status": "STARTER",
+            "points": 30.5
+          },
+          {
+            "playerId": 4871023,
+            "player": "Carnell Tate",
+            "position": "WR",
+            "eligibleSlots": [
+              25,
+              3,
+              4,
+              5,
+              23,
+              7,
+              20,
+              21
+            ],
+            "lineupSlotId": 23,
+            "status": "STARTER",
+            "points": 23.1
+          },
+          {
+            "playerId": 4047650,
+            "player": "DK Metcalf",
+            "position": "WR",
+            "eligibleSlots": [
+              3,
+              4,
+              5,
+              23,
+              7,
+              20,
+              21
+            ],
+            "lineupSlotId": 20,
+            "status": "BENCH",
+            "points": 21.8
+          },
+          {
+            "playerId": 4608686,
+            "player": "Kyle Monangai",
+            "position": "RB",
+            "eligibleSlots": [
+              2,
+              3,
+              23,
+              7,
+              20,
+              21
+            ],
+            "lineupSlotId": 20,
+            "status": "BENCH",
+            "points": 28
+          },
+          {
+            "playerId": -16026,
+            "player": "Seahawks D/ST",
+            "position": "D/ST",
+            "eligibleSlots": [
+              16,
+              20,
+              21
+            ],
+            "lineupSlotId": 16,
+            "status": "STARTER",
+            "points": 36
+          },
+          {
+            "playerId": 4702555,
+            "player": "Jonah Coleman",
+            "position": "RB",
+            "eligibleSlots": [
+              25,
+              2,
+              3,
+              23,
+              7,
+              20,
+              21
+            ],
+            "lineupSlotId": 21,
+            "status": "IR",
+            "points": 0
+          },
+          {
+            "playerId": 4685720,
+            "player": "Bryce Young",
+            "position": "QB",
+            "eligibleSlots": [
+              0,
+              7,
+              20,
+              21
+            ],
+            "lineupSlotId": 20,
+            "status": "BENCH",
+            "points": 25.46
+          },
+          {
+            "playerId": 2473037,
+            "player": "Jason Myers",
+            "position": "K",
+            "eligibleSlots": [
+              17,
+              20,
+              21
+            ],
+            "lineupSlotId": 17,
+            "status": "STARTER",
+            "points": 29
+          },
+          {
+            "playerId": 4242355,
+            "player": "Jake Ferguson",
+            "position": "TE",
+            "eligibleSlots": [
+              5,
+              6,
+              23,
+              7,
+              20,
+              21
+            ],
+            "lineupSlotId": 20,
+            "status": "BENCH",
+            "points": 9
+          },
+          {
+            "playerId": 3917315,
+            "player": "Kyler Murray",
+            "position": "QB",
+            "eligibleSlots": [
+              0,
+              7,
+              20,
+              21
+            ],
+            "lineupSlotId": 0,
+            "status": "STARTER",
+            "points": 31.740000000000002
+          },
+          {
+            "playerId": 3116385,
+            "player": "Joe Mixon",
+            "position": "RB",
+            "eligibleSlots": [
+              2,
+              3,
+              23,
+              7,
+              20,
+              21
+            ],
+            "lineupSlotId": 20,
+            "status": "BENCH",
+            "points": 0
+          }
+        ],
+        "slots": [
+          0,
+          2,
+          2,
+          4,
+          4,
+          6,
+          16,
+          17,
+          23
+        ],
+        "source": "ESPN mRoster scoringPeriodId"
+      },
+      {
+        "teamId": 10,
+        "week": 5,
+        "players": [
+          {
+            "playerId": 3043078,
+            "player": "Derrick Henry",
+            "position": "RB",
+            "eligibleSlots": [
+              2,
+              3,
+              23,
+              7,
+              20,
+              21
+            ],
+            "lineupSlotId": 2,
+            "status": "STARTER",
+            "points": 36.900000000000006
+          },
+          {
+            "playerId": 4567048,
+            "player": "Kenneth Walker III",
+            "position": "RB",
+            "eligibleSlots": [
+              2,
+              3,
+              23,
+              7,
+              20,
+              21
+            ],
+            "lineupSlotId": 20,
+            "status": "BENCH",
+            "points": 30.9
+          },
+          {
+            "playerId": 4241478,
+            "player": "DeVonta Smith",
+            "position": "WR",
+            "eligibleSlots": [
+              3,
+              4,
+              5,
+              23,
+              7,
+              20,
+              21
+            ],
+            "lineupSlotId": 20,
+            "status": "BENCH",
+            "points": 0
+          },
+          {
+            "playerId": 4612826,
+            "player": "Ladd McConkey",
+            "position": "WR",
+            "eligibleSlots": [
+              3,
+              4,
+              5,
+              23,
+              7,
+              20,
+              21
+            ],
+            "lineupSlotId": 20,
+            "status": "BENCH",
+            "points": 0
+          },
+          {
+            "playerId": 16737,
+            "player": "Mike Evans",
+            "position": "WR",
+            "eligibleSlots": [
+              3,
+              4,
+              5,
+              23,
+              7,
+              20,
+              21
+            ],
+            "lineupSlotId": 4,
+            "status": "STARTER",
+            "points": 38.900000000000006
+          },
+          {
+            "playerId": 4723086,
+            "player": "Colston Loveland",
+            "position": "TE",
+            "eligibleSlots": [
+              5,
+              6,
+              23,
+              7,
+              20,
+              21
+            ],
+            "lineupSlotId": 20,
+            "status": "BENCH",
+            "points": 15.6
+          },
+          {
+            "playerId": 4569173,
+            "player": "Rhamondre Stevenson",
+            "position": "RB",
+            "eligibleSlots": [
+              2,
+              3,
+              23,
+              7,
+              20,
+              21
+            ],
+            "lineupSlotId": 2,
+            "status": "STARTER",
+            "points": 35.9
+          },
+          {
+            "playerId": 4241416,
+            "player": "Chuba Hubbard",
+            "position": "RB",
+            "eligibleSlots": [
+              2,
+              3,
+              23,
+              7,
+              20,
+              21
+            ],
+            "lineupSlotId": 20,
+            "status": "BENCH",
+            "points": 25.900000000000002
+          },
+          {
+            "playerId": 4695883,
+            "player": "Jalen Coker",
+            "position": "WR",
+            "eligibleSlots": [
+              3,
+              4,
+              5,
+              23,
+              7,
+              20,
+              21
+            ],
+            "lineupSlotId": 20,
+            "status": "BENCH",
+            "points": 0
+          },
+          {
+            "playerId": 3929645,
+            "player": "Juwan Johnson",
+            "position": "TE",
+            "eligibleSlots": [
+              5,
+              6,
+              23,
+              7,
+              20,
+              21
+            ],
+            "lineupSlotId": 6,
+            "status": "STARTER",
+            "points": 17.5
+          },
+          {
+            "playerId": -16016,
+            "player": "Vikings D/ST",
+            "position": "D/ST",
+            "eligibleSlots": [
+              16,
+              20,
+              21
+            ],
+            "lineupSlotId": 16,
+            "status": "STARTER",
+            "points": 39
+          },
+          {
+            "playerId": 4361432,
+            "player": "Romeo Doubs",
+            "position": "WR",
+            "eligibleSlots": [
+              3,
+              4,
+              5,
+              23,
+              7,
+              20,
+              21
+            ],
+            "lineupSlotId": 4,
+            "status": "STARTER",
+            "points": 26.400000000000002
+          },
+          {
+            "playerId": 2578570,
+            "player": "Jacoby Brissett",
+            "position": "QB",
+            "eligibleSlots": [
+              0,
+              7,
+              20,
+              21
+            ],
+            "lineupSlotId": 0,
+            "status": "STARTER",
+            "points": 45.72
+          },
+          {
+            "playerId": 4574716,
+            "player": "Harrison Mevis",
+            "position": "K",
+            "eligibleSlots": [
+              17,
+              20,
+              21
+            ],
+            "lineupSlotId": 17,
+            "status": "STARTER",
+            "points": 11
+          },
+          {
+            "playerId": 4870653,
+            "player": "KC Concepcion",
+            "position": "WR",
+            "eligibleSlots": [
+              25,
+              3,
+              4,
+              5,
+              23,
+              7,
+              20,
+              21
+            ],
+            "lineupSlotId": 23,
+            "status": "STARTER",
+            "points": 12.9
+          }
+        ],
+        "slots": [
+          0,
+          2,
+          2,
+          4,
+          4,
+          6,
+          16,
+          17,
+          23
+        ],
+        "source": "ESPN mRoster scoringPeriodId"
       }
     ]
   },
-  "updatedAt": "2026-10-13T04:52:29.262Z"
+  "updatedAt": "2026-10-13T17:42:20.887Z"
 }
