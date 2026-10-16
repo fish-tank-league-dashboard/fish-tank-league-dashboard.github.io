@@ -2433,11 +2433,11 @@
       "a": "owner:gilguy",
       "al": "Gilguy",
       "at": "Dico Rowdle",
-      "as": 0,
+      "as": 36.2,
       "b": "owner:mob",
       "bl": "Mob",
       "bt": "8 Hole Reverend Rate",
-      "bs": 0,
+      "bs": 4.5,
       "status": "LIVE",
       "aTeamId": 9,
       "bTeamId": 5
@@ -2482,7 +2482,7 @@
       "b": "owner:nick",
       "bl": "Nick",
       "bt": "The Azz Train",
-      "bs": 0,
+      "bs": 6.4,
       "status": "LIVE",
       "aTeamId": 7,
       "bTeamId": 4
@@ -27065,5 +27065,5 @@
       }
     ]
   },
-  "updatedAt": "2026-10-15T15:12:00.802Z"
+  "updatedAt": "2026-10-16T03:03:57.421Z"
 }
