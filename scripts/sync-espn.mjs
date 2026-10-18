@@ -370,6 +370,11 @@ if (Array.isArray(previous?.advanced?.rosters)) {
   rosterRows.splice(0, rosterRows.length, ...merged.values());
 }
 const finalizedRosters = rosterRows.filter((row) => completedWeeks.includes(Number(row.week)));
+// The live mRoster rows for the in-progress week are published separately so
+// consumers can read the actual current roster instead of rebuilding it from the
+// last final week plus transactions. Historical analytics (lineup regret, pickup
+// production, draft scoring) keep using finalizedRosters only.
+const currentRosters = rosterRows.filter((row) => Number(row.week) === currentWeek && Array.isArray(row.players) && row.players.length);
 
 const previousTransactions = previous?.transactions && typeof previous.transactions === "object" ? previous.transactions : null;
 const playerNames = new Map(rosterPlayerById);
@@ -463,8 +468,9 @@ const content = {
     rosterScoring: finalizedRosters.some((row) => row.players.some((player) => player.points !== null)) ? "AVAILABLE" : "UNAVAILABLE",
     rosterPeriods: { requested: completedWeeks, captured: completedWeeks.filter((week) => !missingRosterWeeks.includes(week)), missing: missingRosterWeeks },
     playerDirectory: playerPayloadAvailable ? "AVAILABLE" : "UNAVAILABLE",
+    currentRoster: currentRosters.length === normalizedTeams.length ? "AVAILABLE" : currentRosters.length ? "PARTIAL" : "UNAVAILABLE",
   },
-  advanced: { ...buildAdvancedFeatures({ matchups: games.map((game) => ({ ...game, homeId: game.aTeamId, awayId: game.bTeamId, homeScore: game.as, awayScore: game.bs })), teams: normalizedTeams, rosters: finalizedRosters, drafts: reportDrafts, currentWeek }), rosters: finalizedRosters },
+  advanced: { ...buildAdvancedFeatures({ matchups: games.map((game) => ({ ...game, homeId: game.aTeamId, awayId: game.bTeamId, homeScore: game.as, awayScore: game.bs })), teams: normalizedTeams, rosters: finalizedRosters, drafts: reportDrafts, currentWeek }), rosters: finalizedRosters, currentRosters },
 };
 
 if (Array.isArray(previous?.advanced?.lineupRegret)) {
