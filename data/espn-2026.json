@@ -2448,7 +2448,7 @@
       "a": "owner:blake",
       "al": "Blake",
       "at": "Pasta Holy Trinity ",
-      "as": 109.14,
+      "as": 108.94,
       "b": "owner:chris",
       "bl": "Chris",
       "bt": "Backup Meat",
@@ -2463,7 +2463,7 @@
       "a": "owner:jake",
       "al": "Jake",
       "at": "Serenity Now, Insanity Later",
-      "as": 97.96,
+      "as": 110.52,
       "b": "owner:min",
       "bl": "Min",
       "bt": "Splitpeesoup",
@@ -2493,7 +2493,7 @@
       "a": "owner:michael",
       "al": "Michael",
       "at": "Unbridled Enthusiasm",
-      "as": 101.42,
+      "as": 103.12,
       "b": "owner:rich",
       "bl": "Rich",
       "bt": "Right Reverend Raisins ",
@@ -27102,7 +27102,7 @@
             ],
             "lineupSlotId": 4,
             "status": "STARTER",
-            "points": 17.2
+            "points": 18.9
           },
           {
             "playerId": 4361370,
@@ -27388,7 +27388,7 @@
             ],
             "lineupSlotId": 4,
             "status": "STARTER",
-            "points": 36.5
+            "points": 41.3
           },
           {
             "playerId": 4429615,
@@ -27501,7 +27501,7 @@
             ],
             "lineupSlotId": 0,
             "status": "STARTER",
-            "points": 19.900000000000002
+            "points": 27.66
           },
           {
             "playerId": 4426348,
@@ -29645,7 +29645,7 @@
             ],
             "lineupSlotId": 0,
             "status": "STARTER",
-            "points": 49.72
+            "points": 49.52
           },
           {
             "playerId": -16019,
@@ -29722,5 +29722,5 @@
       }
     ]
   },
-  "updatedAt": "2026-10-19T03:38:15.168Z"
+  "updatedAt": "2026-10-19T09:40:07.487Z"
 }
