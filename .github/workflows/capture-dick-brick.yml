@@ -128,8 +128,7 @@ jobs:
         run: |
           mode="${{ inputs.mode }}"
           if [ "${{ github.event_name }}" = "push" ]; then
-            # A change to the capture code checks ESPN access and refreshes the Week 1 retrospective.
-            node scripts/capture-dick-brick.mjs review 1
+            # Workflow or capture-code changes check current ESPN access.
             node scripts/capture-dick-brick.mjs verify
             exit 0
           fi
