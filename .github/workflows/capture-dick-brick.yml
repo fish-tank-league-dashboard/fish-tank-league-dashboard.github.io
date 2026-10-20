@@ -29,9 +29,12 @@ on:
     # 17:30 UTC is 12:30 EST. The script records only at or after 12:30 Eastern and skips
     # when the week already has a preview recorded in today's window, so exactly one of
     # each pair writes, and the 12:45 pair acts only when 12:30 was dropped or wrote
-    # nothing. Do not collapse these into one slot.
+    # nothing. Monday hourly runs also provide an independent fallback.
+    # Do not collapse these into one slot.
     - cron: '30 16,17 * * 1'
     - cron: '45 16,17 * * 1'
+    # Earlier non-zero-minute anchors can wait for 12:30 ET if hourly starts lag.
+    - cron: '17 12,13,14 * * 1'
     # Finalize once ESPN has processed Monday's results: hourly 7am-3pm EDT Tuesday (6am-2pm EST),
     # because GitHub can start any single run hours late, then once Wednesday morning as a backup.
     # Finalize is idempotent: a finalized week is skipped. These are now only a backup: any
@@ -45,17 +48,69 @@ permissions:
   # Lets a wait run start its own replacement.
   actions: write
 
-# A wait run holds the capture group for hours, so quick runs (preliminary, verify,
-# finalize, review, code pushes) use their own group instead of queueing behind it.
-# A finalize-wait run also holds its group for hours, so it gets a third group; duplicates
-# queue there and exit once they see the week finalized.
-concurrency:
-  group: dick-brick-${{ (github.event_name == 'workflow_dispatch' && inputs.mode == 'finalize-wait') && 'finalize' || ((github.event_name == 'push' || github.event.schedule == '30 16,17 * * 1' || github.event.schedule == '45 16,17 * * 1' || github.event.schedule == '0 11-19 * * 2' || github.event.schedule == '0 11 * * 3' || (github.event_name == 'workflow_dispatch' && inputs.mode != 'wait' && inputs.mode != 'capture' && inputs.mode != 'auto')) && 'quick' || 'capture') }}
-  cancel-in-progress: false
-
 jobs:
-  capture:
+  preliminary:
+    # Every Monday hourly run is another chance to publish before Brick Watch.
+    # Job-level concurrency keeps this separate from the long pre-MNF wait.
+    if: ${{ (github.event_name == 'workflow_dispatch' && inputs.mode == 'preliminary') || github.event.schedule == '0 10-23 * * 1' || github.event.schedule == '17 12,13,14 * * 1' || github.event.schedule == '30 16,17 * * 1' || github.event.schedule == '45 16,17 * * 1' }}
     runs-on: ubuntu-latest
+    timeout-minutes: 300
+    concurrency:
+      group: dick-brick-preliminary
+      cancel-in-progress: false
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Record current-week preliminary projections
+        env:
+          ESPN_LEAGUE_ID: '791101930'
+          ESPN_SEASON: '2026'
+          ESPN_S2: ${{ secrets.ESPN_S2 }}
+          ESPN_SWID: ${{ secrets.ESPN_SWID }}
+        run: |
+          if [ "${{ github.event_name }}" = "schedule" ]; then
+            # An early runner stays alive until 12:30 ET. TZ handles EDT/EST.
+            et_hour=$(TZ=America/New_York date +%H)
+            et_minute=$(TZ=America/New_York date +%M)
+            et_second=$(TZ=America/New_York date +%S)
+            if [ "$et_hour" -lt 8 ]; then
+              echo "Before 8am ET; a later Monday run will handle the preview."
+              exit 0
+            fi
+            wait_seconds=$(( (12 * 60 + 30 - 10#$et_hour * 60 - 10#$et_minute) * 60 - 10#$et_second ))
+            if [ "$wait_seconds" -gt 0 ]; then
+              echo "Waiting $wait_seconds seconds until 12:30pm ET."
+              sleep "$wait_seconds"
+            fi
+            node scripts/capture-dick-brick.mjs preliminary --scheduled
+          else
+            node scripts/capture-dick-brick.mjs preliminary
+          fi
+      - name: Publish preliminary snapshot
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if git diff --quiet -- data/dick-brick-preliminary.json; then
+            echo "No preliminary changes."
+            exit 0
+          fi
+          git config user.name "fish-tank-data-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add data/dick-brick-preliminary.json
+          git commit -m "data: refresh Dick Brick preliminary"
+          git pull --rebase
+          git push
+          gh api --method POST "repos/$GITHUB_REPOSITORY/pages/builds"
+
+  capture:
+    # Preliminary runs have their own job so a long wait cannot hold up the preview.
+    if: ${{ !(github.event_name == 'workflow_dispatch' && inputs.mode == 'preliminary') && github.event.schedule != '17 12,13,14 * * 1' && github.event.schedule != '30 16,17 * * 1' && github.event.schedule != '45 16,17 * * 1' }}
+    runs-on: ubuntu-latest
+    concurrency:
+      group: dick-brick-${{ (github.event_name == 'workflow_dispatch' && inputs.mode == 'finalize-wait') && 'finalize' || ((github.event_name == 'push' || github.event.schedule == '0 11-19 * * 2' || github.event.schedule == '0 11 * * 3' || (github.event_name == 'workflow_dispatch' && inputs.mode != 'wait' && inputs.mode != 'capture' && inputs.mode != 'auto')) && 'quick' || 'capture') }}
+      cancel-in-progress: false
     # A wait run can sleep for hours; GitHub's hard limit is 360 minutes.
     timeout-minutes: 355
     steps:
@@ -80,7 +135,6 @@ jobs:
           fi
           if [ "$mode" = "review" ]; then node scripts/capture-dick-brick.mjs review 1; exit 0; fi
           if [ -z "$mode" ]; then
-            case "${{ github.event.schedule }}" in '30 16,17 * * 1'|'45 16,17 * * 1') node scripts/capture-dick-brick.mjs preliminary --scheduled; exit 0 ;; esac
             case "${{ github.event.schedule }}" in '0 11-19 * * 2'|'0 11 * * 3') mode=finalize ;; *) mode=wait ;; esac
           fi
           node scripts/capture-dick-brick.mjs "$mode"
