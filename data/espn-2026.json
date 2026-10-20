@@ -32715,8 +32715,8 @@
               20,
               21
             ],
-            "lineupSlotId": 20,
-            "status": "BENCH",
+            "lineupSlotId": 2,
+            "status": "STARTER",
             "points": 0
           },
           {
@@ -32764,8 +32764,8 @@
               20,
               21
             ],
-            "lineupSlotId": 20,
-            "status": "BENCH",
+            "lineupSlotId": 6,
+            "status": "STARTER",
             "points": 0
           },
           {
@@ -32891,22 +32891,6 @@
             "points": 18.5
           },
           {
-            "playerId": 4373626,
-            "player": "Tyler Allgeier",
-            "position": "RB",
-            "eligibleSlots": [
-              2,
-              3,
-              23,
-              7,
-              20,
-              21
-            ],
-            "lineupSlotId": 2,
-            "status": "STARTER",
-            "points": 5.800000000000001
-          },
-          {
             "playerId": 2573401,
             "player": "Tyler Higbee",
             "position": "TE",
@@ -32918,8 +32902,8 @@
               20,
               21
             ],
-            "lineupSlotId": 6,
-            "status": "STARTER",
+            "lineupSlotId": 20,
+            "status": "BENCH",
             "points": 4.2
           }
         ],
@@ -33206,5 +33190,5 @@
       }
     ]
   },
-  "updatedAt": "2026-10-20T15:16:14.319Z"
+  "updatedAt": "2026-10-20T23:50:32.059Z"
 }
