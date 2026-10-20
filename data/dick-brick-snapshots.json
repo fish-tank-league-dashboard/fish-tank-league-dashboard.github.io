@@ -500,7 +500,9 @@
             "winProbability": 100
           }
         }
-      ]
+      ],
+      "finalizedAt": "2026-10-20T07:10:40.623Z",
+      "awardManager": "Mob"
     }
   ]
 }

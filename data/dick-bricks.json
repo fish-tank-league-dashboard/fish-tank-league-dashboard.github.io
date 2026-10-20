@@ -5,6 +5,20 @@
   "awards": [
     {
       "season": 2026,
+      "week": 6,
+      "status": "verified",
+      "managerId": "owner:mob",
+      "manager": "Mob",
+      "team": "8 Hole Reverend Rate",
+      "opponent": "Dico Rowdle",
+      "opponentManager": "Gilguy",
+      "winProbability": 59.1,
+      "projectedPoints": 127.78362793,
+      "finalScore": "119.10–126.74",
+      "capturedAt": "2026-10-19T23:55:00.100Z"
+    },
+    {
+      "season": 2026,
       "week": 5,
       "status": "verified",
       "managerId": "owner:min",
