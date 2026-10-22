@@ -31882,19 +31882,6 @@
             "points": 17
           },
           {
-            "playerId": -16012,
-            "player": "Chiefs D/ST",
-            "position": "D/ST",
-            "eligibleSlots": [
-              16,
-              20,
-              21
-            ],
-            "lineupSlotId": 20,
-            "status": "BENCH",
-            "points": 22
-          },
-          {
             "playerId": 4697815,
             "player": "Rachaad White",
             "position": "RB",
@@ -31974,6 +31961,23 @@
             "lineupSlotId": 2,
             "status": "STARTER",
             "points": 14.500000000000002
+          },
+          {
+            "playerId": 15818,
+            "player": "Keenan Allen",
+            "position": "WR",
+            "eligibleSlots": [
+              3,
+              4,
+              5,
+              23,
+              7,
+              20,
+              21
+            ],
+            "lineupSlotId": 20,
+            "status": "BENCH",
+            "points": 16.200000000000003
           }
         ],
         "slots": [
@@ -33567,5 +33571,5 @@
       }
     ]
   },
-  "updatedAt": "2026-10-22T15:53:39.071Z"
+  "updatedAt": "2026-10-22T17:59:47.465Z"
 }
