@@ -31773,8 +31773,8 @@
               20,
               21
             ],
-            "lineupSlotId": 4,
-            "status": "STARTER",
+            "lineupSlotId": 20,
+            "status": "BENCH",
             "points": 6.4
           },
           {
@@ -31790,23 +31790,6 @@
             "lineupSlotId": 20,
             "status": "BENCH",
             "points": 0
-          },
-          {
-            "playerId": 3116165,
-            "player": "Chris Godwin Jr.",
-            "position": "WR",
-            "eligibleSlots": [
-              3,
-              4,
-              5,
-              23,
-              7,
-              20,
-              21
-            ],
-            "lineupSlotId": 20,
-            "status": "BENCH",
-            "points": 7.7
           },
           {
             "playerId": 4360569,
@@ -31955,8 +31938,8 @@
               20,
               21
             ],
-            "lineupSlotId": 2,
-            "status": "STARTER",
+            "lineupSlotId": 20,
+            "status": "BENCH",
             "points": 0
           },
           {
@@ -31972,9 +31955,25 @@
               20,
               21
             ],
-            "lineupSlotId": 20,
-            "status": "BENCH",
+            "lineupSlotId": 4,
+            "status": "STARTER",
             "points": 20.3
+          },
+          {
+            "playerId": 4426386,
+            "player": "Roschon Johnson",
+            "position": "RB",
+            "eligibleSlots": [
+              2,
+              3,
+              23,
+              7,
+              20,
+              21
+            ],
+            "lineupSlotId": 2,
+            "status": "STARTER",
+            "points": 14.500000000000002
           }
         ],
         "slots": [
@@ -33568,5 +33567,5 @@
       }
     ]
   },
-  "updatedAt": "2026-10-22T15:27:49.557Z"
+  "updatedAt": "2026-10-22T15:53:39.071Z"
 }
