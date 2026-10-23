@@ -2508,7 +2508,7 @@
       "a": "owner:mob",
       "al": "Mob",
       "at": "8 Hole Reverend Rate",
-      "as": 0,
+      "as": 49.8,
       "b": "owner:michael",
       "bl": "Michael",
       "bt": "Unbridled Enthusiasm",
@@ -2527,7 +2527,7 @@
       "b": "owner:nyle",
       "bl": "Nyle",
       "bt": "The Blessed Sherpa ",
-      "bs": 0,
+      "bs": 7.8,
       "status": "LIVE",
       "aTeamId": 6,
       "bTeamId": 7
@@ -2538,7 +2538,7 @@
       "a": "owner:rich",
       "al": "Rich",
       "at": "Right Reverend Raisins ",
-      "as": 0,
+      "as": 23.7,
       "b": "owner:jake",
       "bl": "Jake",
       "bt": "Serenity Now, Insanity Later",
@@ -2553,11 +2553,11 @@
       "a": "owner:min",
       "al": "Min",
       "at": "Splitpeesoup",
-      "as": 0,
+      "as": 5,
       "b": "owner:blake",
       "bl": "Blake",
       "bt": "Pasta Holy Trinity ",
-      "bs": 0,
+      "bs": 19.9,
       "status": "LIVE",
       "aTeamId": 8,
       "bTeamId": 10
@@ -2568,7 +2568,7 @@
       "a": "owner:nick",
       "al": "Nick",
       "at": "The Azz Train",
-      "as": 0,
+      "as": 1.3,
       "b": "owner:gilguy",
       "bl": "Gilguy",
       "bt": "Dico Rowdle",
@@ -31541,7 +31541,7 @@
             ],
             "lineupSlotId": 23,
             "status": "STARTER",
-            "points": 17.5
+            "points": 41.2
           },
           {
             "playerId": 4248528,
@@ -31960,7 +31960,7 @@
             ],
             "lineupSlotId": 2,
             "status": "STARTER",
-            "points": 14.500000000000002
+            "points": 15.800000000000002
           },
           {
             "playerId": 15818,
@@ -32060,7 +32060,7 @@
             ],
             "lineupSlotId": 2,
             "status": "STARTER",
-            "points": 23
+            "points": 42
           },
           {
             "playerId": 4567750,
@@ -32091,7 +32091,7 @@
             ],
             "lineupSlotId": 0,
             "status": "STARTER",
-            "points": 29.8
+            "points": 60.6
           },
           {
             "playerId": 4360761,
@@ -32564,7 +32564,7 @@
             ],
             "lineupSlotId": 4,
             "status": "STARTER",
-            "points": 5.7
+            "points": 13.5
           },
           {
             "playerId": 4361307,
@@ -32631,7 +32631,7 @@
             ],
             "lineupSlotId": 20,
             "status": "BENCH",
-            "points": 6.9
+            "points": 17.8
           },
           {
             "playerId": 3916148,
@@ -32982,7 +32982,7 @@
             ],
             "lineupSlotId": 16,
             "status": "STARTER",
-            "points": 14
+            "points": 19
           },
           {
             "playerId": 4571557,
@@ -33091,8 +33091,8 @@
               20,
               21
             ],
-            "lineupSlotId": 2,
-            "status": "STARTER",
+            "lineupSlotId": 20,
+            "status": "BENCH",
             "points": 0
           },
           {
@@ -33140,8 +33140,8 @@
               20,
               21
             ],
-            "lineupSlotId": 6,
-            "status": "STARTER",
+            "lineupSlotId": 20,
+            "status": "BENCH",
             "points": 0
           },
           {
@@ -33231,7 +33231,7 @@
             ],
             "lineupSlotId": 20,
             "status": "BENCH",
-            "points": 18.5
+            "points": 44.72
           },
           {
             "playerId": 2573401,
@@ -33245,8 +33245,8 @@
               20,
               21
             ],
-            "lineupSlotId": 20,
-            "status": "BENCH",
+            "lineupSlotId": 6,
+            "status": "STARTER",
             "points": 4.2
           },
           {
@@ -33278,8 +33278,8 @@
               20,
               21
             ],
-            "lineupSlotId": 20,
-            "status": "BENCH",
+            "lineupSlotId": 2,
+            "status": "STARTER",
             "points": 9.8
           }
         ],
@@ -33397,7 +33397,7 @@
             ],
             "lineupSlotId": 6,
             "status": "STARTER",
-            "points": 18.5
+            "points": 38.4
           },
           {
             "playerId": 4569173,
@@ -33413,7 +33413,7 @@
             ],
             "lineupSlotId": 20,
             "status": "BENCH",
-            "points": 3.6
+            "points": 26.1
           },
           {
             "playerId": 4241416,
@@ -33536,7 +33536,7 @@
             ],
             "lineupSlotId": 20,
             "status": "BENCH",
-            "points": 19.6
+            "points": 22.3
           },
           {
             "playerId": 4428718,
@@ -33571,5 +33571,5 @@
       }
     ]
   },
-  "updatedAt": "2026-10-22T17:59:47.465Z"
+  "updatedAt": "2026-10-23T03:19:17.571Z"
 }
