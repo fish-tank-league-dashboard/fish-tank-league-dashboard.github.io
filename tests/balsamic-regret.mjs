@@ -7,7 +7,9 @@ const scoringEntry = { appliedStatTotal: 45, playerPoolEntry: { player: { stats:
   { scoringPeriodId: 2, statSourceId: 1, statSplitTypeId: 1, appliedTotal: 12 },
 ] } } };
 assert.equal(playerPoints(scoringEntry, 2), 7, 'Weekly actual points must override season totals and projections');
-assert.equal(playerPoints({ appliedStatTotal: 45 }, 2), null, 'A cumulative score cannot stand in for a missing weekly score');
+assert.equal(playerPoints({ appliedStatTotal: 45 }, 2), null, 'A multi-period score cannot stand in for a missing weekly score');
+assert.equal(playerPoints({ appliedStatTotal: 13, player: { stats: [{ scoringPeriodId: 1, statSourceId: 0, statSplitTypeId: 1, appliedTotal: 13 }] } }, 2), 0, 'A missing weekly stat is zero when the aggregate equals the prior actual');
+assert.equal(playerPoints({ appliedStatTotal: 0 }, 2), 0, 'A zero aggregate confirms a zero weekly score');
 assert.equal(normalizeRosterEntry({ ...scoringEntry, playerId: 11, lineupSlotId: 20 }, 2).points, 7);
 
 const legal = optimizeLineup([
