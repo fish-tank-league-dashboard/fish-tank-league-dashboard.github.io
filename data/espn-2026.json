@@ -4608,8 +4608,8 @@
         "faab": 0,
         "totalPoints": 49.3,
         "starterPoints": 49.3,
-        "scoredPeriods": 2,
-        "coverage": "partial"
+        "scoredPeriods": 3,
+        "coverage": "complete"
       },
       {
         "id": "pickup:7:4568490",
@@ -4706,8 +4706,8 @@
         "faab": 5,
         "totalPoints": 19.5,
         "starterPoints": 15.7,
-        "scoredPeriods": 3,
-        "coverage": "partial"
+        "scoredPeriods": 4,
+        "coverage": "complete"
       },
       {
         "id": "pickup:5:-16025",
@@ -4762,8 +4762,8 @@
         "faab": 10,
         "totalPoints": 14.8,
         "starterPoints": 14.8,
-        "scoredPeriods": 1,
-        "coverage": "partial"
+        "scoredPeriods": 2,
+        "coverage": "complete"
       },
       {
         "id": "pickup:3:4429096",
@@ -4945,6 +4945,20 @@
         "totalPoints": 0,
         "starterPoints": 0,
         "scoredPeriods": 3,
+        "coverage": "complete"
+      },
+      {
+        "id": "pickup:4:4567104",
+        "playerId": 4567104,
+        "player": "Will Reichard",
+        "teamId": 4,
+        "team": "The Azz Train",
+        "manager": "Nick",
+        "ownerId": "owner:nick",
+        "faab": 7,
+        "totalPoints": 0,
+        "starterPoints": 0,
+        "scoredPeriods": 1,
         "coverage": "complete"
       }
     ],
@@ -8265,63 +8279,63 @@
       {
         "teamId": 3,
         "week": 5,
-        "actual": 298.22,
-        "optimal": 311.02,
-        "regret": 12.8,
+        "actual": 165.9,
+        "optimal": 180.02,
+        "regret": 14.12,
         "assignments": [
           {
             "slot": 0,
-            "playerId": 3918298,
-            "player": "Josh Allen",
-            "points": 51.02
+            "playerId": 12483,
+            "player": "Matthew Stafford",
+            "points": 33.32
           },
           {
             "slot": 2,
             "playerId": 3117251,
             "player": "Christian McCaffrey",
-            "points": 33.3
+            "points": 17.3
           },
           {
             "slot": 2,
-            "playerId": 4241474,
-            "player": "Brian Robinson Jr.",
-            "points": 27.3
+            "playerId": 4429096,
+            "player": "Blake Corum",
+            "points": 16.2
           },
           {
             "slot": 4,
             "playerId": 4258173,
             "player": "Nico Collins",
-            "points": 41.400000000000006
+            "points": 10.6
           },
           {
             "slot": 4,
-            "playerId": 4248528,
-            "player": "Christian Watson",
-            "points": 40
+            "playerId": 4685278,
+            "player": "Luther Burden III",
+            "points": 8.9
           },
           {
             "slot": 6,
             "playerId": 4361050,
             "player": "Isaiah Likely",
-            "points": 46
+            "points": 32.4
           },
           {
             "slot": 16,
             "playerId": -16034,
             "player": "Texans D/ST",
-            "points": 31
+            "points": 24
           },
           {
             "slot": 17,
             "playerId": 3953687,
             "player": "Brandon Aubrey",
-            "points": 17
+            "points": 5
           },
           {
             "slot": 23,
-            "playerId": 4569559,
-            "player": "Devaughn Vele",
-            "points": 24
+            "playerId": 4248528,
+            "player": "Christian Watson",
+            "points": 32.3
           }
         ],
         "available": true
@@ -8329,63 +8343,63 @@
       {
         "teamId": 4,
         "week": 5,
-        "actual": 341.22,
-        "optimal": 341.22,
-        "regret": 0,
+        "actual": 166.44,
+        "optimal": 170.94,
+        "regret": 4.5,
         "assignments": [
           {
             "slot": 0,
             "playerId": 4432577,
             "player": "C.J. Stroud",
-            "points": 50.019999999999996
+            "points": 22.94
           },
           {
             "slot": 2,
             "playerId": 4361579,
             "player": "Javonte Williams",
-            "points": 45.5
+            "points": 14.2
           },
           {
             "slot": 2,
             "playerId": 4569987,
             "player": "Jaylen Warren",
-            "points": 52.400000000000006
+            "points": 36.8
           },
           {
             "slot": 4,
             "playerId": 4426515,
             "player": "Puka Nacua",
-            "points": 65.4
+            "points": 37.7
           },
           {
             "slot": 4,
-            "playerId": 4372016,
-            "player": "Jaylen Waddle",
-            "points": 19.3
+            "playerId": 3116165,
+            "player": "Chris Godwin Jr.",
+            "points": 7
           },
           {
             "slot": 6,
-            "playerId": 5083076,
-            "player": "Harold Fannin Jr.",
-            "points": 13.1
+            "playerId": 4385690,
+            "player": "Dalton Kincaid",
+            "points": 3.7
           },
           {
             "slot": 16,
             "playerId": -16005,
             "player": "Browns D/ST",
-            "points": 34
+            "points": 19
           },
           {
             "slot": 17,
             "playerId": 4567104,
             "player": "Will Reichard",
-            "points": 35
+            "points": 16
           },
           {
             "slot": 23,
             "playerId": 4832800,
             "player": "Denzel Boston",
-            "points": 26.5
+            "points": 13.6
           }
         ],
         "available": true
@@ -8457,63 +8471,63 @@
       {
         "teamId": 6,
         "week": 5,
-        "actual": 274.92,
-        "optimal": 290.52,
-        "regret": 15.6,
+        "actual": 127.64,
+        "optimal": 135.74,
+        "regret": 8.1,
         "assignments": [
           {
             "slot": 0,
             "playerId": 3046779,
             "player": "Jared Goff",
-            "points": 57.42
-          },
-          {
-            "slot": 2,
-            "playerId": 3054850,
-            "player": "Alvin Kamara",
-            "points": 25.400000000000002
+            "points": 34.94
           },
           {
             "slot": 2,
             "playerId": 4242335,
             "player": "Jonathan Taylor",
-            "points": 33.9
+            "points": 11.2
           },
           {
-            "slot": 4,
-            "playerId": 4701936,
-            "player": "Matthew Golden",
-            "points": 32
+            "slot": 2,
+            "playerId": 4711533,
+            "player": "Ollie Gordon II",
+            "points": 14.8
           },
           {
             "slot": 4,
             "playerId": 4374302,
             "player": "Amon-Ra St. Brown",
-            "points": 28.4
+            "points": 12.9
+          },
+          {
+            "slot": 4,
+            "playerId": 3128429,
+            "player": "Courtland Sutton",
+            "points": 9.8
           },
           {
             "slot": 6,
-            "playerId": 4036133,
-            "player": "T.J. Hockenson",
-            "points": 26.599999999999998
+            "playerId": 3121023,
+            "player": "Dallas Goedert",
+            "points": 9.8
           },
           {
             "slot": 16,
             "playerId": -16014,
             "player": "Rams D/ST",
-            "points": 21
+            "points": 5
           },
           {
             "slot": 17,
             "playerId": 2971573,
             "player": "Ka'imi Fairbairn",
-            "points": 33
+            "points": 17
           },
           {
             "slot": 23,
-            "playerId": 4711533,
-            "player": "Ollie Gordon II",
-            "points": 32.8
+            "playerId": 4701936,
+            "player": "Matthew Golden",
+            "points": 20.3
           }
         ],
         "available": true
@@ -8521,63 +8535,63 @@
       {
         "teamId": 7,
         "week": 5,
-        "actual": 232.78,
-        "optimal": 273.38,
-        "regret": 40.6,
+        "actual": 89.36,
+        "optimal": 107.26,
+        "regret": 17.9,
         "assignments": [
           {
             "slot": 0,
             "playerId": 4361741,
             "player": "Brock Purdy",
-            "points": 41.78
+            "points": 18.16
           },
           {
             "slot": 2,
             "playerId": 4685247,
             "player": "Braelon Allen",
-            "points": 27.300000000000004
+            "points": 18.6
           },
           {
             "slot": 2,
             "playerId": 4430807,
             "player": "Bijan Robinson",
-            "points": 43.5
+            "points": 15.8
           },
           {
             "slot": 4,
-            "playerId": 3126486,
-            "player": "Deebo Samuel Sr.",
-            "points": 20.5
+            "playerId": 3916433,
+            "player": "Jakobi Meyers",
+            "points": 5.7
           },
           {
             "slot": 4,
-            "playerId": 4685472,
-            "player": "Tetairoa McMillan",
-            "points": 45.2
+            "playerId": 4431299,
+            "player": "Rome Odunze",
+            "points": 5
           },
           {
             "slot": 6,
             "playerId": 3040151,
             "player": "George Kittle",
-            "points": 24.4
+            "points": 7.4
           },
           {
             "slot": 16,
             "playerId": -16006,
             "player": "Cowboys D/ST",
-            "points": 11
+            "points": 5
           },
           {
             "slot": 17,
             "playerId": 4689936,
             "player": "Jake Bates",
-            "points": 28
+            "points": 10
           },
           {
             "slot": 23,
             "playerId": 4361307,
             "player": "Trey McBride",
-            "points": 31.700000000000003
+            "points": 21.6
           }
         ],
         "available": true
@@ -8649,63 +8663,63 @@
       {
         "teamId": 9,
         "week": 5,
-        "actual": 252.84,
-        "optimal": 272.14,
-        "regret": 19.3,
+        "actual": 142.36,
+        "optimal": 146.06,
+        "regret": 3.7,
         "assignments": [
           {
             "slot": 0,
             "playerId": 3917315,
             "player": "Kyler Murray",
-            "points": 31.740000000000002
-          },
-          {
-            "slot": 2,
-            "playerId": 4608686,
-            "player": "Kyle Monangai",
-            "points": 28
+            "points": 20.26
           },
           {
             "slot": 2,
             "playerId": 4890973,
             "player": "Ashton Jeanty",
-            "points": 29.3
+            "points": 10.7
           },
           {
-            "slot": 4,
-            "playerId": 4871023,
-            "player": "Carnell Tate",
-            "points": 23.1
+            "slot": 2,
+            "playerId": 4870808,
+            "player": "Jeremiyah Love",
+            "points": 2.2
           },
           {
             "slot": 4,
             "playerId": 4430878,
             "player": "Jaxon Smith-Njigba",
-            "points": 35.400000000000006
+            "points": 22.8
+          },
+          {
+            "slot": 4,
+            "playerId": 4569618,
+            "player": "Garrett Wilson",
+            "points": 23.4
           },
           {
             "slot": 6,
             "playerId": 4431459,
             "player": "Tyler Warren",
-            "points": 30.5
+            "points": 21.4
           },
           {
             "slot": 16,
             "playerId": -16026,
             "player": "Seahawks D/ST",
-            "points": 36
+            "points": 17
           },
           {
             "slot": 17,
             "playerId": 2473037,
             "player": "Jason Myers",
-            "points": 29
+            "points": 23
           },
           {
             "slot": 23,
-            "playerId": 4569618,
-            "player": "Garrett Wilson",
-            "points": 29.099999999999998
+            "playerId": 4047650,
+            "player": "DK Metcalf",
+            "points": 5.3
           }
         ],
         "available": true
@@ -8713,63 +8727,63 @@
       {
         "teamId": 10,
         "week": 5,
-        "actual": 264.22,
-        "optimal": 282.22,
-        "regret": 18,
+        "actual": 130.78,
+        "optimal": 133.18,
+        "regret": 2.4,
         "assignments": [
           {
             "slot": 0,
             "playerId": 2578570,
             "player": "Jacoby Brissett",
-            "points": 45.72
+            "points": 31.28
           },
           {
             "slot": 2,
             "playerId": 3043078,
             "player": "Derrick Henry",
-            "points": 36.900000000000006
+            "points": 21
           },
           {
             "slot": 2,
-            "playerId": 4567048,
-            "player": "Kenneth Walker III",
-            "points": 30.9
+            "playerId": 4569173,
+            "player": "Rhamondre Stevenson",
+            "points": 17.5
           },
           {
             "slot": 4,
             "playerId": 16737,
             "player": "Mike Evans",
-            "points": 38.900000000000006
+            "points": 26.3
           },
           {
             "slot": 4,
             "playerId": 4361432,
             "player": "Romeo Doubs",
-            "points": 26.400000000000002
+            "points": 2.6
           },
           {
             "slot": 6,
-            "playerId": 3929645,
-            "player": "Juwan Johnson",
-            "points": 17.5
+            "playerId": 4723086,
+            "player": "Colston Loveland",
+            "points": 3.9
           },
           {
             "slot": 16,
             "playerId": -16016,
             "player": "Vikings D/ST",
-            "points": 39
+            "points": 21
           },
           {
             "slot": 17,
             "playerId": 4574716,
             "player": "Harrison Mevis",
-            "points": 11
+            "points": 4
           },
           {
             "slot": 23,
-            "playerId": 4569173,
-            "player": "Rhamondre Stevenson",
-            "points": 35.9
+            "playerId": 3929645,
+            "player": "Juwan Johnson",
+            "points": 5.6
           }
         ],
         "available": true
@@ -8777,63 +8791,63 @@
       {
         "teamId": 1,
         "week": 6,
-        "actual": 194.34,
-        "optimal": 226.54,
-        "regret": 32.2,
+        "actual": 103.12,
+        "optimal": 125.82,
+        "regret": 22.7,
         "assignments": [
           {
             "slot": 0,
             "playerId": 14880,
             "player": "Kirk Cousins",
-            "points": 38.24
-          },
-          {
-            "slot": 2,
-            "playerId": 4429059,
-            "player": "Woody Marks",
-            "points": 22.6
+            "points": 22.52
           },
           {
             "slot": 2,
             "playerId": 4241985,
             "player": "J.K. Dobbins",
-            "points": 29
+            "points": 13.6
           },
           {
-            "slot": 4,
-            "playerId": 4361370,
-            "player": "Chris Olave",
-            "points": 22.900000000000002
+            "slot": 2,
+            "playerId": 4429059,
+            "player": "Woody Marks",
+            "points": 10.1
           },
           {
             "slot": 4,
             "playerId": 4241389,
             "player": "CeeDee Lamb",
-            "points": 18.9
+            "points": 16
+          },
+          {
+            "slot": 4,
+            "playerId": 4361370,
+            "player": "Chris Olave",
+            "points": 14.3
           },
           {
             "slot": 6,
             "playerId": 4360248,
             "player": "Kyle Pitts Sr.",
-            "points": 38.2
+            "points": 23
           },
           {
             "slot": 16,
             "playerId": -16030,
             "player": "Jaguars D/ST",
-            "points": 16
+            "points": 4
           },
           {
             "slot": 17,
             "playerId": 5082424,
             "player": "Dominic Zvada",
-            "points": 21
+            "points": 8
           },
           {
             "slot": 23,
-            "playerId": 4362628,
-            "player": "Ja'Marr Chase",
-            "points": 19.7
+            "playerId": 4683062,
+            "player": "Xavier Worthy",
+            "points": 14.3
           }
         ],
         "available": true
@@ -8841,51 +8855,51 @@
       {
         "teamId": 2,
         "week": 6,
-        "actual": 256.96,
-        "optimal": 307.16,
-        "regret": 50.2,
+        "actual": 110.52,
+        "optimal": 149.8,
+        "regret": 39.28,
         "assignments": [
           {
             "slot": 0,
             "playerId": 4426348,
             "player": "Jayden Daniels",
-            "points": 55.260000000000005
+            "points": 25
           },
           {
             "slot": 2,
             "playerId": 4379399,
             "player": "James Cook III",
-            "points": 47.1
+            "points": 24.3
           },
           {
             "slot": 2,
-            "playerId": 4596448,
-            "player": "Bucky Irving",
-            "points": 38.4
+            "playerId": 4882093,
+            "player": "Bhayshul Tuten",
+            "points": 24.7
           },
           {
             "slot": 4,
             "playerId": 4426354,
             "player": "George Pickens",
-            "points": 41.3
+            "points": 13.3
           },
           {
             "slot": 4,
-            "playerId": 16800,
-            "player": "Davante Adams",
-            "points": 29
+            "playerId": 4429615,
+            "player": "Zay Flowers",
+            "points": 12.7
           },
           {
             "slot": 6,
-            "playerId": 4430027,
-            "player": "Sam LaPorta",
-            "points": 19.8
+            "playerId": 3116365,
+            "player": "Mark Andrews",
+            "points": 1.4
           },
           {
             "slot": 16,
             "playerId": -16023,
             "player": "Steelers D/ST",
-            "points": 27
+            "points": 19
           },
           {
             "slot": 17,
@@ -8895,9 +8909,9 @@
           },
           {
             "slot": 23,
-            "playerId": 4882093,
-            "player": "Bhayshul Tuten",
-            "points": 36.3
+            "playerId": 2976212,
+            "player": "Stefon Diggs",
+            "points": 16.4
           }
         ],
         "available": true
@@ -8969,63 +8983,63 @@
       {
         "teamId": 4,
         "week": 6,
-        "actual": 248.02,
-        "optimal": 276.72,
-        "regret": 28.7,
+        "actual": 102.58,
+        "optimal": 116.68,
+        "regret": 14.1,
         "assignments": [
           {
             "slot": 0,
             "playerId": 4432577,
             "player": "C.J. Stroud",
-            "points": 51.92
+            "points": 28.98
           },
           {
             "slot": 2,
             "playerId": 4361579,
             "player": "Javonte Williams",
-            "points": 27.200000000000003
+            "points": 13
           },
           {
             "slot": 2,
             "playerId": 4569987,
             "player": "Jaylen Warren",
-            "points": 46.60000000000001
+            "points": 9.8
           },
           {
             "slot": 4,
             "playerId": 4426515,
             "player": "Puka Nacua",
-            "points": 51.7
+            "points": 14
           },
           {
             "slot": 4,
-            "playerId": 3116165,
-            "player": "Chris Godwin Jr.",
-            "points": 14.7
+            "playerId": 4372016,
+            "player": "Jaylen Waddle",
+            "points": 6.4
           },
           {
             "slot": 6,
             "playerId": 4385690,
             "player": "Dalton Kincaid",
-            "points": 14.5
+            "points": 10.8
           },
           {
             "slot": 16,
-            "playerId": -16005,
-            "player": "Browns D/ST",
-            "points": 36
+            "playerId": -16012,
+            "player": "Chiefs D/ST",
+            "points": 22
           },
           {
             "slot": 17,
             "playerId": 4697745,
             "player": "Tyler Loop",
-            "points": 18
+            "points": 4
           },
           {
             "slot": 23,
-            "playerId": 4832800,
-            "player": "Denzel Boston",
-            "points": 16.1
+            "playerId": 3116165,
+            "player": "Chris Godwin Jr.",
+            "points": 7.7
           }
         ],
         "available": true
@@ -9033,63 +9047,63 @@
       {
         "teamId": 5,
         "week": 6,
-        "actual": 281.34,
-        "optimal": 323.96,
-        "regret": 42.62,
+        "actual": 119.1,
+        "optimal": 138.74,
+        "regret": 19.64,
         "assignments": [
           {
             "slot": 0,
-            "playerId": 4431452,
-            "player": "Drake Maye",
-            "points": 77.26
+            "playerId": 4360310,
+            "player": "Trevor Lawrence",
+            "points": 35.34
           },
           {
             "slot": 2,
-            "playerId": 3042519,
-            "player": "Aaron Jones Sr.",
-            "points": 18.7
+            "playerId": 4259545,
+            "player": "D'Andre Swift",
+            "points": 23
           },
           {
             "slot": 2,
-            "playerId": 4429795,
-            "player": "Jahmyr Gibbs",
-            "points": 37.7
-          },
-          {
-            "slot": 4,
-            "playerId": 4567750,
-            "player": "Emeka Egbuka",
-            "points": 35
+            "playerId": 4887558,
+            "player": "Emanuel Wilson",
+            "points": 5.2
           },
           {
             "slot": 4,
             "playerId": 4426502,
             "player": "Drake London",
-            "points": 31
+            "points": 12.2
+          },
+          {
+            "slot": 4,
+            "playerId": 4567750,
+            "player": "Emeka Egbuka",
+            "points": 17.8
           },
           {
             "slot": 6,
             "playerId": 4432665,
             "player": "Brock Bowers",
-            "points": 34
+            "points": 11
           },
           {
             "slot": 16,
             "playerId": -16033,
             "player": "Ravens D/ST",
-            "points": 31
+            "points": 17
           },
           {
             "slot": 17,
             "playerId": 4686361,
             "player": "Cam Little",
-            "points": 19
+            "points": 10
           },
           {
             "slot": 23,
-            "playerId": 4259545,
-            "player": "D'Andre Swift",
-            "points": 40.3
+            "playerId": 4360761,
+            "player": "Michael Wilson",
+            "points": 7.2
           }
         ],
         "available": true
@@ -9097,63 +9111,63 @@
       {
         "teamId": 6,
         "week": 6,
-        "actual": 199.88,
-        "optimal": 231.64,
-        "regret": 31.76,
+        "actual": 112.48,
+        "optimal": 113.28,
+        "regret": 0.8,
         "assignments": [
           {
             "slot": 0,
-            "playerId": 3046779,
-            "player": "Jared Goff",
-            "points": 34.94
+            "playerId": 3139477,
+            "player": "Patrick Mahomes",
+            "points": 10.48
           },
           {
             "slot": 2,
             "playerId": 4242335,
             "player": "Jonathan Taylor",
-            "points": 32.3
+            "points": 21.1
           },
           {
             "slot": 2,
             "playerId": 3054850,
             "player": "Alvin Kamara",
-            "points": 17.5
+            "points": 14.9
           },
           {
             "slot": 4,
             "playerId": 3128429,
             "player": "Courtland Sutton",
-            "points": 13.700000000000001
+            "points": 3.9
           },
           {
             "slot": 4,
             "playerId": 4701936,
             "player": "Matthew Golden",
-            "points": 42.7
+            "points": 22.4
           },
           {
             "slot": 6,
             "playerId": 3121023,
             "player": "Dallas Goedert",
-            "points": 21.900000000000002
+            "points": 12.1
           },
           {
             "slot": 16,
             "playerId": -16014,
             "player": "Rams D/ST",
-            "points": 16
+            "points": 11
           },
           {
             "slot": 17,
             "playerId": 2971573,
             "player": "Ka'imi Fairbairn",
-            "points": 28
+            "points": 11
           },
           {
             "slot": 23,
-            "playerId": 4361411,
-            "player": "Pat Freiermuth",
-            "points": 24.6
+            "playerId": 4432708,
+            "player": "Marvin Harrison Jr.",
+            "points": 6.4
           }
         ],
         "available": true
@@ -9225,63 +9239,63 @@
       {
         "teamId": 8,
         "week": 6,
-        "actual": 281.82,
-        "optimal": 284.22,
-        "regret": 2.4,
+        "actual": 112.48,
+        "optimal": 112.48,
+        "regret": 0,
         "assignments": [
           {
             "slot": 0,
             "playerId": 2969939,
             "player": "Jameis Winston",
-            "points": 40.22
+            "points": 8.48
           },
           {
             "slot": 2,
             "playerId": 4430737,
             "player": "Kyren Williams",
-            "points": 29.299999999999997
+            "points": 9.7
           },
           {
             "slot": 2,
             "playerId": 4360238,
             "player": "Dameon Pierce",
-            "points": 18.2
-          },
-          {
-            "slot": 4,
-            "playerId": 4262921,
-            "player": "Justin Jefferson",
-            "points": 18.8
+            "points": 15
           },
           {
             "slot": 4,
             "playerId": 4595348,
             "player": "Malik Nabers",
-            "points": 57.6
+            "points": 28.5
+          },
+          {
+            "slot": 4,
+            "playerId": 4432620,
+            "player": "Parker Washington",
+            "points": 10.4
           },
           {
             "slot": 6,
             "playerId": 4572680,
             "player": "Tucker Kraft",
-            "points": 20.3
+            "points": 8.7
           },
           {
             "slot": 16,
             "playerId": -16017,
             "player": "Patriots D/ST",
-            "points": 29
+            "points": 14
           },
           {
             "slot": 17,
             "playerId": 4571557,
             "player": "Spencer Shrader",
-            "points": 30
+            "points": 9
           },
           {
             "slot": 23,
-            "playerId": 4432620,
-            "player": "Parker Washington",
-            "points": 40.8
+            "playerId": 4688813,
+            "player": "Josh Downs",
+            "points": 8.7
           }
         ],
         "available": true
@@ -9353,63 +9367,63 @@
       {
         "teamId": 10,
         "week": 6,
-        "actual": 218.52,
-        "optimal": 247.22,
-        "regret": 28.7,
+        "actual": 121.34,
+        "optimal": 155.34,
+        "regret": 34,
         "assignments": [
           {
             "slot": 0,
             "playerId": 4036378,
             "player": "Jordan Love",
-            "points": 49.52
+            "points": 22.24
+          },
+          {
+            "slot": 2,
+            "playerId": 4241416,
+            "player": "Chuba Hubbard",
+            "points": 19.1
           },
           {
             "slot": 2,
             "playerId": 4567048,
             "player": "Kenneth Walker III",
-            "points": 27.900000000000002
+            "points": 27.9
           },
           {
-            "slot": 2,
-            "playerId": 3043078,
-            "player": "Derrick Henry",
-            "points": 26.000000000000004
+            "slot": 4,
+            "playerId": 4695883,
+            "player": "Jalen Coker",
+            "points": 15.7
           },
           {
             "slot": 4,
             "playerId": 16737,
             "player": "Mike Evans",
-            "points": 38.7
-          },
-          {
-            "slot": 4,
-            "playerId": 4241478,
-            "player": "DeVonta Smith",
-            "points": 20.5
+            "points": 12.4
           },
           {
             "slot": 6,
             "playerId": 4723086,
             "player": "Colston Loveland",
-            "points": 22.4
+            "points": 18.5
           },
           {
             "slot": 16,
-            "playerId": -16016,
-            "player": "Vikings D/ST",
-            "points": 21
+            "playerId": -16019,
+            "player": "Giants D/ST",
+            "points": 7
           },
           {
             "slot": 17,
             "playerId": 4249087,
             "player": "Matt Gay",
-            "points": 18
+            "points": 12
           },
           {
             "slot": 23,
-            "playerId": 4430539,
-            "player": "Brenton Strange",
-            "points": 23.200000000000003
+            "playerId": 4241478,
+            "player": "DeVonta Smith",
+            "points": 20.5
           }
         ],
         "available": true
@@ -26293,7 +26307,7 @@
             ],
             "lineupSlotId": 20,
             "status": "BENCH",
-            "points": null
+            "points": 0
           },
           {
             "playerId": 12483,
@@ -26639,7 +26653,7 @@
             ],
             "lineupSlotId": 20,
             "status": "BENCH",
-            "points": null
+            "points": 0
           },
           {
             "playerId": 4431492,
@@ -27054,7 +27068,7 @@
             ],
             "lineupSlotId": 20,
             "status": "BENCH",
-            "points": null
+            "points": 0
           },
           {
             "playerId": 4701936,
@@ -27276,7 +27290,7 @@
             ],
             "lineupSlotId": 20,
             "status": "BENCH",
-            "points": null
+            "points": 0
           },
           {
             "playerId": 4685472,
@@ -27293,7 +27307,7 @@
             ],
             "lineupSlotId": 20,
             "status": "BENCH",
-            "points": null
+            "points": 0
           },
           {
             "playerId": 4432710,
@@ -27948,7 +27962,7 @@
             ],
             "lineupSlotId": 20,
             "status": "BENCH",
-            "points": null
+            "points": 0
           },
           {
             "playerId": 2473037,
@@ -28007,7 +28021,7 @@
             ],
             "lineupSlotId": 20,
             "status": "BENCH",
-            "points": null
+            "points": 0
           }
         ],
         "slots": [
@@ -28057,7 +28071,7 @@
             ],
             "lineupSlotId": 20,
             "status": "BENCH",
-            "points": null
+            "points": 0
           },
           {
             "playerId": 4241478,
@@ -28156,7 +28170,7 @@
             ],
             "lineupSlotId": 20,
             "status": "BENCH",
-            "points": null
+            "points": 0
           },
           {
             "playerId": 4695883,
@@ -28173,7 +28187,7 @@
             ],
             "lineupSlotId": 20,
             "status": "BENCH",
-            "points": null
+            "points": 0
           },
           {
             "playerId": 3929645,
@@ -28299,7 +28313,7 @@
             ],
             "lineupSlotId": 20,
             "status": "BENCH",
-            "points": null
+            "points": 0
           },
           {
             "playerId": 4241389,
@@ -28379,7 +28393,7 @@
             ],
             "lineupSlotId": 20,
             "status": "BENCH",
-            "points": null
+            "points": 0
           },
           {
             "playerId": 4241985,
@@ -28488,7 +28502,7 @@
             ],
             "lineupSlotId": 20,
             "status": "BENCH",
-            "points": null
+            "points": 0
           },
           {
             "playerId": 4429023,
@@ -28585,7 +28599,7 @@
             ],
             "lineupSlotId": 20,
             "status": "BENCH",
-            "points": null
+            "points": 0
           },
           {
             "playerId": 4426354,
@@ -28684,7 +28698,7 @@
             ],
             "lineupSlotId": 20,
             "status": "BENCH",
-            "points": null
+            "points": 0
           },
           {
             "playerId": 4429205,
@@ -28701,7 +28715,7 @@
             ],
             "lineupSlotId": 20,
             "status": "BENCH",
-            "points": null
+            "points": 0
           },
           {
             "playerId": 2577417,
@@ -29200,7 +29214,7 @@
             ],
             "lineupSlotId": 21,
             "status": "IR",
-            "points": null
+            "points": 0
           },
           {
             "playerId": 4385690,
@@ -29261,7 +29275,7 @@
             ],
             "lineupSlotId": 20,
             "status": "BENCH",
-            "points": null
+            "points": 0
           },
           {
             "playerId": -16005,
@@ -29291,7 +29305,7 @@
             ],
             "lineupSlotId": 20,
             "status": "BENCH",
-            "points": null
+            "points": 0
           },
           {
             "playerId": -16012,
@@ -29351,7 +29365,7 @@
             ],
             "lineupSlotId": 20,
             "status": "BENCH",
-            "points": null
+            "points": 0
           },
           {
             "playerId": 4426502,
@@ -29481,7 +29495,7 @@
             ],
             "lineupSlotId": 20,
             "status": "BENCH",
-            "points": null
+            "points": 0
           },
           {
             "playerId": 4360310,
@@ -29524,7 +29538,7 @@
             ],
             "lineupSlotId": 21,
             "status": "IR",
-            "points": null
+            "points": 0
           },
           {
             "playerId": 4360689,
@@ -29635,7 +29649,7 @@
             ],
             "lineupSlotId": 20,
             "status": "BENCH",
-            "points": null
+            "points": 0
           },
           {
             "playerId": 4427366,
@@ -29788,7 +29802,7 @@
             ],
             "lineupSlotId": 20,
             "status": "BENCH",
-            "points": null
+            "points": 0
           },
           {
             "playerId": 3054850,
@@ -29820,7 +29834,7 @@
             ],
             "lineupSlotId": 20,
             "status": "BENCH",
-            "points": null
+            "points": 0
           },
           {
             "playerId": 4432708,
@@ -30143,7 +30157,7 @@
             ],
             "lineupSlotId": 20,
             "status": "BENCH",
-            "points": null
+            "points": 0
           },
           {
             "playerId": 3929630,
@@ -30209,7 +30223,7 @@
             ],
             "lineupSlotId": 20,
             "status": "BENCH",
-            "points": null
+            "points": 0
           },
           {
             "playerId": 4035538,
@@ -30845,7 +30859,7 @@
             ],
             "lineupSlotId": 20,
             "status": "BENCH",
-            "points": null
+            "points": 0
           },
           {
             "playerId": 4036378,
@@ -33575,5 +33589,5 @@
       }
     ]
   },
-  "updatedAt": "2026-10-26T18:54:01.672Z"
+  "updatedAt": "2026-10-26T18:55:27.247Z"
 }
