@@ -279,7 +279,7 @@ if (allowPrivate) {
       if (weekGames.length !== 5 || rows.some((row) => {
         const official = Number(officialScores.get(Number(row.teamId)));
         const starters = row.players.filter((player) => player.status === "STARTER");
-        return !Number.isFinite(official) || !starters.length || starters.some((player) => player.points === null || !Number.isFinite(Number(player.points))) ||
+        return !Number.isFinite(official) || !starters.length || row.players.some((player) => player.status !== "IR" && (player.points === null || !Number.isFinite(Number(player.points)))) ||
           Math.round(starters.reduce((sum, player) => sum + Number(player.points), 0) * 100) !== Math.round(official * 100);
       })) continue;
       for (const row of rows) {
