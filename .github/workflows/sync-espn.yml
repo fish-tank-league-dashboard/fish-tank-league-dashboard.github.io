@@ -2,6 +2,13 @@ name: Refresh ESPN league data
 
 on:
   workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - "scripts/sync-espn.mjs"
+      - "scripts/advanced-data.mjs"
+      - "assets/balsamic-regret*.mjs"
+      - "assets/balsamic-regret.js"
   # GitHub cron is always UTC and ignores DST. Days are the UTC day, so
   # Thursday night ET is Friday UTC (5) and Monday night ET is Tuesday UTC (2).
   # Evening windows run through hour 4 UTC on purpose: when EDT ends on

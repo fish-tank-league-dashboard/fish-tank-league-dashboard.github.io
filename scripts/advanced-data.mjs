@@ -342,8 +342,8 @@ const normalizePosition = (value) => {
 };
 
 export function playerPoints(player = {}, scoringPeriodId) {
-  const directScore = player.appliedStatTotal ?? player.playerPoolEntry?.appliedStatTotal;
-  if (directScore !== null && directScore !== undefined && directScore !== "") return number(directScore);
+  // appliedStatTotal on a roster entry can be season-to-date. The award and
+  // other weekly features require the league's actual scoring-period stat.
   const stats = asArray(player.stats || player.player?.stats || player.playerPoolEntry?.player?.stats);
   const period = Number(scoringPeriodId);
   if (!Number.isFinite(period) || period <= 0) return null;

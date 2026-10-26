@@ -1,0 +1,25 @@
+name: Check award calculations
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+    paths:
+      - "assets/balsamic-regret*"
+      - "scripts/advanced-data.mjs"
+      - "tests/balsamic-regret.mjs"
+      - "tests/dick-bricks.mjs"
+      - "assets/page-Dbq9q0Z0.js"
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify award calculations and navigation
+        run: |
+          node tests/balsamic-regret.mjs
+          node tests/dick-bricks.mjs
