@@ -342,14 +342,22 @@ const normalizePosition = (value) => {
 };
 
 export function playerPoints(player = {}, scoringPeriodId) {
-  // appliedStatTotal on a roster entry can be season-to-date. The award and
-  // other weekly features require the league's actual scoring-period stat.
+  // ESPN's roster appliedStatTotal can combine adjacent scoring periods.
+  // Prefer the actual stat for this week. When ESPN omits the week's stat,
+  // accept zero only if its aggregate equals the prior week's actual (or is 0).
   const stats = asArray(player.stats || player.player?.stats || player.playerPoolEntry?.player?.stats);
   const period = Number(scoringPeriodId);
   if (!Number.isFinite(period) || period <= 0) return null;
-  const candidates = stats.filter((stat) => Number(stat.scoringPeriodId) === period);
-  const stat = candidates.find((entry) => Number(entry.statSourceId) === 0 && Number(entry.statSplitTypeId) === 1);
-  return number(stat?.appliedTotal ?? stat?.appliedStats?.total ?? stat?.points) ?? null;
+  const actualStat = (week) => stats.find((entry) => Number(entry.scoringPeriodId) === week && Number(entry.statSourceId) === 0 && Number(entry.statSplitTypeId) === 1);
+  const stat = actualStat(period);
+  const weekly = number(stat?.appliedTotal ?? stat?.appliedStats?.total ?? stat?.points);
+  if (weekly !== null) return weekly;
+  const aggregate = number(player.appliedStatTotal ?? player.playerPoolEntry?.appliedStatTotal);
+  if (aggregate === null) return null;
+  const prior = actualStat(period - 1);
+  const priorPoints = number(prior?.appliedTotal ?? prior?.appliedStats?.total ?? prior?.points);
+  if (Math.round(aggregate * 100) === Math.round((priorPoints ?? 0) * 100) && (priorPoints !== null || aggregate === 0)) return 0;
+  return null;
 }
 
 export function normalizeRosterEntry(entry = {}, scoringPeriodId) {
