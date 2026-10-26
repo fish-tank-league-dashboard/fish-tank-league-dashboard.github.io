@@ -272,6 +272,16 @@ if (allowPrivate) {
       if (!Number.isInteger(week) || week < 1 || week >= currentWeek) continue;
       const rows = raw.teams.map((team) => previousRosters.find((row) => Number(row?.teamId) === Number(team.id) && Number(row?.week) === week));
       if (rows.some((row) => !Array.isArray(row?.players) || !row.players.length)) continue;
+      // Older snapshots used season-to-date appliedStatTotal for player scores.
+      // Reuse a week only when its starting lineup agrees with ESPN's final score.
+      const weekGames = (previous.games || []).filter((game) => Number(game.week) === week && game.status === "FINAL");
+      const officialScores = new Map(weekGames.flatMap((game) => [[Number(game.aTeamId), game.as], [Number(game.bTeamId), game.bs]]));
+      if (weekGames.length !== 5 || rows.some((row) => {
+        const official = Number(officialScores.get(Number(row.teamId)));
+        const starters = row.players.filter((player) => player.status === "STARTER");
+        return !Number.isFinite(official) || !starters.length || starters.some((player) => player.points === null || !Number.isFinite(Number(player.points))) ||
+          Math.round(starters.reduce((sum, player) => sum + Number(player.points), 0) * 100) !== Math.round(official * 100);
+      })) continue;
       for (const row of rows) {
         const key = `${Number(row.teamId)}:${week}`;
         if (rosterRowKeys.has(key)) continue;
@@ -368,6 +378,17 @@ if (Array.isArray(previous?.advanced?.rosters)) {
     if (row.players?.length && (!merged.has(key) || !merged.get(key).players?.length)) merged.set(key, row);
   }
   rosterRows.splice(0, rosterRows.length, ...merged.values());
+}
+// Refuse to publish cumulative or partial player scores as weekly results.
+for (const week of completedWeeks) for (const team of normalizedTeams) {
+  const row = rosterRows.find((entry) => entry.teamId === team.teamId && Number(entry.week) === week);
+  const game = games.find((entry) => Number(entry.week) === week && (entry.aTeamId === team.teamId || entry.bTeamId === team.teamId));
+  if (!row?.players?.length || !game) continue; // Explicitly unavailable below.
+  const official = game.aTeamId === team.teamId ? game.as : game.bs;
+  const starters = row.players.filter((player) => player.status === "STARTER");
+  if (!starters.length || starters.some((player) => player.points === null || !Number.isFinite(Number(player.points))) ||
+      Math.round(starters.reduce((sum, player) => sum + Number(player.points), 0) * 100) !== Math.round(Number(official) * 100))
+    throw new Error(`Week ${week} team ${team.teamId} player scores do not match the official ESPN matchup score; saved data is unchanged.`);
 }
 const finalizedRosters = rosterRows.filter((row) => completedWeeks.includes(Number(row.week)));
 // The live mRoster rows for the in-progress week are published separately so

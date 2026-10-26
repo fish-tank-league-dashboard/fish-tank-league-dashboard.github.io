@@ -71,9 +71,10 @@ assert.equal(awardCandidate(snapshot, [{ id: 1, winner: 'UNDECIDED' }]), null);
 // Bundle patch: tab sits directly after Standings, Tank Features kept, module wired in.
 const bundle = await readFile(new URL('../assets/page-Dbq9q0Z0.js', import.meta.url), 'utf8');
 const nav = [...bundle.match(/nav`,\{children:\[(.*?)\]\.map/)[1].matchAll(/\[`(\w+)`,`([^`]+)`\]/g)].map(m => m[1]);
-assert.deepEqual(nav, ['home', 'live', 'standings', 'bricks', 'results', 'rivalries', 'features', 'trophy', 'drafts', 'about']);
+assert.deepEqual(nav, ['home', 'live', 'standings', 'bricks', 'regret', 'results', 'rivalries', 'features', 'trophy', 'drafts', 'about']);
 assert.match(bundle, /import __DickBrick from"\.\/dick-bricks\.js"/);
-assert.match(bundle, /n===`bricks`&&\(0,p\.jsx\)\(__DickBrick,\{\}\),n===`features`/);
+assert.match(bundle, /n===`bricks`&&\(0,p\.jsx\)\(__DickBrick,\{\}\),n===`regret`/);
+assert.match(bundle, /import __BalsamicRegret from"\.\/balsamic-regret\.js"/);
 console.log('Passed: ledger integrity, no invented probabilities, capture failures, award selection, and nav wiring.');
 
 // Retrospective review: scored-before-MNF plus stored projections for starters still to play.
