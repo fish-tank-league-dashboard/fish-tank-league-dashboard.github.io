@@ -2512,7 +2512,7 @@
       "b": "owner:michael",
       "bl": "Michael",
       "bt": "Unbridled Enthusiasm",
-      "bs": 115.28,
+      "bs": 123.18,
       "status": "LIVE",
       "aTeamId": 5,
       "bTeamId": 1
@@ -2538,11 +2538,11 @@
       "a": "owner:rich",
       "al": "Rich",
       "at": "Right Reverend Raisins ",
-      "as": 114.8,
+      "as": 115.8,
       "b": "owner:jake",
       "bl": "Jake",
       "bt": "Serenity Now, Insanity Later",
-      "bs": 91.2,
+      "bs": 98.96,
       "status": "LIVE",
       "aTeamId": 3,
       "bTeamId": 2
@@ -2568,7 +2568,7 @@
       "a": "owner:nick",
       "al": "Nick",
       "at": "The Azz Train",
-      "as": 95.72,
+      "as": 97.42,
       "b": "owner:gilguy",
       "bl": "Gilguy",
       "bt": "Dico Rowdle",
@@ -30986,7 +30986,7 @@
             ],
             "lineupSlotId": 23,
             "status": "STARTER",
-            "points": 0
+            "points": 7.9
           },
           {
             "playerId": 4361370,
@@ -31385,7 +31385,7 @@
             ],
             "lineupSlotId": 0,
             "status": "STARTER",
-            "points": 0.2
+            "points": 7.96
           },
           {
             "playerId": 4426348,
@@ -31604,7 +31604,7 @@
             ],
             "lineupSlotId": 17,
             "status": "STARTER",
-            "points": 5
+            "points": 6
           },
           {
             "playerId": -16034,
@@ -31791,7 +31791,7 @@
             ],
             "lineupSlotId": 2,
             "status": "STARTER",
-            "points": 2.3
+            "points": 4
           },
           {
             "playerId": 4372016,
@@ -33589,5 +33589,5 @@
       }
     ]
   },
-  "updatedAt": "2026-10-27T00:31:57.925Z"
+  "updatedAt": "2026-10-27T00:39:07.650Z"
 }
