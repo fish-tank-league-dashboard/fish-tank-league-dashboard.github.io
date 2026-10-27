@@ -51,5 +51,8 @@ const illegal = makeData(); illegal.advanced.lineupRegret[0].assignments[0].slot
 assert.equal(award(illegal).status, 'unavailable');
 const uncaptured = makeData(); uncaptured.dataAvailability.rosterPeriods.captured = [];
 assert.equal(award(uncaptured).status, 'unavailable');
-console.log('Passed: weekly ESPN scores, legal lineup slots, IR, final-week gate, ties, and missing-data gates.');
+const { default: awardTab } = await import('../assets/balsamic-regret.js');
+assert.equal(typeof awardTab, 'function', 'Award tab and its browser imports must parse');
+await import('../assets/page-Dbq9q0Z0.js');
+console.log('Passed: weekly ESPN scores, legal lineup slots, IR, final-week gate, ties, missing-data gates, and dashboard imports.');
 

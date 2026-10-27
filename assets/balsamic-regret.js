@@ -75,7 +75,8 @@ export default function BalsamicRegret({ league }) {
               h('td', null, score.team, h('small', null, score.manager)),
               h('td', null, format(score.actual)),
               h('td', null, format(score.optimal)),
-              h('td', null, format(score.points))))))))));
+              h('td', null, format(score.points)))))))))));
 }
+
 
 
