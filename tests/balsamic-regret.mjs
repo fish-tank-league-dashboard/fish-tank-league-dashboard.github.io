@@ -1,5 +1,5 @@
 import assert from 'node:assert/strict';
-import { calculateBalsamicRegret } from '../assets/balsamic-regret-core.mjs';
+import { calculateBalsamicRegret } from '../assets/balsamic-regret-core.js';
 import { playerPoints, normalizeRosterEntry, optimizeLineup } from '../scripts/advanced-data.mjs';
 
 const scoringEntry = { appliedStatTotal: 45, playerPoolEntry: { player: { stats: [

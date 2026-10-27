@@ -1,9 +1,9 @@
 // Balsamic Regret is the actual lineup score lost versus the best legal lineup.
 import { r as wrap } from './rolldown-runtime-S-ySWqyJ.js';
 import { i as reactFactory } from './framework-CXnKph_e.js';
+import { calculateBalsamicRegret } from './balsamic-regret-core.js';
 
 const React = wrap(reactFactory(), 1);
-import { calculateBalsamicRegret } from './balsamic-regret-core.mjs';
 
 const h = React.createElement;
 const format = value => (value / 100).toFixed(2);
