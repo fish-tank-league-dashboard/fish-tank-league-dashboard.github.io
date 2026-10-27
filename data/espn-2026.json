@@ -34989,8 +34989,8 @@
               20,
               21
             ],
-            "lineupSlotId": 2,
-            "status": "STARTER",
+            "lineupSlotId": 20,
+            "status": "BENCH",
             "points": 0
           },
           {
@@ -35005,8 +35005,8 @@
               20,
               21
             ],
-            "lineupSlotId": 20,
-            "status": "BENCH",
+            "lineupSlotId": 2,
+            "status": "STARTER",
             "points": 0
           },
           {
@@ -35022,8 +35022,8 @@
               20,
               21
             ],
-            "lineupSlotId": 4,
-            "status": "STARTER",
+            "lineupSlotId": 20,
+            "status": "BENCH",
             "points": 0
           },
           {
@@ -35036,8 +35036,8 @@
               20,
               21
             ],
-            "lineupSlotId": 20,
-            "status": "BENCH",
+            "lineupSlotId": 0,
+            "status": "STARTER",
             "points": 0
           },
           {
@@ -35053,7 +35053,7 @@
               20,
               21
             ],
-            "lineupSlotId": 23,
+            "lineupSlotId": 4,
             "status": "STARTER",
             "points": 0
           },
@@ -35096,8 +35096,8 @@
               20,
               21
             ],
-            "lineupSlotId": 16,
-            "status": "STARTER",
+            "lineupSlotId": 20,
+            "status": "BENCH",
             "points": 0
           },
           {
@@ -35112,8 +35112,8 @@
               20,
               21
             ],
-            "lineupSlotId": 6,
-            "status": "STARTER",
+            "lineupSlotId": 20,
+            "status": "BENCH",
             "points": 0
           },
           {
@@ -35128,8 +35128,8 @@
               20,
               21
             ],
-            "lineupSlotId": 20,
-            "status": "BENCH",
+            "lineupSlotId": 6,
+            "status": "STARTER",
             "points": 0
           },
           {
@@ -35142,8 +35142,8 @@
               20,
               21
             ],
-            "lineupSlotId": 0,
-            "status": "STARTER",
+            "lineupSlotId": 20,
+            "status": "BENCH",
             "points": 0
           },
           {
@@ -35155,8 +35155,8 @@
               20,
               21
             ],
-            "lineupSlotId": 20,
-            "status": "BENCH",
+            "lineupSlotId": 16,
+            "status": "STARTER",
             "points": 0
           },
           {
@@ -35203,8 +35203,8 @@
               20,
               21
             ],
-            "lineupSlotId": 20,
-            "status": "BENCH",
+            "lineupSlotId": 23,
+            "status": "STARTER",
             "points": 0
           },
           {
@@ -36623,8 +36623,8 @@
               20,
               21
             ],
-            "lineupSlotId": 20,
-            "status": "BENCH",
+            "lineupSlotId": 23,
+            "status": "STARTER",
             "points": 0
           },
           {
@@ -36657,8 +36657,8 @@
               20,
               21
             ],
-            "lineupSlotId": 23,
-            "status": "STARTER",
+            "lineupSlotId": 20,
+            "status": "BENCH",
             "points": 0
           },
           {
@@ -37004,23 +37004,6 @@
             "points": 0
           },
           {
-            "playerId": 3895856,
-            "player": "Christian Kirk",
-            "position": "WR",
-            "eligibleSlots": [
-              3,
-              4,
-              5,
-              23,
-              7,
-              20,
-              21
-            ],
-            "lineupSlotId": 21,
-            "status": "IR",
-            "points": 0
-          },
-          {
             "playerId": 4427095,
             "player": "DeMario Douglas",
             "position": "WR",
@@ -37070,5 +37053,5 @@
       }
     ]
   },
-  "updatedAt": "2026-10-27T09:29:38.435Z"
+  "updatedAt": "2026-10-27T15:56:54.674Z"
 }
