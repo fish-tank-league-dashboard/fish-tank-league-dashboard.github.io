@@ -5,6 +5,20 @@
   "awards": [
     {
       "season": 2026,
+      "week": 7,
+      "status": "verified",
+      "managerId": "owner:mob",
+      "manager": "Mob",
+      "team": "8 Hole Reverend Rate",
+      "opponent": "Unbridled Enthusiasm",
+      "opponentManager": "Michael",
+      "winProbability": 40.9,
+      "projectedPoints": 132.84,
+      "finalScore": "132.84–139.68",
+      "capturedAt": "2026-10-26T23:55:00.100Z"
+    },
+    {
+      "season": 2026,
       "week": 6,
       "status": "verified",
       "managerId": "owner:mob",
