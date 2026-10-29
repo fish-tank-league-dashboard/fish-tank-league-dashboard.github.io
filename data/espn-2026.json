@@ -35346,19 +35346,6 @@
             "points": 0
           },
           {
-            "playerId": -16034,
-            "player": "Texans D/ST",
-            "position": "D/ST",
-            "eligibleSlots": [
-              16,
-              20,
-              21
-            ],
-            "lineupSlotId": 20,
-            "status": "BENCH",
-            "points": 0
-          },
-          {
             "playerId": 4361050,
             "player": "Isaiah Likely",
             "position": "TE",
@@ -35462,8 +35449,8 @@
               20,
               21
             ],
-            "lineupSlotId": 23,
-            "status": "STARTER",
+            "lineupSlotId": 20,
+            "status": "BENCH",
             "points": 0
           },
           {
@@ -35471,6 +35458,23 @@
             "player": "RJ Harvey",
             "position": "RB",
             "eligibleSlots": [
+              2,
+              3,
+              23,
+              7,
+              20,
+              21
+            ],
+            "lineupSlotId": 23,
+            "status": "STARTER",
+            "points": 0
+          },
+          {
+            "playerId": 4696044,
+            "player": "Kaelon Black",
+            "position": "RB",
+            "eligibleSlots": [
+              25,
               2,
               3,
               23,
@@ -37321,5 +37325,5 @@
       }
     ]
   },
-  "updatedAt": "2026-10-29T14:01:05.666Z"
+  "updatedAt": "2026-10-29T17:01:30.355Z"
 }
