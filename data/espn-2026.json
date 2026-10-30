@@ -2583,11 +2583,11 @@
       "a": "owner:gilguy",
       "al": "Gilguy",
       "at": "Dico Rowdle",
-      "as": 0,
+      "as": 35.56,
       "b": "owner:chris",
       "bl": "Chris",
       "bt": "Backup Meat",
-      "bs": 0,
+      "bs": 20.9,
       "status": "LIVE",
       "aTeamId": 9,
       "bTeamId": 6
@@ -2598,11 +2598,11 @@
       "a": "owner:blake",
       "al": "Blake",
       "at": "Pasta Holy Trinity ",
-      "as": 0,
+      "as": 62.12,
       "b": "owner:rich",
       "bl": "Rich",
       "bt": "Right Reverend Raisins ",
-      "bs": 0,
+      "bs": 17.3,
       "status": "LIVE",
       "aTeamId": 10,
       "bTeamId": 3
@@ -2628,11 +2628,11 @@
       "a": "owner:nyle",
       "al": "Nyle",
       "at": "The Blessed Sherpa ",
-      "as": 0,
+      "as": 11.7,
       "b": "owner:min",
       "bl": "Min",
       "bt": "Splitpeesoup",
-      "bs": 0,
+      "bs": 17.3,
       "status": "LIVE",
       "aTeamId": 7,
       "bTeamId": 8
@@ -35330,7 +35330,7 @@
             ],
             "lineupSlotId": 4,
             "status": "STARTER",
-            "points": 0
+            "points": 17.3
           },
           {
             "playerId": 3953687,
@@ -36154,7 +36154,7 @@
             ],
             "lineupSlotId": 4,
             "status": "STARTER",
-            "points": 0
+            "points": 20.9
           },
           {
             "playerId": 3121023,
@@ -36373,7 +36373,7 @@
             ],
             "lineupSlotId": 4,
             "status": "STARTER",
-            "points": 0
+            "points": 11.7
           },
           {
             "playerId": 4431299,
@@ -36692,7 +36692,7 @@
             ],
             "lineupSlotId": 6,
             "status": "STARTER",
-            "points": 0
+            "points": 17.3
           },
           {
             "playerId": 4596334,
@@ -36897,7 +36897,7 @@
             ],
             "lineupSlotId": 2,
             "status": "STARTER",
-            "points": 0
+            "points": 23.2
           },
           {
             "playerId": 4431459,
@@ -36975,7 +36975,7 @@
             ],
             "lineupSlotId": 0,
             "status": "STARTER",
-            "points": 0
+            "points": 12.36
           },
           {
             "playerId": 2473037,
@@ -36996,23 +36996,6 @@
             "position": "QB",
             "eligibleSlots": [
               0,
-              7,
-              20,
-              21
-            ],
-            "lineupSlotId": 20,
-            "status": "BENCH",
-            "points": 0
-          },
-          {
-            "playerId": 4586312,
-            "player": "Jaylin Noel",
-            "position": "WR",
-            "eligibleSlots": [
-              3,
-              4,
-              5,
-              23,
               7,
               20,
               21
@@ -37051,6 +37034,24 @@
             ],
             "lineupSlotId": 6,
             "status": "STARTER",
+            "points": 0
+          },
+          {
+            "playerId": 4869645,
+            "player": "Caleb Douglas",
+            "position": "WR",
+            "eligibleSlots": [
+              25,
+              3,
+              4,
+              5,
+              23,
+              7,
+              20,
+              21
+            ],
+            "lineupSlotId": 20,
+            "status": "BENCH",
             "points": 0
           }
         ],
@@ -37200,7 +37201,7 @@
             ],
             "lineupSlotId": 23,
             "status": "STARTER",
-            "points": 0
+            "points": 24.9
           },
           {
             "playerId": 4695883,
@@ -37217,7 +37218,7 @@
             ],
             "lineupSlotId": 4,
             "status": "STARTER",
-            "points": 0
+            "points": 9.7
           },
           {
             "playerId": 3929645,
@@ -37260,7 +37261,7 @@
             ],
             "lineupSlotId": 0,
             "status": "STARTER",
-            "points": 0
+            "points": 27.52
           },
           {
             "playerId": 4249087,
@@ -37325,5 +37326,5 @@
       }
     ]
   },
-  "updatedAt": "2026-10-29T17:01:30.355Z"
+  "updatedAt": "2026-10-30T03:27:37.322Z"
 }
