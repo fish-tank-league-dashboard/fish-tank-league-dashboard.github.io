@@ -2598,7 +2598,7 @@
       "a": "owner:blake",
       "al": "Blake",
       "at": "Pasta Holy Trinity ",
-      "as": 62.12,
+      "as": 62.02,
       "b": "owner:rich",
       "bl": "Rich",
       "bt": "Right Reverend Raisins ",
@@ -2628,7 +2628,7 @@
       "a": "owner:nyle",
       "al": "Nyle",
       "at": "The Blessed Sherpa ",
-      "as": 11.7,
+      "as": 11.8,
       "b": "owner:min",
       "bl": "Min",
       "bt": "Splitpeesoup",
@@ -36373,7 +36373,7 @@
             ],
             "lineupSlotId": 4,
             "status": "STARTER",
-            "points": 11.7
+            "points": 11.8
           },
           {
             "playerId": 4431299,
@@ -37218,7 +37218,7 @@
             ],
             "lineupSlotId": 4,
             "status": "STARTER",
-            "points": 9.7
+            "points": 9.6
           },
           {
             "playerId": 3929645,
@@ -37326,5 +37326,5 @@
       }
     ]
   },
-  "updatedAt": "2026-10-30T03:27:37.322Z"
+  "updatedAt": "2026-10-30T04:18:38.793Z"
 }
