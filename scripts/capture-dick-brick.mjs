@@ -1,7 +1,7 @@
 // Dick Brick of the Week capture.
 //   capture  - on Monday, within 30 minutes of the first MNF kickoff, record ESPN live projected totals.
 //   finalize - once ESPN marks the week final, turn a captured snapshot into a verified award.
-//   preliminary - Monday 10am Eastern: record live projections as a preview; never used for the award.
+//   preliminary - Monday 11:30am Eastern: record live projections as a preview; never used for the award.
 //   verify   - confirm ESPN access and that live projections are present.
 //   finalize-wait - retry finalize every 15 minutes until ESPN marks the week final.
 //   finalize-pending - print yes if a captured week still awaits final scores.
@@ -216,12 +216,11 @@ async function waitAndCapture() {
   }
 }
 
-// The preview feeds a 1:00pm Eastern Monday league readout, so it is scheduled for
-// 12:30pm Eastern with a 12:45pm fallback. GitHub cron is UTC and ignores DST, so each
+// The preview feeds a 1:00pm Eastern Monday league readout, so it is scheduled from
+// 11:30am Eastern with later fallbacks. GitHub cron is UTC and ignores DST, so each
 // slot is listed for both offsets and this window check decides which of the pair
-// actually records: 16:30 UTC is 12:30 EDT but 11:30 EST, 17:30 UTC is 13:30 EDT but
-// 12:30 EST. A slot that arrives late still records, which is better than no preview.
-const PRELIMINARY_ET_MINUTES = 12 * 60 + 30;
+// actually records. A slot that arrives late still records before kickoff.
+const PRELIMINARY_ET_MINUTES = 11 * 60 + 30;
 const nyClock = date => {
   const part = Object.fromEntries(new Intl.DateTimeFormat('en-US', {
     timeZone: 'America/New_York', weekday: 'long', year: 'numeric', month: '2-digit',
@@ -236,18 +235,29 @@ export const isPreliminaryWindow = now => {
 // Fresh means recorded inside today's window, not merely some time this week. This is
 // what lets the 12:45 fallback re-record when the 12:30 run was dropped or wrote nothing,
 // while staying a no-op when 12:30 already produced a preview.
-export function preliminaryIsFresh(preview, now) {
-  if (!preview || !preview.capturedAt) return false;
+export function preliminaryIsFresh(preview, now, expectedWeek, expectedSeason = season) {
+  if (!preview || preview.status !== 'preliminary' || preview.season !== expectedSeason || preview.week !== expectedWeek || !preview.capturedAt) return false;
   const taken = new Date(preview.capturedAt);
-  if (!Number.isFinite(taken.valueOf())) return false;
+  if (!Number.isFinite(taken.valueOf()) || taken > now) return false;
   const recorded = nyClock(taken), current = nyClock(now);
-  return recorded.day === current.day && recorded.minutes >= PRELIMINARY_ET_MINUTES;
+  if (recorded.day !== current.day || recorded.minutes < PRELIMINARY_ET_MINUTES) return false;
+  if (!Array.isArray(preview.matchups) || preview.matchups.length !== 5) return false;
+  const ids = new Set(preview.matchups.map(matchup => matchup.id));
+  return ids.size === 5 && preview.matchups.every(matchup => [matchup.home, matchup.away].every(side =>
+    side && Number.isFinite(side.winProbability) && Number.isFinite(side.projectedPoints)));
+}
+
+async function preliminaryCheck(now) {
+  const { week } = await leagueScoreboard();
+  const preview = (await readJson(preliminaryPath, { previews: [] })).previews.find(row => row.season === season && row.week === week);
+  if (!preliminaryIsFresh(preview, now, week)) throw new Error(`Week ${week} has no fresh, complete preliminary preview from today's window.`);
+  return `Verified fresh Week ${week} preliminary: five matchups captured at ${preview.capturedAt}.`;
 }
 
 // Monday-morning look at the week's live projections. It is stored apart from the
 // capture snapshots, labeled preliminary, and never decides an award. GitHub can start
 // a scheduled run hours late, so a scheduled run records the first time it gets to run
-// on Monday from 10am Eastern until kickoff, and skips once the week has a preview.
+// on Monday from 11:30am Eastern until kickoff, and skips once the week has a valid preview.
 async function preliminary(now, scheduled) {
   if (scheduled) {
     if (!isPreliminaryWindow(now)) return 'Preliminary run skipped: before 12:30pm Eastern on Monday.';
@@ -257,7 +267,7 @@ async function preliminary(now, scheduled) {
   const { week, payload } = await leagueScoreboard();
   if (scheduled) {
     const existing = (await readJson(preliminaryPath, { previews: [] })).previews.find(row => row.season === season && row.week === week);
-    if (preliminaryIsFresh(existing, now)) return `Preliminary run skipped: Week ${week} already has a preview from today's window.`;
+    if (preliminaryIsFresh(existing, now, week)) return `Preliminary run skipped: Week ${week} already has a preview from today's window.`;
   }
   const schedule = weekSchedule(payload, week);
   if (!schedule.length) throw new Error(`ESPN returned no Week ${week} matchups`);
@@ -415,12 +425,13 @@ async function review(week) {
 
 async function main() {
   const mode = process.argv[2] || 'auto';
-  if (!['auto', 'capture', 'finalize', 'finalize-wait', 'finalize-pending', 'verify', 'review', 'preliminary', 'wait'].includes(mode)) throw new Error(`Unknown mode: ${mode}`);
+  if (!['auto', 'capture', 'finalize', 'finalize-wait', 'finalize-pending', 'verify', 'review', 'preliminary', 'preliminary-check', 'wait'].includes(mode)) throw new Error(`Unknown mode: ${mode}`);
   if (mode === 'finalize-pending') return console.log(await finalizePending());
   if (!process.env.ESPN_S2 || !process.env.ESPN_SWID) throw new Error('ESPN_S2 and ESPN_SWID secrets are required; nothing was captured.');
   if (mode === 'verify') return console.log(await verify());
   if (mode === 'wait') return console.log(await waitAndCapture());
   if (mode === 'preliminary') return console.log(await preliminary(new Date(), process.argv[3] === '--scheduled'));
+  if (mode === 'preliminary-check') return console.log(await preliminaryCheck(new Date()));
   if (mode === 'review') return console.log(await review(Number(process.argv[3] || 1)));
   if (mode === 'auto' || mode === 'capture') console.log(await capture(new Date()));
   if (mode === 'finalize-wait') return console.log(await finalizeAndWait());
