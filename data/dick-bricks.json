@@ -5,6 +5,20 @@
   "awards": [
     {
       "season": 2026,
+      "week": 8,
+      "status": "verified",
+      "managerId": "owner:gilguy",
+      "manager": "Gilguy",
+      "team": "Dico Rowdle",
+      "opponent": "Backup Meat",
+      "opponentManager": "Chris",
+      "winProbability": 76.7,
+      "projectedPoints": 132.17055777,
+      "finalScore": "121.06–126.34",
+      "capturedAt": "2026-11-03T00:55:00.013Z"
+    },
+    {
+      "season": 2026,
       "week": 7,
       "status": "verified",
       "managerId": "owner:mob",

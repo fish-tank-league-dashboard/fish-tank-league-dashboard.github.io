@@ -752,7 +752,9 @@
             "winProbability": 99.9
           }
         }
-      ]
+      ],
+      "finalizedAt": "2026-11-03T08:10:52.592Z",
+      "awardManager": "Gilguy"
     }
   ]
 }
