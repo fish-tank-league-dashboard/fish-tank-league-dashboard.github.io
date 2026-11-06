@@ -2662,7 +2662,7 @@
       "b": "owner:michael",
       "bl": "Michael",
       "bt": "Unbridled Enthusiasm",
-      "bs": 0,
+      "bs": 19,
       "status": "LIVE",
       "aTeamId": 6,
       "bTeamId": 1
@@ -2677,7 +2677,7 @@
       "b": "owner:jake",
       "bl": "Jake",
       "bt": "Serenity Now, Insanity Later",
-      "bs": 0,
+      "bs": 5.3,
       "status": "LIVE",
       "aTeamId": 9,
       "bTeamId": 2
@@ -38534,22 +38534,6 @@
             "points": 0
           },
           {
-            "playerId": 4241985,
-            "player": "J.K. Dobbins",
-            "position": "RB",
-            "eligibleSlots": [
-              2,
-              3,
-              23,
-              7,
-              20,
-              21
-            ],
-            "lineupSlotId": 20,
-            "status": "BENCH",
-            "points": 0
-          },
-          {
             "playerId": 4360248,
             "player": "Kyle Pitts Sr.",
             "position": "TE",
@@ -38576,7 +38560,7 @@
             ],
             "lineupSlotId": 16,
             "status": "STARTER",
-            "points": 0
+            "points": 19
           },
           {
             "playerId": 4429059,
@@ -38590,8 +38574,8 @@
               20,
               21
             ],
-            "lineupSlotId": 20,
-            "status": "BENCH",
+            "lineupSlotId": 2,
+            "status": "STARTER",
             "points": 0
           },
           {
@@ -38629,23 +38613,6 @@
             "points": 0
           },
           {
-            "playerId": 3116165,
-            "player": "Chris Godwin Jr.",
-            "position": "WR",
-            "eligibleSlots": [
-              3,
-              4,
-              5,
-              23,
-              7,
-              20,
-              21
-            ],
-            "lineupSlotId": 20,
-            "status": "BENCH",
-            "points": 0
-          },
-          {
             "playerId": 4697815,
             "player": "Rachaad White",
             "position": "RB",
@@ -38657,8 +38624,8 @@
               20,
               21
             ],
-            "lineupSlotId": 2,
-            "status": "STARTER",
+            "lineupSlotId": 20,
+            "status": "BENCH",
             "points": 0
           },
           {
@@ -38679,6 +38646,41 @@
             "player": "Tyler Allgeier",
             "position": "RB",
             "eligibleSlots": [
+              2,
+              3,
+              23,
+              7,
+              20,
+              21
+            ],
+            "lineupSlotId": 20,
+            "status": "BENCH",
+            "points": 0
+          },
+          {
+            "playerId": 4870795,
+            "player": "Makai Lemon",
+            "position": "WR",
+            "eligibleSlots": [
+              25,
+              3,
+              4,
+              5,
+              23,
+              7,
+              20,
+              21
+            ],
+            "lineupSlotId": 20,
+            "status": "BENCH",
+            "points": 0
+          },
+          {
+            "playerId": 4685512,
+            "player": "Jadarian Price",
+            "position": "RB",
+            "eligibleSlots": [
+              25,
               2,
               3,
               23,
@@ -38772,7 +38774,7 @@
             ],
             "lineupSlotId": 4,
             "status": "STARTER",
-            "points": 0
+            "points": 5.3
           },
           {
             "playerId": 4596448,
@@ -38821,7 +38823,7 @@
             ],
             "lineupSlotId": 20,
             "status": "BENCH",
-            "points": 0
+            "points": 8.9
           },
           {
             "playerId": 4430027,
@@ -38898,7 +38900,7 @@
             ],
             "lineupSlotId": 20,
             "status": "BENCH",
-            "points": 0
+            "points": 3.9
           },
           {
             "playerId": 2976212,
@@ -39306,8 +39308,8 @@
               20,
               21
             ],
-            "lineupSlotId": 20,
-            "status": "BENCH",
+            "lineupSlotId": 21,
+            "status": "IR",
             "points": 0
           },
           {
@@ -39378,8 +39380,8 @@
               20,
               21
             ],
-            "lineupSlotId": 16,
-            "status": "STARTER",
+            "lineupSlotId": 20,
+            "status": "BENCH",
             "points": 0
           },
           {
@@ -39432,22 +39434,6 @@
             "points": 0
           },
           {
-            "playerId": 4426386,
-            "player": "Roschon Johnson",
-            "position": "RB",
-            "eligibleSlots": [
-              2,
-              3,
-              23,
-              7,
-              20,
-              21
-            ],
-            "lineupSlotId": 20,
-            "status": "BENCH",
-            "points": 0
-          },
-          {
             "playerId": 15818,
             "player": "Keenan Allen",
             "position": "WR",
@@ -39478,7 +39464,37 @@
               20,
               21
             ],
+            "lineupSlotId": 20,
+            "status": "BENCH",
+            "points": 0
+          },
+          {
+            "playerId": 4569603,
+            "player": "Malik Washington",
+            "position": "WR",
+            "eligibleSlots": [
+              3,
+              4,
+              5,
+              23,
+              7,
+              20,
+              21
+            ],
             "lineupSlotId": 23,
+            "status": "STARTER",
+            "points": 0
+          },
+          {
+            "playerId": -16012,
+            "player": "Chiefs D/ST",
+            "position": "D/ST",
+            "eligibleSlots": [
+              16,
+              20,
+              21
+            ],
+            "lineupSlotId": 16,
             "status": "STARTER",
             "points": 0
           }
@@ -39641,7 +39657,7 @@
             ],
             "lineupSlotId": 20,
             "status": "BENCH",
-            "points": 0
+            "points": 15.58
           },
           {
             "playerId": 4360689,
@@ -40393,7 +40409,7 @@
             ],
             "lineupSlotId": 20,
             "status": "BENCH",
-            "points": 0
+            "points": 14.1
           },
           {
             "playerId": 4688813,
@@ -40840,7 +40856,7 @@
             ],
             "lineupSlotId": 20,
             "status": "BENCH",
-            "points": 0
+            "points": 5.58
           },
           {
             "playerId": 4567048,
@@ -41045,10 +41061,11 @@
             "points": 0
           },
           {
-            "playerId": 3126486,
-            "player": "Deebo Samuel Sr.",
+            "playerId": 4832800,
+            "player": "Denzel Boston",
             "position": "WR",
             "eligibleSlots": [
+              25,
               3,
               4,
               5,
@@ -41077,5 +41094,5 @@
       }
     ]
   },
-  "updatedAt": "2026-11-05T17:48:12.174Z"
+  "updatedAt": "2026-11-06T05:00:48.543Z"
 }
