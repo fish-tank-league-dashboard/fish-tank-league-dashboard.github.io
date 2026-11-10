@@ -297,6 +297,21 @@ async function finalize() {
   for (const snapshot of open) {
     const award = awardCandidate(snapshot, weekSchedule(payload, snapshot.week));
     if (!award) { messages.push(`Week ${snapshot.week} is not final yet.`); continue; }
+    // Beginning Week 9 of 2026, a losing team must have had at least a
+    // 50.0% official pre-MNF win probability to qualify for the Dick Brick.
+    // Older awards remain governed by the rule in force at the time.
+    const thresholdApplies = snapshot.season > 2026 || (snapshot.season === 2026 && snapshot.week >= 9);
+    if (thresholdApplies && (!Number.isFinite(award.winProbability) || award.winProbability < 50)) {
+      ledger.noAwardWeeks ??= [];
+      if (!ledger.noAwardWeeks.some(row => row.season === snapshot.season && row.week === snapshot.week)) {
+        ledger.noAwardWeeks.push({ season: snapshot.season, week: snapshot.week, reason: 'No losing team had at least a 50.0% win probability immediately before the first Monday kickoff.', highestLosingWinProbability: award.winProbability, capturedAt: snapshot.capturedAt });
+      }
+      snapshot.finalizedAt = new Date().toISOString();
+      snapshot.awardManager = null;
+      changed = true;
+      messages.push(`Week ${snapshot.week}: no Dick Brick awarded (highest losing probability ${award.winProbability}%).`);
+      continue;
+    }
     if (!ledger.awards.some(row => row.season === snapshot.season && row.week === snapshot.week)) {
       ledger.awards.push({ season: snapshot.season, week: snapshot.week, status: 'verified', managerId: award.managerId, manager: award.manager, team: award.team, opponent: award.opponent, opponentManager: award.opponentManager, winProbability: award.winProbability, projectedPoints: award.projectedPoints, finalScore: award.finalScore, capturedAt: snapshot.capturedAt });
     }
