@@ -880,7 +880,8 @@
         }
       ],
       "finalizedAt": "2026-11-10T08:10:38.003Z",
-      "awardManager": "Chris"
+      "awardManager": null,
+      "awardStatus": "no_qualifying_loser"
     }
   ]
 }
