@@ -5,6 +5,20 @@
   "awards": [
     {
       "season": 2026,
+      "week": 9,
+      "status": "verified",
+      "managerId": "owner:chris",
+      "manager": "Chris",
+      "team": "Backup Meat",
+      "opponent": "Unbridled Enthusiasm",
+      "opponentManager": "Michael",
+      "winProbability": 0.8,
+      "projectedPoints": 147.03928687,
+      "finalScore": "141.08–168.54",
+      "capturedAt": "2026-11-10T00:55:00.080Z"
+    },
+    {
+      "season": 2026,
       "week": 8,
       "status": "verified",
       "managerId": "owner:gilguy",
