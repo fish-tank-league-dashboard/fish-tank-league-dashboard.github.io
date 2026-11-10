@@ -1,22 +1,8 @@
 {
-  "definition": "Awarded each week to the losing team with the highest projection-based win probability immediately before the first Monday Night Football kickoff.",
+  "definition": "Awarded to the eventual losing team with the highest official pre-MNF projection-based win probability of at least 50.0%, measured immediately before the first Monday Night Football kickoff. If no losing team meets 50.0%, no Dick Brick is awarded. This eligibility threshold applies beginning Week 9 of the 2026 season; Weeks 1–8 retain their original historical awards.",
   "capturePoint": "The capture workflow records ESPN live projected totals in the 30 minutes before the first Monday Night Football kickoff. Nothing is back-filled or estimated after the fact.",
   "probabilityMethod": "From Week 2: 100 ÷ (1 + e^(-(team projected total − opponent projected total) ÷ s)), where s = 12 × √(starters still to play in the matchup ÷ starters in both lineups). With no starters left the result is decided (0% or 100%); otherwise it is capped at 0.1–99.9%. Week 1 used a fixed s = 12.",
   "awards": [
-    {
-      "season": 2026,
-      "week": 9,
-      "status": "verified",
-      "managerId": "owner:chris",
-      "manager": "Chris",
-      "team": "Backup Meat",
-      "opponent": "Unbridled Enthusiasm",
-      "opponentManager": "Michael",
-      "winProbability": 0.8,
-      "projectedPoints": 147.03928687,
-      "finalScore": "141.08–168.54",
-      "capturedAt": "2026-11-10T00:55:00.080Z"
-    },
     {
       "season": 2026,
       "week": 8,
@@ -126,6 +112,15 @@
       "winProbability": null,
       "finalScore": "129.30–146.66",
       "note": "Manual award. No pre-MNF projection was captured live for Week 1. A retrospective rebuild from ESPN data (points scored before MNF plus ESPN stored projections for starters still to play) ranks Nyle as the losing team with the highest win probability (66.6%), ahead of Gilguy (63.5%); see data/dick-brick-review-week1.json."
+    }
+  ],
+  "noAwardWeeks": [
+    {
+      "season": 2026,
+      "week": 9,
+      "reason": "No losing team had at least a 50.0% win probability immediately before the first Monday kickoff.",
+      "highestLosingWinProbability": 0.8,
+      "capturedAt": "2026-11-10T00:55:00.080Z"
     }
   ]
 }
