@@ -61,20 +61,6 @@
     },
     {
       "season": 2026,
-      "week": 4,
-      "status": "verified",
-      "managerId": "owner:jake",
-      "manager": "Jake",
-      "team": "Serenity Now, Insanity Later",
-      "opponent": "The Blessed Sherpa",
-      "opponentManager": "Nyle",
-      "winProbability": 20.9,
-      "projectedPoints": 137.4,
-      "finalScore": "137.40–147.32",
-      "capturedAt": "2026-10-05T23:55:00.101Z"
-    },
-    {
-      "season": 2026,
       "week": 3,
       "status": "manual",
       "managerId": "owner:min",
@@ -121,6 +107,13 @@
       "reason": "No losing team had at least a 50.0% win probability immediately before the first Monday kickoff.",
       "highestLosingWinProbability": 0.8,
       "capturedAt": "2026-11-10T00:55:00.080Z"
+    },
+    {
+      "season": 2026,
+      "week": 4,
+      "reason": "Historical award withdrawn by league decision. Original recipient Jake had a 20.9% official pre-MNF win probability.",
+      "highestLosingWinProbability": 20.9,
+      "capturedAt": "2026-10-05T23:55:00.101Z"
     }
   ]
 }
