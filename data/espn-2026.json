@@ -44518,8 +44518,8 @@
               20,
               21
             ],
-            "lineupSlotId": 4,
-            "status": "STARTER",
+            "lineupSlotId": 20,
+            "status": "BENCH",
             "points": 0
           },
           {
@@ -44643,8 +44643,8 @@
               20,
               21
             ],
-            "lineupSlotId": 20,
-            "status": "BENCH",
+            "lineupSlotId": 4,
+            "status": "STARTER",
             "points": 0
           },
           {
@@ -44950,5 +44950,5 @@
       }
     ]
   },
-  "updatedAt": "2026-11-12T18:57:05.434Z"
+  "updatedAt": "2026-11-12T20:50:40.460Z"
 }
