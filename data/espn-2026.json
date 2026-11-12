@@ -2811,6 +2811,342 @@
     },
     "items": [
       {
+        "id": "espn:467f42b9-2ce1-4031-b112-3b832bf25537:DROP:4597500:9",
+        "kind": "DROP",
+        "type": "DROP",
+        "playerId": 4597500,
+        "player": "Adonai Mitchell",
+        "position": null,
+        "teamId": 9,
+        "team": "Dico Rowdle",
+        "manager": "Gilguy",
+        "ownerId": "owner:gilguy",
+        "date": "2026-11-11T08:02:00.349Z",
+        "completedAt": "2026-11-11T08:02:00.349Z",
+        "scoringPeriodId": 10,
+        "faab": null
+      },
+      {
+        "id": "espn:467f42b9-2ce1-4031-b112-3b832bf25537:WAIVER:12483:9",
+        "kind": "WAIVER",
+        "type": "WAIVER",
+        "playerId": 12483,
+        "player": "Matthew Stafford",
+        "position": null,
+        "teamId": 9,
+        "team": "Dico Rowdle",
+        "manager": "Gilguy",
+        "ownerId": "owner:gilguy",
+        "date": "2026-11-11T08:02:00.349Z",
+        "completedAt": "2026-11-11T08:02:00.349Z",
+        "scoringPeriodId": 10,
+        "faab": 0
+      },
+      {
+        "id": "espn:538bcd9c-35d7-4d96-921a-442855c121dd:WAIVER:4430539:10",
+        "kind": "WAIVER",
+        "type": "WAIVER",
+        "playerId": 4430539,
+        "player": "Player #4430539",
+        "position": null,
+        "teamId": 10,
+        "team": "Pasta Holy Trinity ",
+        "manager": "Blake",
+        "ownerId": "owner:blake",
+        "date": "2026-11-11T08:02:00.349Z",
+        "completedAt": "2026-11-11T08:02:00.349Z",
+        "scoringPeriodId": 10,
+        "faab": 0
+      },
+      {
+        "id": "espn:c6cc8629-9b67-48e7-8fd3-79eb47254c50:DROP:3055899:2",
+        "kind": "DROP",
+        "type": "DROP",
+        "playerId": 3055899,
+        "player": "Harrison Butker",
+        "position": null,
+        "teamId": 2,
+        "team": "Serenity Now, Insanity Later",
+        "manager": "Jake",
+        "ownerId": "owner:jake",
+        "date": "2026-11-11T08:02:00.349Z",
+        "completedAt": "2026-11-11T08:02:00.349Z",
+        "scoringPeriodId": 10,
+        "faab": null
+      },
+      {
+        "id": "espn:c6cc8629-9b67-48e7-8fd3-79eb47254c50:WAIVER:4360234:2",
+        "kind": "WAIVER",
+        "type": "WAIVER",
+        "playerId": 4360234,
+        "player": "Evan McPherson",
+        "position": null,
+        "teamId": 2,
+        "team": "Serenity Now, Insanity Later",
+        "manager": "Jake",
+        "ownerId": "owner:jake",
+        "date": "2026-11-11T08:02:00.349Z",
+        "completedAt": "2026-11-11T08:02:00.349Z",
+        "scoringPeriodId": 10,
+        "faab": 0
+      },
+      {
+        "id": "espn:c799cd14-b35d-4a91-9c3f-6e8aa975a4d5:DROP:3150744:5",
+        "kind": "DROP",
+        "type": "DROP",
+        "playerId": 3150744,
+        "player": "Chase McLaughlin",
+        "position": null,
+        "teamId": 5,
+        "team": "8 Hole Reverend Rate",
+        "manager": "Mob",
+        "ownerId": "owner:mob",
+        "date": "2026-11-11T08:02:00.349Z",
+        "completedAt": "2026-11-11T08:02:00.349Z",
+        "scoringPeriodId": 10,
+        "faab": null
+      },
+      {
+        "id": "espn:c799cd14-b35d-4a91-9c3f-6e8aa975a4d5:WAIVER:4258620:5",
+        "kind": "WAIVER",
+        "type": "WAIVER",
+        "playerId": 4258620,
+        "player": "Andre Szmyt",
+        "position": null,
+        "teamId": 5,
+        "team": "8 Hole Reverend Rate",
+        "manager": "Mob",
+        "ownerId": "owner:mob",
+        "date": "2026-11-11T08:02:00.349Z",
+        "completedAt": "2026-11-11T08:02:00.349Z",
+        "scoringPeriodId": 10,
+        "faab": 0
+      },
+      {
+        "id": "espn:fcc5622b-d6b7-414b-bc17-4d82d9839d2f:DROP:4887558:5",
+        "kind": "DROP",
+        "type": "DROP",
+        "playerId": 4887558,
+        "player": "Player #4887558",
+        "position": null,
+        "teamId": 5,
+        "team": "8 Hole Reverend Rate",
+        "manager": "Mob",
+        "ownerId": "owner:mob",
+        "date": "2026-11-11T08:02:00.348Z",
+        "completedAt": "2026-11-11T08:02:00.348Z",
+        "scoringPeriodId": 10,
+        "faab": null
+      },
+      {
+        "id": "espn:fcc5622b-d6b7-414b-bc17-4d82d9839d2f:WAIVER:3916433:5",
+        "kind": "WAIVER",
+        "type": "WAIVER",
+        "playerId": 3916433,
+        "player": "Jakobi Meyers",
+        "position": null,
+        "teamId": 5,
+        "team": "8 Hole Reverend Rate",
+        "manager": "Mob",
+        "ownerId": "owner:mob",
+        "date": "2026-11-11T08:02:00.348Z",
+        "completedAt": "2026-11-11T08:02:00.348Z",
+        "scoringPeriodId": 10,
+        "faab": 2
+      },
+      {
+        "id": "espn:68fa546a-dd7f-452a-a7a1-77e7365c1369:DROP:-16018:5",
+        "kind": "DROP",
+        "type": "DROP",
+        "playerId": -16018,
+        "player": "Player #-16018",
+        "position": null,
+        "teamId": 5,
+        "team": "8 Hole Reverend Rate",
+        "manager": "Mob",
+        "ownerId": "owner:mob",
+        "date": "2026-11-11T08:02:00.254Z",
+        "completedAt": "2026-11-11T08:02:00.254Z",
+        "scoringPeriodId": 10,
+        "faab": null
+      },
+      {
+        "id": "espn:68fa546a-dd7f-452a-a7a1-77e7365c1369:WAIVER:-16009:5",
+        "kind": "WAIVER",
+        "type": "WAIVER",
+        "playerId": -16009,
+        "player": "Packers D/ST",
+        "position": null,
+        "teamId": 5,
+        "team": "8 Hole Reverend Rate",
+        "manager": "Mob",
+        "ownerId": "owner:mob",
+        "date": "2026-11-11T08:02:00.254Z",
+        "completedAt": "2026-11-11T08:02:00.254Z",
+        "scoringPeriodId": 10,
+        "faab": 3
+      },
+      {
+        "id": "espn:8a738b53-5fea-4a11-b85e-ca86af9e971f:DROP:4696044:3",
+        "kind": "DROP",
+        "type": "DROP",
+        "playerId": 4696044,
+        "player": "Kaelon Black",
+        "position": null,
+        "teamId": 3,
+        "team": "Right Reverend Raisins ",
+        "manager": "Rich",
+        "ownerId": "owner:rich",
+        "date": "2026-11-11T08:02:00.254Z",
+        "completedAt": "2026-11-11T08:02:00.254Z",
+        "scoringPeriodId": 10,
+        "faab": null
+      },
+      {
+        "id": "espn:8a738b53-5fea-4a11-b85e-ca86af9e971f:WAIVER:4685261:3",
+        "kind": "WAIVER",
+        "type": "WAIVER",
+        "playerId": 4685261,
+        "player": "Germie Bernard",
+        "position": null,
+        "teamId": 3,
+        "team": "Right Reverend Raisins ",
+        "manager": "Rich",
+        "ownerId": "owner:rich",
+        "date": "2026-11-11T08:02:00.254Z",
+        "completedAt": "2026-11-11T08:02:00.254Z",
+        "scoringPeriodId": 10,
+        "faab": 4
+      },
+      {
+        "id": "espn:8d6636ea-265e-4166-88c7-32c8893f677b:DROP:4428718:3",
+        "kind": "DROP",
+        "type": "DROP",
+        "playerId": 4428718,
+        "player": "Player #4428718",
+        "position": null,
+        "teamId": 3,
+        "team": "Right Reverend Raisins ",
+        "manager": "Rich",
+        "ownerId": "owner:rich",
+        "date": "2026-11-11T08:02:00.253Z",
+        "completedAt": "2026-11-11T08:02:00.253Z",
+        "scoringPeriodId": 10,
+        "faab": null
+      },
+      {
+        "id": "espn:8d6636ea-265e-4166-88c7-32c8893f677b:WAIVER:4366031:3",
+        "kind": "WAIVER",
+        "type": "WAIVER",
+        "playerId": 4366031,
+        "player": "Tank Dell",
+        "position": null,
+        "teamId": 3,
+        "team": "Right Reverend Raisins ",
+        "manager": "Rich",
+        "ownerId": "owner:rich",
+        "date": "2026-11-11T08:02:00.253Z",
+        "completedAt": "2026-11-11T08:02:00.253Z",
+        "scoringPeriodId": 10,
+        "faab": 4
+      },
+      {
+        "id": "espn:11693a02-c045-4e44-91f9-8167dc35c54c:DROP:4686468:5",
+        "kind": "DROP",
+        "type": "DROP",
+        "playerId": 4686468,
+        "player": "Player #4686468",
+        "position": null,
+        "teamId": 5,
+        "team": "8 Hole Reverend Rate",
+        "manager": "Mob",
+        "ownerId": "owner:mob",
+        "date": "2026-11-11T08:02:00.252Z",
+        "completedAt": "2026-11-11T08:02:00.252Z",
+        "scoringPeriodId": 10,
+        "faab": null
+      },
+      {
+        "id": "espn:11693a02-c045-4e44-91f9-8167dc35c54c:WAIVER:4569682:5",
+        "kind": "WAIVER",
+        "type": "WAIVER",
+        "playerId": 4569682,
+        "player": "Audric Estime",
+        "position": null,
+        "teamId": 5,
+        "team": "8 Hole Reverend Rate",
+        "manager": "Mob",
+        "ownerId": "owner:mob",
+        "date": "2026-11-11T08:02:00.252Z",
+        "completedAt": "2026-11-11T08:02:00.252Z",
+        "scoringPeriodId": 10,
+        "faab": 7
+      },
+      {
+        "id": "espn:7685562e-42e6-426a-ab31-24c74a37dd14:DROP:4360761:5",
+        "kind": "DROP",
+        "type": "DROP",
+        "playerId": 4360761,
+        "player": "Michael Wilson",
+        "position": null,
+        "teamId": 5,
+        "team": "8 Hole Reverend Rate",
+        "manager": "Mob",
+        "ownerId": "owner:mob",
+        "date": "2026-11-11T08:02:00.251Z",
+        "completedAt": "2026-11-11T08:02:00.251Z",
+        "scoringPeriodId": 10,
+        "faab": null
+      },
+      {
+        "id": "espn:7685562e-42e6-426a-ab31-24c74a37dd14:WAIVER:4880281:5",
+        "kind": "WAIVER",
+        "type": "WAIVER",
+        "playerId": 4880281,
+        "player": "Jordyn Tyson",
+        "position": null,
+        "teamId": 5,
+        "team": "8 Hole Reverend Rate",
+        "manager": "Mob",
+        "ownerId": "owner:mob",
+        "date": "2026-11-11T08:02:00.251Z",
+        "completedAt": "2026-11-11T08:02:00.251Z",
+        "scoringPeriodId": 10,
+        "faab": 8
+      },
+      {
+        "id": "espn:e5127616-62c1-41ae-a007-498723e9acc4:DROP:-16003:10",
+        "kind": "DROP",
+        "type": "DROP",
+        "playerId": -16003,
+        "player": "Bears D/ST",
+        "position": null,
+        "teamId": 10,
+        "team": "Pasta Holy Trinity ",
+        "manager": "Blake",
+        "ownerId": "owner:blake",
+        "date": "2026-11-11T08:02:00.250Z",
+        "completedAt": "2026-11-11T08:02:00.250Z",
+        "scoringPeriodId": 10,
+        "faab": null
+      },
+      {
+        "id": "espn:e5127616-62c1-41ae-a007-498723e9acc4:WAIVER:4431431:10",
+        "kind": "WAIVER",
+        "type": "WAIVER",
+        "playerId": 4431431,
+        "player": "Corey Kiner",
+        "position": null,
+        "teamId": 10,
+        "team": "Pasta Holy Trinity ",
+        "manager": "Blake",
+        "ownerId": "owner:blake",
+        "date": "2026-11-11T08:02:00.250Z",
+        "completedAt": "2026-11-11T08:02:00.250Z",
+        "scoringPeriodId": 10,
+        "faab": 12
+      },
+      {
         "id": "espn:b5325080-04a2-4198-89b4-e10cf8b37efc:DROP:4685720:9",
         "kind": "DROP",
         "type": "DROP",
@@ -41998,8 +42334,8 @@
               20,
               21
             ],
-            "lineupSlotId": 20,
-            "status": "BENCH",
+            "lineupSlotId": 2,
+            "status": "STARTER",
             "points": 0
           },
           {
@@ -42073,8 +42409,8 @@
               20,
               21
             ],
-            "lineupSlotId": 2,
-            "status": "STARTER",
+            "lineupSlotId": 20,
+            "status": "BENCH",
             "points": 0
           },
           {
@@ -42432,19 +42768,6 @@
             "points": 0
           },
           {
-            "playerId": 3055899,
-            "player": "Harrison Butker",
-            "position": "K",
-            "eligibleSlots": [
-              17,
-              20,
-              21
-            ],
-            "lineupSlotId": 17,
-            "status": "STARTER",
-            "points": 0
-          },
-          {
             "playerId": -16034,
             "player": "Texans D/ST",
             "position": "D/ST",
@@ -42454,6 +42777,19 @@
               21
             ],
             "lineupSlotId": 16,
+            "status": "STARTER",
+            "points": 0
+          },
+          {
+            "playerId": 4360234,
+            "player": "Evan McPherson",
+            "position": "K",
+            "eligibleSlots": [
+              17,
+              20,
+              21
+            ],
+            "lineupSlotId": 17,
             "status": "STARTER",
             "points": 0
           }
@@ -42663,40 +42999,6 @@
             "points": 0
           },
           {
-            "playerId": 4696044,
-            "player": "Kaelon Black",
-            "position": "RB",
-            "eligibleSlots": [
-              25,
-              2,
-              3,
-              23,
-              7,
-              20,
-              21
-            ],
-            "lineupSlotId": 20,
-            "status": "BENCH",
-            "points": 0
-          },
-          {
-            "playerId": 4428718,
-            "player": "Tre Tucker",
-            "position": "WR",
-            "eligibleSlots": [
-              3,
-              4,
-              5,
-              23,
-              7,
-              20,
-              21
-            ],
-            "lineupSlotId": 20,
-            "status": "BENCH",
-            "points": 0
-          },
-          {
             "playerId": 3045147,
             "player": "James Conner",
             "position": "RB",
@@ -42727,6 +43029,41 @@
             ],
             "lineupSlotId": 23,
             "status": "STARTER",
+            "points": 0
+          },
+          {
+            "playerId": 4366031,
+            "player": "Tank Dell",
+            "position": "WR",
+            "eligibleSlots": [
+              3,
+              4,
+              5,
+              23,
+              7,
+              20,
+              21
+            ],
+            "lineupSlotId": 20,
+            "status": "BENCH",
+            "points": 0
+          },
+          {
+            "playerId": 4685261,
+            "player": "Germie Bernard",
+            "position": "WR",
+            "eligibleSlots": [
+              25,
+              3,
+              4,
+              5,
+              23,
+              7,
+              20,
+              21
+            ],
+            "lineupSlotId": 20,
+            "status": "BENCH",
             "points": 0
           }
         ],
@@ -42945,8 +43282,8 @@
               20,
               21
             ],
-            "lineupSlotId": 20,
-            "status": "BENCH",
+            "lineupSlotId": 23,
+            "status": "STARTER",
             "points": 0
           },
           {
@@ -42968,23 +43305,6 @@
             "points": 0
           },
           {
-            "playerId": 4569603,
-            "player": "Malik Washington",
-            "position": "WR",
-            "eligibleSlots": [
-              3,
-              4,
-              5,
-              23,
-              7,
-              20,
-              21
-            ],
-            "lineupSlotId": 23,
-            "status": "STARTER",
-            "points": 0
-          },
-          {
             "playerId": -16012,
             "player": "Chiefs D/ST",
             "position": "D/ST",
@@ -42995,6 +43315,23 @@
             ],
             "lineupSlotId": 16,
             "status": "STARTER",
+            "points": 0
+          },
+          {
+            "playerId": 3126486,
+            "player": "Deebo Samuel Sr.",
+            "position": "WR",
+            "eligibleSlots": [
+              3,
+              4,
+              5,
+              23,
+              7,
+              20,
+              21
+            ],
+            "lineupSlotId": 20,
+            "status": "BENCH",
             "points": 0
           }
         ],
@@ -43076,8 +43413,8 @@
               20,
               21
             ],
-            "lineupSlotId": 2,
-            "status": "STARTER",
+            "lineupSlotId": 20,
+            "status": "BENCH",
             "points": 0
           },
           {
@@ -43108,23 +43445,6 @@
               21
             ],
             "lineupSlotId": 0,
-            "status": "STARTER",
-            "points": 0
-          },
-          {
-            "playerId": 4360761,
-            "player": "Michael Wilson",
-            "position": "WR",
-            "eligibleSlots": [
-              3,
-              4,
-              5,
-              23,
-              7,
-              20,
-              21
-            ],
-            "lineupSlotId": 4,
             "status": "STARTER",
             "points": 0
           },
@@ -43173,22 +43493,6 @@
             "points": 0
           },
           {
-            "playerId": 4887558,
-            "player": "Emanuel Wilson",
-            "position": "RB",
-            "eligibleSlots": [
-              2,
-              3,
-              23,
-              7,
-              20,
-              21
-            ],
-            "lineupSlotId": 20,
-            "status": "BENCH",
-            "points": 0
-          },
-          {
             "playerId": 4723820,
             "player": "Omar Cooper Jr.",
             "position": "WR",
@@ -43202,20 +43506,7 @@
               20,
               21
             ],
-            "lineupSlotId": 23,
-            "status": "STARTER",
-            "points": 0
-          },
-          {
-            "playerId": 3150744,
-            "player": "Chase McLaughlin",
-            "position": "K",
-            "eligibleSlots": [
-              17,
-              20,
-              21
-            ],
-            "lineupSlotId": 17,
+            "lineupSlotId": 4,
             "status": "STARTER",
             "points": 0
           },
@@ -43236,13 +43527,14 @@
             "points": 0
           },
           {
-            "playerId": 4686468,
-            "player": "Seth McGowan",
-            "position": "RB",
+            "playerId": 4880281,
+            "player": "Jordyn Tyson",
+            "position": "WR",
             "eligibleSlots": [
               25,
-              2,
               3,
+              4,
+              5,
               23,
               7,
               20,
@@ -43253,8 +43545,24 @@
             "points": 0
           },
           {
-            "playerId": -16018,
-            "player": "Saints D/ST",
+            "playerId": 4569682,
+            "player": "Audric Estime",
+            "position": "RB",
+            "eligibleSlots": [
+              2,
+              3,
+              23,
+              7,
+              20,
+              21
+            ],
+            "lineupSlotId": 2,
+            "status": "STARTER",
+            "points": 0
+          },
+          {
+            "playerId": -16009,
+            "player": "Packers D/ST",
             "position": "D/ST",
             "eligibleSlots": [
               16,
@@ -43262,6 +43570,36 @@
               21
             ],
             "lineupSlotId": 16,
+            "status": "STARTER",
+            "points": 0
+          },
+          {
+            "playerId": 3916433,
+            "player": "Jakobi Meyers",
+            "position": "WR",
+            "eligibleSlots": [
+              3,
+              4,
+              5,
+              23,
+              7,
+              20,
+              21
+            ],
+            "lineupSlotId": 23,
+            "status": "STARTER",
+            "points": 0
+          },
+          {
+            "playerId": 4258620,
+            "player": "Andre Szmyt",
+            "position": "K",
+            "eligibleSlots": [
+              17,
+              20,
+              21
+            ],
+            "lineupSlotId": 17,
             "status": "STARTER",
             "points": 0
           }
@@ -43650,8 +43988,8 @@
               20,
               21
             ],
-            "lineupSlotId": 20,
-            "status": "BENCH",
+            "lineupSlotId": 2,
+            "status": "STARTER",
             "points": 0
           },
           {
@@ -43696,8 +44034,8 @@
               20,
               21
             ],
-            "lineupSlotId": 2,
-            "status": "STARTER",
+            "lineupSlotId": 20,
+            "status": "BENCH",
             "points": 0
           },
           {
@@ -43823,8 +44161,8 @@
               20,
               21
             ],
-            "lineupSlotId": 2,
-            "status": "STARTER",
+            "lineupSlotId": 20,
+            "status": "BENCH",
             "points": 0
           },
           {
@@ -44013,8 +44351,8 @@
               20,
               21
             ],
-            "lineupSlotId": 20,
-            "status": "BENCH",
+            "lineupSlotId": 2,
+            "status": "STARTER",
             "points": 0
           },
           {
@@ -44130,8 +44468,8 @@
               20,
               21
             ],
-            "lineupSlotId": 20,
-            "status": "BENCH",
+            "lineupSlotId": 23,
+            "status": "STARTER",
             "points": 0
           },
           {
@@ -44146,8 +44484,8 @@
               20,
               21
             ],
-            "lineupSlotId": 23,
-            "status": "STARTER",
+            "lineupSlotId": 20,
+            "status": "BENCH",
             "points": 0
           },
           {
@@ -44180,8 +44518,8 @@
               20,
               21
             ],
-            "lineupSlotId": 20,
-            "status": "BENCH",
+            "lineupSlotId": 4,
+            "status": "STARTER",
             "points": 0
           },
           {
@@ -44210,8 +44548,8 @@
               20,
               21
             ],
-            "lineupSlotId": 2,
-            "status": "STARTER",
+            "lineupSlotId": 20,
+            "status": "BENCH",
             "points": 0
           },
           {
@@ -44237,8 +44575,8 @@
               20,
               21
             ],
-            "lineupSlotId": 0,
-            "status": "STARTER",
+            "lineupSlotId": 20,
+            "status": "BENCH",
             "points": 0
           },
           {
@@ -44253,8 +44591,8 @@
               20,
               21
             ],
-            "lineupSlotId": 20,
-            "status": "BENCH",
+            "lineupSlotId": 2,
+            "status": "STARTER",
             "points": 0
           },
           {
@@ -44287,8 +44625,8 @@
               20,
               21
             ],
-            "lineupSlotId": 4,
-            "status": "STARTER",
+            "lineupSlotId": 20,
+            "status": "BENCH",
             "points": 0
           },
           {
@@ -44310,20 +44648,17 @@
             "points": 0
           },
           {
-            "playerId": 4597500,
-            "player": "Adonai Mitchell",
-            "position": "WR",
+            "playerId": 12483,
+            "player": "Matthew Stafford",
+            "position": "QB",
             "eligibleSlots": [
-              3,
-              4,
-              5,
-              23,
+              0,
               7,
               20,
               21
             ],
-            "lineupSlotId": 20,
-            "status": "BENCH",
+            "lineupSlotId": 0,
+            "status": "STARTER",
             "points": 0
           }
         ],
@@ -44389,8 +44724,8 @@
               20,
               21
             ],
-            "lineupSlotId": 20,
-            "status": "BENCH",
+            "lineupSlotId": 21,
+            "status": "IR",
             "points": 0
           },
           {
@@ -44439,8 +44774,8 @@
               20,
               21
             ],
-            "lineupSlotId": 6,
-            "status": "STARTER",
+            "lineupSlotId": 20,
+            "status": "BENCH",
             "points": 0
           },
           {
@@ -44550,19 +44885,6 @@
             "points": 0
           },
           {
-            "playerId": -16003,
-            "player": "Bears D/ST",
-            "position": "D/ST",
-            "eligibleSlots": [
-              16,
-              20,
-              21
-            ],
-            "lineupSlotId": 20,
-            "status": "BENCH",
-            "points": 0
-          },
-          {
             "playerId": 4832800,
             "player": "Denzel Boston",
             "position": "WR",
@@ -44577,6 +44899,38 @@
               21
             ],
             "lineupSlotId": 4,
+            "status": "STARTER",
+            "points": 0
+          },
+          {
+            "playerId": 4431431,
+            "player": "Corey Kiner",
+            "position": "RB",
+            "eligibleSlots": [
+              2,
+              3,
+              23,
+              7,
+              20,
+              21
+            ],
+            "lineupSlotId": 20,
+            "status": "BENCH",
+            "points": 0
+          },
+          {
+            "playerId": 4430539,
+            "player": "Brenton Strange",
+            "position": "TE",
+            "eligibleSlots": [
+              5,
+              6,
+              23,
+              7,
+              20,
+              21
+            ],
+            "lineupSlotId": 6,
             "status": "STARTER",
             "points": 0
           }
@@ -44596,5 +44950,5 @@
       }
     ]
   },
-  "updatedAt": "2026-11-10T20:28:11.557Z"
+  "updatedAt": "2026-11-12T18:29:40.884Z"
 }
