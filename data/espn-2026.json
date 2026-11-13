@@ -2748,7 +2748,7 @@
       "a": "owner:rich",
       "al": "Rich",
       "at": "Right Reverend Raisins ",
-      "as": 0,
+      "as": 27.7,
       "b": "owner:chris",
       "bl": "Chris",
       "bt": "Backup Meat",
@@ -2763,7 +2763,7 @@
       "a": "owner:jake",
       "al": "Jake",
       "at": "Serenity Now, Insanity Later",
-      "as": 0,
+      "as": 47.06,
       "b": "owner:blake",
       "bl": "Blake",
       "bt": "Pasta Holy Trinity ",
@@ -2778,11 +2778,11 @@
       "a": "owner:min",
       "al": "Min",
       "at": "Splitpeesoup",
-      "as": 0,
+      "as": 7.7,
       "b": "owner:gilguy",
       "bl": "Gilguy",
       "bt": "Dico Rowdle",
-      "bs": 0,
+      "bs": 12.2,
       "status": "LIVE",
       "aTeamId": 8,
       "bTeamId": 9
@@ -2793,11 +2793,11 @@
       "a": "owner:michael",
       "al": "Michael",
       "at": "Unbridled Enthusiasm",
-      "as": 0,
+      "as": 27.2,
       "b": "owner:nyle",
       "bl": "Nyle",
       "bt": "The Blessed Sherpa ",
-      "bs": 0,
+      "bs": 12,
       "status": "LIVE",
       "aTeamId": 1,
       "bTeamId": 7
@@ -42336,7 +42336,7 @@
             ],
             "lineupSlotId": 2,
             "status": "STARTER",
-            "points": 0
+            "points": 27.2
           },
           {
             "playerId": 4685702,
@@ -42461,7 +42461,7 @@
             ],
             "lineupSlotId": 20,
             "status": "BENCH",
-            "points": 0
+            "points": 6.2
           },
           {
             "playerId": 3917232,
@@ -42719,7 +42719,7 @@
             ],
             "lineupSlotId": 0,
             "status": "STARTER",
-            "points": 0
+            "points": 26.76
           },
           {
             "playerId": 3116365,
@@ -42752,7 +42752,7 @@
             ],
             "lineupSlotId": 4,
             "status": "STARTER",
-            "points": 0
+            "points": 20.3
           },
           {
             "playerId": -16023,
@@ -42935,7 +42935,7 @@
             ],
             "lineupSlotId": 6,
             "status": "STARTER",
-            "points": 0
+            "points": 27.7
           },
           {
             "playerId": 15847,
@@ -42978,8 +42978,8 @@
               20,
               21
             ],
-            "lineupSlotId": 20,
-            "status": "BENCH",
+            "lineupSlotId": 2,
+            "status": "STARTER",
             "points": 0
           },
           {
@@ -42994,8 +42994,8 @@
               20,
               21
             ],
-            "lineupSlotId": 2,
-            "status": "STARTER",
+            "lineupSlotId": 20,
+            "status": "BENCH",
             "points": 0
           },
           {
@@ -43843,8 +43843,8 @@
             "points": 0
           },
           {
-            "playerId": 5083076,
-            "player": "Harold Fannin Jr.",
+            "playerId": 2576925,
+            "player": "Darren Waller",
             "position": "TE",
             "eligibleSlots": [
               5,
@@ -44112,7 +44112,7 @@
             ],
             "lineupSlotId": 16,
             "status": "STARTER",
-            "points": 0
+            "points": 12
           }
         ],
         "slots": [
@@ -44196,7 +44196,7 @@
             ],
             "lineupSlotId": 4,
             "status": "STARTER",
-            "points": 0
+            "points": 7.4
           },
           {
             "playerId": 4239993,
@@ -44353,7 +44353,7 @@
             ],
             "lineupSlotId": 2,
             "status": "STARTER",
-            "points": 0
+            "points": 0.3
           },
           {
             "playerId": 4430968,
@@ -44385,7 +44385,7 @@
             ],
             "lineupSlotId": 20,
             "status": "BENCH",
-            "points": 0
+            "points": 6.4
           }
         ],
         "slots": [
@@ -44645,7 +44645,7 @@
             ],
             "lineupSlotId": 4,
             "status": "STARTER",
-            "points": 0
+            "points": 12.2
           },
           {
             "playerId": 12483,
@@ -44950,5 +44950,5 @@
       }
     ]
   },
-  "updatedAt": "2026-11-12T20:50:40.460Z"
+  "updatedAt": "2026-11-13T04:58:54.032Z"
 }
