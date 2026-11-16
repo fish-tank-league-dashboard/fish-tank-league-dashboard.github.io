@@ -1,0 +1,80 @@
+name: Watch Dick Brick preliminary
+
+# Independent of the pre-MNF capture workflow. GitHub cron uses UTC, so both
+# Eastern offsets are scheduled and the job checks America/New_York at runtime.
+on:
+  schedule:
+    - cron: '30 15,16 * * 1'      # 11:30 ET anchor, plus an offset fallback
+    - cron: '15,45 16,17 * * 1'   # 12:15 and 12:45 ET checks, both offsets
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  issues: write
+
+jobs:
+  watch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    # Shared with the existing preliminary job, including across workflows.
+    concurrency:
+      group: dick-brick-preliminary
+      cancel-in-progress: false
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Check current week and recover preliminary only if needed
+        env:
+          ESPN_LEAGUE_ID: '791101930'
+          ESPN_SEASON: '2026'
+          ESPN_S2: ${{ secrets.ESPN_S2 }}
+          ESPN_SWID: ${{ secrets.ESPN_SWID }}
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          et_day=$(TZ=America/New_York date +%u)
+          et_time=$(TZ=America/New_York date +%H%M)
+          if [ "$et_day" != 1 ] || [ "$((10#$et_time))" -lt 1130 ]; then
+            echo "Outside the Monday preliminary window in America/New_York."
+            exit 0
+          fi
+          # Read main after acquiring the shared lock; another preliminary run
+          # may have published since this job was queued.
+          git pull --ff-only
+          if node scripts/capture-dick-brick.mjs preliminary-check; then
+            echo "Current ESPN week already has a fresh five-matchup preview."
+            exit 0
+          fi
+          echo "Preliminary is missing, stale, or incomplete; recovering this week only."
+          node scripts/capture-dick-brick.mjs preliminary --scheduled
+          node scripts/capture-dick-brick.mjs preliminary-check
+          if git diff --quiet -- data/dick-brick-preliminary.json; then
+            echo "Recovery made no preliminary change." >&2
+            exit 1
+          fi
+          git config user.name "fish-tank-data-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add data/dick-brick-preliminary.json
+          git commit -m "data: recover Dick Brick preliminary"
+          git pull --rebase
+          git push
+          gh api --method POST "repos/$GITHUB_REPOSITORY/pages/builds"
+      - name: Alert on preliminary failure
+        if: failure()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          et_date=$(TZ=America/New_York date +%F)
+          title="Dick Brick preliminary recovery failed: $et_date"
+          if gh issue list --state open --search "$title in:title" --json title --jq '.[].title' | grep -Fxq "$title"; then
+            echo "An open alert already exists for $et_date."
+            exit 0
+          fi
+          gh issue create --title "$title" --body "The independent preliminary watch failed for $et_date (America/New_York). Check the [workflow run](https://github.com/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID) and verify the current ESPN week, capture timestamp, and five matchups. Recovery is preliminary only; do not use it to finalize an award."
+

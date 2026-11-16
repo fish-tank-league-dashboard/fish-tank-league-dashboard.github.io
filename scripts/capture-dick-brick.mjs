@@ -260,7 +260,7 @@ async function preliminaryCheck(now) {
 // on Monday from 11:30am Eastern until kickoff, and skips once the week has a valid preview.
 async function preliminary(now, scheduled) {
   if (scheduled) {
-    if (!isPreliminaryWindow(now)) return 'Preliminary run skipped: before 12:30pm Eastern on Monday.';
+    if (!isPreliminaryWindow(now)) return 'Preliminary run skipped: before 11:30am Eastern on Monday.';
     const kickoff = await firstMondayKickoff(now);
     if (kickoff && now >= kickoff) return 'Preliminary run skipped: Monday Night Football has kicked off.';
   }
@@ -270,7 +270,9 @@ async function preliminary(now, scheduled) {
     if (preliminaryIsFresh(existing, now, week)) return `Preliminary run skipped: Week ${week} already has a preview from today's window.`;
   }
   const schedule = weekSchedule(payload, week);
-  if (!schedule.length) throw new Error(`ESPN returned no Week ${week} matchups`);
+  if (schedule.length !== 5 || new Set(schedule.map(matchup => matchup.id)).size !== 5) {
+    throw new Error(`ESPN returned ${schedule.length} Week ${week} matchups; exactly five distinct matchups are required for a preliminary preview.`);
+  }
   const directory = teamDirectory(await readJson(leaguePath));
   const left = await remainingContext(week);
   const matchups = schedule.map(matchup => ({
@@ -456,3 +458,4 @@ async function main() {
 if (process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
   main().catch(error => { console.error(error.message || error); process.exitCode = 1; });
 }
+
