@@ -54,8 +54,8 @@ jobs:
           node scripts/capture-dick-brick.mjs preliminary --scheduled
           node scripts/capture-dick-brick.mjs preliminary-check
           if git diff --quiet -- data/dick-brick-preliminary.json; then
-            echo "Recovery made no preliminary change." >&2
-            exit 1
+            echo "A complete preliminary preview already exists; no publish needed."
+            exit 0
           fi
           git config user.name "fish-tank-data-bot"
           git config user.email "actions@users.noreply.github.com"
