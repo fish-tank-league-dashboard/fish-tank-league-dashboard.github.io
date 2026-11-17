@@ -1006,7 +1006,9 @@
             "winProbability": 0.1
           }
         }
-      ]
+      ],
+      "finalizedAt": "2026-11-17T08:10:51.396Z",
+      "awardManager": "Rich"
     }
   ]
 }

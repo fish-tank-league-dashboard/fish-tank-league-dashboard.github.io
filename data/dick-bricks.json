@@ -5,6 +5,20 @@
   "awards": [
     {
       "season": 2026,
+      "week": 10,
+      "status": "verified",
+      "managerId": "owner:rich",
+      "manager": "Rich",
+      "team": "Right Reverend Raisins",
+      "opponent": "Backup Meat",
+      "opponentManager": "Chris",
+      "winProbability": 51.5,
+      "projectedPoints": 166.98806206,
+      "finalScore": "161.84–166.82",
+      "capturedAt": "2026-11-17T00:55:00.085Z"
+    },
+    {
+      "season": 2026,
       "week": 8,
       "status": "verified",
       "managerId": "owner:gilguy",
