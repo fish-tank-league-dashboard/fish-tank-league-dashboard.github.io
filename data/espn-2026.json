@@ -46864,8 +46864,8 @@
               20,
               21
             ],
-            "lineupSlotId": 20,
-            "status": "BENCH",
+            "lineupSlotId": 2,
+            "status": "STARTER",
             "points": 0
           },
           {
@@ -47051,8 +47051,8 @@
               20,
               21
             ],
-            "lineupSlotId": 2,
-            "status": "STARTER",
+            "lineupSlotId": 20,
+            "status": "BENCH",
             "points": 0
           }
         ],
@@ -47340,8 +47340,8 @@
               20,
               21
             ],
-            "lineupSlotId": 2,
-            "status": "STARTER",
+            "lineupSlotId": 20,
+            "status": "BENCH",
             "points": 0
           },
           {
@@ -47502,8 +47502,8 @@
               20,
               21
             ],
-            "lineupSlotId": 20,
-            "status": "BENCH",
+            "lineupSlotId": 2,
+            "status": "STARTER",
             "points": 0
           },
           {
@@ -47870,8 +47870,8 @@
               20,
               21
             ],
-            "lineupSlotId": 23,
-            "status": "STARTER",
+            "lineupSlotId": 20,
+            "status": "BENCH",
             "points": 0
           },
           {
@@ -47920,8 +47920,8 @@
               20,
               21
             ],
-            "lineupSlotId": 20,
-            "status": "BENCH",
+            "lineupSlotId": 4,
+            "status": "STARTER",
             "points": 0
           },
           {
@@ -47983,8 +47983,8 @@
               20,
               21
             ],
-            "lineupSlotId": 16,
-            "status": "STARTER",
+            "lineupSlotId": 20,
+            "status": "BENCH",
             "points": 0
           },
           {
@@ -48000,8 +48000,8 @@
               20,
               21
             ],
-            "lineupSlotId": 20,
-            "status": "BENCH",
+            "lineupSlotId": 23,
+            "status": "STARTER",
             "points": 0
           },
           {
@@ -48027,8 +48027,8 @@
               20,
               21
             ],
-            "lineupSlotId": 20,
-            "status": "BENCH",
+            "lineupSlotId": 0,
+            "status": "STARTER",
             "points": 0
           },
           {
@@ -48045,22 +48045,6 @@
             ],
             "lineupSlotId": 2,
             "status": "STARTER",
-            "points": 0
-          },
-          {
-            "playerId": 3046439,
-            "player": "Hunter Henry",
-            "position": "TE",
-            "eligibleSlots": [
-              5,
-              6,
-              23,
-              7,
-              20,
-              21
-            ],
-            "lineupSlotId": 20,
-            "status": "BENCH",
             "points": 0
           },
           {
@@ -48095,8 +48079,8 @@
               20,
               21
             ],
-            "lineupSlotId": 4,
-            "status": "STARTER",
+            "lineupSlotId": 20,
+            "status": "BENCH",
             "points": 0
           },
           {
@@ -48109,8 +48093,8 @@
               20,
               21
             ],
-            "lineupSlotId": 0,
-            "status": "STARTER",
+            "lineupSlotId": 20,
+            "status": "BENCH",
             "points": 0
           }
         ],
@@ -48399,5 +48383,5 @@
       }
     ]
   },
-  "updatedAt": "2026-11-17T14:47:37.292Z"
+  "updatedAt": "2026-11-17T19:16:02.775Z"
 }
