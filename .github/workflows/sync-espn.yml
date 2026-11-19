@@ -6,6 +6,7 @@ on:
     branches: [main]
     paths:
       - ".github/workflows/sync-espn.yml"
+      - ".github/espn-review-trigger.txt"
       - "scripts/check-espn-review-refresh.mjs"
       - "scripts/sync-espn.mjs"
       - "scripts/advanced-data.mjs"
@@ -62,7 +63,7 @@ jobs:
           ESPN_S2: ${{ secrets.ESPN_S2 }}
           ESPN_SWID: ${{ secrets.ESPN_SWID }}
         run: |
-          if [ "${{ github.event_name }}" = "schedule" ] || [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+          if [ "${{ github.event_name }}" = "schedule" ] || [ "${{ github.event_name }}" = "workflow_dispatch" ] || [ "${{ github.event_name }}" = "push" ]; then
             decision=$(node scripts/check-espn-review-refresh.mjs)
             if [ "$decision" = "skip" ]; then
               echo "A successful review-morning sync already verified this snapshot."
