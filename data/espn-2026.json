@@ -46282,24 +46282,6 @@
             "points": 0
           },
           {
-            "playerId": 4870795,
-            "player": "Makai Lemon",
-            "position": "WR",
-            "eligibleSlots": [
-              25,
-              3,
-              4,
-              5,
-              23,
-              7,
-              20,
-              21
-            ],
-            "lineupSlotId": 20,
-            "status": "BENCH",
-            "points": 0
-          },
-          {
             "playerId": 4685512,
             "player": "Jadarian Price",
             "position": "RB",
@@ -46330,6 +46312,23 @@
             ],
             "lineupSlotId": 6,
             "status": "STARTER",
+            "points": 0
+          },
+          {
+            "playerId": 4686468,
+            "player": "Seth McGowan",
+            "position": "RB",
+            "eligibleSlots": [
+              25,
+              2,
+              3,
+              23,
+              7,
+              20,
+              21
+            ],
+            "lineupSlotId": 20,
+            "status": "BENCH",
             "points": 0
           }
         ],
@@ -47238,7 +47237,7 @@
               20,
               21
             ],
-            "lineupSlotId": 23,
+            "lineupSlotId": 4,
             "status": "STARTER",
             "points": 0
           },
@@ -47350,8 +47349,8 @@
               20,
               21
             ],
-            "lineupSlotId": 20,
-            "status": "BENCH",
+            "lineupSlotId": 23,
+            "status": "STARTER",
             "points": 0
           },
           {
@@ -47367,8 +47366,8 @@
               20,
               21
             ],
-            "lineupSlotId": 4,
-            "status": "STARTER",
+            "lineupSlotId": 20,
+            "status": "BENCH",
             "points": 0
           },
           {
@@ -47876,23 +47875,6 @@
             "points": 0
           },
           {
-            "playerId": 4686658,
-            "player": "Mike Washington Jr.",
-            "position": "RB",
-            "eligibleSlots": [
-              25,
-              2,
-              3,
-              23,
-              7,
-              20,
-              21
-            ],
-            "lineupSlotId": 20,
-            "status": "BENCH",
-            "points": 0
-          },
-          {
             "playerId": 4689936,
             "player": "Jake Bates",
             "position": "K",
@@ -47906,8 +47888,25 @@
             "points": 0
           },
           {
-            "playerId": -16019,
-            "player": "Giants D/ST",
+            "playerId": 4686422,
+            "player": "Xavier Hutchinson",
+            "position": "WR",
+            "eligibleSlots": [
+              3,
+              4,
+              5,
+              23,
+              7,
+              20,
+              21
+            ],
+            "lineupSlotId": 20,
+            "status": "BENCH",
+            "points": 0
+          },
+          {
+            "playerId": -16020,
+            "player": "Jets D/ST",
             "position": "D/ST",
             "eligibleSlots": [
               16,
@@ -48746,5 +48745,5 @@
       }
     ]
   },
-  "updatedAt": "2026-11-19T13:02:55.688Z"
+  "updatedAt": "2026-11-19T19:05:25.971Z"
 }
