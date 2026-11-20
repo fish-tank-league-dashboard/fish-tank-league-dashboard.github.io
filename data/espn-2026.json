@@ -2808,11 +2808,11 @@
       "a": "owner:chris",
       "al": "Chris",
       "at": "Backup Meat",
-      "as": 0,
+      "as": 12.7,
       "b": "owner:nick",
       "bl": "Nick",
       "bt": "The Azz Train",
-      "bs": 0,
+      "bs": 26.46,
       "status": "LIVE",
       "aTeamId": 6,
       "bTeamId": 4
@@ -2827,7 +2827,7 @@
       "b": "owner:gilguy",
       "bl": "Gilguy",
       "bt": "Dico Rowdle",
-      "bs": 0,
+      "bs": 3.2,
       "status": "LIVE",
       "aTeamId": 10,
       "bTeamId": 9
@@ -2838,7 +2838,7 @@
       "a": "owner:rich",
       "al": "Rich",
       "at": "Right Reverend Raisins ",
-      "as": 0,
+      "as": 14.8,
       "b": "owner:nyle",
       "bl": "Nyle",
       "bt": "The Blessed Sherpa ",
@@ -2853,7 +2853,7 @@
       "a": "owner:jake",
       "al": "Jake",
       "at": "Serenity Now, Insanity Later",
-      "as": 0,
+      "as": 22,
       "b": "owner:michael",
       "bl": "Michael",
       "bt": "Unbridled Enthusiasm",
@@ -2868,7 +2868,7 @@
       "a": "owner:min",
       "al": "Min",
       "at": "Splitpeesoup",
-      "as": 0,
+      "as": 18.4,
       "b": "owner:mob",
       "bl": "Mob",
       "bt": "8 Hole Reverend Rate",
@@ -46329,7 +46329,7 @@
             ],
             "lineupSlotId": 20,
             "status": "BENCH",
-            "points": 0
+            "points": 1.8
           }
         ],
         "slots": [
@@ -46582,7 +46582,7 @@
             ],
             "lineupSlotId": 16,
             "status": "STARTER",
-            "points": 0
+            "points": 22
           },
           {
             "playerId": 4360234,
@@ -46662,7 +46662,7 @@
             ],
             "lineupSlotId": 4,
             "status": "STARTER",
-            "points": 0
+            "points": 14.8
           },
           {
             "playerId": 3918298,
@@ -46833,7 +46833,7 @@
             ],
             "lineupSlotId": 20,
             "status": "BENCH",
-            "points": 0
+            "points": 5.7
           },
           {
             "playerId": 4685261,
@@ -46966,8 +46966,8 @@
               20,
               21
             ],
-            "lineupSlotId": 6,
-            "status": "STARTER",
+            "lineupSlotId": 20,
+            "status": "BENCH",
             "points": 0
           },
           {
@@ -46982,7 +46982,7 @@
             ],
             "lineupSlotId": 0,
             "status": "STARTER",
-            "points": 0
+            "points": 26.46
           },
           {
             "playerId": 4567104,
@@ -47022,8 +47022,8 @@
               20,
               21
             ],
-            "lineupSlotId": 20,
-            "status": "BENCH",
+            "lineupSlotId": 6,
+            "status": "STARTER",
             "points": 0
           },
           {
@@ -47441,7 +47441,7 @@
             ],
             "lineupSlotId": 2,
             "status": "STARTER",
-            "points": 0
+            "points": 6.7
           },
           {
             "playerId": 4374302,
@@ -47597,7 +47597,7 @@
             ],
             "lineupSlotId": 17,
             "status": "STARTER",
-            "points": 0
+            "points": 6
           },
           {
             "playerId": 3054850,
@@ -47902,7 +47902,7 @@
             ],
             "lineupSlotId": 20,
             "status": "BENCH",
-            "points": 0
+            "points": 3.3
           },
           {
             "playerId": -16020,
@@ -48032,7 +48032,7 @@
             ],
             "lineupSlotId": 2,
             "status": "STARTER",
-            "points": 0
+            "points": 15.4
           },
           {
             "playerId": 4432620,
@@ -48126,7 +48126,7 @@
             ],
             "lineupSlotId": 17,
             "status": "STARTER",
-            "points": 0
+            "points": 3
           },
           {
             "playerId": 14880,
@@ -48302,7 +48302,7 @@
             ],
             "lineupSlotId": 6,
             "status": "STARTER",
-            "points": 0
+            "points": 3.2
           },
           {
             "playerId": 4871023,
@@ -48745,5 +48745,5 @@
       }
     ]
   },
-  "updatedAt": "2026-11-19T19:05:25.971Z"
+  "updatedAt": "2026-11-20T05:40:11.352Z"
 }
