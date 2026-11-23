@@ -96,7 +96,7 @@ jobs:
               sleep 300
             done
           else
-            node scripts/capture-dick-brick.mjs preliminary
+            node scripts/capture-dick-brick.mjs preliminary --scheduled
             node scripts/capture-dick-brick.mjs preliminary-check
           fi
       - name: Publish preliminary snapshot
@@ -165,7 +165,7 @@ jobs:
           git push
           gh api --method POST "repos/$GITHUB_REPOSITORY/pages/builds"
       - name: Keep finalizing until ESPN posts final scores
-        if: success() && inputs.mode != 'finalize-wait'
+        if: success() && github.event_name != 'push' && inputs.mode != 'finalize-wait'
         env:
           GH_TOKEN: ${{ github.token }}
         run: |

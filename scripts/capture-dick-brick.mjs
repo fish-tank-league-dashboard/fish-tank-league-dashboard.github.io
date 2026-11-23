@@ -240,11 +240,17 @@ export function preliminaryIsFresh(preview, now, expectedWeek, expectedSeason = 
   const taken = new Date(preview.capturedAt);
   if (!Number.isFinite(taken.valueOf()) || taken > now) return false;
   const recorded = nyClock(taken), current = nyClock(now);
-  if (recorded.day !== current.day || recorded.minutes < PRELIMINARY_ET_MINUTES) return false;
+  if (recorded.weekday !== 'Monday' || recorded.day !== current.day || recorded.minutes < PRELIMINARY_ET_MINUTES) return false;
   if (!Array.isArray(preview.matchups) || preview.matchups.length !== 5) return false;
-  const ids = new Set(preview.matchups.map(matchup => matchup.id));
-  return ids.size === 5 && preview.matchups.every(matchup => [matchup.home, matchup.away].every(side =>
-    side && Number.isFinite(side.winProbability) && Number.isFinite(side.projectedPoints)));
+  const ids = new Set(preview.matchups.map(matchup => matchup?.id));
+  if (ids.size !== 5 || ![...ids].every(Number.isInteger)) return false;
+  const teams = preview.matchups.flatMap(matchup => [matchup.home, matchup.away]);
+  return new Set(teams.map(side => side?.teamId)).size === 10 && teams.every(side =>
+    side && Number.isInteger(side.teamId) && side.teamId > 0 &&
+    typeof side.team === 'string' && side.team.trim().length > 0 &&
+    Number.isFinite(side.pointsAtCapture) && Number.isFinite(side.projectedPoints) &&
+    Number.isInteger(side.startersLeft) && side.startersLeft >= 0 &&
+    Number.isFinite(side.winProbability) && side.winProbability >= 0 && side.winProbability <= 100);
 }
 
 async function preliminaryCheck(now) {

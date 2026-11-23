@@ -7,6 +7,10 @@ on:
     - cron: '30 15,16 * * 1'      # 11:30 ET anchor, plus an offset fallback
     - cron: '15,45 16,17 * * 1'   # 12:15 and 12:45 ET checks, both offsets
   workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - .github/dick-brick-preliminary-trigger.txt
 
 permissions:
   contents: write
@@ -15,6 +19,7 @@ permissions:
 
 jobs:
   watch:
+    if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     timeout-minutes: 20
     # Shared with the existing preliminary job, including across workflows.
@@ -51,8 +56,16 @@ jobs:
             exit 0
           fi
           echo "Preliminary is missing, stale, or incomplete; recovering this week only."
-          node scripts/capture-dick-brick.mjs preliminary --scheduled
-          node scripts/capture-dick-brick.mjs preliminary-check
+          for attempt in 1 2 3; do
+            if node scripts/capture-dick-brick.mjs preliminary --scheduled && node scripts/capture-dick-brick.mjs preliminary-check; then
+              break
+            fi
+            if [ "$attempt" -eq 3 ]; then
+              echo "No valid preliminary preview after $attempt attempts." >&2
+              exit 1
+            fi
+            sleep 60
+          done
           if git diff --quiet -- data/dick-brick-preliminary.json; then
             echo "A complete preliminary preview already exists; no publish needed."
             exit 0
