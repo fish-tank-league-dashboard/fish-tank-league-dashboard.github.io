@@ -21,6 +21,10 @@ assert.equal(needsReviewRefresh([run('2026-11-03T13:17:00Z')], { ...snapshot, ga
 assert.equal(needsReviewRefresh([run('2026-11-03T13:17:00Z')], { ...snapshot, games: snapshot.games.map(game => ({ ...game, status: 'LIVE' })) }, estReview), true, 'a prior sync with live games needs a final-score retry');
 const rollover = { ...snapshot, currentWeek: 9, games: [...snapshot.games, ...snapshot.games.map(game => ({ ...game, week: 9, status: 'SCHEDULED' }))] };
 assert.equal(needsReviewRefresh([run('2026-11-03T13:17:00Z')], rollover, estReview), false, 'next-week schedule does not force a redundant refresh after prior-week finals');
+const zeroScoreLive = { ...rollover, games: [...snapshot.games, ...snapshot.games.map(game => ({ ...game, week: 9, status: 'LIVE', as: 0, bs: 0 }))] };
+assert.equal(needsReviewRefresh([run('2026-11-03T13:17:00Z')], zeroScoreLive, estReview), false, 'ESPN zero-score LIVE next-week games do not force a redundant refresh');
+const startedWeek = { ...zeroScoreLive, games: zeroScoreLive.games.map(game => game.week === 9 && game.a === 'a0' ? { ...game, as: 1 } : game) };
+assert.equal(needsReviewRefresh([run('2026-11-03T13:17:00Z')], startedWeek, estReview), true, 'a scoring current-week game still needs final-score retry');
 assert.equal(needsReviewRefresh([run('2026-11-03T13:17:00Z')], snapshot, new Date('2026-11-03T12:17:00Z')), true, 'before 8am ET retains the existing cadence');
 assert.equal(needsReviewRefresh([run('2026-11-03T13:17:00Z')], snapshot, new Date('2026-11-05T14:17:00Z')), true, 'Tuesday success does not cover Thursday');
 assert.equal(needsReviewRefresh([{ ...run('2026-11-03T13:17:00Z'), conclusion: 'failure' }], snapshot, estReview), true);
