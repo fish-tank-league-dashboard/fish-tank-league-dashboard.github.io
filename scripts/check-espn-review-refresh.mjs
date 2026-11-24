@@ -20,7 +20,10 @@ export function validSnapshot(snapshot, leagueId = 791101930, season = 2026) {
 
 export function reviewScoresFinal(snapshot) {
   const currentGames = snapshot.games.filter(game => Number(game.week) === snapshot.currentWeek);
-  const reviewWeek = currentGames.some(game => ['LIVE', 'FINAL'].includes(game.status)) ? snapshot.currentWeek : snapshot.currentWeek - 1;
+  // ESPN can label next week's 0-0 matchups LIVE before play begins.
+  const currentWeekStarted = currentGames.some(game => game.status === 'FINAL' ||
+    (game.status === 'LIVE' && (Number(game.as) > 0 || Number(game.bs) > 0)));
+  const reviewWeek = currentWeekStarted ? snapshot.currentWeek : snapshot.currentWeek - 1;
   const games = snapshot.games.filter(game => Number(game.week) === reviewWeek);
   return games.length === 5 && games.every(game => game.status === 'FINAL');
 }
