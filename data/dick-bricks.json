@@ -128,6 +128,13 @@
       "reason": "Historical award withdrawn by league decision. Original recipient Jake had a 20.9% official pre-MNF win probability.",
       "highestLosingWinProbability": 20.9,
       "capturedAt": "2026-10-05T23:55:00.101Z"
+    },
+    {
+      "season": 2026,
+      "week": 11,
+      "reason": "No losing team had at least a 50.0% win probability immediately before the first Monday kickoff.",
+      "highestLosingWinProbability": 13,
+      "capturedAt": "2026-11-24T00:55:00.088Z"
     }
   ]
 }

@@ -1132,7 +1132,9 @@
             "winProbability": 0.3
           }
         }
-      ]
+      ],
+      "finalizedAt": "2026-11-24T08:10:44.194Z",
+      "awardManager": null
     }
   ]
 }
