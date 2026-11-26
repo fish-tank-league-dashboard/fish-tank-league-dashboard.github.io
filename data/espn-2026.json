@@ -2913,7 +2913,7 @@
       "a": "owner:gilguy",
       "al": "Gilguy",
       "at": "Dico Rowdle",
-      "as": 5.08,
+      "as": 7.5,
       "b": "owner:michael",
       "bl": "Michael",
       "bt": "Unbridled Enthusiasm",
@@ -2928,11 +2928,11 @@
       "a": "owner:nick",
       "al": "Nick",
       "at": "The Azz Train",
-      "as": 6.5,
+      "as": 16.3,
       "b": "owner:rich",
       "bl": "Rich",
       "bt": "Right Reverend Raisins ",
-      "bs": 46.4,
+      "bs": 50,
       "status": "LIVE",
       "aTeamId": 4,
       "bTeamId": 3
@@ -50424,7 +50424,7 @@
             ],
             "lineupSlotId": 4,
             "status": "STARTER",
-            "points": 1.4
+            "points": 5
           },
           {
             "playerId": 4248528,
@@ -50755,7 +50755,7 @@
             ],
             "lineupSlotId": 2,
             "status": "STARTER",
-            "points": 6.5
+            "points": 16.3
           },
           {
             "playerId": 4047650,
@@ -52097,7 +52097,7 @@
             ],
             "lineupSlotId": 0,
             "status": "STARTER",
-            "points": 5.08
+            "points": 7.5
           },
           {
             "playerId": 4569987,
@@ -52460,5 +52460,5 @@
       }
     ]
   },
-  "updatedAt": "2026-11-26T19:44:24.501Z"
+  "updatedAt": "2026-11-26T20:11:39.544Z"
 }
