@@ -2928,11 +2928,11 @@
       "a": "owner:nick",
       "al": "Nick",
       "at": "The Azz Train",
-      "as": 26.9,
+      "as": 27.5,
       "b": "owner:rich",
       "bl": "Rich",
       "bt": "Right Reverend Raisins ",
-      "bs": 53.5,
+      "bs": 54.5,
       "status": "LIVE",
       "aTeamId": 4,
       "bTeamId": 3
@@ -2947,7 +2947,7 @@
       "b": "owner:jake",
       "bl": "Jake",
       "bt": "Serenity Now, Insanity Later",
-      "bs": 1.32,
+      "bs": 14.6,
       "status": "LIVE",
       "aTeamId": 7,
       "bTeamId": 2
@@ -50127,7 +50127,7 @@
             ],
             "lineupSlotId": 4,
             "status": "STARTER",
-            "points": 0
+            "points": 4.6
           },
           {
             "playerId": 4429615,
@@ -50224,7 +50224,7 @@
             ],
             "lineupSlotId": 0,
             "status": "STARTER",
-            "points": 1.32
+            "points": 10
           },
           {
             "playerId": 4426348,
@@ -50454,7 +50454,7 @@
             ],
             "lineupSlotId": 17,
             "status": "STARTER",
-            "points": 1
+            "points": 2
           },
           {
             "playerId": 4361050,
@@ -50650,7 +50650,7 @@
             ],
             "lineupSlotId": 2,
             "status": "STARTER",
-            "points": 11
+            "points": 11.6
           },
           {
             "playerId": 4372016,
@@ -52460,5 +52460,5 @@
       }
     ]
   },
-  "updatedAt": "2026-11-26T22:21:53.179Z"
+  "updatedAt": "2026-11-26T22:36:14.698Z"
 }
